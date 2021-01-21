@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .php_cs
 .travis.yml
 README.md
@@ -33,14 +32,3 @@ lib/Configuration.php
 lib/HeaderSelector.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Api/DefaultApiTest.php
-test/Model/InlineResponse2001ObitDocumentsTest.php
-test/Model/InlineResponse2001ObitMetadataTest.php
-test/Model/InlineResponse2001ObitStructuredDataTest.php
-test/Model/InlineResponse2001ObitTest.php
-test/Model/InlineResponse2001Test.php
-test/Model/InlineResponse2002BlockchainObitTest.php
-test/Model/InlineResponse2002Test.php
-test/Model/InlineResponse2003Test.php
-test/Model/InlineResponse200Test.php
-test/Model/InlineResponse200UsnTest.php
