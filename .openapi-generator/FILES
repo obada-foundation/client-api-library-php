@@ -32,8 +32,3 @@ lib/Configuration.php
 lib/HeaderSelector.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Model/ClientObitDocumentsTest.php
-test/Model/ClientObitMetadataTest.php
-test/Model/ClientObitStructuredDataTest.php
-test/Model/ClientObitTest.php
-test/Model/ObitDefinitionTest.php
