@@ -1,6 +1,6 @@
 <?php
 /**
- * ClientObit
+ * LocalObit
  *
  * PHP version 7.2
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \Obada\ObjectSerializer;
 
 /**
- * ClientObit Class Doc Comment
+ * LocalObit Class Doc Comment
  *
  * @category Class
  * @package  Obada
@@ -43,7 +43,7 @@ use \Obada\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class ClientObit implements ModelInterface, ArrayAccess, \JsonSerializable
+class LocalObit implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +52,7 @@ class ClientObit implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ClientObit';
+    protected static $openAPIModelName = 'LocalObit';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,19 +60,15 @@ class ClientObit implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'int',
-        'obitDid' => 'string',
-        'usn' => 'string',
-        'ownerDid' => 'string',
+        'owner' => 'string',
         'obitStatus' => 'string',
         'manufacturer' => 'string',
         'partNumber' => 'string',
         'serialNumberHash' => 'string',
-        'modifiedAt' => '\DateTime',
-        'rootHash' => 'string',
         'metadata' => '\Obada\ClientHelper\LocalObitMetadata[]',
         'documents' => '\Obada\ClientHelper\LocalObitDocuments[]',
-        'structuredData' => '\Obada\ClientHelper\LocalObitStructuredData[]'
+        'structuredData' => '\Obada\ClientHelper\LocalObitStructuredData[]',
+        'modifiedAt' => '\DateTime'
     ];
 
     /**
@@ -83,19 +79,15 @@ class ClientObit implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'obitDid' => null,
-        'usn' => null,
-        'ownerDid' => null,
+        'owner' => null,
         'obitStatus' => null,
         'manufacturer' => null,
         'partNumber' => null,
         'serialNumberHash' => null,
-        'modifiedAt' => 'date-time',
-        'rootHash' => null,
         'metadata' => null,
         'documents' => null,
-        'structuredData' => null
+        'structuredData' => null,
+        'modifiedAt' => 'date-time'
     ];
 
     /**
@@ -125,19 +117,15 @@ class ClientObit implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'obitDid' => 'obit_did',
-        'usn' => 'usn',
-        'ownerDid' => 'owner_did',
+        'owner' => 'owner',
         'obitStatus' => 'obit_status',
         'manufacturer' => 'manufacturer',
         'partNumber' => 'part_number',
         'serialNumberHash' => 'serial_number_hash',
-        'modifiedAt' => 'modified_at',
-        'rootHash' => 'root_hash',
         'metadata' => 'metadata',
         'documents' => 'documents',
-        'structuredData' => 'structured_data'
+        'structuredData' => 'structured_data',
+        'modifiedAt' => 'modified_at'
     ];
 
     /**
@@ -146,19 +134,15 @@ class ClientObit implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'obitDid' => 'setObitDid',
-        'usn' => 'setUsn',
-        'ownerDid' => 'setOwnerDid',
+        'owner' => 'setOwner',
         'obitStatus' => 'setObitStatus',
         'manufacturer' => 'setManufacturer',
         'partNumber' => 'setPartNumber',
         'serialNumberHash' => 'setSerialNumberHash',
-        'modifiedAt' => 'setModifiedAt',
-        'rootHash' => 'setRootHash',
         'metadata' => 'setMetadata',
         'documents' => 'setDocuments',
-        'structuredData' => 'setStructuredData'
+        'structuredData' => 'setStructuredData',
+        'modifiedAt' => 'setModifiedAt'
     ];
 
     /**
@@ -167,19 +151,15 @@ class ClientObit implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'obitDid' => 'getObitDid',
-        'usn' => 'getUsn',
-        'ownerDid' => 'getOwnerDid',
+        'owner' => 'getOwner',
         'obitStatus' => 'getObitStatus',
         'manufacturer' => 'getManufacturer',
         'partNumber' => 'getPartNumber',
         'serialNumberHash' => 'getSerialNumberHash',
-        'modifiedAt' => 'getModifiedAt',
-        'rootHash' => 'getRootHash',
         'metadata' => 'getMetadata',
         'documents' => 'getDocuments',
-        'structuredData' => 'getStructuredData'
+        'structuredData' => 'getStructuredData',
+        'modifiedAt' => 'getModifiedAt'
     ];
 
     /**
@@ -263,19 +243,15 @@ class ClientObit implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['id'] = $data['id'] ?? null;
-        $this->container['obitDid'] = $data['obitDid'] ?? null;
-        $this->container['usn'] = $data['usn'] ?? null;
-        $this->container['ownerDid'] = $data['ownerDid'] ?? null;
+        $this->container['owner'] = $data['owner'] ?? null;
         $this->container['obitStatus'] = $data['obitStatus'] ?? null;
         $this->container['manufacturer'] = $data['manufacturer'] ?? null;
         $this->container['partNumber'] = $data['partNumber'] ?? null;
         $this->container['serialNumberHash'] = $data['serialNumberHash'] ?? null;
-        $this->container['modifiedAt'] = $data['modifiedAt'] ?? null;
-        $this->container['rootHash'] = $data['rootHash'] ?? null;
         $this->container['metadata'] = $data['metadata'] ?? null;
         $this->container['documents'] = $data['documents'] ?? null;
         $this->container['structuredData'] = $data['structuredData'] ?? null;
+        $this->container['modifiedAt'] = $data['modifiedAt'] ?? null;
     }
 
     /**
@@ -287,6 +263,12 @@ class ClientObit implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['owner'] === null) {
+            $invalidProperties[] = "'owner' can't be null";
+        }
+        if ($this->container['obitStatus'] === null) {
+            $invalidProperties[] = "'obitStatus' can't be null";
+        }
         $allowedValues = $this->getObitStatusAllowableValues();
         if (!is_null($this->container['obitStatus']) && !in_array($this->container['obitStatus'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -296,6 +278,18 @@ class ClientObit implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
 
+        if ($this->container['manufacturer'] === null) {
+            $invalidProperties[] = "'manufacturer' can't be null";
+        }
+        if ($this->container['partNumber'] === null) {
+            $invalidProperties[] = "'partNumber' can't be null";
+        }
+        if ($this->container['serialNumberHash'] === null) {
+            $invalidProperties[] = "'serialNumberHash' can't be null";
+        }
+        if ($this->container['modifiedAt'] === null) {
+            $invalidProperties[] = "'modifiedAt' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -312,97 +306,25 @@ class ClientObit implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets id
+     * Gets owner
      *
-     * @return int|null
+     * @return string
      */
-    public function getId()
+    public function getOwner()
     {
-        return $this->container['id'];
+        return $this->container['owner'];
     }
 
     /**
-     * Sets id
+     * Sets owner
      *
-     * @param int|null $id id
+     * @param string $owner Owner is the person/entity that owns the obit and the physical asset it represents.
      *
      * @return self
      */
-    public function setId($id)
+    public function setOwner($owner)
     {
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets obitDid
-     *
-     * @return string|null
-     */
-    public function getObitDid()
-    {
-        return $this->container['obitDid'];
-    }
-
-    /**
-     * Sets obitDid
-     *
-     * @param string|null $obitDid obitDid
-     *
-     * @return self
-     */
-    public function setObitDid($obitDid)
-    {
-        $this->container['obitDid'] = $obitDid;
-
-        return $this;
-    }
-
-    /**
-     * Gets usn
-     *
-     * @return string|null
-     */
-    public function getUsn()
-    {
-        return $this->container['usn'];
-    }
-
-    /**
-     * Sets usn
-     *
-     * @param string|null $usn usn
-     *
-     * @return self
-     */
-    public function setUsn($usn)
-    {
-        $this->container['usn'] = $usn;
-
-        return $this;
-    }
-
-    /**
-     * Gets ownerDid
-     *
-     * @return string|null
-     */
-    public function getOwnerDid()
-    {
-        return $this->container['ownerDid'];
-    }
-
-    /**
-     * Sets ownerDid
-     *
-     * @param string|null $ownerDid ownerDid
-     *
-     * @return self
-     */
-    public function setOwnerDid($ownerDid)
-    {
-        $this->container['ownerDid'] = $ownerDid;
+        $this->container['owner'] = $owner;
 
         return $this;
     }
@@ -410,7 +332,7 @@ class ClientObit implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets obitStatus
      *
-     * @return string|null
+     * @return string
      */
     public function getObitStatus()
     {
@@ -420,14 +342,14 @@ class ClientObit implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets obitStatus
      *
-     * @param string|null $obitStatus Represent available Obit statuses:   - FUNCTIONAL   - NON_FUNCTIONAL   - DISPOSED   - STOLEN   - DISABLED_BY_OWNER
+     * @param string $obitStatus Represent available Obit statuses:   - FUNCTIONAL   - NON_FUNCTIONAL   - DISPOSED   - STOLEN   - DISABLED_BY_OWNER
      *
      * @return self
      */
     public function setObitStatus($obitStatus)
     {
         $allowedValues = $this->getObitStatusAllowableValues();
-        if (!is_null($obitStatus) && !in_array($obitStatus, $allowedValues, true)) {
+        if (!in_array($obitStatus, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'obitStatus', must be one of '%s'",
@@ -444,7 +366,7 @@ class ClientObit implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets manufacturer
      *
-     * @return string|null
+     * @return string
      */
     public function getManufacturer()
     {
@@ -454,7 +376,7 @@ class ClientObit implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets manufacturer
      *
-     * @param string|null $manufacturer manufacturer
+     * @param string $manufacturer Waiting more specific details from Rohi
      *
      * @return self
      */
@@ -468,7 +390,7 @@ class ClientObit implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets partNumber
      *
-     * @return string|null
+     * @return string
      */
     public function getPartNumber()
     {
@@ -478,7 +400,7 @@ class ClientObit implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets partNumber
      *
-     * @param string|null $partNumber partNumber
+     * @param string $partNumber Manufacturer provided. In cases where no part number is provided for the product, use model, or the most specific ID available from the manufacturer. MWCN2LL/A (an iPhone 11 Pro, Silver, 256GB, model A2160)
      *
      * @return self
      */
@@ -492,7 +414,7 @@ class ClientObit implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets serialNumberHash
      *
-     * @return string|null
+     * @return string
      */
     public function getSerialNumberHash()
     {
@@ -502,61 +424,13 @@ class ClientObit implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets serialNumberHash
      *
-     * @param string|null $serialNumberHash serialNumberHash
+     * @param string $serialNumberHash Serial number hashed with sha256 hash function
      *
      * @return self
      */
     public function setSerialNumberHash($serialNumberHash)
     {
         $this->container['serialNumberHash'] = $serialNumberHash;
-
-        return $this;
-    }
-
-    /**
-     * Gets modifiedAt
-     *
-     * @return \DateTime|null
-     */
-    public function getModifiedAt()
-    {
-        return $this->container['modifiedAt'];
-    }
-
-    /**
-     * Sets modifiedAt
-     *
-     * @param \DateTime|null $modifiedAt modifiedAt
-     *
-     * @return self
-     */
-    public function setModifiedAt($modifiedAt)
-    {
-        $this->container['modifiedAt'] = $modifiedAt;
-
-        return $this;
-    }
-
-    /**
-     * Gets rootHash
-     *
-     * @return string|null
-     */
-    public function getRootHash()
-    {
-        return $this->container['rootHash'];
-    }
-
-    /**
-     * Sets rootHash
-     *
-     * @param string|null $rootHash rootHash
-     *
-     * @return self
-     */
-    public function setRootHash($rootHash)
-    {
-        $this->container['rootHash'] = $rootHash;
 
         return $this;
     }
@@ -629,6 +503,30 @@ class ClientObit implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setStructuredData($structuredData)
     {
         $this->container['structuredData'] = $structuredData;
+
+        return $this;
+    }
+
+    /**
+     * Gets modifiedAt
+     *
+     * @return \DateTime
+     */
+    public function getModifiedAt()
+    {
+        return $this->container['modifiedAt'];
+    }
+
+    /**
+     * Sets modifiedAt
+     *
+     * @param \DateTime $modifiedAt modifiedAt
+     *
+     * @return self
+     */
+    public function setModifiedAt($modifiedAt)
+    {
+        $this->container['modifiedAt'] = $modifiedAt;
 
         return $this;
     }

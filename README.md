@@ -55,10 +55,10 @@ $apiInstance = new Obada\Api\ObitApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$uNKNOWNBASETYPE = new \Obada\ClientHelper\UNKNOWN_BASE_TYPE(); // \Obada\ClientHelper\UNKNOWN_BASE_TYPE
+$obitDid = new \Obada\ClientHelper\ObitDid(); // \Obada\ClientHelper\ObitDid
 
 try {
-    $result = $apiInstance->downloadObitFromChain($uNKNOWNBASETYPE);
+    $result = $apiInstance->downloadObitFromChain($obitDid);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ObitApi->downloadObitFromChain: ', $e->getMessage(), PHP_EOL;
@@ -81,16 +81,18 @@ Class | Method | HTTP request | Description
 
 ## Models
 
+- [BaseResponse](docs/Model/BaseResponse.md)
+- [BlockChainObit](docs/Model/BlockChainObit.md)
+- [BlockChainObitResponse](docs/Model/BlockChainObitResponse.md)
 - [ClientObit](docs/Model/ClientObit.md)
-- [ClientObitDocuments](docs/Model/ClientObitDocuments.md)
-- [ClientObitMetadata](docs/Model/ClientObitMetadata.md)
-- [ClientObitStructuredData](docs/Model/ClientObitStructuredData.md)
-- [InlineResponse200](docs/Model/InlineResponse200.md)
-- [InlineResponse2001](docs/Model/InlineResponse2001.md)
-- [InlineResponse2002](docs/Model/InlineResponse2002.md)
-- [InlineResponse2002BlockchainObit](docs/Model/InlineResponse2002BlockchainObit.md)
-- [InlineResponse2003](docs/Model/InlineResponse2003.md)
+- [ClientObitResponse](docs/Model/ClientObitResponse.md)
+- [LocalObit](docs/Model/LocalObit.md)
+- [LocalObitDocuments](docs/Model/LocalObitDocuments.md)
+- [LocalObitMetadata](docs/Model/LocalObitMetadata.md)
+- [LocalObitStructuredData](docs/Model/LocalObitStructuredData.md)
 - [ObitDefinition](docs/Model/ObitDefinition.md)
+- [ObitDefinitionResponse](docs/Model/ObitDefinitionResponse.md)
+- [ObitDid](docs/Model/ObitDid.md)
 
 ## Authorization
 All endpoints do not require authorization.

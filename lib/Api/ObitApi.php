@@ -120,15 +120,15 @@ class ObitApi
      *
      * Download Obit from Blockchain
      *
-     * @param  \Obada\ClientHelper\UNKNOWN_BASE_TYPE $uNKNOWNBASETYPE uNKNOWNBASETYPE (optional)
+     * @param  \Obada\ClientHelper\ObitDid $obitDid obitDid (optional)
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Obada\ClientHelper\InlineResponse2001
+     * @return \Obada\ClientHelper\ClientObitResponse
      */
-    public function downloadObitFromChain($uNKNOWNBASETYPE = null)
+    public function downloadObitFromChain($obitDid = null)
     {
-        list($response) = $this->downloadObitFromChainWithHttpInfo($uNKNOWNBASETYPE);
+        list($response) = $this->downloadObitFromChainWithHttpInfo($obitDid);
         return $response;
     }
 
@@ -137,15 +137,15 @@ class ObitApi
      *
      * Download Obit from Blockchain
      *
-     * @param  \Obada\ClientHelper\UNKNOWN_BASE_TYPE $uNKNOWNBASETYPE (optional)
+     * @param  \Obada\ClientHelper\ObitDid $obitDid (optional)
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Obada\ClientHelper\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Obada\ClientHelper\ClientObitResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function downloadObitFromChainWithHttpInfo($uNKNOWNBASETYPE = null)
+    public function downloadObitFromChainWithHttpInfo($obitDid = null)
     {
-        $request = $this->downloadObitFromChainRequest($uNKNOWNBASETYPE);
+        $request = $this->downloadObitFromChainRequest($obitDid);
 
         try {
             $options = $this->createHttpClientOption();
@@ -178,20 +178,20 @@ class ObitApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Obada\ClientHelper\InlineResponse2001' === '\SplFileObject') {
+                    if ('\Obada\ClientHelper\ClientObitResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Obada\ClientHelper\InlineResponse2001', []),
+                        ObjectSerializer::deserialize($content, '\Obada\ClientHelper\ClientObitResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Obada\ClientHelper\InlineResponse2001';
+            $returnType = '\Obada\ClientHelper\ClientObitResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -210,7 +210,7 @@ class ObitApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Obada\ClientHelper\InlineResponse2001',
+                        '\Obada\ClientHelper\ClientObitResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -225,14 +225,14 @@ class ObitApi
      *
      * Download Obit from Blockchain
      *
-     * @param  \Obada\ClientHelper\UNKNOWN_BASE_TYPE $uNKNOWNBASETYPE (optional)
+     * @param  \Obada\ClientHelper\ObitDid $obitDid (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function downloadObitFromChainAsync($uNKNOWNBASETYPE = null)
+    public function downloadObitFromChainAsync($obitDid = null)
     {
-        return $this->downloadObitFromChainAsyncWithHttpInfo($uNKNOWNBASETYPE)
+        return $this->downloadObitFromChainAsyncWithHttpInfo($obitDid)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -245,15 +245,15 @@ class ObitApi
      *
      * Download Obit from Blockchain
      *
-     * @param  \Obada\ClientHelper\UNKNOWN_BASE_TYPE $uNKNOWNBASETYPE (optional)
+     * @param  \Obada\ClientHelper\ObitDid $obitDid (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function downloadObitFromChainAsyncWithHttpInfo($uNKNOWNBASETYPE = null)
+    public function downloadObitFromChainAsyncWithHttpInfo($obitDid = null)
     {
-        $returnType = '\Obada\ClientHelper\InlineResponse2001';
-        $request = $this->downloadObitFromChainRequest($uNKNOWNBASETYPE);
+        $returnType = '\Obada\ClientHelper\ClientObitResponse';
+        $request = $this->downloadObitFromChainRequest($obitDid);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -292,12 +292,12 @@ class ObitApi
     /**
      * Create request for operation 'downloadObitFromChain'
      *
-     * @param  \Obada\ClientHelper\UNKNOWN_BASE_TYPE $uNKNOWNBASETYPE (optional)
+     * @param  \Obada\ClientHelper\ObitDid $obitDid (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function downloadObitFromChainRequest($uNKNOWNBASETYPE = null)
+    public function downloadObitFromChainRequest($obitDid = null)
     {
 
         $resourcePath = '/server/obit/download';
@@ -323,11 +323,11 @@ class ObitApi
         }
 
         // for model (json/xml)
-        if (isset($uNKNOWNBASETYPE)) {
+        if (isset($obitDid)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($uNKNOWNBASETYPE));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($obitDid));
             } else {
-                $httpBody = $uNKNOWNBASETYPE;
+                $httpBody = $obitDid;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -383,7 +383,7 @@ class ObitApi
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Obada\ClientHelper\InlineResponse2002
+     * @return \Obada\ClientHelper\BlockChainObitResponse
      */
     public function fetchObitFromChain($obitDid)
     {
@@ -400,7 +400,7 @@ class ObitApi
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Obada\ClientHelper\InlineResponse2002, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Obada\ClientHelper\BlockChainObitResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function fetchObitFromChainWithHttpInfo($obitDid)
     {
@@ -437,20 +437,20 @@ class ObitApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Obada\ClientHelper\InlineResponse2002' === '\SplFileObject') {
+                    if ('\Obada\ClientHelper\BlockChainObitResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Obada\ClientHelper\InlineResponse2002', []),
+                        ObjectSerializer::deserialize($content, '\Obada\ClientHelper\BlockChainObitResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Obada\ClientHelper\InlineResponse2002';
+            $returnType = '\Obada\ClientHelper\BlockChainObitResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -469,7 +469,7 @@ class ObitApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Obada\ClientHelper\InlineResponse2002',
+                        '\Obada\ClientHelper\BlockChainObitResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -511,7 +511,7 @@ class ObitApi
      */
     public function fetchObitFromChainAsyncWithHttpInfo($obitDid)
     {
-        $returnType = '\Obada\ClientHelper\InlineResponse2002';
+        $returnType = '\Obada\ClientHelper\BlockChainObitResponse';
         $request = $this->fetchObitFromChainRequest($obitDid);
 
         return $this->client
@@ -652,7 +652,7 @@ class ObitApi
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Obada\ClientHelper\InlineResponse200
+     * @return \Obada\ClientHelper\ObitDefinitionResponse
      */
     public function generateObitDef($manufacturer, $partNumber, $serialNumber)
     {
@@ -671,7 +671,7 @@ class ObitApi
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Obada\ClientHelper\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Obada\ClientHelper\ObitDefinitionResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function generateObitDefWithHttpInfo($manufacturer, $partNumber, $serialNumber)
     {
@@ -708,20 +708,20 @@ class ObitApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Obada\ClientHelper\InlineResponse200' === '\SplFileObject') {
+                    if ('\Obada\ClientHelper\ObitDefinitionResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Obada\ClientHelper\InlineResponse200', []),
+                        ObjectSerializer::deserialize($content, '\Obada\ClientHelper\ObitDefinitionResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Obada\ClientHelper\InlineResponse200';
+            $returnType = '\Obada\ClientHelper\ObitDefinitionResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -740,7 +740,7 @@ class ObitApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Obada\ClientHelper\InlineResponse200',
+                        '\Obada\ClientHelper\ObitDefinitionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -786,7 +786,7 @@ class ObitApi
      */
     public function generateObitDefAsyncWithHttpInfo($manufacturer, $partNumber, $serialNumber)
     {
-        $returnType = '\Obada\ClientHelper\InlineResponse200';
+        $returnType = '\Obada\ClientHelper\ObitDefinitionResponse';
         $request = $this->generateObitDefRequest($manufacturer, $partNumber, $serialNumber);
 
         return $this->client
@@ -964,7 +964,7 @@ class ObitApi
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Obada\ClientHelper\InlineResponse2001
+     * @return \Obada\ClientHelper\ClientObitResponse
      */
     public function getClientObit($obitDid)
     {
@@ -981,7 +981,7 @@ class ObitApi
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Obada\ClientHelper\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Obada\ClientHelper\ClientObitResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getClientObitWithHttpInfo($obitDid)
     {
@@ -1018,20 +1018,20 @@ class ObitApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Obada\ClientHelper\InlineResponse2001' === '\SplFileObject') {
+                    if ('\Obada\ClientHelper\ClientObitResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Obada\ClientHelper\InlineResponse2001', []),
+                        ObjectSerializer::deserialize($content, '\Obada\ClientHelper\ClientObitResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Obada\ClientHelper\InlineResponse2001';
+            $returnType = '\Obada\ClientHelper\ClientObitResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -1050,7 +1050,7 @@ class ObitApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Obada\ClientHelper\InlineResponse2001',
+                        '\Obada\ClientHelper\ClientObitResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1092,7 +1092,7 @@ class ObitApi
      */
     public function getClientObitAsyncWithHttpInfo($obitDid)
     {
-        $returnType = '\Obada\ClientHelper\InlineResponse2001';
+        $returnType = '\Obada\ClientHelper\ClientObitResponse';
         $request = $this->getClientObitRequest($obitDid);
 
         return $this->client
@@ -1227,15 +1227,15 @@ class ObitApi
      *
      * Save Client Obit
      *
-     * @param  \Obada\ClientHelper\UNKNOWN_BASE_TYPE $uNKNOWNBASETYPE uNKNOWNBASETYPE (optional)
+     * @param  \Obada\ClientHelper\LocalObit $localObit localObit (optional)
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Obada\ClientHelper\InlineResponse2001
+     * @return \Obada\ClientHelper\ClientObitResponse
      */
-    public function saveClientObit($uNKNOWNBASETYPE = null)
+    public function saveClientObit($localObit = null)
     {
-        list($response) = $this->saveClientObitWithHttpInfo($uNKNOWNBASETYPE);
+        list($response) = $this->saveClientObitWithHttpInfo($localObit);
         return $response;
     }
 
@@ -1244,15 +1244,15 @@ class ObitApi
      *
      * Save Client Obit
      *
-     * @param  \Obada\ClientHelper\UNKNOWN_BASE_TYPE $uNKNOWNBASETYPE (optional)
+     * @param  \Obada\ClientHelper\LocalObit $localObit (optional)
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Obada\ClientHelper\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Obada\ClientHelper\ClientObitResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function saveClientObitWithHttpInfo($uNKNOWNBASETYPE = null)
+    public function saveClientObitWithHttpInfo($localObit = null)
     {
-        $request = $this->saveClientObitRequest($uNKNOWNBASETYPE);
+        $request = $this->saveClientObitRequest($localObit);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1285,20 +1285,20 @@ class ObitApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Obada\ClientHelper\InlineResponse2001' === '\SplFileObject') {
+                    if ('\Obada\ClientHelper\ClientObitResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Obada\ClientHelper\InlineResponse2001', []),
+                        ObjectSerializer::deserialize($content, '\Obada\ClientHelper\ClientObitResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Obada\ClientHelper\InlineResponse2001';
+            $returnType = '\Obada\ClientHelper\ClientObitResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -1317,7 +1317,7 @@ class ObitApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Obada\ClientHelper\InlineResponse2001',
+                        '\Obada\ClientHelper\ClientObitResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1332,14 +1332,14 @@ class ObitApi
      *
      * Save Client Obit
      *
-     * @param  \Obada\ClientHelper\UNKNOWN_BASE_TYPE $uNKNOWNBASETYPE (optional)
+     * @param  \Obada\ClientHelper\LocalObit $localObit (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function saveClientObitAsync($uNKNOWNBASETYPE = null)
+    public function saveClientObitAsync($localObit = null)
     {
-        return $this->saveClientObitAsyncWithHttpInfo($uNKNOWNBASETYPE)
+        return $this->saveClientObitAsyncWithHttpInfo($localObit)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1352,15 +1352,15 @@ class ObitApi
      *
      * Save Client Obit
      *
-     * @param  \Obada\ClientHelper\UNKNOWN_BASE_TYPE $uNKNOWNBASETYPE (optional)
+     * @param  \Obada\ClientHelper\LocalObit $localObit (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function saveClientObitAsyncWithHttpInfo($uNKNOWNBASETYPE = null)
+    public function saveClientObitAsyncWithHttpInfo($localObit = null)
     {
-        $returnType = '\Obada\ClientHelper\InlineResponse2001';
-        $request = $this->saveClientObitRequest($uNKNOWNBASETYPE);
+        $returnType = '\Obada\ClientHelper\ClientObitResponse';
+        $request = $this->saveClientObitRequest($localObit);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1399,12 +1399,12 @@ class ObitApi
     /**
      * Create request for operation 'saveClientObit'
      *
-     * @param  \Obada\ClientHelper\UNKNOWN_BASE_TYPE $uNKNOWNBASETYPE (optional)
+     * @param  \Obada\ClientHelper\LocalObit $localObit (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function saveClientObitRequest($uNKNOWNBASETYPE = null)
+    public function saveClientObitRequest($localObit = null)
     {
 
         $resourcePath = '/client/obit';
@@ -1430,11 +1430,11 @@ class ObitApi
         }
 
         // for model (json/xml)
-        if (isset($uNKNOWNBASETYPE)) {
+        if (isset($localObit)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($uNKNOWNBASETYPE));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($localObit));
             } else {
-                $httpBody = $uNKNOWNBASETYPE;
+                $httpBody = $localObit;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1486,15 +1486,15 @@ class ObitApi
      *
      * Upload Obit to Blockchain
      *
-     * @param  \Obada\ClientHelper\UNKNOWN_BASE_TYPE $uNKNOWNBASETYPE uNKNOWNBASETYPE (optional)
+     * @param  \Obada\ClientHelper\ObitDid $obitDid obitDid (optional)
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Obada\ClientHelper\InlineResponse2003
+     * @return \Obada\ClientHelper\BaseResponse
      */
-    public function uploadObit($uNKNOWNBASETYPE = null)
+    public function uploadObit($obitDid = null)
     {
-        list($response) = $this->uploadObitWithHttpInfo($uNKNOWNBASETYPE);
+        list($response) = $this->uploadObitWithHttpInfo($obitDid);
         return $response;
     }
 
@@ -1503,15 +1503,15 @@ class ObitApi
      *
      * Upload Obit to Blockchain
      *
-     * @param  \Obada\ClientHelper\UNKNOWN_BASE_TYPE $uNKNOWNBASETYPE (optional)
+     * @param  \Obada\ClientHelper\ObitDid $obitDid (optional)
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Obada\ClientHelper\InlineResponse2003, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Obada\ClientHelper\BaseResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function uploadObitWithHttpInfo($uNKNOWNBASETYPE = null)
+    public function uploadObitWithHttpInfo($obitDid = null)
     {
-        $request = $this->uploadObitRequest($uNKNOWNBASETYPE);
+        $request = $this->uploadObitRequest($obitDid);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1544,20 +1544,20 @@ class ObitApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Obada\ClientHelper\InlineResponse2003' === '\SplFileObject') {
+                    if ('\Obada\ClientHelper\BaseResponse' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Obada\ClientHelper\InlineResponse2003', []),
+                        ObjectSerializer::deserialize($content, '\Obada\ClientHelper\BaseResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Obada\ClientHelper\InlineResponse2003';
+            $returnType = '\Obada\ClientHelper\BaseResponse';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -1576,7 +1576,7 @@ class ObitApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Obada\ClientHelper\InlineResponse2003',
+                        '\Obada\ClientHelper\BaseResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1591,14 +1591,14 @@ class ObitApi
      *
      * Upload Obit to Blockchain
      *
-     * @param  \Obada\ClientHelper\UNKNOWN_BASE_TYPE $uNKNOWNBASETYPE (optional)
+     * @param  \Obada\ClientHelper\ObitDid $obitDid (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function uploadObitAsync($uNKNOWNBASETYPE = null)
+    public function uploadObitAsync($obitDid = null)
     {
-        return $this->uploadObitAsyncWithHttpInfo($uNKNOWNBASETYPE)
+        return $this->uploadObitAsyncWithHttpInfo($obitDid)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1611,15 +1611,15 @@ class ObitApi
      *
      * Upload Obit to Blockchain
      *
-     * @param  \Obada\ClientHelper\UNKNOWN_BASE_TYPE $uNKNOWNBASETYPE (optional)
+     * @param  \Obada\ClientHelper\ObitDid $obitDid (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function uploadObitAsyncWithHttpInfo($uNKNOWNBASETYPE = null)
+    public function uploadObitAsyncWithHttpInfo($obitDid = null)
     {
-        $returnType = '\Obada\ClientHelper\InlineResponse2003';
-        $request = $this->uploadObitRequest($uNKNOWNBASETYPE);
+        $returnType = '\Obada\ClientHelper\BaseResponse';
+        $request = $this->uploadObitRequest($obitDid);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1658,12 +1658,12 @@ class ObitApi
     /**
      * Create request for operation 'uploadObit'
      *
-     * @param  \Obada\ClientHelper\UNKNOWN_BASE_TYPE $uNKNOWNBASETYPE (optional)
+     * @param  \Obada\ClientHelper\ObitDid $obitDid (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function uploadObitRequest($uNKNOWNBASETYPE = null)
+    public function uploadObitRequest($obitDid = null)
     {
 
         $resourcePath = '/server/obit/upload';
@@ -1689,11 +1689,11 @@ class ObitApi
         }
 
         // for model (json/xml)
-        if (isset($uNKNOWNBASETYPE)) {
+        if (isset($obitDid)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($uNKNOWNBASETYPE));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($obitDid));
             } else {
-                $httpBody = $uNKNOWNBASETYPE;
+                $httpBody = $obitDid;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

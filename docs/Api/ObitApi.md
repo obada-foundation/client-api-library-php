@@ -15,7 +15,7 @@ Method | HTTP request | Description
 ## `downloadObitFromChain()`
 
 ```php
-downloadObitFromChain($uNKNOWNBASETYPE): \Obada\ClientHelper\InlineResponse2001
+downloadObitFromChain($obitDid): \Obada\ClientHelper\ClientObitResponse
 ```
 
 Download Obit from Blockchain
@@ -35,10 +35,10 @@ $apiInstance = new Obada\Api\ObitApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$uNKNOWNBASETYPE = new \Obada\ClientHelper\UNKNOWN_BASE_TYPE(); // \Obada\ClientHelper\UNKNOWN_BASE_TYPE
+$obitDid = new \Obada\ClientHelper\ObitDid(); // \Obada\ClientHelper\ObitDid
 
 try {
-    $result = $apiInstance->downloadObitFromChain($uNKNOWNBASETYPE);
+    $result = $apiInstance->downloadObitFromChain($obitDid);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ObitApi->downloadObitFromChain: ', $e->getMessage(), PHP_EOL;
@@ -49,11 +49,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uNKNOWNBASETYPE** | [**\Obada\ClientHelper\UNKNOWN_BASE_TYPE**](../Model/UNKNOWN_BASE_TYPE.md)|  | [optional]
+ **obitDid** | [**\Obada\ClientHelper\ObitDid**](../Model/ObitDid.md)|  | [optional]
 
 ### Return type
 
-[**\Obada\ClientHelper\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\Obada\ClientHelper\ClientObitResponse**](../Model/ClientObitResponse.md)
 
 ### Authorization
 
@@ -71,7 +71,7 @@ No authorization required
 ## `fetchObitFromChain()`
 
 ```php
-fetchObitFromChain($obitDid): \Obada\ClientHelper\InlineResponse2002
+fetchObitFromChain($obitDid): \Obada\ClientHelper\BlockChainObitResponse
 ```
 
 Get Obit From Blockchain
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Obada\ClientHelper\InlineResponse2002**](../Model/InlineResponse2002.md)
+[**\Obada\ClientHelper\BlockChainObitResponse**](../Model/BlockChainObitResponse.md)
 
 ### Authorization
 
@@ -127,7 +127,7 @@ No authorization required
 ## `generateObitDef()`
 
 ```php
-generateObitDef($manufacturer, $partNumber, $serialNumber): \Obada\ClientHelper\InlineResponse200
+generateObitDef($manufacturer, $partNumber, $serialNumber): \Obada\ClientHelper\ObitDefinitionResponse
 ```
 
 Generate Obit Definition
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Obada\ClientHelper\InlineResponse200**](../Model/InlineResponse200.md)
+[**\Obada\ClientHelper\ObitDefinitionResponse**](../Model/ObitDefinitionResponse.md)
 
 ### Authorization
 
@@ -187,7 +187,7 @@ No authorization required
 ## `getClientObit()`
 
 ```php
-getClientObit($obitDid): \Obada\ClientHelper\InlineResponse2001
+getClientObit($obitDid): \Obada\ClientHelper\ClientObitResponse
 ```
 
 Get Client Obit
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Obada\ClientHelper\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\Obada\ClientHelper\ClientObitResponse**](../Model/ClientObitResponse.md)
 
 ### Authorization
 
@@ -241,7 +241,7 @@ No authorization required
 ## `saveClientObit()`
 
 ```php
-saveClientObit($uNKNOWNBASETYPE): \Obada\ClientHelper\InlineResponse2001
+saveClientObit($localObit): \Obada\ClientHelper\ClientObitResponse
 ```
 
 Save Client Obit
@@ -259,10 +259,10 @@ $apiInstance = new Obada\Api\ObitApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$uNKNOWNBASETYPE = new \Obada\ClientHelper\UNKNOWN_BASE_TYPE(); // \Obada\ClientHelper\UNKNOWN_BASE_TYPE
+$localObit = new \Obada\ClientHelper\LocalObit(); // \Obada\ClientHelper\LocalObit
 
 try {
-    $result = $apiInstance->saveClientObit($uNKNOWNBASETYPE);
+    $result = $apiInstance->saveClientObit($localObit);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ObitApi->saveClientObit: ', $e->getMessage(), PHP_EOL;
@@ -273,11 +273,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uNKNOWNBASETYPE** | [**\Obada\ClientHelper\UNKNOWN_BASE_TYPE**](../Model/UNKNOWN_BASE_TYPE.md)|  | [optional]
+ **localObit** | [**\Obada\ClientHelper\LocalObit**](../Model/LocalObit.md)|  | [optional]
 
 ### Return type
 
-[**\Obada\ClientHelper\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\Obada\ClientHelper\ClientObitResponse**](../Model/ClientObitResponse.md)
 
 ### Authorization
 
@@ -295,7 +295,7 @@ No authorization required
 ## `uploadObit()`
 
 ```php
-uploadObit($uNKNOWNBASETYPE): \Obada\ClientHelper\InlineResponse2003
+uploadObit($obitDid): \Obada\ClientHelper\BaseResponse
 ```
 
 Upload Obit to Blockchain
@@ -315,10 +315,10 @@ $apiInstance = new Obada\Api\ObitApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$uNKNOWNBASETYPE = new \Obada\ClientHelper\UNKNOWN_BASE_TYPE(); // \Obada\ClientHelper\UNKNOWN_BASE_TYPE
+$obitDid = new \Obada\ClientHelper\ObitDid(); // \Obada\ClientHelper\ObitDid
 
 try {
-    $result = $apiInstance->uploadObit($uNKNOWNBASETYPE);
+    $result = $apiInstance->uploadObit($obitDid);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ObitApi->uploadObit: ', $e->getMessage(), PHP_EOL;
@@ -329,11 +329,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uNKNOWNBASETYPE** | [**\Obada\ClientHelper\UNKNOWN_BASE_TYPE**](../Model/UNKNOWN_BASE_TYPE.md)|  | [optional]
+ **obitDid** | [**\Obada\ClientHelper\ObitDid**](../Model/ObitDid.md)|  | [optional]
 
 ### Return type
 
-[**\Obada\ClientHelper\InlineResponse2003**](../Model/InlineResponse2003.md)
+[**\Obada\ClientHelper\BaseResponse**](../Model/BaseResponse.md)
 
 ### Authorization
 
