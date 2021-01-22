@@ -124,7 +124,7 @@ class ObitApi
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Obada\ClientHelper\InlineResponse2001
+     * @return \Obada\ClientHelper\InlineResponse2004
      */
     public function downloadObitFromChain($uNKNOWNBASETYPE = null)
     {
@@ -141,7 +141,7 @@ class ObitApi
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Obada\ClientHelper\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Obada\ClientHelper\InlineResponse2004, HTTP status code, HTTP response headers (array of strings)
      */
     public function downloadObitFromChainWithHttpInfo($uNKNOWNBASETYPE = null)
     {
@@ -178,20 +178,20 @@ class ObitApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Obada\ClientHelper\InlineResponse2001' === '\SplFileObject') {
+                    if ('\Obada\ClientHelper\InlineResponse2004' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Obada\ClientHelper\InlineResponse2001', []),
+                        ObjectSerializer::deserialize($content, '\Obada\ClientHelper\InlineResponse2004', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Obada\ClientHelper\InlineResponse2001';
+            $returnType = '\Obada\ClientHelper\InlineResponse2004';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -210,7 +210,7 @@ class ObitApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Obada\ClientHelper\InlineResponse2001',
+                        '\Obada\ClientHelper\InlineResponse2004',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -252,7 +252,7 @@ class ObitApi
      */
     public function downloadObitFromChainAsyncWithHttpInfo($uNKNOWNBASETYPE = null)
     {
-        $returnType = '\Obada\ClientHelper\InlineResponse2001';
+        $returnType = '\Obada\ClientHelper\InlineResponse2004';
         $request = $this->downloadObitFromChainRequest($uNKNOWNBASETYPE);
 
         return $this->client

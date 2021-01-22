@@ -13,6 +13,9 @@ docs/Model/InlineResponse2001ObitStructuredData.md
 docs/Model/InlineResponse2002.md
 docs/Model/InlineResponse2002BlockchainObit.md
 docs/Model/InlineResponse2003.md
+docs/Model/InlineResponse2004.md
+docs/Model/InlineResponse2004Obit.md
+docs/Model/InlineResponse2004ObitStructuredData.md
 docs/Model/InlineResponse200Usn.md
 git_push.sh
 lib/Api/ObitApi.php
@@ -26,6 +29,9 @@ lib/ClientHelper/InlineResponse2001ObitStructuredData.php
 lib/ClientHelper/InlineResponse2002.php
 lib/ClientHelper/InlineResponse2002BlockchainObit.php
 lib/ClientHelper/InlineResponse2003.php
+lib/ClientHelper/InlineResponse2004.php
+lib/ClientHelper/InlineResponse2004Obit.php
+lib/ClientHelper/InlineResponse2004ObitStructuredData.php
 lib/ClientHelper/InlineResponse200Usn.php
 lib/ClientHelper/ModelInterface.php
 lib/Configuration.php

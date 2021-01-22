@@ -15,7 +15,7 @@ Method | HTTP request | Description
 ## `downloadObitFromChain()`
 
 ```php
-downloadObitFromChain($uNKNOWNBASETYPE): \Obada\ClientHelper\InlineResponse2001
+downloadObitFromChain($uNKNOWNBASETYPE): \Obada\ClientHelper\InlineResponse2004
 ```
 
 Download Obit from Blockchain
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Obada\ClientHelper\InlineResponse2001**](../Model/InlineResponse2001.md)
+[**\Obada\ClientHelper\InlineResponse2004**](../Model/InlineResponse2004.md)
 
 ### Authorization
 

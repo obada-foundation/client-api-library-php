@@ -90,6 +90,9 @@ Class | Method | HTTP request | Description
 - [InlineResponse2002](docs/Model/InlineResponse2002.md)
 - [InlineResponse2002BlockchainObit](docs/Model/InlineResponse2002BlockchainObit.md)
 - [InlineResponse2003](docs/Model/InlineResponse2003.md)
+- [InlineResponse2004](docs/Model/InlineResponse2004.md)
+- [InlineResponse2004Obit](docs/Model/InlineResponse2004Obit.md)
+- [InlineResponse2004ObitStructuredData](docs/Model/InlineResponse2004ObitStructuredData.md)
 - [InlineResponse200Usn](docs/Model/InlineResponse200Usn.md)
 
 ## Authorization
