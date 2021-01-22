@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2001
+ * ObitDefinition
  *
  * PHP version 7.2
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \Obada\ObjectSerializer;
 
 /**
- * InlineResponse2001 Class Doc Comment
+ * ObitDefinition Class Doc Comment
  *
  * @category Class
  * @package  Obada
@@ -43,7 +43,7 @@ use \Obada\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializable
+class ObitDefinition implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +52,7 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
       *
       * @var string
       */
-    protected static $openAPIModelName = 'inline_response_200_1';
+    protected static $openAPIModelName = 'ObitDefinition';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,8 +60,10 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'status' => 'int',
-        'obit' => '\Obada\ClientHelper\ClientObit'
+        'serialHash' => 'string',
+        'usn' => 'string',
+        'obitDid' => 'string',
+        'usnBase58' => 'string'
     ];
 
     /**
@@ -72,8 +74,10 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'status' => null,
-        'obit' => null
+        'serialHash' => null,
+        'usn' => null,
+        'obitDid' => null,
+        'usnBase58' => null
     ];
 
     /**
@@ -103,8 +107,10 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'status' => 'status',
-        'obit' => 'obit'
+        'serialHash' => 'serial_hash',
+        'usn' => 'usn',
+        'obitDid' => 'obit_did',
+        'usnBase58' => 'usn_base58'
     ];
 
     /**
@@ -113,8 +119,10 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'status' => 'setStatus',
-        'obit' => 'setObit'
+        'serialHash' => 'setSerialHash',
+        'usn' => 'setUsn',
+        'obitDid' => 'setObitDid',
+        'usnBase58' => 'setUsnBase58'
     ];
 
     /**
@@ -123,8 +131,10 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'status' => 'getStatus',
-        'obit' => 'getObit'
+        'serialHash' => 'getSerialHash',
+        'usn' => 'getUsn',
+        'obitDid' => 'getObitDid',
+        'usnBase58' => 'getUsnBase58'
     ];
 
     /**
@@ -187,8 +197,10 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['status'] = $data['status'] ?? null;
-        $this->container['obit'] = $data['obit'] ?? null;
+        $this->container['serialHash'] = $data['serialHash'] ?? null;
+        $this->container['usn'] = $data['usn'] ?? null;
+        $this->container['obitDid'] = $data['obitDid'] ?? null;
+        $this->container['usnBase58'] = $data['usnBase58'] ?? null;
     }
 
     /**
@@ -216,49 +228,97 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets status
+     * Gets serialHash
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getStatus()
+    public function getSerialHash()
     {
-        return $this->container['status'];
+        return $this->container['serialHash'];
     }
 
     /**
-     * Sets status
+     * Sets serialHash
      *
-     * @param int|null $status status
+     * @param string|null $serialHash serialHash
      *
      * @return self
      */
-    public function setStatus($status)
+    public function setSerialHash($serialHash)
     {
-        $this->container['status'] = $status;
+        $this->container['serialHash'] = $serialHash;
 
         return $this;
     }
 
     /**
-     * Gets obit
+     * Gets usn
      *
-     * @return \Obada\ClientHelper\ClientObit|null
+     * @return string|null
      */
-    public function getObit()
+    public function getUsn()
     {
-        return $this->container['obit'];
+        return $this->container['usn'];
     }
 
     /**
-     * Sets obit
+     * Sets usn
      *
-     * @param \Obada\ClientHelper\ClientObit|null $obit obit
+     * @param string|null $usn usn
      *
      * @return self
      */
-    public function setObit($obit)
+    public function setUsn($usn)
     {
-        $this->container['obit'] = $obit;
+        $this->container['usn'] = $usn;
+
+        return $this;
+    }
+
+    /**
+     * Gets obitDid
+     *
+     * @return string|null
+     */
+    public function getObitDid()
+    {
+        return $this->container['obitDid'];
+    }
+
+    /**
+     * Sets obitDid
+     *
+     * @param string|null $obitDid obitDid
+     *
+     * @return self
+     */
+    public function setObitDid($obitDid)
+    {
+        $this->container['obitDid'] = $obitDid;
+
+        return $this;
+    }
+
+    /**
+     * Gets usnBase58
+     *
+     * @return string|null
+     */
+    public function getUsnBase58()
+    {
+        return $this->container['usnBase58'];
+    }
+
+    /**
+     * Sets usnBase58
+     *
+     * @param string|null $usnBase58 usnBase58
+     *
+     * @return self
+     */
+    public function setUsnBase58($usnBase58)
+    {
+        $this->container['usnBase58'] = $usnBase58;
 
         return $this;
     }

@@ -61,7 +61,7 @@ class InlineResponse200 implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPITypes = [
         'status' => 'int',
-        'usn' => '\Obada\ClientHelper\InlineResponse200Usn'
+        'usn' => '\Obada\ClientHelper\ObitDefinition'
     ];
 
     /**
@@ -242,7 +242,7 @@ class InlineResponse200 implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets usn
      *
-     * @return \Obada\ClientHelper\InlineResponse200Usn|null
+     * @return \Obada\ClientHelper\ObitDefinition|null
      */
     public function getUsn()
     {
@@ -252,7 +252,7 @@ class InlineResponse200 implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets usn
      *
-     * @param \Obada\ClientHelper\InlineResponse200Usn|null $usn usn
+     * @param \Obada\ClientHelper\ObitDefinition|null $usn usn
      *
      * @return self
      */

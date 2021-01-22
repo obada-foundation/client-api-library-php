@@ -74,26 +74,23 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *ObitApi* | [**downloadObitFromChain**](docs/Api/ObitApi.md#downloadobitfromchain) | **POST** /server/obit/download | Download Obit from Blockchain
 *ObitApi* | [**fetchObitFromChain**](docs/Api/ObitApi.md#fetchobitfromchain) | **GET** /server/obit/{obit_did} | Get Obit From Blockchain
-*ObitApi* | [**generateObit**](docs/Api/ObitApi.md#generateobit) | **GET** /obit/generate | Generate Obit
-*ObitApi* | [**getObit**](docs/Api/ObitApi.md#getobit) | **GET** /client/obit/{obit_did} | Get Client Obit
-*ObitApi* | [**saveObit**](docs/Api/ObitApi.md#saveobit) | **POST** /client/obit | Save Client Obit
+*ObitApi* | [**generateObitDef**](docs/Api/ObitApi.md#generateobitdef) | **GET** /obit/generate | Generate Obit Definition
+*ObitApi* | [**getClientObit**](docs/Api/ObitApi.md#getclientobit) | **GET** /client/obit/{obit_did} | Get Client Obit
+*ObitApi* | [**saveClientObit**](docs/Api/ObitApi.md#saveclientobit) | **POST** /client/obit | Save Client Obit
 *ObitApi* | [**uploadObit**](docs/Api/ObitApi.md#uploadobit) | **POST** /server/obit/upload | Upload Obit to Blockchain
 
 ## Models
 
+- [ClientObit](docs/Model/ClientObit.md)
+- [ClientObitDocuments](docs/Model/ClientObitDocuments.md)
+- [ClientObitMetadata](docs/Model/ClientObitMetadata.md)
+- [ClientObitStructuredData](docs/Model/ClientObitStructuredData.md)
 - [InlineResponse200](docs/Model/InlineResponse200.md)
 - [InlineResponse2001](docs/Model/InlineResponse2001.md)
-- [InlineResponse2001Obit](docs/Model/InlineResponse2001Obit.md)
-- [InlineResponse2001ObitDocuments](docs/Model/InlineResponse2001ObitDocuments.md)
-- [InlineResponse2001ObitMetadata](docs/Model/InlineResponse2001ObitMetadata.md)
-- [InlineResponse2001ObitStructuredData](docs/Model/InlineResponse2001ObitStructuredData.md)
 - [InlineResponse2002](docs/Model/InlineResponse2002.md)
 - [InlineResponse2002BlockchainObit](docs/Model/InlineResponse2002BlockchainObit.md)
 - [InlineResponse2003](docs/Model/InlineResponse2003.md)
-- [InlineResponse2004](docs/Model/InlineResponse2004.md)
-- [InlineResponse2004Obit](docs/Model/InlineResponse2004Obit.md)
-- [InlineResponse2004ObitStructuredData](docs/Model/InlineResponse2004ObitStructuredData.md)
-- [InlineResponse200Usn](docs/Model/InlineResponse200Usn.md)
+- [ObitDefinition](docs/Model/ObitDefinition.md)
 
 ## Authorization
 All endpoints do not require authorization.

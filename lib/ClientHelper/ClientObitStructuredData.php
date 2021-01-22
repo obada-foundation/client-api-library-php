@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2001
+ * ClientObitStructuredData
  *
  * PHP version 7.2
  *
@@ -33,9 +33,10 @@ use \ArrayAccess;
 use \Obada\ObjectSerializer;
 
 /**
- * InlineResponse2001 Class Doc Comment
+ * ClientObitStructuredData Class Doc Comment
  *
  * @category Class
+ * @description A record that represent key/value structure data record
  * @package  Obada
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -43,7 +44,7 @@ use \Obada\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializable
+class ClientObitStructuredData implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +53,7 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
       *
       * @var string
       */
-    protected static $openAPIModelName = 'inline_response_200_1';
+    protected static $openAPIModelName = 'ClientObit_structured_data';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,8 +61,8 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'status' => 'int',
-        'obit' => '\Obada\ClientHelper\ClientObit'
+        'key' => 'string',
+        'value' => 'string'
     ];
 
     /**
@@ -72,8 +73,8 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'status' => null,
-        'obit' => null
+        'key' => null,
+        'value' => null
     ];
 
     /**
@@ -103,8 +104,8 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'status' => 'status',
-        'obit' => 'obit'
+        'key' => 'key',
+        'value' => 'value'
     ];
 
     /**
@@ -113,8 +114,8 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'status' => 'setStatus',
-        'obit' => 'setObit'
+        'key' => 'setKey',
+        'value' => 'setValue'
     ];
 
     /**
@@ -123,8 +124,8 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'status' => 'getStatus',
-        'obit' => 'getObit'
+        'key' => 'getKey',
+        'value' => 'getValue'
     ];
 
     /**
@@ -187,8 +188,8 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['status'] = $data['status'] ?? null;
-        $this->container['obit'] = $data['obit'] ?? null;
+        $this->container['key'] = $data['key'] ?? null;
+        $this->container['value'] = $data['value'] ?? null;
     }
 
     /**
@@ -200,6 +201,12 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
+        if ($this->container['key'] === null) {
+            $invalidProperties[] = "'key' can't be null";
+        }
+        if ($this->container['value'] === null) {
+            $invalidProperties[] = "'value' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -216,49 +223,49 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets status
+     * Gets key
      *
-     * @return int|null
+     * @return string
      */
-    public function getStatus()
+    public function getKey()
     {
-        return $this->container['status'];
+        return $this->container['key'];
     }
 
     /**
-     * Sets status
+     * Sets key
      *
-     * @param int|null $status status
+     * @param string $key Structure data key
      *
      * @return self
      */
-    public function setStatus($status)
+    public function setKey($key)
     {
-        $this->container['status'] = $status;
+        $this->container['key'] = $key;
 
         return $this;
     }
 
     /**
-     * Gets obit
+     * Gets value
      *
-     * @return \Obada\ClientHelper\ClientObit|null
+     * @return string
      */
-    public function getObit()
+    public function getValue()
     {
-        return $this->container['obit'];
+        return $this->container['value'];
     }
 
     /**
-     * Sets obit
+     * Sets value
      *
-     * @param \Obada\ClientHelper\ClientObit|null $obit obit
+     * @param string $value Structure data value as a json string
      *
      * @return self
      */
-    public function setObit($obit)
+    public function setValue($value)
     {
-        $this->container['obit'] = $obit;
+        $this->container['value'] = $value;
 
         return $this;
     }

@@ -124,7 +124,7 @@ class ObitApi
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Obada\ClientHelper\InlineResponse2004
+     * @return \Obada\ClientHelper\InlineResponse2001
      */
     public function downloadObitFromChain($uNKNOWNBASETYPE = null)
     {
@@ -141,7 +141,7 @@ class ObitApi
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Obada\ClientHelper\InlineResponse2004, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Obada\ClientHelper\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
      */
     public function downloadObitFromChainWithHttpInfo($uNKNOWNBASETYPE = null)
     {
@@ -178,20 +178,20 @@ class ObitApi
             $responseBody = $response->getBody();
             switch($statusCode) {
                 case 200:
-                    if ('\Obada\ClientHelper\InlineResponse2004' === '\SplFileObject') {
+                    if ('\Obada\ClientHelper\InlineResponse2001' === '\SplFileObject') {
                         $content = $responseBody; //stream goes to serializer
                     } else {
                         $content = (string) $responseBody;
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Obada\ClientHelper\InlineResponse2004', []),
+                        ObjectSerializer::deserialize($content, '\Obada\ClientHelper\InlineResponse2001', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\Obada\ClientHelper\InlineResponse2004';
+            $returnType = '\Obada\ClientHelper\InlineResponse2001';
             $responseBody = $response->getBody();
             if ($returnType === '\SplFileObject') {
                 $content = $responseBody; //stream goes to serializer
@@ -210,7 +210,7 @@ class ObitApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Obada\ClientHelper\InlineResponse2004',
+                        '\Obada\ClientHelper\InlineResponse2001',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -252,7 +252,7 @@ class ObitApi
      */
     public function downloadObitFromChainAsyncWithHttpInfo($uNKNOWNBASETYPE = null)
     {
-        $returnType = '\Obada\ClientHelper\InlineResponse2004';
+        $returnType = '\Obada\ClientHelper\InlineResponse2001';
         $request = $this->downloadObitFromChainRequest($uNKNOWNBASETYPE);
 
         return $this->client
@@ -642,9 +642,9 @@ class ObitApi
     }
 
     /**
-     * Operation generateObit
+     * Operation generateObitDef
      *
-     * Generate Obit
+     * Generate Obit Definition
      *
      * @param  string $manufacturer Device Id (Required) (required)
      * @param  string $partNumber Part Number (Required) (required)
@@ -654,16 +654,16 @@ class ObitApi
      * @throws \InvalidArgumentException
      * @return \Obada\ClientHelper\InlineResponse200
      */
-    public function generateObit($manufacturer, $partNumber, $serialNumber)
+    public function generateObitDef($manufacturer, $partNumber, $serialNumber)
     {
-        list($response) = $this->generateObitWithHttpInfo($manufacturer, $partNumber, $serialNumber);
+        list($response) = $this->generateObitDefWithHttpInfo($manufacturer, $partNumber, $serialNumber);
         return $response;
     }
 
     /**
-     * Operation generateObitWithHttpInfo
+     * Operation generateObitDefWithHttpInfo
      *
-     * Generate Obit
+     * Generate Obit Definition
      *
      * @param  string $manufacturer Device Id (Required) (required)
      * @param  string $partNumber Part Number (Required) (required)
@@ -673,9 +673,9 @@ class ObitApi
      * @throws \InvalidArgumentException
      * @return array of \Obada\ClientHelper\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
      */
-    public function generateObitWithHttpInfo($manufacturer, $partNumber, $serialNumber)
+    public function generateObitDefWithHttpInfo($manufacturer, $partNumber, $serialNumber)
     {
-        $request = $this->generateObitRequest($manufacturer, $partNumber, $serialNumber);
+        $request = $this->generateObitDefRequest($manufacturer, $partNumber, $serialNumber);
 
         try {
             $options = $this->createHttpClientOption();
@@ -751,9 +751,9 @@ class ObitApi
     }
 
     /**
-     * Operation generateObitAsync
+     * Operation generateObitDefAsync
      *
-     * Generate Obit
+     * Generate Obit Definition
      *
      * @param  string $manufacturer Device Id (Required) (required)
      * @param  string $partNumber Part Number (Required) (required)
@@ -762,9 +762,9 @@ class ObitApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function generateObitAsync($manufacturer, $partNumber, $serialNumber)
+    public function generateObitDefAsync($manufacturer, $partNumber, $serialNumber)
     {
-        return $this->generateObitAsyncWithHttpInfo($manufacturer, $partNumber, $serialNumber)
+        return $this->generateObitDefAsyncWithHttpInfo($manufacturer, $partNumber, $serialNumber)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -773,9 +773,9 @@ class ObitApi
     }
 
     /**
-     * Operation generateObitAsyncWithHttpInfo
+     * Operation generateObitDefAsyncWithHttpInfo
      *
-     * Generate Obit
+     * Generate Obit Definition
      *
      * @param  string $manufacturer Device Id (Required) (required)
      * @param  string $partNumber Part Number (Required) (required)
@@ -784,10 +784,10 @@ class ObitApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function generateObitAsyncWithHttpInfo($manufacturer, $partNumber, $serialNumber)
+    public function generateObitDefAsyncWithHttpInfo($manufacturer, $partNumber, $serialNumber)
     {
         $returnType = '\Obada\ClientHelper\InlineResponse200';
-        $request = $this->generateObitRequest($manufacturer, $partNumber, $serialNumber);
+        $request = $this->generateObitDefRequest($manufacturer, $partNumber, $serialNumber);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -824,7 +824,7 @@ class ObitApi
     }
 
     /**
-     * Create request for operation 'generateObit'
+     * Create request for operation 'generateObitDef'
      *
      * @param  string $manufacturer Device Id (Required) (required)
      * @param  string $partNumber Part Number (Required) (required)
@@ -833,24 +833,24 @@ class ObitApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function generateObitRequest($manufacturer, $partNumber, $serialNumber)
+    public function generateObitDefRequest($manufacturer, $partNumber, $serialNumber)
     {
         // verify the required parameter 'manufacturer' is set
         if ($manufacturer === null || (is_array($manufacturer) && count($manufacturer) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $manufacturer when calling generateObit'
+                'Missing the required parameter $manufacturer when calling generateObitDef'
             );
         }
         // verify the required parameter 'partNumber' is set
         if ($partNumber === null || (is_array($partNumber) && count($partNumber) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $partNumber when calling generateObit'
+                'Missing the required parameter $partNumber when calling generateObitDef'
             );
         }
         // verify the required parameter 'serialNumber' is set
         if ($serialNumber === null || (is_array($serialNumber) && count($serialNumber) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $serialNumber when calling generateObit'
+                'Missing the required parameter $serialNumber when calling generateObitDef'
             );
         }
 
@@ -956,7 +956,7 @@ class ObitApi
     }
 
     /**
-     * Operation getObit
+     * Operation getClientObit
      *
      * Get Client Obit
      *
@@ -966,14 +966,14 @@ class ObitApi
      * @throws \InvalidArgumentException
      * @return \Obada\ClientHelper\InlineResponse2001
      */
-    public function getObit($obitDid)
+    public function getClientObit($obitDid)
     {
-        list($response) = $this->getObitWithHttpInfo($obitDid);
+        list($response) = $this->getClientObitWithHttpInfo($obitDid);
         return $response;
     }
 
     /**
-     * Operation getObitWithHttpInfo
+     * Operation getClientObitWithHttpInfo
      *
      * Get Client Obit
      *
@@ -983,9 +983,9 @@ class ObitApi
      * @throws \InvalidArgumentException
      * @return array of \Obada\ClientHelper\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getObitWithHttpInfo($obitDid)
+    public function getClientObitWithHttpInfo($obitDid)
     {
-        $request = $this->getObitRequest($obitDid);
+        $request = $this->getClientObitRequest($obitDid);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1061,7 +1061,7 @@ class ObitApi
     }
 
     /**
-     * Operation getObitAsync
+     * Operation getClientObitAsync
      *
      * Get Client Obit
      *
@@ -1070,9 +1070,9 @@ class ObitApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getObitAsync($obitDid)
+    public function getClientObitAsync($obitDid)
     {
-        return $this->getObitAsyncWithHttpInfo($obitDid)
+        return $this->getClientObitAsyncWithHttpInfo($obitDid)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1081,7 +1081,7 @@ class ObitApi
     }
 
     /**
-     * Operation getObitAsyncWithHttpInfo
+     * Operation getClientObitAsyncWithHttpInfo
      *
      * Get Client Obit
      *
@@ -1090,10 +1090,10 @@ class ObitApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getObitAsyncWithHttpInfo($obitDid)
+    public function getClientObitAsyncWithHttpInfo($obitDid)
     {
         $returnType = '\Obada\ClientHelper\InlineResponse2001';
-        $request = $this->getObitRequest($obitDid);
+        $request = $this->getClientObitRequest($obitDid);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1130,19 +1130,19 @@ class ObitApi
     }
 
     /**
-     * Create request for operation 'getObit'
+     * Create request for operation 'getClientObit'
      *
      * @param  string $obitDid Required. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getObitRequest($obitDid)
+    public function getClientObitRequest($obitDid)
     {
         // verify the required parameter 'obitDid' is set
         if ($obitDid === null || (is_array($obitDid) && count($obitDid) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obitDid when calling getObit'
+                'Missing the required parameter $obitDid when calling getClientObit'
             );
         }
 
@@ -1223,7 +1223,7 @@ class ObitApi
     }
 
     /**
-     * Operation saveObit
+     * Operation saveClientObit
      *
      * Save Client Obit
      *
@@ -1233,14 +1233,14 @@ class ObitApi
      * @throws \InvalidArgumentException
      * @return \Obada\ClientHelper\InlineResponse2001
      */
-    public function saveObit($uNKNOWNBASETYPE = null)
+    public function saveClientObit($uNKNOWNBASETYPE = null)
     {
-        list($response) = $this->saveObitWithHttpInfo($uNKNOWNBASETYPE);
+        list($response) = $this->saveClientObitWithHttpInfo($uNKNOWNBASETYPE);
         return $response;
     }
 
     /**
-     * Operation saveObitWithHttpInfo
+     * Operation saveClientObitWithHttpInfo
      *
      * Save Client Obit
      *
@@ -1250,9 +1250,9 @@ class ObitApi
      * @throws \InvalidArgumentException
      * @return array of \Obada\ClientHelper\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
      */
-    public function saveObitWithHttpInfo($uNKNOWNBASETYPE = null)
+    public function saveClientObitWithHttpInfo($uNKNOWNBASETYPE = null)
     {
-        $request = $this->saveObitRequest($uNKNOWNBASETYPE);
+        $request = $this->saveClientObitRequest($uNKNOWNBASETYPE);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1328,7 +1328,7 @@ class ObitApi
     }
 
     /**
-     * Operation saveObitAsync
+     * Operation saveClientObitAsync
      *
      * Save Client Obit
      *
@@ -1337,9 +1337,9 @@ class ObitApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function saveObitAsync($uNKNOWNBASETYPE = null)
+    public function saveClientObitAsync($uNKNOWNBASETYPE = null)
     {
-        return $this->saveObitAsyncWithHttpInfo($uNKNOWNBASETYPE)
+        return $this->saveClientObitAsyncWithHttpInfo($uNKNOWNBASETYPE)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1348,7 +1348,7 @@ class ObitApi
     }
 
     /**
-     * Operation saveObitAsyncWithHttpInfo
+     * Operation saveClientObitAsyncWithHttpInfo
      *
      * Save Client Obit
      *
@@ -1357,10 +1357,10 @@ class ObitApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function saveObitAsyncWithHttpInfo($uNKNOWNBASETYPE = null)
+    public function saveClientObitAsyncWithHttpInfo($uNKNOWNBASETYPE = null)
     {
         $returnType = '\Obada\ClientHelper\InlineResponse2001';
-        $request = $this->saveObitRequest($uNKNOWNBASETYPE);
+        $request = $this->saveClientObitRequest($uNKNOWNBASETYPE);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1397,14 +1397,14 @@ class ObitApi
     }
 
     /**
-     * Create request for operation 'saveObit'
+     * Create request for operation 'saveClientObit'
      *
      * @param  \Obada\ClientHelper\UNKNOWN_BASE_TYPE $uNKNOWNBASETYPE (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function saveObitRequest($uNKNOWNBASETYPE = null)
+    public function saveClientObitRequest($uNKNOWNBASETYPE = null)
     {
 
         $resourcePath = '/client/obit';

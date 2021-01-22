@@ -1,10 +1,10 @@
-# # InlineResponse200
+# # ClientObitStructuredData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**status** | **int** |  | [optional]
-**usn** | [**\Obada\ClientHelper\ObitDefinition**](ObitDefinition.md) |  | [optional]
+**key** | **string** | Structure data key |
+**value** | **string** | Structure data value as a json string |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

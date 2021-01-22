@@ -1,6 +1,6 @@
 <?php
 /**
- * InlineResponse2001
+ * ClientObitDocuments
  *
  * PHP version 7.2
  *
@@ -33,9 +33,10 @@ use \ArrayAccess;
 use \Obada\ObjectSerializer;
 
 /**
- * InlineResponse2001 Class Doc Comment
+ * ClientObitDocuments Class Doc Comment
  *
  * @category Class
+ * @description Document hashlink
  * @package  Obada
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -43,7 +44,7 @@ use \Obada\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null  
  */
-class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializable
+class ClientObitDocuments implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -52,7 +53,7 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
       *
       * @var string
       */
-    protected static $openAPIModelName = 'inline_response_200_1';
+    protected static $openAPIModelName = 'ClientObit_documents';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,8 +61,8 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'status' => 'int',
-        'obit' => '\Obada\ClientHelper\ClientObit'
+        'name' => 'string',
+        'hashlink' => 'string'
     ];
 
     /**
@@ -72,8 +73,8 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'status' => null,
-        'obit' => null
+        'name' => null,
+        'hashlink' => null
     ];
 
     /**
@@ -103,8 +104,8 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'status' => 'status',
-        'obit' => 'obit'
+        'name' => 'name',
+        'hashlink' => 'hashlink'
     ];
 
     /**
@@ -113,8 +114,8 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'status' => 'setStatus',
-        'obit' => 'setObit'
+        'name' => 'setName',
+        'hashlink' => 'setHashlink'
     ];
 
     /**
@@ -123,8 +124,8 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'status' => 'getStatus',
-        'obit' => 'getObit'
+        'name' => 'getName',
+        'hashlink' => 'getHashlink'
     ];
 
     /**
@@ -187,8 +188,8 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['status'] = $data['status'] ?? null;
-        $this->container['obit'] = $data['obit'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['hashlink'] = $data['hashlink'] ?? null;
     }
 
     /**
@@ -200,6 +201,12 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
+        if ($this->container['hashlink'] === null) {
+            $invalidProperties[] = "'hashlink' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -216,49 +223,49 @@ class InlineResponse2001 implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets status
+     * Gets name
      *
-     * @return int|null
+     * @return string
      */
-    public function getStatus()
+    public function getName()
     {
-        return $this->container['status'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets status
+     * Sets name
      *
-     * @param int|null $status status
+     * @param string $name Associative name of hashlink
      *
      * @return self
      */
-    public function setStatus($status)
+    public function setName($name)
     {
-        $this->container['status'] = $status;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets obit
+     * Gets hashlink
      *
-     * @return \Obada\ClientHelper\ClientObit|null
+     * @return string
      */
-    public function getObit()
+    public function getHashlink()
     {
-        return $this->container['obit'];
+        return $this->container['hashlink'];
     }
 
     /**
-     * Sets obit
+     * Sets hashlink
      *
-     * @param \Obada\ClientHelper\ClientObit|null $obit obit
+     * @param string $hashlink Hashlink
      *
      * @return self
      */
-    public function setObit($obit)
+    public function setHashlink($hashlink)
     {
-        $this->container['obit'] = $obit;
+        $this->container['hashlink'] = $hashlink;
 
         return $this;
     }

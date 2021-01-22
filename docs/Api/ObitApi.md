@@ -6,16 +6,16 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**downloadObitFromChain()**](ObitApi.md#downloadObitFromChain) | **POST** /server/obit/download | Download Obit from Blockchain
 [**fetchObitFromChain()**](ObitApi.md#fetchObitFromChain) | **GET** /server/obit/{obit_did} | Get Obit From Blockchain
-[**generateObit()**](ObitApi.md#generateObit) | **GET** /obit/generate | Generate Obit
-[**getObit()**](ObitApi.md#getObit) | **GET** /client/obit/{obit_did} | Get Client Obit
-[**saveObit()**](ObitApi.md#saveObit) | **POST** /client/obit | Save Client Obit
+[**generateObitDef()**](ObitApi.md#generateObitDef) | **GET** /obit/generate | Generate Obit Definition
+[**getClientObit()**](ObitApi.md#getClientObit) | **GET** /client/obit/{obit_did} | Get Client Obit
+[**saveClientObit()**](ObitApi.md#saveClientObit) | **POST** /client/obit | Save Client Obit
 [**uploadObit()**](ObitApi.md#uploadObit) | **POST** /server/obit/upload | Upload Obit to Blockchain
 
 
 ## `downloadObitFromChain()`
 
 ```php
-downloadObitFromChain($uNKNOWNBASETYPE): \Obada\ClientHelper\InlineResponse2004
+downloadObitFromChain($uNKNOWNBASETYPE): \Obada\ClientHelper\InlineResponse2001
 ```
 
 Download Obit from Blockchain
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Obada\ClientHelper\InlineResponse2004**](../Model/InlineResponse2004.md)
+[**\Obada\ClientHelper\InlineResponse2001**](../Model/InlineResponse2001.md)
 
 ### Authorization
 
@@ -124,15 +124,15 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `generateObit()`
+## `generateObitDef()`
 
 ```php
-generateObit($manufacturer, $partNumber, $serialNumber): \Obada\ClientHelper\InlineResponse200
+generateObitDef($manufacturer, $partNumber, $serialNumber): \Obada\ClientHelper\InlineResponse200
 ```
 
-Generate Obit
+Generate Obit Definition
 
-Returns the usn & obit for a given device_id, part_number and serial_number input.
+Returns the Obit Definition for a given device_id, part_number and serial_number input.
 
 ### Example
 
@@ -152,10 +152,10 @@ $partNumber = 123456789; // string | Part Number (Required)
 $serialNumber = 123456789; // string | Serial Number (Required)
 
 try {
-    $result = $apiInstance->generateObit($manufacturer, $partNumber, $serialNumber);
+    $result = $apiInstance->generateObitDef($manufacturer, $partNumber, $serialNumber);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObitApi->generateObit: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObitApi->generateObitDef: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -184,10 +184,10 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getObit()`
+## `getClientObit()`
 
 ```php
-getObit($obitDid): \Obada\ClientHelper\InlineResponse2001
+getClientObit($obitDid): \Obada\ClientHelper\InlineResponse2001
 ```
 
 Get Client Obit
@@ -208,10 +208,10 @@ $apiInstance = new Obada\Api\ObitApi(
 $obitDid = did:obada:81413bc1ad2074a6ae35d1f65f64f1bca2e8a20959f37ef0349a729ddc567d9b; // string | Required.
 
 try {
-    $result = $apiInstance->getObit($obitDid);
+    $result = $apiInstance->getClientObit($obitDid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObitApi->getObit: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObitApi->getClientObit: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -238,10 +238,10 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `saveObit()`
+## `saveClientObit()`
 
 ```php
-saveObit($uNKNOWNBASETYPE): \Obada\ClientHelper\InlineResponse2001
+saveClientObit($uNKNOWNBASETYPE): \Obada\ClientHelper\InlineResponse2001
 ```
 
 Save Client Obit
@@ -262,10 +262,10 @@ $apiInstance = new Obada\Api\ObitApi(
 $uNKNOWNBASETYPE = new \Obada\ClientHelper\UNKNOWN_BASE_TYPE(); // \Obada\ClientHelper\UNKNOWN_BASE_TYPE
 
 try {
-    $result = $apiInstance->saveObit($uNKNOWNBASETYPE);
+    $result = $apiInstance->saveClientObit($uNKNOWNBASETYPE);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObitApi->saveObit: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObitApi->saveClientObit: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
