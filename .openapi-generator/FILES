@@ -3,7 +3,7 @@
 .travis.yml
 README.md
 composer.json
-docs/Api/DefaultApi.md
+docs/Api/ObitApi.md
 docs/Model/InlineResponse200.md
 docs/Model/InlineResponse2001.md
 docs/Model/InlineResponse2001Obit.md
@@ -15,7 +15,7 @@ docs/Model/InlineResponse2002BlockchainObit.md
 docs/Model/InlineResponse2003.md
 docs/Model/InlineResponse200Usn.md
 git_push.sh
-lib/Api/DefaultApi.php
+lib/Api/ObitApi.php
 lib/ApiException.php
 lib/ClientHelper/InlineResponse200.php
 lib/ClientHelper/InlineResponse2001.php
@@ -32,3 +32,4 @@ lib/Configuration.php
 lib/HeaderSelector.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Api/ObitApiTest.php
