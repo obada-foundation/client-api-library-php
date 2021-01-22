@@ -32,4 +32,3 @@ lib/Configuration.php
 lib/HeaderSelector.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
-test/Api/ObitApiTest.php
