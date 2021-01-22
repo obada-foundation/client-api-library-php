@@ -36,13 +36,16 @@ lib/Configuration.php
 lib/HeaderSelector.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Api/ObitApiTest.php
 test/Model/BaseResponseTest.php
 test/Model/BlockChainObitResponseTest.php
 test/Model/BlockChainObitTest.php
 test/Model/ClientObitResponseTest.php
+test/Model/ClientObitTest.php
 test/Model/LocalObitDocumentsTest.php
 test/Model/LocalObitMetadataTest.php
 test/Model/LocalObitStructuredDataTest.php
 test/Model/LocalObitTest.php
 test/Model/ObitDefinitionResponseTest.php
+test/Model/ObitDefinitionTest.php
 test/Model/ObitDidTest.php

@@ -97,36 +97,36 @@ class ObitApiTest extends TestCase
     }
 
     /**
-     * Test case for generateObit
+     * Test case for generateObitDef
      *
-     * Generate Obit.
+     * Generate Obit Definition.
      *
      */
-    public function testGenerateObit()
+    public function testGenerateObitDef()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for getObit
+     * Test case for getClientObit
      *
      * Get Client Obit.
      *
      */
-    public function testGetObit()
+    public function testGetClientObit()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for saveObit
+     * Test case for saveClientObit
      *
      * Save Client Obit.
      *
      */
-    public function testSaveObit()
+    public function testSaveClientObit()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
