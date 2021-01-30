@@ -19,11 +19,11 @@ To install the bindings via [Composer](https://getcomposer.org/), add the follow
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/obada-protocol/client-api-library.git"
+      "url": "https://github.com/obada-foundation/client-api-library-php.git"
     }
   ],
   "require": {
-    "obada-protocol/client-api-library": "*@dev"
+    "obada-foundation/client-api-library-php": "*@dev"
   }
 }
 ```
