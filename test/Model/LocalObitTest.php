@@ -117,9 +117,9 @@ class LocalObitTest extends TestCase
     }
 
     /**
-     * Test attribute "serialNumberHash"
+     * Test attribute "serialNumber"
      */
-    public function testPropertySerialNumberHash()
+    public function testPropertySerialNumber()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

@@ -64,7 +64,7 @@ class LocalObit implements ModelInterface, ArrayAccess, \JsonSerializable
         'obitStatus' => 'string',
         'manufacturer' => 'string',
         'partNumber' => 'string',
-        'serialNumberHash' => 'string',
+        'serialNumber' => 'string',
         'metadata' => '\Obada\ClientHelper\LocalObitMetadata[]',
         'documents' => '\Obada\ClientHelper\LocalObitDocuments[]',
         'structuredData' => '\Obada\ClientHelper\LocalObitStructuredData[]',
@@ -83,7 +83,7 @@ class LocalObit implements ModelInterface, ArrayAccess, \JsonSerializable
         'obitStatus' => null,
         'manufacturer' => null,
         'partNumber' => null,
-        'serialNumberHash' => null,
+        'serialNumber' => null,
         'metadata' => null,
         'documents' => null,
         'structuredData' => null,
@@ -121,7 +121,7 @@ class LocalObit implements ModelInterface, ArrayAccess, \JsonSerializable
         'obitStatus' => 'obit_status',
         'manufacturer' => 'manufacturer',
         'partNumber' => 'part_number',
-        'serialNumberHash' => 'serial_number_hash',
+        'serialNumber' => 'serial_number',
         'metadata' => 'metadata',
         'documents' => 'documents',
         'structuredData' => 'structured_data',
@@ -138,7 +138,7 @@ class LocalObit implements ModelInterface, ArrayAccess, \JsonSerializable
         'obitStatus' => 'setObitStatus',
         'manufacturer' => 'setManufacturer',
         'partNumber' => 'setPartNumber',
-        'serialNumberHash' => 'setSerialNumberHash',
+        'serialNumber' => 'setSerialNumber',
         'metadata' => 'setMetadata',
         'documents' => 'setDocuments',
         'structuredData' => 'setStructuredData',
@@ -155,7 +155,7 @@ class LocalObit implements ModelInterface, ArrayAccess, \JsonSerializable
         'obitStatus' => 'getObitStatus',
         'manufacturer' => 'getManufacturer',
         'partNumber' => 'getPartNumber',
-        'serialNumberHash' => 'getSerialNumberHash',
+        'serialNumber' => 'getSerialNumber',
         'metadata' => 'getMetadata',
         'documents' => 'getDocuments',
         'structuredData' => 'getStructuredData',
@@ -247,7 +247,7 @@ class LocalObit implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['obitStatus'] = $data['obitStatus'] ?? null;
         $this->container['manufacturer'] = $data['manufacturer'] ?? null;
         $this->container['partNumber'] = $data['partNumber'] ?? null;
-        $this->container['serialNumberHash'] = $data['serialNumberHash'] ?? null;
+        $this->container['serialNumber'] = $data['serialNumber'] ?? null;
         $this->container['metadata'] = $data['metadata'] ?? null;
         $this->container['documents'] = $data['documents'] ?? null;
         $this->container['structuredData'] = $data['structuredData'] ?? null;
@@ -284,8 +284,8 @@ class LocalObit implements ModelInterface, ArrayAccess, \JsonSerializable
         if ($this->container['partNumber'] === null) {
             $invalidProperties[] = "'partNumber' can't be null";
         }
-        if ($this->container['serialNumberHash'] === null) {
-            $invalidProperties[] = "'serialNumberHash' can't be null";
+        if ($this->container['serialNumber'] === null) {
+            $invalidProperties[] = "'serialNumber' can't be null";
         }
         if ($this->container['modifiedAt'] === null) {
             $invalidProperties[] = "'modifiedAt' can't be null";
@@ -412,25 +412,25 @@ class LocalObit implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets serialNumberHash
+     * Gets serialNumber
      *
      * @return string
      */
-    public function getSerialNumberHash()
+    public function getSerialNumber()
     {
-        return $this->container['serialNumberHash'];
+        return $this->container['serialNumber'];
     }
 
     /**
-     * Sets serialNumberHash
+     * Sets serialNumber
      *
-     * @param string $serialNumberHash Serial number hashed with sha256 hash function
+     * @param string $serialNumber Serial Number
      *
      * @return self
      */
-    public function setSerialNumberHash($serialNumberHash)
+    public function setSerialNumber($serialNumber)
     {
-        $this->container['serialNumberHash'] = $serialNumberHash;
+        $this->container['serialNumber'] = $serialNumber;
 
         return $this;
     }
