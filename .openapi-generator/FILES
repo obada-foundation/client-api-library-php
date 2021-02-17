@@ -16,6 +16,7 @@ docs/Model/LocalObitStructuredData.md
 docs/Model/ObitDefinition.md
 docs/Model/ObitDefinitionResponse.md
 docs/Model/ObitDid.md
+docs/Model/RootHashResponse.md
 git_push.sh
 lib/Api/ObitApi.php
 lib/ApiException.php
@@ -32,6 +33,7 @@ lib/ClientHelper/ModelInterface.php
 lib/ClientHelper/ObitDefinition.php
 lib/ClientHelper/ObitDefinitionResponse.php
 lib/ClientHelper/ObitDid.php
+lib/ClientHelper/RootHashResponse.php
 lib/Configuration.php
 lib/HeaderSelector.php
 lib/ObjectSerializer.php
@@ -49,3 +51,4 @@ test/Model/LocalObitTest.php
 test/Model/ObitDefinitionResponseTest.php
 test/Model/ObitDefinitionTest.php
 test/Model/ObitDidTest.php
+test/Model/RootHashResponseTest.php

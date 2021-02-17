@@ -109,6 +109,18 @@ class ObitApiTest extends TestCase
     }
 
     /**
+     * Test case for generateRootHash
+     *
+     * Generates The Root Hash using the data provided..
+     *
+     */
+    public function testGenerateRootHash()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for getClientObit
      *
      * Get Client Obit.
