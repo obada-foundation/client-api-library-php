@@ -300,7 +300,7 @@ class ObitApi
     public function downloadObitFromChainRequest($obitDid = null)
     {
 
-        $resourcePath = '/server/obit/download';
+        $resourcePath = '/api/server/obit/download';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -565,7 +565,7 @@ class ObitApi
             );
         }
 
-        $resourcePath = '/server/obit/{obit_did}';
+        $resourcePath = '/api/server/obit/{obit_did}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -854,7 +854,7 @@ class ObitApi
             );
         }
 
-        $resourcePath = '/obit/generate';
+        $resourcePath = '/api/obit/generate';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1146,7 +1146,7 @@ class ObitApi
             );
         }
 
-        $resourcePath = '/client/obit/{obit_did}';
+        $resourcePath = '/api/client/obit/{obit_did}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1407,7 +1407,7 @@ class ObitApi
     public function saveClientObitRequest($localObit = null)
     {
 
-        $resourcePath = '/client/obit';
+        $resourcePath = '/api/client/obit';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -1666,7 +1666,7 @@ class ObitApi
     public function uploadObitRequest($obitDid = null)
     {
 
-        $resourcePath = '/server/obit/upload';
+        $resourcePath = '/api/server/obit/upload';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
