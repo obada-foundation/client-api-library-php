@@ -74,7 +74,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *ObitApi* | [**downloadObitFromChain**](docs/Api/ObitApi.md#downloadobitfromchain) | **POST** /api/server/obit/download | Download Obit from Blockchain
 *ObitApi* | [**fetchObitFromChain**](docs/Api/ObitApi.md#fetchobitfromchain) | **GET** /api/server/obit/{obit_did} | Get Obit From Blockchain
-*ObitApi* | [**generateObitDef**](docs/Api/ObitApi.md#generateobitdef) | **GET** /api/obit/generate | Generate Obit Definition
+*ObitApi* | [**generateObitDef**](docs/Api/ObitApi.md#generateobitdef) | **GET** /api/obit/definition | Generate Obit Definition
 *ObitApi* | [**generateRootHash**](docs/Api/ObitApi.md#generateroothash) | **POST** /api/obit/hash | Generates The Root Hash using the data provided.
 *ObitApi* | [**getClientObit**](docs/Api/ObitApi.md#getclientobit) | **GET** /api/client/obit/{obit_did} | Get Client Obit
 *ObitApi* | [**saveClientObit**](docs/Api/ObitApi.md#saveclientobit) | **POST** /api/client/obit | Save Client Obit

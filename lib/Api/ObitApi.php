@@ -854,7 +854,7 @@ class ObitApi
             );
         }
 
-        $resourcePath = '/api/obit/generate';
+        $resourcePath = '/api/obit/definition';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

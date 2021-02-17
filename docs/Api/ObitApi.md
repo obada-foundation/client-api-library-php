@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**downloadObitFromChain()**](ObitApi.md#downloadObitFromChain) | **POST** /api/server/obit/download | Download Obit from Blockchain
 [**fetchObitFromChain()**](ObitApi.md#fetchObitFromChain) | **GET** /api/server/obit/{obit_did} | Get Obit From Blockchain
-[**generateObitDef()**](ObitApi.md#generateObitDef) | **GET** /api/obit/generate | Generate Obit Definition
+[**generateObitDef()**](ObitApi.md#generateObitDef) | **GET** /api/obit/definition | Generate Obit Definition
 [**generateRootHash()**](ObitApi.md#generateRootHash) | **POST** /api/obit/hash | Generates The Root Hash using the data provided.
 [**getClientObit()**](ObitApi.md#getClientObit) | **GET** /api/client/obit/{obit_did} | Get Client Obit
 [**saveClientObit()**](ObitApi.md#saveClientObit) | **POST** /api/client/obit | Save Client Obit
