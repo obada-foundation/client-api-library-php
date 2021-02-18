@@ -70,9 +70,9 @@ class ClientObit implements ModelInterface, ArrayAccess, \JsonSerializable
         'serialNumberHash' => 'string',
         'modifiedAt' => '\DateTime',
         'rootHash' => 'string',
-        'metadata' => 'object[]',
-        'documents' => 'object[]',
-        'structuredData' => 'object[]'
+        'metadata' => 'object',
+        'documents' => 'object',
+        'structuredData' => 'object'
     ];
 
     /**
@@ -564,7 +564,7 @@ class ClientObit implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets metadata
      *
-     * @return object[]|null
+     * @return object|null
      */
     public function getMetadata()
     {
@@ -574,7 +574,7 @@ class ClientObit implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets metadata
      *
-     * @param object[]|null $metadata Get description from Rohi
+     * @param object|null $metadata Get description from Rohi
      *
      * @return self
      */
@@ -588,7 +588,7 @@ class ClientObit implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets documents
      *
-     * @return object[]|null
+     * @return object|null
      */
     public function getDocuments()
     {
@@ -598,7 +598,7 @@ class ClientObit implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets documents
      *
-     * @param object[]|null $documents To generate this link, take an SHA-256 hash of the document, and link to it as https://www.some-website.com?h1=hash-of-document. Note this does not yet adhere to the hashlink standard.
+     * @param object|null $documents To generate this link, take an SHA-256 hash of the document, and link to it as https://www.some-website.com?h1=hash-of-document. Note this does not yet adhere to the hashlink standard.
      *
      * @return self
      */
@@ -612,7 +612,7 @@ class ClientObit implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets structuredData
      *
-     * @return object[]|null
+     * @return object|null
      */
     public function getStructuredData()
     {
@@ -622,7 +622,7 @@ class ClientObit implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets structuredData
      *
-     * @param object[]|null $structuredData Same as metadata but bigger. Key (string) => Value (string) (hash per line sha256(key + value))
+     * @param object|null $structuredData Same as metadata but bigger. Key (string) => Value (string) (hash per line sha256(key + value))
      *
      * @return self
      */
