@@ -8,7 +8,8 @@ For more information, please visit [https://www.obada.io](https://www.obada.io).
 
 ### Requirements
 
-PHP 7.2 and later.
+PHP 7.3 and later.
+Should also work with PHP 8.0 or 8.1 but has not been tested.
 
 ### Composer
 
@@ -88,9 +89,9 @@ Class | Method | HTTP request | Description
 - [ClientObit](docs/Model/ClientObit.md)
 - [ClientObitResponse](docs/Model/ClientObitResponse.md)
 - [LocalObit](docs/Model/LocalObit.md)
-- [LocalObitDocuments](docs/Model/LocalObitDocuments.md)
-- [LocalObitMetadata](docs/Model/LocalObitMetadata.md)
-- [LocalObitStructuredData](docs/Model/LocalObitStructuredData.md)
+- [LocalObitDocumentsInner](docs/Model/LocalObitDocumentsInner.md)
+- [LocalObitMetadataInner](docs/Model/LocalObitMetadataInner.md)
+- [LocalObitStructuredDataInner](docs/Model/LocalObitStructuredDataInner.md)
 - [ObitDefinition](docs/Model/ObitDefinition.md)
 - [ObitDefinitionResponse](docs/Model/ObitDefinitionResponse.md)
 - [ObitDid](docs/Model/ObitDid.md)

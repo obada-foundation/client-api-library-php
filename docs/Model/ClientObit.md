@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **manufacturer** | **string** |  | [optional]
 **partNumber** | **string** |  | [optional]
 **serialNumberHash** | **string** |  | [optional]
-**modifiedAt** | [**\DateTime**](\DateTime.md) |  | [optional]
+**modifiedAt** | **\DateTime** |  | [optional]
 **rootHash** | **string** |  | [optional]
 **metadata** | **object** | Get description from Rohi | [optional]
 **documents** | **object** | To generate this link, take an SHA-256 hash of the document, and link to it as https://www.some-website.com?h1&#x3D;hash-of-document. Note this does not yet adhere to the hashlink standard. | [optional]

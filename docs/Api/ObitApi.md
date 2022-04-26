@@ -193,6 +193,8 @@ generateRootHash($localObit): \Obada\ClientHelper\RootHashResponse
 
 Generates The Root Hash using the data provided.
 
+
+
 ### Example
 
 ```php
@@ -247,6 +249,8 @@ getClientObit($obitDid): \Obada\ClientHelper\ClientObitResponse
 
 Get Client Obit
 
+
+
 ### Example
 
 ```php
@@ -300,6 +304,8 @@ saveClientObit($localObit): \Obada\ClientHelper\ClientObitResponse
 ```
 
 Save Client Obit
+
+
 
 ### Example
 

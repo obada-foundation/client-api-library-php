@@ -1,4 +1,4 @@
-# # LocalObitStructuredData
+# # LocalObitStructuredDataInner
 
 ## Properties
 
