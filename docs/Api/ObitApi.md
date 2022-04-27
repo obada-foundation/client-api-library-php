@@ -1,27 +1,26 @@
 # Obada\ObitApi
 
-All URIs are relative to http://localhost.
+All URIs are relative to http://obs.node.obada.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**downloadObitFromChain()**](ObitApi.md#downloadObitFromChain) | **POST** /api/server/obit/download | Download Obit from Blockchain
-[**fetchObitFromChain()**](ObitApi.md#fetchObitFromChain) | **GET** /api/server/obit/{obit_did} | Get Obit From Blockchain
-[**generateObitDef()**](ObitApi.md#generateObitDef) | **GET** /api/obit/definition | Generate Obit Definition
-[**generateRootHash()**](ObitApi.md#generateRootHash) | **POST** /api/obit/hash | Generates The Root Hash using the data provided.
-[**getClientObit()**](ObitApi.md#getClientObit) | **GET** /api/client/obit/{obit_did} | Get Client Obit
-[**saveClientObit()**](ObitApi.md#saveClientObit) | **POST** /api/client/obit | Save Client Obit
-[**uploadObit()**](ObitApi.md#uploadObit) | **POST** /api/server/obit/upload | Upload Obit to Blockchain
+[**checksum()**](ObitApi.md#checksum) | **POST** /obit/checksum | Generates Obit checksum
+[**generateDID()**](ObitApi.md#generateDID) | **POST** /obit/did | Generate Obit DID
+[**get()**](ObitApi.md#get) | **GET** /obits/{obit_did} | Get Obit by DID or USN
+[**history()**](ObitApi.md#history) | **GET** /obits/{obit_did}/history | Get Obit history by DID or USN
+[**save()**](ObitApi.md#save) | **POST** /obits | Save Obit
+[**search()**](ObitApi.md#search) | **GET** /obits | Search obits by query
 
 
-## `downloadObitFromChain()`
+## `checksum()`
 
 ```php
-downloadObitFromChain($obitDid): \Obada\ClientHelper\ClientObitResponse
+checksum($obit): \Obada\ClientHelper\Checksum
 ```
 
-Download Obit from Blockchain
+Generates Obit checksum
 
-Downloads the Obit information from the blockchain to the client.
+
 
 ### Example
 
@@ -36,13 +35,13 @@ $apiInstance = new Obada\Api\ObitApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$obitDid = new \Obada\ClientHelper\ObitDid(); // \Obada\ClientHelper\ObitDid
+$obit = new \Obada\ClientHelper\Obit(); // \Obada\ClientHelper\Obit
 
 try {
-    $result = $apiInstance->downloadObitFromChain($obitDid);
+    $result = $apiInstance->checksum($obit);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObitApi->downloadObitFromChain: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObitApi->checksum: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -50,11 +49,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obitDid** | [**\Obada\ClientHelper\ObitDid**](../Model/ObitDid.md)|  | [optional]
+ **obit** | [**\Obada\ClientHelper\Obit**](../Model/Obit.md)|  | [optional]
 
 ### Return type
 
-[**\Obada\ClientHelper\ClientObitResponse**](../Model/ClientObitResponse.md)
+[**\Obada\ClientHelper\Checksum**](../Model/Checksum.md)
 
 ### Authorization
 
@@ -69,15 +68,15 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `fetchObitFromChain()`
+## `generateDID()`
 
 ```php
-fetchObitFromChain($obitDid): \Obada\ClientHelper\BlockChainObitResponse
+generateDID($requestObitDID): \Obada\ClientHelper\ObitDID
 ```
 
-Get Obit From Blockchain
+Generate Obit DID
 
-Retrieves Obit information from blockchain but does not download it.
+Returns the Obit DID for a given device_id, part_number and serial_number input.
 
 ### Example
 
@@ -92,13 +91,13 @@ $apiInstance = new Obada\Api\ObitApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$obitDid = did:obada:81413bc1ad2074a6ae35d1f65f64f1bca2e8a20959f37ef0349a729ddc567d9b; // string | Required.
+$requestObitDID = new \Obada\ClientHelper\RequestObitDID(); // \Obada\ClientHelper\RequestObitDID
 
 try {
-    $result = $apiInstance->fetchObitFromChain($obitDid);
+    $result = $apiInstance->generateDID($requestObitDID);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObitApi->fetchObitFromChain: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObitApi->generateDID: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -106,11 +105,67 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obitDid** | **string**| Required. |
+ **requestObitDID** | [**\Obada\ClientHelper\RequestObitDID**](../Model/RequestObitDID.md)|  | [optional]
 
 ### Return type
 
-[**\Obada\ClientHelper\BlockChainObitResponse**](../Model/BlockChainObitResponse.md)
+[**\Obada\ClientHelper\ObitDID**](../Model/ObitDID.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `get()`
+
+```php
+get($obitDid): \Obada\ClientHelper\Obit
+```
+
+Get Obit by DID or USN
+
+Get a single Obit by given ObitDID or USN
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new Obada\Api\ObitApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$obitDid = did:obada:fe096095-e0f0-4918-9607-6567bd5756b5; // string | The given ObitDID or USN argument
+
+try {
+    $result = $apiInstance->get($obitDid);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ObitApi->get: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **obitDid** | **string**| The given ObitDID or USN argument |
+
+### Return type
+
+[**\Obada\ClientHelper\Obit**](../Model/Obit.md)
 
 ### Authorization
 
@@ -125,15 +180,15 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `generateObitDef()`
+## `history()`
 
 ```php
-generateObitDef($manufacturer, $partNumber, $serialNumber): \Obada\ClientHelper\ObitDefinitionResponse
+history($obitDid): \Obada\ClientHelper\InlineResponse200
 ```
 
-Generate Obit Definition
+Get Obit history by DID or USN
 
-Returns the Obit Definition for a given device_id, part_number and serial_number input.
+Shows the history of changes by given Obit with ObitDID or USN
 
 ### Example
 
@@ -148,15 +203,13 @@ $apiInstance = new Obada\Api\ObitApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$manufacturer = Apple; // string | Device Id (Required)
-$partNumber = 123456789; // string | Part Number (Required)
-$serialNumber = 123456789; // string | Serial Number (Required)
+$obitDid = did:obada:fe096095-e0f0-4918-9607-6567bd5756b5; // string | The given ObitDID or USN argument
 
 try {
-    $result = $apiInstance->generateObitDef($manufacturer, $partNumber, $serialNumber);
+    $result = $apiInstance->history($obitDid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObitApi->generateObitDef: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObitApi->history: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -164,13 +217,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **manufacturer** | **string**| Device Id (Required) |
- **partNumber** | **string**| Part Number (Required) |
- **serialNumber** | **string**| Serial Number (Required) |
+ **obitDid** | **string**| The given ObitDID or USN argument |
 
 ### Return type
 
-[**\Obada\ClientHelper\ObitDefinitionResponse**](../Model/ObitDefinitionResponse.md)
+[**\Obada\ClientHelper\InlineResponse200**](../Model/InlineResponse200.md)
 
 ### Authorization
 
@@ -185,15 +236,15 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `generateRootHash()`
+## `save()`
 
 ```php
-generateRootHash($localObit): \Obada\ClientHelper\RootHashResponse
+save($obit)
 ```
 
-Generates The Root Hash using the data provided.
+Save Obit
 
-
+Returns Obit with updated checksum if data was changed.
 
 ### Example
 
@@ -208,13 +259,12 @@ $apiInstance = new Obada\Api\ObitApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$localObit = new \Obada\ClientHelper\LocalObit(); // \Obada\ClientHelper\LocalObit
+$obit = new \Obada\ClientHelper\Obit(); // \Obada\ClientHelper\Obit
 
 try {
-    $result = $apiInstance->generateRootHash($localObit);
-    print_r($result);
+    $apiInstance->save($obit);
 } catch (Exception $e) {
-    echo 'Exception when calling ObitApi->generateRootHash: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObitApi->save: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -222,11 +272,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **localObit** | [**\Obada\ClientHelper\LocalObit**](../Model/LocalObit.md)|  | [optional]
+ **obit** | [**\Obada\ClientHelper\Obit**](../Model/Obit.md)|  | [optional]
 
 ### Return type
 
-[**\Obada\ClientHelper\RootHashResponse**](../Model/RootHashResponse.md)
+void (empty response body)
 
 ### Authorization
 
@@ -241,15 +291,15 @@ No authorization required
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getClientObit()`
+## `search()`
 
 ```php
-getClientObit($obitDid): \Obada\ClientHelper\ClientObitResponse
+search($q, $offset): \Obada\ClientHelper\Obits
 ```
 
-Get Client Obit
+Search obits by query
 
-
+Implements a fulltext search for obits by \"searchTerm\".
 
 ### Example
 
@@ -264,13 +314,14 @@ $apiInstance = new Obada\Api\ObitApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$obitDid = did:obada:81413bc1ad2074a6ae35d1f65f64f1bca2e8a20959f37ef0349a729ddc567d9b; // string | Required.
+$q = fe403a1afe16203f4b8bb3a0e72d3e17567897bc15293e4a87b663e441030aea; // string | Query argument that used for a fulltext search
+$offset = 0; // int | Number of records to skip for pagination.
 
 try {
-    $result = $apiInstance->getClientObit($obitDid);
+    $result = $apiInstance->search($q, $offset);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObitApi->getClientObit: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObitApi->search: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -278,11 +329,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obitDid** | **string**| Required. |
+ **q** | **string**| Query argument that used for a fulltext search | [optional]
+ **offset** | **int**| Number of records to skip for pagination. | [optional] [default to 0]
 
 ### Return type
 
-[**\Obada\ClientHelper\ClientObitResponse**](../Model/ClientObitResponse.md)
+[**\Obada\ClientHelper\Obits**](../Model/Obits.md)
 
 ### Authorization
 
@@ -291,118 +343,6 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `saveClientObit()`
-
-```php
-saveClientObit($localObit): \Obada\ClientHelper\ClientObitResponse
-```
-
-Save Client Obit
-
-
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new Obada\Api\ObitApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$localObit = new \Obada\ClientHelper\LocalObit(); // \Obada\ClientHelper\LocalObit
-
-try {
-    $result = $apiInstance->saveClientObit($localObit);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObitApi->saveClientObit: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **localObit** | [**\Obada\ClientHelper\LocalObit**](../Model/LocalObit.md)|  | [optional]
-
-### Return type
-
-[**\Obada\ClientHelper\ClientObitResponse**](../Model/ClientObitResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `uploadObit()`
-
-```php
-uploadObit($obitDid): \Obada\ClientHelper\BaseResponse
-```
-
-Upload Obit to Blockchain
-
-Uploads Obit from client to the Blockchain
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-$apiInstance = new Obada\Api\ObitApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$obitDid = new \Obada\ClientHelper\ObitDid(); // \Obada\ClientHelper\ObitDid
-
-try {
-    $result = $apiInstance->uploadObit($obitDid);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ObitApi->uploadObit: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **obitDid** | [**\Obada\ClientHelper\ObitDid**](../Model/ObitDid.md)|  | [optional]
-
-### Return type
-
-[**\Obada\ClientHelper\BaseResponse**](../Model/BaseResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

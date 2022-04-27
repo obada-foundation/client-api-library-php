@@ -56,46 +56,47 @@ $apiInstance = new Obada\Api\ObitApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$obitDid = new \Obada\ClientHelper\ObitDid(); // \Obada\ClientHelper\ObitDid
+$obit = new \Obada\ClientHelper\Obit(); // \Obada\ClientHelper\Obit
 
 try {
-    $result = $apiInstance->downloadObitFromChain($obitDid);
+    $result = $apiInstance->checksum($obit);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObitApi->downloadObitFromChain: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObitApi->checksum: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
 
 ## API Endpoints
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://obs.node.obada.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ObitApi* | [**downloadObitFromChain**](docs/Api/ObitApi.md#downloadobitfromchain) | **POST** /api/server/obit/download | Download Obit from Blockchain
-*ObitApi* | [**fetchObitFromChain**](docs/Api/ObitApi.md#fetchobitfromchain) | **GET** /api/server/obit/{obit_did} | Get Obit From Blockchain
-*ObitApi* | [**generateObitDef**](docs/Api/ObitApi.md#generateobitdef) | **GET** /api/obit/definition | Generate Obit Definition
-*ObitApi* | [**generateRootHash**](docs/Api/ObitApi.md#generateroothash) | **POST** /api/obit/hash | Generates The Root Hash using the data provided.
-*ObitApi* | [**getClientObit**](docs/Api/ObitApi.md#getclientobit) | **GET** /api/client/obit/{obit_did} | Get Client Obit
-*ObitApi* | [**saveClientObit**](docs/Api/ObitApi.md#saveclientobit) | **POST** /api/client/obit | Save Client Obit
-*ObitApi* | [**uploadObit**](docs/Api/ObitApi.md#uploadobit) | **POST** /api/server/obit/upload | Upload Obit to Blockchain
+*ObitApi* | [**checksum**](docs/Api/ObitApi.md#checksum) | **POST** /obit/checksum | Generates Obit checksum
+*ObitApi* | [**generateDID**](docs/Api/ObitApi.md#generatedid) | **POST** /obit/did | Generate Obit DID
+*ObitApi* | [**get**](docs/Api/ObitApi.md#get) | **GET** /obits/{obit_did} | Get Obit by DID or USN
+*ObitApi* | [**history**](docs/Api/ObitApi.md#history) | **GET** /obits/{obit_did}/history | Get Obit history by DID or USN
+*ObitApi* | [**save**](docs/Api/ObitApi.md#save) | **POST** /obits | Save Obit
+*ObitApi* | [**search**](docs/Api/ObitApi.md#search) | **GET** /obits | Search obits by query
 
 ## Models
 
-- [BaseResponse](docs/Model/BaseResponse.md)
-- [BlockChainObit](docs/Model/BlockChainObit.md)
-- [BlockChainObitResponse](docs/Model/BlockChainObitResponse.md)
-- [ClientObit](docs/Model/ClientObit.md)
-- [ClientObitResponse](docs/Model/ClientObitResponse.md)
-- [LocalObit](docs/Model/LocalObit.md)
-- [LocalObitDocumentsInner](docs/Model/LocalObitDocumentsInner.md)
-- [LocalObitMetadataInner](docs/Model/LocalObitMetadataInner.md)
-- [LocalObitStructuredDataInner](docs/Model/LocalObitStructuredDataInner.md)
-- [ObitDefinition](docs/Model/ObitDefinition.md)
-- [ObitDefinitionResponse](docs/Model/ObitDefinitionResponse.md)
-- [ObitDid](docs/Model/ObitDid.md)
-- [RootHashResponse](docs/Model/RootHashResponse.md)
+- [Checksum](docs/Model/Checksum.md)
+- [DocumentLink](docs/Model/DocumentLink.md)
+- [InlineResponse200](docs/Model/InlineResponse200.md)
+- [InternalServerError](docs/Model/InternalServerError.md)
+- [MetaDataRecord](docs/Model/MetaDataRecord.md)
+- [NotFound](docs/Model/NotFound.md)
+- [Obit](docs/Model/Obit.md)
+- [ObitDID](docs/Model/ObitDID.md)
+- [ObitHistory](docs/Model/ObitHistory.md)
+- [Obits](docs/Model/Obits.md)
+- [ObitsMeta](docs/Model/ObitsMeta.md)
+- [RequestObitDID](docs/Model/RequestObitDID.md)
+- [StructureDataRecord](docs/Model/StructureDataRecord.md)
+- [UnprocessableEntity](docs/Model/UnprocessableEntity.md)
+- [UnprocessableEntityFieldsInner](docs/Model/UnprocessableEntityFieldsInner.md)
 
 ## Authorization
 All endpoints do not require authorization.
