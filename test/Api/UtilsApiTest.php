@@ -1,6 +1,6 @@
 <?php
 /**
- * ObitApiTest
+ * UtilsApiTest
  * PHP version 7.3
  *
  * @category Class
@@ -34,14 +34,14 @@ use \Obada\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ObitApiTest Class Doc Comment
+ * UtilsApiTest Class Doc Comment
  *
  * @category Class
  * @package  Obada
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class ObitApiTest extends TestCase
+class UtilsApiTest extends TestCase
 {
 
     /**
@@ -73,48 +73,24 @@ class ObitApiTest extends TestCase
     }
 
     /**
-     * Test case for get
+     * Test case for generateChecksum
      *
-     * Get Obit by DID or USN.
+     * Generates Obit checksum.
      *
      */
-    public function testGet()
+    public function testGenerateChecksum()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for history
+     * Test case for generateDID
      *
-     * Get Obit history by DID or USN.
-     *
-     */
-    public function testHistory()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for save
-     *
-     * Save Obit.
+     * Generate Obit DID.
      *
      */
-    public function testSave()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for search
-     *
-     * Search obits by query.
-     *
-     */
-    public function testSearch()
+    public function testGenerateDID()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

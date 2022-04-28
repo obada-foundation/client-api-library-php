@@ -1,6 +1,6 @@
 <?php
 /**
- * ChecksumTest
+ * GenerateObitChecksumRequestTest
  *
  * PHP version 7.3
  *
@@ -32,15 +32,15 @@ namespace Obada\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ChecksumTest Class Doc Comment
+ * GenerateObitChecksumRequestTest Class Doc Comment
  *
  * @category    Class
- * @description Obit checksum
+ * @description Generate Obit checksum payload
  * @package     Obada
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class ChecksumTest extends TestCase
+class GenerateObitChecksumRequestTest extends TestCase
 {
 
     /**
@@ -72,18 +72,63 @@ class ChecksumTest extends TestCase
     }
 
     /**
-     * Test "Checksum"
+     * Test "GenerateObitChecksumRequest"
      */
-    public function testChecksum()
+    public function testGenerateObitChecksumRequest()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "checksum"
+     * Test attribute "manufacturer"
      */
-    public function testPropertyChecksum()
+    public function testPropertyManufacturer()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "partNumber"
+     */
+    public function testPropertyPartNumber()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "serialNumber"
+     */
+    public function testPropertySerialNumber()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "metadataUri"
+     */
+    public function testPropertyMetadataUri()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "metadataUriHash"
+     */
+    public function testPropertyMetadataUriHash()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "trustAnchorToken"
+     */
+    public function testPropertyTrustAnchorToken()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

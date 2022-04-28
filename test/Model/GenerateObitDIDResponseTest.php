@@ -1,6 +1,6 @@
 <?php
 /**
- * GenerateObitDIDTest
+ * GenerateObitDIDResponseTest
  *
  * PHP version 7.3
  *
@@ -32,7 +32,7 @@ namespace Obada\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * GenerateObitDIDTest Class Doc Comment
+ * GenerateObitDIDResponseTest Class Doc Comment
  *
  * @category    Class
  * @description Returns steps that used for DID generation
@@ -40,7 +40,7 @@ use PHPUnit\Framework\TestCase;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class GenerateObitDIDTest extends TestCase
+class GenerateObitDIDResponseTest extends TestCase
 {
 
     /**
@@ -72,9 +72,9 @@ class GenerateObitDIDTest extends TestCase
     }
 
     /**
-     * Test "GenerateObitDID"
+     * Test "GenerateObitDIDResponse"
      */
-    public function testGenerateObitDID()
+    public function testGenerateObitDIDResponse()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

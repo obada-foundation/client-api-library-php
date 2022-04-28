@@ -1,6 +1,6 @@
 <?php
 /**
- * Checksum
+ * GenerateObitDIDResponse
  *
  * PHP version 7.3
  *
@@ -33,10 +33,10 @@ use \ArrayAccess;
 use \Obada\ObjectSerializer;
 
 /**
- * Checksum Class Doc Comment
+ * GenerateObitDIDResponse Class Doc Comment
  *
  * @category Class
- * @description Obit checksum
+ * @description Returns steps that used for DID generation
  * @package  Obada
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +44,7 @@ use \Obada\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class Checksum implements ModelInterface, ArrayAccess, \JsonSerializable
+class GenerateObitDIDResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +53,7 @@ class Checksum implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Checksum';
+    protected static $openAPIModelName = 'GenerateObitDIDResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,7 +61,10 @@ class Checksum implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'checksum' => 'string'
+        'serialNumberHash' => 'string',
+        'usn' => 'string',
+        'did' => 'string',
+        'usnBase58' => 'string'
     ];
 
     /**
@@ -72,7 +75,10 @@ class Checksum implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'checksum' => null
+        'serialNumberHash' => null,
+        'usn' => null,
+        'did' => null,
+        'usnBase58' => null
     ];
 
     /**
@@ -102,7 +108,10 @@ class Checksum implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'checksum' => 'checksum'
+        'serialNumberHash' => 'serial_number_hash',
+        'usn' => 'usn',
+        'did' => 'did',
+        'usnBase58' => 'usn_base58'
     ];
 
     /**
@@ -111,7 +120,10 @@ class Checksum implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'checksum' => 'setChecksum'
+        'serialNumberHash' => 'setSerialNumberHash',
+        'usn' => 'setUsn',
+        'did' => 'setDid',
+        'usnBase58' => 'setUsnBase58'
     ];
 
     /**
@@ -120,7 +132,10 @@ class Checksum implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'checksum' => 'getChecksum'
+        'serialNumberHash' => 'getSerialNumberHash',
+        'usn' => 'getUsn',
+        'did' => 'getDid',
+        'usnBase58' => 'getUsnBase58'
     ];
 
     /**
@@ -180,7 +195,10 @@ class Checksum implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['checksum'] = $data['checksum'] ?? null;
+        $this->container['serialNumberHash'] = $data['serialNumberHash'] ?? null;
+        $this->container['usn'] = $data['usn'] ?? null;
+        $this->container['did'] = $data['did'] ?? null;
+        $this->container['usnBase58'] = $data['usnBase58'] ?? null;
     }
 
     /**
@@ -208,25 +226,97 @@ class Checksum implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets checksum
+     * Gets serialNumberHash
      *
      * @return string|null
      */
-    public function getChecksum()
+    public function getSerialNumberHash()
     {
-        return $this->container['checksum'];
+        return $this->container['serialNumberHash'];
     }
 
     /**
-     * Sets checksum
+     * Sets serialNumberHash
      *
-     * @param string|null $checksum checksum
+     * @param string|null $serialNumberHash Serial Number Hash is sha256 of the Serial Number input
      *
      * @return self
      */
-    public function setChecksum($checksum)
+    public function setSerialNumberHash($serialNumberHash)
     {
-        $this->container['checksum'] = $checksum;
+        $this->container['serialNumberHash'] = $serialNumberHash;
+
+        return $this;
+    }
+
+    /**
+     * Gets usn
+     *
+     * @return string|null
+     */
+    public function getUsn()
+    {
+        return $this->container['usn'];
+    }
+
+    /**
+     * Sets usn
+     *
+     * @param string|null $usn Universal Serial Number
+     *
+     * @return self
+     */
+    public function setUsn($usn)
+    {
+        $this->container['usn'] = $usn;
+
+        return $this;
+    }
+
+    /**
+     * Gets did
+     *
+     * @return string|null
+     */
+    public function getDid()
+    {
+        return $this->container['did'];
+    }
+
+    /**
+     * Sets did
+     *
+     * @param string|null $did DID
+     *
+     * @return self
+     */
+    public function setDid($did)
+    {
+        $this->container['did'] = $did;
+
+        return $this;
+    }
+
+    /**
+     * Gets usnBase58
+     *
+     * @return string|null
+     */
+    public function getUsnBase58()
+    {
+        return $this->container['usnBase58'];
+    }
+
+    /**
+     * Sets usnBase58
+     *
+     * @param string|null $usnBase58 Base58
+     *
+     * @return self
+     */
+    public function setUsnBase58($usnBase58)
+    {
+        $this->container['usnBase58'] = $usnBase58;
 
         return $this;
     }

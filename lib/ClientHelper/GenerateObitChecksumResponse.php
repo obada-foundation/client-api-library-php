@@ -1,6 +1,6 @@
 <?php
 /**
- * GenerateObitDID
+ * GenerateObitChecksumResponse
  *
  * PHP version 7.3
  *
@@ -33,10 +33,10 @@ use \ArrayAccess;
 use \Obada\ObjectSerializer;
 
 /**
- * GenerateObitDID Class Doc Comment
+ * GenerateObitChecksumResponse Class Doc Comment
  *
  * @category Class
- * @description Returns steps that used for DID generation
+ * @description Obit checksum with logged data
  * @package  Obada
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +44,7 @@ use \Obada\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GenerateObitDID implements ModelInterface, ArrayAccess, \JsonSerializable
+class GenerateObitChecksumResponse implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +53,7 @@ class GenerateObitDID implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'GenerateObitDID';
+    protected static $openAPIModelName = 'GenerateObitChecksumResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,10 +61,8 @@ class GenerateObitDID implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'serialNumberHash' => 'string',
-        'usn' => 'string',
-        'did' => 'string',
-        'usnBase58' => 'string'
+        'checksum' => 'string',
+        'log' => 'string'
     ];
 
     /**
@@ -75,10 +73,8 @@ class GenerateObitDID implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'serialNumberHash' => null,
-        'usn' => null,
-        'did' => null,
-        'usnBase58' => null
+        'checksum' => null,
+        'log' => null
     ];
 
     /**
@@ -108,10 +104,8 @@ class GenerateObitDID implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'serialNumberHash' => 'serial_number_hash',
-        'usn' => 'usn',
-        'did' => 'did',
-        'usnBase58' => 'usn_base58'
+        'checksum' => 'checksum',
+        'log' => 'log'
     ];
 
     /**
@@ -120,10 +114,8 @@ class GenerateObitDID implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'serialNumberHash' => 'setSerialNumberHash',
-        'usn' => 'setUsn',
-        'did' => 'setDid',
-        'usnBase58' => 'setUsnBase58'
+        'checksum' => 'setChecksum',
+        'log' => 'setLog'
     ];
 
     /**
@@ -132,10 +124,8 @@ class GenerateObitDID implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'serialNumberHash' => 'getSerialNumberHash',
-        'usn' => 'getUsn',
-        'did' => 'getDid',
-        'usnBase58' => 'getUsnBase58'
+        'checksum' => 'getChecksum',
+        'log' => 'getLog'
     ];
 
     /**
@@ -195,10 +185,8 @@ class GenerateObitDID implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['serialNumberHash'] = $data['serialNumberHash'] ?? null;
-        $this->container['usn'] = $data['usn'] ?? null;
-        $this->container['did'] = $data['did'] ?? null;
-        $this->container['usnBase58'] = $data['usnBase58'] ?? null;
+        $this->container['checksum'] = $data['checksum'] ?? null;
+        $this->container['log'] = $data['log'] ?? null;
     }
 
     /**
@@ -226,97 +214,49 @@ class GenerateObitDID implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets serialNumberHash
+     * Gets checksum
      *
      * @return string|null
      */
-    public function getSerialNumberHash()
+    public function getChecksum()
     {
-        return $this->container['serialNumberHash'];
+        return $this->container['checksum'];
     }
 
     /**
-     * Sets serialNumberHash
+     * Sets checksum
      *
-     * @param string|null $serialNumberHash Serial Number Hash is sha512 of the Serial Number input
+     * @param string|null $checksum Obit checksum
      *
      * @return self
      */
-    public function setSerialNumberHash($serialNumberHash)
+    public function setChecksum($checksum)
     {
-        $this->container['serialNumberHash'] = $serialNumberHash;
+        $this->container['checksum'] = $checksum;
 
         return $this;
     }
 
     /**
-     * Gets usn
+     * Gets log
      *
      * @return string|null
      */
-    public function getUsn()
+    public function getLog()
     {
-        return $this->container['usn'];
+        return $this->container['log'];
     }
 
     /**
-     * Sets usn
+     * Sets log
      *
-     * @param string|null $usn Universal Serial Number
+     * @param string|null $log Log that contain captures from SDK
      *
      * @return self
      */
-    public function setUsn($usn)
+    public function setLog($log)
     {
-        $this->container['usn'] = $usn;
-
-        return $this;
-    }
-
-    /**
-     * Gets did
-     *
-     * @return string|null
-     */
-    public function getDid()
-    {
-        return $this->container['did'];
-    }
-
-    /**
-     * Sets did
-     *
-     * @param string|null $did DID
-     *
-     * @return self
-     */
-    public function setDid($did)
-    {
-        $this->container['did'] = $did;
-
-        return $this;
-    }
-
-    /**
-     * Gets usnBase58
-     *
-     * @return string|null
-     */
-    public function getUsnBase58()
-    {
-        return $this->container['usnBase58'];
-    }
-
-    /**
-     * Sets usnBase58
-     *
-     * @param string|null $usnBase58 Base58
-     *
-     * @return self
-     */
-    public function setUsnBase58($usnBase58)
-    {
-        $this->container['usnBase58'] = $usnBase58;
+        $this->container['log'] = $log;
 
         return $this;
     }

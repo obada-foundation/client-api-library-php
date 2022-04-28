@@ -56,13 +56,13 @@ $apiInstance = new Obada\Api\ObitApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$obit = new \Obada\ClientHelper\Obit(); // \Obada\ClientHelper\Obit
+$obitDid = did:obada:fe096095-e0f0-4918-9607-6567bd5756b5; // string | The given ObitDID or USN argument
 
 try {
-    $result = $apiInstance->checksum($obit);
+    $result = $apiInstance->get($obitDid);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObitApi->checksum: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObitApi->get: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
@@ -73,19 +73,20 @@ All URIs are relative to *http://obs.node.obada.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ObitApi* | [**checksum**](docs/Api/ObitApi.md#checksum) | **POST** /obit/checksum | Generates Obit checksum
-*ObitApi* | [**generateDID**](docs/Api/ObitApi.md#generatedid) | **POST** /obit/did | Generate Obit DID
 *ObitApi* | [**get**](docs/Api/ObitApi.md#get) | **GET** /obits/{obit_did} | Get Obit by DID or USN
 *ObitApi* | [**history**](docs/Api/ObitApi.md#history) | **GET** /obits/{obit_did}/history | Get Obit history by DID or USN
 *ObitApi* | [**save**](docs/Api/ObitApi.md#save) | **POST** /obits | Save Obit
 *ObitApi* | [**search**](docs/Api/ObitApi.md#search) | **GET** /obits | Search obits by query
+*UtilsApi* | [**generateChecksum**](docs/Api/UtilsApi.md#generatechecksum) | **POST** /obit/checksum | Generates Obit checksum
+*UtilsApi* | [**generateDID**](docs/Api/UtilsApi.md#generatedid) | **POST** /obit/did | Generate Obit DID
 
 ## Models
 
-- [Checksum](docs/Model/Checksum.md)
 - [DocumentLink](docs/Model/DocumentLink.md)
-- [GenerateObitDID](docs/Model/GenerateObitDID.md)
+- [GenerateObitChecksumRequest](docs/Model/GenerateObitChecksumRequest.md)
+- [GenerateObitChecksumResponse](docs/Model/GenerateObitChecksumResponse.md)
 - [GenerateObitDIDRequest](docs/Model/GenerateObitDIDRequest.md)
+- [GenerateObitDIDResponse](docs/Model/GenerateObitDIDResponse.md)
 - [InlineResponse200](docs/Model/InlineResponse200.md)
 - [InternalServerError](docs/Model/InternalServerError.md)
 - [MetaDataRecord](docs/Model/MetaDataRecord.md)
