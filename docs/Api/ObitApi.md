@@ -71,7 +71,7 @@ No authorization required
 ## `generateDID()`
 
 ```php
-generateDID($requestObitDID): \Obada\ClientHelper\ObitDID
+generateDID($generateObitDIDRequest): \Obada\ClientHelper\GenerateObitDID
 ```
 
 Generate Obit DID
@@ -91,10 +91,10 @@ $apiInstance = new Obada\Api\ObitApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$requestObitDID = new \Obada\ClientHelper\RequestObitDID(); // \Obada\ClientHelper\RequestObitDID
+$generateObitDIDRequest = new \Obada\ClientHelper\GenerateObitDIDRequest(); // \Obada\ClientHelper\GenerateObitDIDRequest
 
 try {
-    $result = $apiInstance->generateDID($requestObitDID);
+    $result = $apiInstance->generateDID($generateObitDIDRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ObitApi->generateDID: ', $e->getMessage(), PHP_EOL;
@@ -105,11 +105,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestObitDID** | [**\Obada\ClientHelper\RequestObitDID**](../Model/RequestObitDID.md)|  | [optional]
+ **generateObitDIDRequest** | [**\Obada\ClientHelper\GenerateObitDIDRequest**](../Model/GenerateObitDIDRequest.md)|  | [optional]
 
 ### Return type
 
-[**\Obada\ClientHelper\ObitDID**](../Model/ObitDID.md)
+[**\Obada\ClientHelper\GenerateObitDID**](../Model/GenerateObitDID.md)
 
 ### Authorization
 

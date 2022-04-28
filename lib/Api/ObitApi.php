@@ -439,15 +439,15 @@ class ObitApi
      *
      * Generate Obit DID
      *
-     * @param  \Obada\ClientHelper\RequestObitDID $requestObitDID requestObitDID (optional)
+     * @param  \Obada\ClientHelper\GenerateObitDIDRequest $generateObitDIDRequest generateObitDIDRequest (optional)
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Obada\ClientHelper\ObitDID|\Obada\ClientHelper\UnprocessableEntity|\Obada\ClientHelper\InternalServerError
+     * @return \Obada\ClientHelper\GenerateObitDID|\Obada\ClientHelper\UnprocessableEntity|\Obada\ClientHelper\InternalServerError
      */
-    public function generateDID($requestObitDID = null)
+    public function generateDID($generateObitDIDRequest = null)
     {
-        list($response) = $this->generateDIDWithHttpInfo($requestObitDID);
+        list($response) = $this->generateDIDWithHttpInfo($generateObitDIDRequest);
         return $response;
     }
 
@@ -456,15 +456,15 @@ class ObitApi
      *
      * Generate Obit DID
      *
-     * @param  \Obada\ClientHelper\RequestObitDID $requestObitDID (optional)
+     * @param  \Obada\ClientHelper\GenerateObitDIDRequest $generateObitDIDRequest (optional)
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Obada\ClientHelper\ObitDID|\Obada\ClientHelper\UnprocessableEntity|\Obada\ClientHelper\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Obada\ClientHelper\GenerateObitDID|\Obada\ClientHelper\UnprocessableEntity|\Obada\ClientHelper\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function generateDIDWithHttpInfo($requestObitDID = null)
+    public function generateDIDWithHttpInfo($generateObitDIDRequest = null)
     {
-        $request = $this->generateDIDRequest($requestObitDID);
+        $request = $this->generateDIDRequest($generateObitDIDRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -503,17 +503,17 @@ class ObitApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Obada\ClientHelper\ObitDID' === '\SplFileObject') {
+                    if ('\Obada\ClientHelper\GenerateObitDID' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Obada\ClientHelper\ObitDID' !== 'string') {
+                        if ('\Obada\ClientHelper\GenerateObitDID' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Obada\ClientHelper\ObitDID', []),
+                        ObjectSerializer::deserialize($content, '\Obada\ClientHelper\GenerateObitDID', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -549,7 +549,7 @@ class ObitApi
                     ];
             }
 
-            $returnType = '\Obada\ClientHelper\ObitDID';
+            $returnType = '\Obada\ClientHelper\GenerateObitDID';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -570,7 +570,7 @@ class ObitApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Obada\ClientHelper\ObitDID',
+                        '\Obada\ClientHelper\GenerateObitDID',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -601,14 +601,14 @@ class ObitApi
      *
      * Generate Obit DID
      *
-     * @param  \Obada\ClientHelper\RequestObitDID $requestObitDID (optional)
+     * @param  \Obada\ClientHelper\GenerateObitDIDRequest $generateObitDIDRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function generateDIDAsync($requestObitDID = null)
+    public function generateDIDAsync($generateObitDIDRequest = null)
     {
-        return $this->generateDIDAsyncWithHttpInfo($requestObitDID)
+        return $this->generateDIDAsyncWithHttpInfo($generateObitDIDRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -621,15 +621,15 @@ class ObitApi
      *
      * Generate Obit DID
      *
-     * @param  \Obada\ClientHelper\RequestObitDID $requestObitDID (optional)
+     * @param  \Obada\ClientHelper\GenerateObitDIDRequest $generateObitDIDRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function generateDIDAsyncWithHttpInfo($requestObitDID = null)
+    public function generateDIDAsyncWithHttpInfo($generateObitDIDRequest = null)
     {
-        $returnType = '\Obada\ClientHelper\ObitDID';
-        $request = $this->generateDIDRequest($requestObitDID);
+        $returnType = '\Obada\ClientHelper\GenerateObitDID';
+        $request = $this->generateDIDRequest($generateObitDIDRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -670,12 +670,12 @@ class ObitApi
     /**
      * Create request for operation 'generateDID'
      *
-     * @param  \Obada\ClientHelper\RequestObitDID $requestObitDID (optional)
+     * @param  \Obada\ClientHelper\GenerateObitDIDRequest $generateObitDIDRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function generateDIDRequest($requestObitDID = null)
+    public function generateDIDRequest($generateObitDIDRequest = null)
     {
 
         $resourcePath = '/obit/did';
@@ -701,11 +701,11 @@ class ObitApi
         }
 
         // for model (json/xml)
-        if (isset($requestObitDID)) {
+        if (isset($generateObitDIDRequest)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($requestObitDID));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($generateObitDIDRequest));
             } else {
-                $httpBody = $requestObitDID;
+                $httpBody = $generateObitDIDRequest;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

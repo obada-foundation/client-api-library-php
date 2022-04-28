@@ -1,6 +1,6 @@
 <?php
 /**
- * RequestObitDID
+ * GenerateObitDID
  *
  * PHP version 7.3
  *
@@ -33,10 +33,10 @@ use \ArrayAccess;
 use \Obada\ObjectSerializer;
 
 /**
- * RequestObitDID Class Doc Comment
+ * GenerateObitDID Class Doc Comment
  *
  * @category Class
- * @description Request Obit DID payload
+ * @description Returns steps that used for DID generation
  * @package  Obada
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +44,7 @@ use \Obada\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class RequestObitDID implements ModelInterface, ArrayAccess, \JsonSerializable
+class GenerateObitDID implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +53,7 @@ class RequestObitDID implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'RequestObitDID';
+    protected static $openAPIModelName = 'GenerateObitDID';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,9 +61,10 @@ class RequestObitDID implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'manufacturer' => 'string',
-        'partNumber' => 'string',
-        'serialNumber' => 'string'
+        'serialNumberHash' => 'string',
+        'usn' => 'string',
+        'did' => 'string',
+        'usnBase58' => 'string'
     ];
 
     /**
@@ -74,9 +75,10 @@ class RequestObitDID implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'manufacturer' => null,
-        'partNumber' => null,
-        'serialNumber' => null
+        'serialNumberHash' => null,
+        'usn' => null,
+        'did' => null,
+        'usnBase58' => null
     ];
 
     /**
@@ -106,9 +108,10 @@ class RequestObitDID implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'manufacturer' => 'manufacturer',
-        'partNumber' => 'part_number',
-        'serialNumber' => 'serial_number'
+        'serialNumberHash' => 'serial_number_hash',
+        'usn' => 'usn',
+        'did' => 'did',
+        'usnBase58' => 'usn_base58'
     ];
 
     /**
@@ -117,9 +120,10 @@ class RequestObitDID implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'manufacturer' => 'setManufacturer',
-        'partNumber' => 'setPartNumber',
-        'serialNumber' => 'setSerialNumber'
+        'serialNumberHash' => 'setSerialNumberHash',
+        'usn' => 'setUsn',
+        'did' => 'setDid',
+        'usnBase58' => 'setUsnBase58'
     ];
 
     /**
@@ -128,9 +132,10 @@ class RequestObitDID implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'manufacturer' => 'getManufacturer',
-        'partNumber' => 'getPartNumber',
-        'serialNumber' => 'getSerialNumber'
+        'serialNumberHash' => 'getSerialNumberHash',
+        'usn' => 'getUsn',
+        'did' => 'getDid',
+        'usnBase58' => 'getUsnBase58'
     ];
 
     /**
@@ -190,9 +195,10 @@ class RequestObitDID implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['manufacturer'] = $data['manufacturer'] ?? null;
-        $this->container['partNumber'] = $data['partNumber'] ?? null;
-        $this->container['serialNumber'] = $data['serialNumber'] ?? null;
+        $this->container['serialNumberHash'] = $data['serialNumberHash'] ?? null;
+        $this->container['usn'] = $data['usn'] ?? null;
+        $this->container['did'] = $data['did'] ?? null;
+        $this->container['usnBase58'] = $data['usnBase58'] ?? null;
     }
 
     /**
@@ -204,15 +210,6 @@ class RequestObitDID implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['manufacturer'] === null) {
-            $invalidProperties[] = "'manufacturer' can't be null";
-        }
-        if ($this->container['partNumber'] === null) {
-            $invalidProperties[] = "'partNumber' can't be null";
-        }
-        if ($this->container['serialNumber'] === null) {
-            $invalidProperties[] = "'serialNumber' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -229,73 +226,97 @@ class RequestObitDID implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets manufacturer
+     * Gets serialNumberHash
      *
-     * @return string
+     * @return string|null
      */
-    public function getManufacturer()
+    public function getSerialNumberHash()
     {
-        return $this->container['manufacturer'];
+        return $this->container['serialNumberHash'];
     }
 
     /**
-     * Sets manufacturer
+     * Sets serialNumberHash
      *
-     * @param string $manufacturer Manufacturer (Required)
+     * @param string|null $serialNumberHash Serial Number Hash is sha512 of the Serial Number input
      *
      * @return self
      */
-    public function setManufacturer($manufacturer)
+    public function setSerialNumberHash($serialNumberHash)
     {
-        $this->container['manufacturer'] = $manufacturer;
+        $this->container['serialNumberHash'] = $serialNumberHash;
 
         return $this;
     }
 
     /**
-     * Gets partNumber
+     * Gets usn
      *
-     * @return string
+     * @return string|null
      */
-    public function getPartNumber()
+    public function getUsn()
     {
-        return $this->container['partNumber'];
+        return $this->container['usn'];
     }
 
     /**
-     * Sets partNumber
+     * Sets usn
      *
-     * @param string $partNumber Part Number (Required)
+     * @param string|null $usn Universal Serial Number
      *
      * @return self
      */
-    public function setPartNumber($partNumber)
+    public function setUsn($usn)
     {
-        $this->container['partNumber'] = $partNumber;
+        $this->container['usn'] = $usn;
 
         return $this;
     }
 
     /**
-     * Gets serialNumber
+     * Gets did
      *
-     * @return string
+     * @return string|null
      */
-    public function getSerialNumber()
+    public function getDid()
     {
-        return $this->container['serialNumber'];
+        return $this->container['did'];
     }
 
     /**
-     * Sets serialNumber
+     * Sets did
      *
-     * @param string $serialNumber Serial Number (Required)
+     * @param string|null $did DID
      *
      * @return self
      */
-    public function setSerialNumber($serialNumber)
+    public function setDid($did)
     {
-        $this->container['serialNumber'] = $serialNumber;
+        $this->container['did'] = $did;
+
+        return $this;
+    }
+
+    /**
+     * Gets usnBase58
+     *
+     * @return string|null
+     */
+    public function getUsnBase58()
+    {
+        return $this->container['usnBase58'];
+    }
+
+    /**
+     * Sets usnBase58
+     *
+     * @param string|null $usnBase58 Base58
+     *
+     * @return self
+     */
+    public function setUsnBase58($usnBase58)
+    {
+        $this->container['usnBase58'] = $usnBase58;
 
         return $this;
     }

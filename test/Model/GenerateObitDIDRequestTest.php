@@ -1,6 +1,6 @@
 <?php
 /**
- * RequestObitDIDTest
+ * GenerateObitDIDRequestTest
  *
  * PHP version 7.3
  *
@@ -32,15 +32,15 @@ namespace Obada\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * RequestObitDIDTest Class Doc Comment
+ * GenerateObitDIDRequestTest Class Doc Comment
  *
  * @category    Class
- * @description Request Obit DID payload
+ * @description Generate Obit DID payload
  * @package     Obada
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class RequestObitDIDTest extends TestCase
+class GenerateObitDIDRequestTest extends TestCase
 {
 
     /**
@@ -72,9 +72,9 @@ class RequestObitDIDTest extends TestCase
     }
 
     /**
-     * Test "RequestObitDID"
+     * Test "GenerateObitDIDRequest"
      */
-    public function testRequestObitDID()
+    public function testGenerateObitDIDRequest()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

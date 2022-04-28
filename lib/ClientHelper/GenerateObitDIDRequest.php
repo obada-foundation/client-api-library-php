@@ -1,6 +1,6 @@
 <?php
 /**
- * ObitDID
+ * GenerateObitDIDRequest
  *
  * PHP version 7.3
  *
@@ -33,10 +33,10 @@ use \ArrayAccess;
 use \Obada\ObjectSerializer;
 
 /**
- * ObitDID Class Doc Comment
+ * GenerateObitDIDRequest Class Doc Comment
  *
  * @category Class
- * @description New Obit DID
+ * @description Generate Obit DID payload
  * @package  Obada
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +44,7 @@ use \Obada\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ObitDID implements ModelInterface, ArrayAccess, \JsonSerializable
+class GenerateObitDIDRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +53,7 @@ class ObitDID implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ObitDID';
+    protected static $openAPIModelName = 'GenerateObitDIDRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,7 +61,9 @@ class ObitDID implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'did' => 'string'
+        'manufacturer' => 'string',
+        'partNumber' => 'string',
+        'serialNumber' => 'string'
     ];
 
     /**
@@ -72,7 +74,9 @@ class ObitDID implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'did' => null
+        'manufacturer' => null,
+        'partNumber' => null,
+        'serialNumber' => null
     ];
 
     /**
@@ -102,7 +106,9 @@ class ObitDID implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'did' => 'did'
+        'manufacturer' => 'manufacturer',
+        'partNumber' => 'part_number',
+        'serialNumber' => 'serial_number'
     ];
 
     /**
@@ -111,7 +117,9 @@ class ObitDID implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'did' => 'setDid'
+        'manufacturer' => 'setManufacturer',
+        'partNumber' => 'setPartNumber',
+        'serialNumber' => 'setSerialNumber'
     ];
 
     /**
@@ -120,7 +128,9 @@ class ObitDID implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'did' => 'getDid'
+        'manufacturer' => 'getManufacturer',
+        'partNumber' => 'getPartNumber',
+        'serialNumber' => 'getSerialNumber'
     ];
 
     /**
@@ -180,7 +190,9 @@ class ObitDID implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['did'] = $data['did'] ?? null;
+        $this->container['manufacturer'] = $data['manufacturer'] ?? null;
+        $this->container['partNumber'] = $data['partNumber'] ?? null;
+        $this->container['serialNumber'] = $data['serialNumber'] ?? null;
     }
 
     /**
@@ -192,6 +204,15 @@ class ObitDID implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['manufacturer'] === null) {
+            $invalidProperties[] = "'manufacturer' can't be null";
+        }
+        if ($this->container['partNumber'] === null) {
+            $invalidProperties[] = "'partNumber' can't be null";
+        }
+        if ($this->container['serialNumber'] === null) {
+            $invalidProperties[] = "'serialNumber' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -208,25 +229,73 @@ class ObitDID implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets did
+     * Gets manufacturer
      *
-     * @return string|null
+     * @return string
      */
-    public function getDid()
+    public function getManufacturer()
     {
-        return $this->container['did'];
+        return $this->container['manufacturer'];
     }
 
     /**
-     * Sets did
+     * Sets manufacturer
      *
-     * @param string|null $did did
+     * @param string $manufacturer Manufacturer (Required)
      *
      * @return self
      */
-    public function setDid($did)
+    public function setManufacturer($manufacturer)
     {
-        $this->container['did'] = $did;
+        $this->container['manufacturer'] = $manufacturer;
+
+        return $this;
+    }
+
+    /**
+     * Gets partNumber
+     *
+     * @return string
+     */
+    public function getPartNumber()
+    {
+        return $this->container['partNumber'];
+    }
+
+    /**
+     * Sets partNumber
+     *
+     * @param string $partNumber Part Number (Required)
+     *
+     * @return self
+     */
+    public function setPartNumber($partNumber)
+    {
+        $this->container['partNumber'] = $partNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets serialNumber
+     *
+     * @return string
+     */
+    public function getSerialNumber()
+    {
+        return $this->container['serialNumber'];
+    }
+
+    /**
+     * Sets serialNumber
+     *
+     * @param string $serialNumber Serial Number (Required)
+     *
+     * @return self
+     */
+    public function setSerialNumber($serialNumber)
+    {
+        $this->container['serialNumber'] = $serialNumber;
 
         return $this;
     }

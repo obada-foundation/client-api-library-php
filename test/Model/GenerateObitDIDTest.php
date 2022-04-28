@@ -1,6 +1,6 @@
 <?php
 /**
- * ObitDIDTest
+ * GenerateObitDIDTest
  *
  * PHP version 7.3
  *
@@ -32,15 +32,15 @@ namespace Obada\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ObitDIDTest Class Doc Comment
+ * GenerateObitDIDTest Class Doc Comment
  *
  * @category    Class
- * @description New Obit DID
+ * @description Returns steps that used for DID generation
  * @package     Obada
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class ObitDIDTest extends TestCase
+class GenerateObitDIDTest extends TestCase
 {
 
     /**
@@ -72,9 +72,27 @@ class ObitDIDTest extends TestCase
     }
 
     /**
-     * Test "ObitDID"
+     * Test "GenerateObitDID"
      */
-    public function testObitDID()
+    public function testGenerateObitDID()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "serialNumberHash"
+     */
+    public function testPropertySerialNumberHash()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "usn"
+     */
+    public function testPropertyUsn()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -84,6 +102,15 @@ class ObitDIDTest extends TestCase
      * Test attribute "did"
      */
     public function testPropertyDid()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "usnBase58"
+     */
+    public function testPropertyUsnBase58()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
