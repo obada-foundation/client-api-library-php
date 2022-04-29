@@ -90,9 +90,9 @@ class GenerateObitChecksumResponseTest extends TestCase
     }
 
     /**
-     * Test attribute "log"
+     * Test attribute "computeLog"
      */
-    public function testPropertyLog()
+    public function testPropertyComputeLog()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

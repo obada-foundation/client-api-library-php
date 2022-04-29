@@ -62,7 +62,7 @@ class GenerateObitChecksumResponse implements ModelInterface, ArrayAccess, \Json
       */
     protected static $openAPITypes = [
         'checksum' => 'string',
-        'log' => 'string'
+        'computeLog' => 'string'
     ];
 
     /**
@@ -74,7 +74,7 @@ class GenerateObitChecksumResponse implements ModelInterface, ArrayAccess, \Json
       */
     protected static $openAPIFormats = [
         'checksum' => null,
-        'log' => null
+        'computeLog' => null
     ];
 
     /**
@@ -105,7 +105,7 @@ class GenerateObitChecksumResponse implements ModelInterface, ArrayAccess, \Json
      */
     protected static $attributeMap = [
         'checksum' => 'checksum',
-        'log' => 'log'
+        'computeLog' => 'compute_log'
     ];
 
     /**
@@ -115,7 +115,7 @@ class GenerateObitChecksumResponse implements ModelInterface, ArrayAccess, \Json
      */
     protected static $setters = [
         'checksum' => 'setChecksum',
-        'log' => 'setLog'
+        'computeLog' => 'setComputeLog'
     ];
 
     /**
@@ -125,7 +125,7 @@ class GenerateObitChecksumResponse implements ModelInterface, ArrayAccess, \Json
      */
     protected static $getters = [
         'checksum' => 'getChecksum',
-        'log' => 'getLog'
+        'computeLog' => 'getComputeLog'
     ];
 
     /**
@@ -186,7 +186,7 @@ class GenerateObitChecksumResponse implements ModelInterface, ArrayAccess, \Json
     public function __construct(array $data = null)
     {
         $this->container['checksum'] = $data['checksum'] ?? null;
-        $this->container['log'] = $data['log'] ?? null;
+        $this->container['computeLog'] = $data['computeLog'] ?? null;
     }
 
     /**
@@ -238,25 +238,25 @@ class GenerateObitChecksumResponse implements ModelInterface, ArrayAccess, \Json
     }
 
     /**
-     * Gets log
+     * Gets computeLog
      *
      * @return string|null
      */
-    public function getLog()
+    public function getComputeLog()
     {
-        return $this->container['log'];
+        return $this->container['computeLog'];
     }
 
     /**
-     * Sets log
+     * Sets computeLog
      *
-     * @param string|null $log Log that contain captures from SDK
+     * @param string|null $computeLog Log that contain captures from SDK
      *
      * @return self
      */
-    public function setLog($log)
+    public function setComputeLog($computeLog)
     {
-        $this->container['log'] = $log;
+        $this->container['computeLog'] = $computeLog;
 
         return $this;
     }
