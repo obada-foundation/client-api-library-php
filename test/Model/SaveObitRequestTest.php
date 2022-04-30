@@ -1,6 +1,6 @@
 <?php
 /**
- * StructureDataRecordTest
+ * SaveObitRequestTest
  *
  * PHP version 7.3
  *
@@ -32,15 +32,15 @@ namespace Obada\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * StructureDataRecordTest Class Doc Comment
+ * SaveObitRequestTest Class Doc Comment
  *
  * @category    Class
- * @description A record that represent key/value structure data record
+ * @description Request to save Obit
  * @package     Obada
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class StructureDataRecordTest extends TestCase
+class SaveObitRequestTest extends TestCase
 {
 
     /**
@@ -72,27 +72,45 @@ class StructureDataRecordTest extends TestCase
     }
 
     /**
-     * Test "StructureDataRecord"
+     * Test "SaveObitRequest"
      */
-    public function testStructureDataRecord()
+    public function testSaveObitRequest()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "key"
+     * Test attribute "manufacturer"
      */
-    public function testPropertyKey()
+    public function testPropertyManufacturer()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "value"
+     * Test attribute "partNumber"
      */
-    public function testPropertyValue()
+    public function testPropertyPartNumber()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "serialNumber"
+     */
+    public function testPropertySerialNumber()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "docLinks"
+     */
+    public function testPropertyDocLinks()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

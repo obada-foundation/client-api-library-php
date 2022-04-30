@@ -750,15 +750,15 @@ class ObitApi
      *
      * Save Obit
      *
-     * @param  \Obada\ClientHelper\Obit $obit obit (optional)
+     * @param  \Obada\ClientHelper\SaveObitRequest $saveObitRequest saveObitRequest (optional)
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function save($obit = null)
+    public function save($saveObitRequest = null)
     {
-        $this->saveWithHttpInfo($obit);
+        $this->saveWithHttpInfo($saveObitRequest);
     }
 
     /**
@@ -766,15 +766,15 @@ class ObitApi
      *
      * Save Obit
      *
-     * @param  \Obada\ClientHelper\Obit $obit (optional)
+     * @param  \Obada\ClientHelper\SaveObitRequest $saveObitRequest (optional)
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function saveWithHttpInfo($obit = null)
+    public function saveWithHttpInfo($saveObitRequest = null)
     {
-        $request = $this->saveRequest($obit);
+        $request = $this->saveRequest($saveObitRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -841,14 +841,14 @@ class ObitApi
      *
      * Save Obit
      *
-     * @param  \Obada\ClientHelper\Obit $obit (optional)
+     * @param  \Obada\ClientHelper\SaveObitRequest $saveObitRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function saveAsync($obit = null)
+    public function saveAsync($saveObitRequest = null)
     {
-        return $this->saveAsyncWithHttpInfo($obit)
+        return $this->saveAsyncWithHttpInfo($saveObitRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -861,15 +861,15 @@ class ObitApi
      *
      * Save Obit
      *
-     * @param  \Obada\ClientHelper\Obit $obit (optional)
+     * @param  \Obada\ClientHelper\SaveObitRequest $saveObitRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function saveAsyncWithHttpInfo($obit = null)
+    public function saveAsyncWithHttpInfo($saveObitRequest = null)
     {
         $returnType = '';
-        $request = $this->saveRequest($obit);
+        $request = $this->saveRequest($saveObitRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -897,12 +897,12 @@ class ObitApi
     /**
      * Create request for operation 'save'
      *
-     * @param  \Obada\ClientHelper\Obit $obit (optional)
+     * @param  \Obada\ClientHelper\SaveObitRequest $saveObitRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function saveRequest($obit = null)
+    public function saveRequest($saveObitRequest = null)
     {
 
         $resourcePath = '/obits';
@@ -928,11 +928,11 @@ class ObitApi
         }
 
         // for model (json/xml)
-        if (isset($obit)) {
+        if (isset($saveObitRequest)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($obit));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($saveObitRequest));
             } else {
-                $httpBody = $obit;
+                $httpBody = $saveObitRequest;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

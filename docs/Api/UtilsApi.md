@@ -16,7 +16,7 @@ generateChecksum($generateObitChecksumRequest): \Obada\ClientHelper\GenerateObit
 
 Generates Obit checksum
 
-
+Generates Obit checksum and provides a log of generation details
 
 ### Example
 

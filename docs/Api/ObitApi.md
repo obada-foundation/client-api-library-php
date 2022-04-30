@@ -125,7 +125,7 @@ No authorization required
 ## `save()`
 
 ```php
-save($obit)
+save($saveObitRequest)
 ```
 
 Save Obit
@@ -145,10 +145,10 @@ $apiInstance = new Obada\Api\ObitApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$obit = new \Obada\ClientHelper\Obit(); // \Obada\ClientHelper\Obit
+$saveObitRequest = new \Obada\ClientHelper\SaveObitRequest(); // \Obada\ClientHelper\SaveObitRequest
 
 try {
-    $apiInstance->save($obit);
+    $apiInstance->save($saveObitRequest);
 } catch (Exception $e) {
     echo 'Exception when calling ObitApi->save: ', $e->getMessage(), PHP_EOL;
 }
@@ -158,7 +158,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obit** | [**\Obada\ClientHelper\Obit**](../Model/Obit.md)|  | [optional]
+ **saveObitRequest** | [**\Obada\ClientHelper\SaveObitRequest**](../Model/SaveObitRequest.md)|  | [optional]
 
 ### Return type
 

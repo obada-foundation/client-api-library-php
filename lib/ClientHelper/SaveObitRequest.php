@@ -1,6 +1,6 @@
 <?php
 /**
- * StructureDataRecord
+ * SaveObitRequest
  *
  * PHP version 7.3
  *
@@ -33,10 +33,10 @@ use \ArrayAccess;
 use \Obada\ObjectSerializer;
 
 /**
- * StructureDataRecord Class Doc Comment
+ * SaveObitRequest Class Doc Comment
  *
  * @category Class
- * @description A record that represent key/value structure data record
+ * @description Request to save Obit
  * @package  Obada
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,7 +44,7 @@ use \Obada\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class StructureDataRecord implements ModelInterface, ArrayAccess, \JsonSerializable
+class SaveObitRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -53,7 +53,7 @@ class StructureDataRecord implements ModelInterface, ArrayAccess, \JsonSerializa
       *
       * @var string
       */
-    protected static $openAPIModelName = 'StructureDataRecord';
+    protected static $openAPIModelName = 'SaveObitRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,8 +61,10 @@ class StructureDataRecord implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var string[]
       */
     protected static $openAPITypes = [
-        'key' => 'string',
-        'value' => 'string'
+        'manufacturer' => 'string',
+        'partNumber' => 'string',
+        'serialNumber' => 'string',
+        'docLinks' => '\Obada\ClientHelper\DocumentLink[]'
     ];
 
     /**
@@ -73,8 +75,10 @@ class StructureDataRecord implements ModelInterface, ArrayAccess, \JsonSerializa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'key' => null,
-        'value' => null
+        'manufacturer' => null,
+        'partNumber' => null,
+        'serialNumber' => null,
+        'docLinks' => null
     ];
 
     /**
@@ -104,8 +108,10 @@ class StructureDataRecord implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $attributeMap = [
-        'key' => 'key',
-        'value' => 'value'
+        'manufacturer' => 'manufacturer',
+        'partNumber' => 'part_number',
+        'serialNumber' => 'serial_number',
+        'docLinks' => 'doc_links'
     ];
 
     /**
@@ -114,8 +120,10 @@ class StructureDataRecord implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $setters = [
-        'key' => 'setKey',
-        'value' => 'setValue'
+        'manufacturer' => 'setManufacturer',
+        'partNumber' => 'setPartNumber',
+        'serialNumber' => 'setSerialNumber',
+        'docLinks' => 'setDocLinks'
     ];
 
     /**
@@ -124,8 +132,10 @@ class StructureDataRecord implements ModelInterface, ArrayAccess, \JsonSerializa
      * @var string[]
      */
     protected static $getters = [
-        'key' => 'getKey',
-        'value' => 'getValue'
+        'manufacturer' => 'getManufacturer',
+        'partNumber' => 'getPartNumber',
+        'serialNumber' => 'getSerialNumber',
+        'docLinks' => 'getDocLinks'
     ];
 
     /**
@@ -185,8 +195,10 @@ class StructureDataRecord implements ModelInterface, ArrayAccess, \JsonSerializa
      */
     public function __construct(array $data = null)
     {
-        $this->container['key'] = $data['key'] ?? null;
-        $this->container['value'] = $data['value'] ?? null;
+        $this->container['manufacturer'] = $data['manufacturer'] ?? null;
+        $this->container['partNumber'] = $data['partNumber'] ?? null;
+        $this->container['serialNumber'] = $data['serialNumber'] ?? null;
+        $this->container['docLinks'] = $data['docLinks'] ?? null;
     }
 
     /**
@@ -198,11 +210,14 @@ class StructureDataRecord implements ModelInterface, ArrayAccess, \JsonSerializa
     {
         $invalidProperties = [];
 
-        if ($this->container['key'] === null) {
-            $invalidProperties[] = "'key' can't be null";
+        if ($this->container['manufacturer'] === null) {
+            $invalidProperties[] = "'manufacturer' can't be null";
         }
-        if ($this->container['value'] === null) {
-            $invalidProperties[] = "'value' can't be null";
+        if ($this->container['partNumber'] === null) {
+            $invalidProperties[] = "'partNumber' can't be null";
+        }
+        if ($this->container['serialNumber'] === null) {
+            $invalidProperties[] = "'serialNumber' can't be null";
         }
         return $invalidProperties;
     }
@@ -220,49 +235,97 @@ class StructureDataRecord implements ModelInterface, ArrayAccess, \JsonSerializa
 
 
     /**
-     * Gets key
+     * Gets manufacturer
      *
      * @return string
      */
-    public function getKey()
+    public function getManufacturer()
     {
-        return $this->container['key'];
+        return $this->container['manufacturer'];
     }
 
     /**
-     * Sets key
+     * Sets manufacturer
      *
-     * @param string $key Structure data key
+     * @param string $manufacturer Waiting more specific details from Rohi
      *
      * @return self
      */
-    public function setKey($key)
+    public function setManufacturer($manufacturer)
     {
-        $this->container['key'] = $key;
+        $this->container['manufacturer'] = $manufacturer;
 
         return $this;
     }
 
     /**
-     * Gets value
+     * Gets partNumber
      *
      * @return string
      */
-    public function getValue()
+    public function getPartNumber()
     {
-        return $this->container['value'];
+        return $this->container['partNumber'];
     }
 
     /**
-     * Sets value
+     * Sets partNumber
      *
-     * @param string $value Structure data value
+     * @param string $partNumber Manufacturer provided. In cases where no part number is provided for the product, use model, or the most specific ID available from the manufacturer. MWCN2LL/A (an iPhone 11 Pro, Silver, 256GB, model A2160)
      *
      * @return self
      */
-    public function setValue($value)
+    public function setPartNumber($partNumber)
     {
-        $this->container['value'] = $value;
+        $this->container['partNumber'] = $partNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets serialNumber
+     *
+     * @return string
+     */
+    public function getSerialNumber()
+    {
+        return $this->container['serialNumber'];
+    }
+
+    /**
+     * Sets serialNumber
+     *
+     * @param string $serialNumber Serial number hashed with sha256 hash function
+     *
+     * @return self
+     */
+    public function setSerialNumber($serialNumber)
+    {
+        $this->container['serialNumber'] = $serialNumber;
+
+        return $this;
+    }
+
+    /**
+     * Gets docLinks
+     *
+     * @return \Obada\ClientHelper\DocumentLink[]|null
+     */
+    public function getDocLinks()
+    {
+        return $this->container['docLinks'];
+    }
+
+    /**
+     * Sets docLinks
+     *
+     * @param \Obada\ClientHelper\DocumentLink[]|null $docLinks To generate this link, take an SHA-256 hash of the document, and link to it as https://www.some-website.com?h1=hash-of-document. Note this does not yet adhere to the hashlink standard.
+     *
+     * @return self
+     */
+    public function setDocLinks($docLinks)
+    {
+        $this->container['docLinks'] = $docLinks;
 
         return $this;
     }

@@ -99,36 +99,9 @@ class ObitTest extends TestCase
     }
 
     /**
-     * Test attribute "obitAlternateIds"
+     * Test attribute "owner"
      */
-    public function testPropertyObitAlternateIds()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "ownerDid"
-     */
-    public function testPropertyOwnerDid()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "obdDid"
-     */
-    public function testPropertyObdDid()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "obitStatus"
-     */
-    public function testPropertyObitStatus()
+    public function testPropertyOwner()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -162,36 +135,9 @@ class ObitTest extends TestCase
     }
 
     /**
-     * Test attribute "metadata"
-     */
-    public function testPropertyMetadata()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "docLinks"
      */
     public function testPropertyDocLinks()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "structuredData"
-     */
-    public function testPropertyStructuredData()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "modifiedOn"
-     */
-    public function testPropertyModifiedOn()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
