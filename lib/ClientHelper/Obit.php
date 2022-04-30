@@ -67,7 +67,7 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
         'manufacturer' => 'string',
         'partNumber' => 'string',
         'serialNumberHash' => 'string',
-        'docLinks' => '\Obada\ClientHelper\DocumentLink[]',
+        'documents' => '\Obada\ClientHelper\DocumentLink[]',
         'checksum' => 'string'
     ];
 
@@ -85,7 +85,7 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
         'manufacturer' => null,
         'partNumber' => null,
         'serialNumberHash' => null,
-        'docLinks' => null,
+        'documents' => null,
         'checksum' => null
     ];
 
@@ -122,7 +122,7 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
         'manufacturer' => 'manufacturer',
         'partNumber' => 'part_number',
         'serialNumberHash' => 'serial_number_hash',
-        'docLinks' => 'doc_links',
+        'documents' => 'documents',
         'checksum' => 'checksum'
     ];
 
@@ -138,7 +138,7 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
         'manufacturer' => 'setManufacturer',
         'partNumber' => 'setPartNumber',
         'serialNumberHash' => 'setSerialNumberHash',
-        'docLinks' => 'setDocLinks',
+        'documents' => 'setDocuments',
         'checksum' => 'setChecksum'
     ];
 
@@ -154,7 +154,7 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
         'manufacturer' => 'getManufacturer',
         'partNumber' => 'getPartNumber',
         'serialNumberHash' => 'getSerialNumberHash',
-        'docLinks' => 'getDocLinks',
+        'documents' => 'getDocuments',
         'checksum' => 'getChecksum'
     ];
 
@@ -221,7 +221,7 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['manufacturer'] = $data['manufacturer'] ?? null;
         $this->container['partNumber'] = $data['partNumber'] ?? null;
         $this->container['serialNumberHash'] = $data['serialNumberHash'] ?? null;
-        $this->container['docLinks'] = $data['docLinks'] ?? null;
+        $this->container['documents'] = $data['documents'] ?? null;
         $this->container['checksum'] = $data['checksum'] ?? null;
     }
 
@@ -400,25 +400,25 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets docLinks
+     * Gets documents
      *
      * @return \Obada\ClientHelper\DocumentLink[]|null
      */
-    public function getDocLinks()
+    public function getDocuments()
     {
-        return $this->container['docLinks'];
+        return $this->container['documents'];
     }
 
     /**
-     * Sets docLinks
+     * Sets documents
      *
-     * @param \Obada\ClientHelper\DocumentLink[]|null $docLinks To generate this link, take an SHA-256 hash of the document, and link to it as https://www.some-website.com?h1=hash-of-document. Note this does not yet adhere to the hashlink standard.
+     * @param \Obada\ClientHelper\DocumentLink[]|null $documents To generate this link, take an SHA-256 hash of the document, and link to it as https://www.some-website.com?h1=hash-of-document. Note this does not yet adhere to the hashlink standard.
      *
      * @return self
      */
-    public function setDocLinks($docLinks)
+    public function setDocuments($documents)
     {
-        $this->container['docLinks'] = $docLinks;
+        $this->container['documents'] = $documents;
 
         return $this;
     }
