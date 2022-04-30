@@ -125,7 +125,7 @@ No authorization required
 ## `save()`
 
 ```php
-save($saveObitRequest)
+save($saveObitRequest): \Obada\ClientHelper\Obit
 ```
 
 Save Obit
@@ -148,7 +148,8 @@ $apiInstance = new Obada\Api\ObitApi(
 $saveObitRequest = new \Obada\ClientHelper\SaveObitRequest(); // \Obada\ClientHelper\SaveObitRequest
 
 try {
-    $apiInstance->save($saveObitRequest);
+    $result = $apiInstance->save($saveObitRequest);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ObitApi->save: ', $e->getMessage(), PHP_EOL;
 }
@@ -162,7 +163,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**\Obada\ClientHelper\Obit**](../Model/Obit.md)
 
 ### Authorization
 
