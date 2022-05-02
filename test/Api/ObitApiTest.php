@@ -73,6 +73,18 @@ class ObitApiTest extends TestCase
     }
 
     /**
+     * Test case for downloadFromChain
+     *
+     * Download NFT from the blockchain.
+     *
+     */
+    public function testDownloadFromChain()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for get
      *
      * Get Obit by DID or USN.
@@ -115,6 +127,18 @@ class ObitApiTest extends TestCase
      *
      */
     public function testSearch()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for uploadToChain
+     *
+     * Uploads NFT to the blockchain.
+     *
+     */
+    public function testUploadToChain()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

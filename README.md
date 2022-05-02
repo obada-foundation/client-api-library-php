@@ -59,10 +59,9 @@ $apiInstance = new Obada\Api\ObitApi(
 $key = did:obada:fe096095-e0f0-4918-9607-6567bd5756b5; // string | The given ObitDID or USN argument
 
 try {
-    $result = $apiInstance->get($key);
-    print_r($result);
+    $apiInstance->downloadFromChain($key);
 } catch (Exception $e) {
-    echo 'Exception when calling ObitApi->get: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ObitApi->downloadFromChain: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
@@ -73,10 +72,12 @@ All URIs are relative to *http://obs.node.obada.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*ObitApi* | [**downloadFromChain**](docs/Api/ObitApi.md#downloadfromchain) | **GET** /obits/{key}/from-chain | Download NFT from the blockchain
 *ObitApi* | [**get**](docs/Api/ObitApi.md#get) | **GET** /obits/{key} | Get Obit by DID or USN
 *ObitApi* | [**history**](docs/Api/ObitApi.md#history) | **GET** /obits/{obit_did}/history | Get Obit history by DID or USN
 *ObitApi* | [**save**](docs/Api/ObitApi.md#save) | **POST** /obits | Save Obit
 *ObitApi* | [**search**](docs/Api/ObitApi.md#search) | **GET** /obits | Search obits by query
+*ObitApi* | [**uploadToChain**](docs/Api/ObitApi.md#uploadtochain) | **GET** /obits/{key}/to-chain | Uploads NFT to the blockchain
 *UtilsApi* | [**generateChecksum**](docs/Api/UtilsApi.md#generatechecksum) | **POST** /obit/checksum | Generates Obit checksum
 *UtilsApi* | [**generateDID**](docs/Api/UtilsApi.md#generatedid) | **POST** /obit/did | Generate Obit DID
 
