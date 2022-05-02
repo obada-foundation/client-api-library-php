@@ -4,7 +4,7 @@ All URIs are relative to http://obs.node.obada.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get()**](ObitApi.md#get) | **GET** /obits/{obit_did} | Get Obit by DID or USN
+[**get()**](ObitApi.md#get) | **GET** /obits/{key} | Get Obit by DID or USN
 [**history()**](ObitApi.md#history) | **GET** /obits/{obit_did}/history | Get Obit history by DID or USN
 [**save()**](ObitApi.md#save) | **POST** /obits | Save Obit
 [**search()**](ObitApi.md#search) | **GET** /obits | Search obits by query
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 ## `get()`
 
 ```php
-get($obitDid): \Obada\ClientHelper\Obit
+get($key): \Obada\ClientHelper\Obit
 ```
 
 Get Obit by DID or USN
@@ -33,10 +33,10 @@ $apiInstance = new Obada\Api\ObitApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$obitDid = did:obada:fe096095-e0f0-4918-9607-6567bd5756b5; // string | The given ObitDID or USN argument
+$key = did:obada:fe096095-e0f0-4918-9607-6567bd5756b5; // string | The given ObitDID or USN argument
 
 try {
-    $result = $apiInstance->get($obitDid);
+    $result = $apiInstance->get($key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ObitApi->get: ', $e->getMessage(), PHP_EOL;
@@ -47,7 +47,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obitDid** | **string**| The given ObitDID or USN argument |
+ **key** | **string**| The given ObitDID or USN argument |
 
 ### Return type
 

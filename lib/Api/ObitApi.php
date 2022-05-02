@@ -121,15 +121,15 @@ class ObitApi
      *
      * Get Obit by DID or USN
      *
-     * @param  string $obitDid The given ObitDID or USN argument (required)
+     * @param  string $key The given ObitDID or USN argument (required)
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Obada\ClientHelper\Obit|\Obada\ClientHelper\NotFound|\Obada\ClientHelper\InternalServerError
      */
-    public function get($obitDid)
+    public function get($key)
     {
-        list($response) = $this->getWithHttpInfo($obitDid);
+        list($response) = $this->getWithHttpInfo($key);
         return $response;
     }
 
@@ -138,15 +138,15 @@ class ObitApi
      *
      * Get Obit by DID or USN
      *
-     * @param  string $obitDid The given ObitDID or USN argument (required)
+     * @param  string $key The given ObitDID or USN argument (required)
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Obada\ClientHelper\Obit|\Obada\ClientHelper\NotFound|\Obada\ClientHelper\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getWithHttpInfo($obitDid)
+    public function getWithHttpInfo($key)
     {
-        $request = $this->getRequest($obitDid);
+        $request = $this->getRequest($key);
 
         try {
             $options = $this->createHttpClientOption();
@@ -283,14 +283,14 @@ class ObitApi
      *
      * Get Obit by DID or USN
      *
-     * @param  string $obitDid The given ObitDID or USN argument (required)
+     * @param  string $key The given ObitDID or USN argument (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAsync($obitDid)
+    public function getAsync($key)
     {
-        return $this->getAsyncWithHttpInfo($obitDid)
+        return $this->getAsyncWithHttpInfo($key)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -303,15 +303,15 @@ class ObitApi
      *
      * Get Obit by DID or USN
      *
-     * @param  string $obitDid The given ObitDID or USN argument (required)
+     * @param  string $key The given ObitDID or USN argument (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAsyncWithHttpInfo($obitDid)
+    public function getAsyncWithHttpInfo($key)
     {
         $returnType = '\Obada\ClientHelper\Obit';
-        $request = $this->getRequest($obitDid);
+        $request = $this->getRequest($key);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -352,21 +352,21 @@ class ObitApi
     /**
      * Create request for operation 'get'
      *
-     * @param  string $obitDid The given ObitDID or USN argument (required)
+     * @param  string $key The given ObitDID or USN argument (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getRequest($obitDid)
+    public function getRequest($key)
     {
-        // verify the required parameter 'obitDid' is set
-        if ($obitDid === null || (is_array($obitDid) && count($obitDid) === 0)) {
+        // verify the required parameter 'key' is set
+        if ($key === null || (is_array($key) && count($key) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obitDid when calling get'
+                'Missing the required parameter $key when calling get'
             );
         }
 
-        $resourcePath = '/obits/{obit_did}';
+        $resourcePath = '/obits/{key}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -376,10 +376,10 @@ class ObitApi
 
 
         // path params
-        if ($obitDid !== null) {
+        if ($key !== null) {
             $resourcePath = str_replace(
-                '{' . 'obit_did' . '}',
-                ObjectSerializer::toPathValue($obitDid),
+                '{' . 'key' . '}',
+                ObjectSerializer::toPathValue($key),
                 $resourcePath
             );
         }

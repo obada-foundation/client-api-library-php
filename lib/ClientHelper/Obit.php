@@ -61,12 +61,13 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'obitDid' => 'string',
+        'did' => 'string',
         'usn' => 'string',
         'owner' => 'string',
         'manufacturer' => 'string',
         'partNumber' => 'string',
         'serialNumberHash' => 'string',
+        'trustAnchorToken' => 'string',
         'documents' => '\Obada\ClientHelper\DocumentLink[]',
         'checksum' => 'string'
     ];
@@ -79,12 +80,13 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'obitDid' => null,
+        'did' => null,
         'usn' => null,
         'owner' => null,
         'manufacturer' => null,
         'partNumber' => null,
         'serialNumberHash' => null,
+        'trustAnchorToken' => null,
         'documents' => null,
         'checksum' => null
     ];
@@ -116,12 +118,13 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'obitDid' => 'obit_did',
+        'did' => 'did',
         'usn' => 'usn',
         'owner' => 'owner',
         'manufacturer' => 'manufacturer',
         'partNumber' => 'part_number',
         'serialNumberHash' => 'serial_number_hash',
+        'trustAnchorToken' => 'trust_anchor_token',
         'documents' => 'documents',
         'checksum' => 'checksum'
     ];
@@ -132,12 +135,13 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'obitDid' => 'setObitDid',
+        'did' => 'setDid',
         'usn' => 'setUsn',
         'owner' => 'setOwner',
         'manufacturer' => 'setManufacturer',
         'partNumber' => 'setPartNumber',
         'serialNumberHash' => 'setSerialNumberHash',
+        'trustAnchorToken' => 'setTrustAnchorToken',
         'documents' => 'setDocuments',
         'checksum' => 'setChecksum'
     ];
@@ -148,12 +152,13 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'obitDid' => 'getObitDid',
+        'did' => 'getDid',
         'usn' => 'getUsn',
         'owner' => 'getOwner',
         'manufacturer' => 'getManufacturer',
         'partNumber' => 'getPartNumber',
         'serialNumberHash' => 'getSerialNumberHash',
+        'trustAnchorToken' => 'getTrustAnchorToken',
         'documents' => 'getDocuments',
         'checksum' => 'getChecksum'
     ];
@@ -215,12 +220,13 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['obitDid'] = $data['obitDid'] ?? null;
+        $this->container['did'] = $data['did'] ?? null;
         $this->container['usn'] = $data['usn'] ?? null;
         $this->container['owner'] = $data['owner'] ?? null;
         $this->container['manufacturer'] = $data['manufacturer'] ?? null;
         $this->container['partNumber'] = $data['partNumber'] ?? null;
         $this->container['serialNumberHash'] = $data['serialNumberHash'] ?? null;
+        $this->container['trustAnchorToken'] = $data['trustAnchorToken'] ?? null;
         $this->container['documents'] = $data['documents'] ?? null;
         $this->container['checksum'] = $data['checksum'] ?? null;
     }
@@ -256,25 +262,25 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets obitDid
+     * Gets did
      *
      * @return string|null
      */
-    public function getObitDid()
+    public function getDid()
     {
-        return $this->container['obitDid'];
+        return $this->container['did'];
     }
 
     /**
-     * Sets obitDid
+     * Sets did
      *
-     * @param string|null $obitDid OBADA decentralized identifier
+     * @param string|null $did OBADA decentralized identifier
      *
      * @return self
      */
-    public function setObitDid($obitDid)
+    public function setDid($did)
     {
-        $this->container['obitDid'] = $obitDid;
+        $this->container['did'] = $did;
 
         return $this;
     }
@@ -395,6 +401,30 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setSerialNumberHash($serialNumberHash)
     {
         $this->container['serialNumberHash'] = $serialNumberHash;
+
+        return $this;
+    }
+
+    /**
+     * Gets trustAnchorToken
+     *
+     * @return string|null
+     */
+    public function getTrustAnchorToken()
+    {
+        return $this->container['trustAnchorToken'];
+    }
+
+    /**
+     * Sets trustAnchorToken
+     *
+     * @param string|null $trustAnchorToken JWT token from the trust anchor
+     *
+     * @return self
+     */
+    public function setTrustAnchorToken($trustAnchorToken)
+    {
+        $this->container['trustAnchorToken'] = $trustAnchorToken;
 
         return $this;
     }

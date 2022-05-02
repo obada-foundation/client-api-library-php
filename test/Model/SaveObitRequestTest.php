@@ -108,9 +108,9 @@ class SaveObitRequestTest extends TestCase
     }
 
     /**
-     * Test attribute "docLinks"
+     * Test attribute "documents"
      */
-    public function testPropertyDocLinks()
+    public function testPropertyDocuments()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

@@ -81,9 +81,9 @@ class ObitTest extends TestCase
     }
 
     /**
-     * Test attribute "obitDid"
+     * Test attribute "did"
      */
-    public function testPropertyObitDid()
+    public function testPropertyDid()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -129,6 +129,15 @@ class ObitTest extends TestCase
      * Test attribute "serialNumberHash"
      */
     public function testPropertySerialNumberHash()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "trustAnchorToken"
+     */
+    public function testPropertyTrustAnchorToken()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
