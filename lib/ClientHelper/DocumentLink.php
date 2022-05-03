@@ -62,7 +62,7 @@ class DocumentLink implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'name' => 'string',
-        'hashlink' => 'string'
+        'documentFile' => '\SplFileObject'
     ];
 
     /**
@@ -74,7 +74,7 @@ class DocumentLink implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'name' => null,
-        'hashlink' => null
+        'documentFile' => 'binary'
     ];
 
     /**
@@ -105,7 +105,7 @@ class DocumentLink implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'name' => 'name',
-        'hashlink' => 'hashlink'
+        'documentFile' => 'document_file'
     ];
 
     /**
@@ -115,7 +115,7 @@ class DocumentLink implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'name' => 'setName',
-        'hashlink' => 'setHashlink'
+        'documentFile' => 'setDocumentFile'
     ];
 
     /**
@@ -125,7 +125,7 @@ class DocumentLink implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'name' => 'getName',
-        'hashlink' => 'getHashlink'
+        'documentFile' => 'getDocumentFile'
     ];
 
     /**
@@ -186,7 +186,7 @@ class DocumentLink implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->container['name'] = $data['name'] ?? null;
-        $this->container['hashlink'] = $data['hashlink'] ?? null;
+        $this->container['documentFile'] = $data['documentFile'] ?? null;
     }
 
     /**
@@ -200,9 +200,6 @@ class DocumentLink implements ModelInterface, ArrayAccess, \JsonSerializable
 
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
-        }
-        if ($this->container['hashlink'] === null) {
-            $invalidProperties[] = "'hashlink' can't be null";
         }
         return $invalidProperties;
     }
@@ -244,25 +241,25 @@ class DocumentLink implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets hashlink
+     * Gets documentFile
      *
-     * @return string
+     * @return \SplFileObject|null
      */
-    public function getHashlink()
+    public function getDocumentFile()
     {
-        return $this->container['hashlink'];
+        return $this->container['documentFile'];
     }
 
     /**
-     * Sets hashlink
+     * Sets documentFile
      *
-     * @param string $hashlink Hashlink
+     * @param \SplFileObject|null $documentFile documentFile
      *
      * @return self
      */
-    public function setHashlink($hashlink)
+    public function setDocumentFile($documentFile)
     {
-        $this->container['hashlink'] = $hashlink;
+        $this->container['documentFile'] = $documentFile;
 
         return $this;
     }

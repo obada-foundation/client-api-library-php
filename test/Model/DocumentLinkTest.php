@@ -90,9 +90,9 @@ class DocumentLinkTest extends TestCase
     }
 
     /**
-     * Test attribute "hashlink"
+     * Test attribute "documentFile"
      */
-    public function testPropertyHashlink()
+    public function testPropertyDocumentFile()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
