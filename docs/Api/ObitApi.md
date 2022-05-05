@@ -182,7 +182,7 @@ No authorization required
 ## `save()`
 
 ```php
-save($manufacturer, $partNumber, $serialNumber, $documents): \Obada\ClientHelper\Obit
+save($manufacturer, $partNumber, $serialNumber): \Obada\ClientHelper\Obit
 ```
 
 Save Obit
@@ -205,10 +205,9 @@ $apiInstance = new Obada\Api\ObitApi(
 $manufacturer = 'manufacturer_example'; // string | Waiting more specific details from Rohi
 $partNumber = 'partNumber_example'; // string | Manufacturer provided. In cases where no part number is provided for the product, use model, or the most specific ID available from the manufacturer. MWCN2LL/A (an iPhone 11 Pro, Silver, 256GB, model A2160)
 $serialNumber = 'serialNumber_example'; // string | Serial number hashed with sha256 hash function
-$documents = array(new \Obada\ClientHelper\\Obada\ClientHelper\DocumentLink()); // \Obada\ClientHelper\DocumentLink[] | To generate this link, take an SHA-256 hash of the document, and link to it as https://www.some-website.com?h1=hash-of-document. Note this does not yet adhere to the hashlink standard.
 
 try {
-    $result = $apiInstance->save($manufacturer, $partNumber, $serialNumber, $documents);
+    $result = $apiInstance->save($manufacturer, $partNumber, $serialNumber);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ObitApi->save: ', $e->getMessage(), PHP_EOL;
@@ -222,7 +221,6 @@ Name | Type | Description  | Notes
  **manufacturer** | **string**| Waiting more specific details from Rohi |
  **partNumber** | **string**| Manufacturer provided. In cases where no part number is provided for the product, use model, or the most specific ID available from the manufacturer. MWCN2LL/A (an iPhone 11 Pro, Silver, 256GB, model A2160) |
  **serialNumber** | **string**| Serial number hashed with sha256 hash function |
- **documents** | [**\Obada\ClientHelper\DocumentLink[]**](../Model/\Obada\ClientHelper\DocumentLink.md)| To generate this link, take an SHA-256 hash of the document, and link to it as https://www.some-website.com?h1&#x3D;hash-of-document. Note this does not yet adhere to the hashlink standard. | [optional]
 
 ### Return type
 

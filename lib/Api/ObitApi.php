@@ -995,15 +995,14 @@ class ObitApi
      * @param  string $manufacturer Waiting more specific details from Rohi (required)
      * @param  string $partNumber Manufacturer provided. In cases where no part number is provided for the product, use model, or the most specific ID available from the manufacturer. MWCN2LL/A (an iPhone 11 Pro, Silver, 256GB, model A2160) (required)
      * @param  string $serialNumber Serial number hashed with sha256 hash function (required)
-     * @param  \Obada\ClientHelper\DocumentLink[] $documents To generate this link, take an SHA-256 hash of the document, and link to it as https://www.some-website.com?h1&#x3D;hash-of-document. Note this does not yet adhere to the hashlink standard. (optional)
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Obada\ClientHelper\Obit|\Obada\ClientHelper\UnprocessableEntity|\Obada\ClientHelper\InternalServerError
      */
-    public function save($manufacturer, $partNumber, $serialNumber, $documents = null)
+    public function save($manufacturer, $partNumber, $serialNumber)
     {
-        list($response) = $this->saveWithHttpInfo($manufacturer, $partNumber, $serialNumber, $documents);
+        list($response) = $this->saveWithHttpInfo($manufacturer, $partNumber, $serialNumber);
         return $response;
     }
 
@@ -1015,15 +1014,14 @@ class ObitApi
      * @param  string $manufacturer Waiting more specific details from Rohi (required)
      * @param  string $partNumber Manufacturer provided. In cases where no part number is provided for the product, use model, or the most specific ID available from the manufacturer. MWCN2LL/A (an iPhone 11 Pro, Silver, 256GB, model A2160) (required)
      * @param  string $serialNumber Serial number hashed with sha256 hash function (required)
-     * @param  \Obada\ClientHelper\DocumentLink[] $documents To generate this link, take an SHA-256 hash of the document, and link to it as https://www.some-website.com?h1&#x3D;hash-of-document. Note this does not yet adhere to the hashlink standard. (optional)
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Obada\ClientHelper\Obit|\Obada\ClientHelper\UnprocessableEntity|\Obada\ClientHelper\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function saveWithHttpInfo($manufacturer, $partNumber, $serialNumber, $documents = null)
+    public function saveWithHttpInfo($manufacturer, $partNumber, $serialNumber)
     {
-        $request = $this->saveRequest($manufacturer, $partNumber, $serialNumber, $documents);
+        $request = $this->saveRequest($manufacturer, $partNumber, $serialNumber);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1163,14 +1161,13 @@ class ObitApi
      * @param  string $manufacturer Waiting more specific details from Rohi (required)
      * @param  string $partNumber Manufacturer provided. In cases where no part number is provided for the product, use model, or the most specific ID available from the manufacturer. MWCN2LL/A (an iPhone 11 Pro, Silver, 256GB, model A2160) (required)
      * @param  string $serialNumber Serial number hashed with sha256 hash function (required)
-     * @param  \Obada\ClientHelper\DocumentLink[] $documents To generate this link, take an SHA-256 hash of the document, and link to it as https://www.some-website.com?h1&#x3D;hash-of-document. Note this does not yet adhere to the hashlink standard. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function saveAsync($manufacturer, $partNumber, $serialNumber, $documents = null)
+    public function saveAsync($manufacturer, $partNumber, $serialNumber)
     {
-        return $this->saveAsyncWithHttpInfo($manufacturer, $partNumber, $serialNumber, $documents)
+        return $this->saveAsyncWithHttpInfo($manufacturer, $partNumber, $serialNumber)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1186,15 +1183,14 @@ class ObitApi
      * @param  string $manufacturer Waiting more specific details from Rohi (required)
      * @param  string $partNumber Manufacturer provided. In cases where no part number is provided for the product, use model, or the most specific ID available from the manufacturer. MWCN2LL/A (an iPhone 11 Pro, Silver, 256GB, model A2160) (required)
      * @param  string $serialNumber Serial number hashed with sha256 hash function (required)
-     * @param  \Obada\ClientHelper\DocumentLink[] $documents To generate this link, take an SHA-256 hash of the document, and link to it as https://www.some-website.com?h1&#x3D;hash-of-document. Note this does not yet adhere to the hashlink standard. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function saveAsyncWithHttpInfo($manufacturer, $partNumber, $serialNumber, $documents = null)
+    public function saveAsyncWithHttpInfo($manufacturer, $partNumber, $serialNumber)
     {
         $returnType = '\Obada\ClientHelper\Obit';
-        $request = $this->saveRequest($manufacturer, $partNumber, $serialNumber, $documents);
+        $request = $this->saveRequest($manufacturer, $partNumber, $serialNumber);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1238,12 +1234,11 @@ class ObitApi
      * @param  string $manufacturer Waiting more specific details from Rohi (required)
      * @param  string $partNumber Manufacturer provided. In cases where no part number is provided for the product, use model, or the most specific ID available from the manufacturer. MWCN2LL/A (an iPhone 11 Pro, Silver, 256GB, model A2160) (required)
      * @param  string $serialNumber Serial number hashed with sha256 hash function (required)
-     * @param  \Obada\ClientHelper\DocumentLink[] $documents To generate this link, take an SHA-256 hash of the document, and link to it as https://www.some-website.com?h1&#x3D;hash-of-document. Note this does not yet adhere to the hashlink standard. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function saveRequest($manufacturer, $partNumber, $serialNumber, $documents = null)
+    public function saveRequest($manufacturer, $partNumber, $serialNumber)
     {
         // verify the required parameter 'manufacturer' is set
         if ($manufacturer === null || (is_array($manufacturer) && count($manufacturer) === 0)) {
@@ -1285,10 +1280,6 @@ class ObitApi
         // form params
         if ($serialNumber !== null) {
             $formParams['serial_number'] = ObjectSerializer::toFormValue($serialNumber);
-        }
-        // form params
-        if ($documents !== null) {
-            $formParams['documents'] = ObjectSerializer::toFormValue($documents);
         }
 
         if ($multipart) {
