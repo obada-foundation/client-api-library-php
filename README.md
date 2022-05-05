@@ -95,6 +95,7 @@ Class | Method | HTTP request | Description
 - [ObitHistory](docs/Model/ObitHistory.md)
 - [Obits](docs/Model/Obits.md)
 - [ObitsMeta](docs/Model/ObitsMeta.md)
+- [SaveObitRequest](docs/Model/SaveObitRequest.md)
 - [UnprocessableEntity](docs/Model/UnprocessableEntity.md)
 - [UnprocessableEntityFieldsInner](docs/Model/UnprocessableEntityFieldsInner.md)
 
