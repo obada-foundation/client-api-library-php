@@ -50,18 +50,23 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
+// Configure Bearer (JWT) authorization: bearerAuth
+$config = Obada\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$apiInstance = new Obada\Api\ObitApi(
+
+$apiInstance = new Obada\Api\AccountsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$key = did:obada:fe096095-e0f0-4918-9607-6567bd5756b5; // string | The given ObitDID or USN argument
+$newAccountRequest = new \Obada\ClientHelper\NewAccountRequest(); // \Obada\ClientHelper\NewAccountRequest
 
 try {
-    $apiInstance->downloadFromChain($key);
+    $result = $apiInstance->createAccount($newAccountRequest);
+    print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObitApi->downloadFromChain: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AccountsApi->createAccount: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
@@ -72,6 +77,7 @@ All URIs are relative to *http://obs.node.obada.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AccountsApi* | [**createAccount**](docs/Api/AccountsApi.md#createaccount) | **POST** /accounts | Creates a new Account
 *ObitApi* | [**downloadFromChain**](docs/Api/ObitApi.md#downloadfromchain) | **GET** /obits/{key}/from-chain | Download NFT from the blockchain
 *ObitApi* | [**get**](docs/Api/ObitApi.md#get) | **GET** /obits/{key} | Get Obit by DID or USN
 *ObitApi* | [**history**](docs/Api/ObitApi.md#history) | **GET** /obits/{obit_did}/history | Get Obit history by DID or USN
@@ -83,6 +89,7 @@ Class | Method | HTTP request | Description
 
 ## Models
 
+- [Account](docs/Model/Account.md)
 - [DocumentLink](docs/Model/DocumentLink.md)
 - [GenerateObitChecksumRequest](docs/Model/GenerateObitChecksumRequest.md)
 - [GenerateObitChecksumResponse](docs/Model/GenerateObitChecksumResponse.md)
@@ -90,6 +97,8 @@ Class | Method | HTTP request | Description
 - [GenerateObitDIDResponse](docs/Model/GenerateObitDIDResponse.md)
 - [InlineResponse200](docs/Model/InlineResponse200.md)
 - [InternalServerError](docs/Model/InternalServerError.md)
+- [NewAccountRequest](docs/Model/NewAccountRequest.md)
+- [NotAuthorized](docs/Model/NotAuthorized.md)
 - [NotFound](docs/Model/NotFound.md)
 - [Obit](docs/Model/Obit.md)
 - [ObitHistory](docs/Model/ObitHistory.md)
@@ -100,7 +109,11 @@ Class | Method | HTTP request | Description
 - [UnprocessableEntityFieldsInner](docs/Model/UnprocessableEntityFieldsInner.md)
 
 ## Authorization
-All endpoints do not require authorization.
+
+### bearerAuth
+
+- **Type**: Bearer authentication (JWT)
+
 ## Tests
 
 To run the tests, use:

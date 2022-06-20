@@ -25,11 +25,15 @@ Generates Obit checksum and provides a log of generation details
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer (JWT) authorization: bearerAuth
+$config = Obada\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Obada\Api\UtilsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $generateObitChecksumRequest = new \Obada\ClientHelper\GenerateObitChecksumRequest(); // \Obada\ClientHelper\GenerateObitChecksumRequest
 
@@ -53,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -81,11 +85,15 @@ Returns the Obit DID for a given device_id, part_number and serial_number input.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+// Configure Bearer (JWT) authorization: bearerAuth
+$config = Obada\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
 
 $apiInstance = new Obada\Api\UtilsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
 $generateObitDIDRequest = new \Obada\ClientHelper\GenerateObitDIDRequest(); // \Obada\ClientHelper\GenerateObitDIDRequest
 
@@ -109,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../../README.md#bearerAuth)
 
 ### HTTP request headers
 

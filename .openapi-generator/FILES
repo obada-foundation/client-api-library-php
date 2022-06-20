@@ -3,8 +3,10 @@
 .travis.yml
 README.md
 composer.json
+docs/Api/AccountsApi.md
 docs/Api/ObitApi.md
 docs/Api/UtilsApi.md
+docs/Model/Account.md
 docs/Model/DocumentLink.md
 docs/Model/GenerateObitChecksumRequest.md
 docs/Model/GenerateObitChecksumResponse.md
@@ -12,6 +14,8 @@ docs/Model/GenerateObitDIDRequest.md
 docs/Model/GenerateObitDIDResponse.md
 docs/Model/InlineResponse200.md
 docs/Model/InternalServerError.md
+docs/Model/NewAccountRequest.md
+docs/Model/NotAuthorized.md
 docs/Model/NotFound.md
 docs/Model/Obit.md
 docs/Model/ObitHistory.md
@@ -21,9 +25,11 @@ docs/Model/SaveObitRequest.md
 docs/Model/UnprocessableEntity.md
 docs/Model/UnprocessableEntityFieldsInner.md
 git_push.sh
+lib/Api/AccountsApi.php
 lib/Api/ObitApi.php
 lib/Api/UtilsApi.php
 lib/ApiException.php
+lib/ClientHelper/Account.php
 lib/ClientHelper/DocumentLink.php
 lib/ClientHelper/GenerateObitChecksumRequest.php
 lib/ClientHelper/GenerateObitChecksumResponse.php
@@ -32,6 +38,8 @@ lib/ClientHelper/GenerateObitDIDResponse.php
 lib/ClientHelper/InlineResponse200.php
 lib/ClientHelper/InternalServerError.php
 lib/ClientHelper/ModelInterface.php
+lib/ClientHelper/NewAccountRequest.php
+lib/ClientHelper/NotAuthorized.php
 lib/ClientHelper/NotFound.php
 lib/ClientHelper/Obit.php
 lib/ClientHelper/ObitHistory.php
@@ -44,8 +52,10 @@ lib/Configuration.php
 lib/HeaderSelector.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
+test/Api/AccountsApiTest.php
 test/Api/ObitApiTest.php
 test/Api/UtilsApiTest.php
+test/Model/AccountTest.php
 test/Model/DocumentLinkTest.php
 test/Model/GenerateObitChecksumRequestTest.php
 test/Model/GenerateObitChecksumResponseTest.php
@@ -53,6 +63,8 @@ test/Model/GenerateObitDIDRequestTest.php
 test/Model/GenerateObitDIDResponseTest.php
 test/Model/InlineResponse200Test.php
 test/Model/InternalServerErrorTest.php
+test/Model/NewAccountRequestTest.php
+test/Model/NotAuthorizedTest.php
 test/Model/NotFoundTest.php
 test/Model/ObitHistoryTest.php
 test/Model/ObitTest.php
