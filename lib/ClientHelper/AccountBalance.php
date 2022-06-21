@@ -62,7 +62,7 @@ class AccountBalance implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'address' => 'string',
-        'balance' => 'Int'
+        'balance' => 'int'
     ];
 
     /**
@@ -74,7 +74,7 @@ class AccountBalance implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'address' => null,
-        'balance' => null
+        'balance' => 'int64'
     ];
 
     /**
@@ -240,7 +240,7 @@ class AccountBalance implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets balance
      *
-     * @return Int|null
+     * @return int|null
      */
     public function getBalance()
     {
@@ -250,7 +250,7 @@ class AccountBalance implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets balance
      *
-     * @param Int|null $balance balance
+     * @param int|null $balance balance
      *
      * @return self
      */
