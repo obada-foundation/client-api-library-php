@@ -7,6 +7,7 @@ docs/Api/AccountsApi.md
 docs/Api/ObitApi.md
 docs/Api/UtilsApi.md
 docs/Model/Account.md
+docs/Model/AccountBalance.md
 docs/Model/DocumentLink.md
 docs/Model/GenerateObitChecksumRequest.md
 docs/Model/GenerateObitChecksumResponse.md
@@ -30,6 +31,7 @@ lib/Api/ObitApi.php
 lib/Api/UtilsApi.php
 lib/ApiException.php
 lib/ClientHelper/Account.php
+lib/ClientHelper/AccountBalance.php
 lib/ClientHelper/DocumentLink.php
 lib/ClientHelper/GenerateObitChecksumRequest.php
 lib/ClientHelper/GenerateObitChecksumResponse.php
@@ -55,6 +57,7 @@ phpunit.xml.dist
 test/Api/AccountsApiTest.php
 test/Api/ObitApiTest.php
 test/Api/UtilsApiTest.php
+test/Model/AccountBalanceTest.php
 test/Model/AccountTest.php
 test/Model/DocumentLinkTest.php
 test/Model/GenerateObitChecksumRequestTest.php

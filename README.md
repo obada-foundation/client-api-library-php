@@ -60,13 +60,12 @@ $apiInstance = new Obada\Api\AccountsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$newAccountRequest = new \Obada\ClientHelper\NewAccountRequest(); // \Obada\ClientHelper\NewAccountRequest
 
 try {
-    $result = $apiInstance->createAccount($newAccountRequest);
+    $result = $apiInstance->balance();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AccountsApi->createAccount: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AccountsApi->balance: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
@@ -77,6 +76,7 @@ All URIs are relative to *http://obs.node.obada.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AccountsApi* | [**balance**](docs/Api/AccountsApi.md#balance) | **GET** /accounts/my-balance | Shows account balance of OBADA address
 *AccountsApi* | [**createAccount**](docs/Api/AccountsApi.md#createaccount) | **POST** /accounts | Creates a new Account
 *ObitApi* | [**downloadFromChain**](docs/Api/ObitApi.md#downloadfromchain) | **GET** /obits/{key}/from-chain | Download NFT from the blockchain
 *ObitApi* | [**get**](docs/Api/ObitApi.md#get) | **GET** /obits/{key} | Get Obit by DID or USN
@@ -90,6 +90,7 @@ Class | Method | HTTP request | Description
 ## Models
 
 - [Account](docs/Model/Account.md)
+- [AccountBalance](docs/Model/AccountBalance.md)
 - [DocumentLink](docs/Model/DocumentLink.md)
 - [GenerateObitChecksumRequest](docs/Model/GenerateObitChecksumRequest.md)
 - [GenerateObitChecksumResponse](docs/Model/GenerateObitChecksumResponse.md)
