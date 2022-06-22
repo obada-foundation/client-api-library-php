@@ -62,7 +62,8 @@ class SaveObitRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'manufacturer' => 'string',
         'partNumber' => 'string',
         'serialNumber' => 'string',
-        'documents' => '\Obada\ClientHelper\DeviceDocument[]'
+        'documents' => '\Obada\ClientHelper\DeviceDocument[]',
+        'encryptDocuments' => 'bool'
     ];
 
     /**
@@ -76,7 +77,8 @@ class SaveObitRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'manufacturer' => null,
         'partNumber' => null,
         'serialNumber' => null,
-        'documents' => null
+        'documents' => null,
+        'encryptDocuments' => null
     ];
 
     /**
@@ -109,7 +111,8 @@ class SaveObitRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'manufacturer' => 'manufacturer',
         'partNumber' => 'part_number',
         'serialNumber' => 'serial_number',
-        'documents' => 'documents'
+        'documents' => 'documents',
+        'encryptDocuments' => 'encrypt_documents'
     ];
 
     /**
@@ -121,7 +124,8 @@ class SaveObitRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'manufacturer' => 'setManufacturer',
         'partNumber' => 'setPartNumber',
         'serialNumber' => 'setSerialNumber',
-        'documents' => 'setDocuments'
+        'documents' => 'setDocuments',
+        'encryptDocuments' => 'setEncryptDocuments'
     ];
 
     /**
@@ -133,7 +137,8 @@ class SaveObitRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'manufacturer' => 'getManufacturer',
         'partNumber' => 'getPartNumber',
         'serialNumber' => 'getSerialNumber',
-        'documents' => 'getDocuments'
+        'documents' => 'getDocuments',
+        'encryptDocuments' => 'getEncryptDocuments'
     ];
 
     /**
@@ -197,6 +202,7 @@ class SaveObitRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['partNumber'] = $data['partNumber'] ?? null;
         $this->container['serialNumber'] = $data['serialNumber'] ?? null;
         $this->container['documents'] = $data['documents'] ?? null;
+        $this->container['encryptDocuments'] = $data['encryptDocuments'] ?? true;
     }
 
     /**
@@ -324,6 +330,30 @@ class SaveObitRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDocuments($documents)
     {
         $this->container['documents'] = $documents;
+
+        return $this;
+    }
+
+    /**
+     * Gets encryptDocuments
+     *
+     * @return bool|null
+     */
+    public function getEncryptDocuments()
+    {
+        return $this->container['encryptDocuments'];
+    }
+
+    /**
+     * Sets encryptDocuments
+     *
+     * @param bool|null $encryptDocuments If true then client helper will encrypt documents with randomly generated key
+     *
+     * @return self
+     */
+    public function setEncryptDocuments($encryptDocuments)
+    {
+        $this->container['encryptDocuments'] = $encryptDocuments;
 
         return $this;
     }

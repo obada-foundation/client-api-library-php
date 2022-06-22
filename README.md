@@ -80,7 +80,7 @@ Class | Method | HTTP request | Description
 *AccountsApi* | [**createAccount**](docs/Api/AccountsApi.md#createaccount) | **POST** /accounts | Creates a new Account
 *ObitApi* | [**downloadFromChain**](docs/Api/ObitApi.md#downloadfromchain) | **GET** /obits/{key}/from-chain | Download NFT from the blockchain
 *ObitApi* | [**get**](docs/Api/ObitApi.md#get) | **GET** /obits/{key} | Get Obit by DID or USN
-*ObitApi* | [**history**](docs/Api/ObitApi.md#history) | **GET** /obits/{obit_did}/history | Get Obit history by DID or USN
+*ObitApi* | [**history**](docs/Api/ObitApi.md#history) | **GET** /obits/{key}/history | Get Obit history by DID or USN
 *ObitApi* | [**save**](docs/Api/ObitApi.md#save) | **POST** /obits | Save Obit
 *ObitApi* | [**search**](docs/Api/ObitApi.md#search) | **GET** /obits | Search obits by query
 *ObitApi* | [**uploadToChain**](docs/Api/ObitApi.md#uploadtochain) | **GET** /obits/{key}/to-chain | Uploads NFT to the blockchain

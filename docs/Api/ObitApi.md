@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**downloadFromChain()**](ObitApi.md#downloadFromChain) | **GET** /obits/{key}/from-chain | Download NFT from the blockchain
 [**get()**](ObitApi.md#get) | **GET** /obits/{key} | Get Obit by DID or USN
-[**history()**](ObitApi.md#history) | **GET** /obits/{obit_did}/history | Get Obit history by DID or USN
+[**history()**](ObitApi.md#history) | **GET** /obits/{key}/history | Get Obit history by DID or USN
 [**save()**](ObitApi.md#save) | **POST** /obits | Save Obit
 [**search()**](ObitApi.md#search) | **GET** /obits | Search obits by query
 [**uploadToChain()**](ObitApi.md#uploadToChain) | **GET** /obits/{key}/to-chain | Uploads NFT to the blockchain
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 ## `history()`
 
 ```php
-history($obitDid): \Obada\ClientHelper\History200Response
+history($key): \Obada\ClientHelper\History200Response
 ```
 
 Get Obit history by DID or USN
@@ -158,10 +158,10 @@ $apiInstance = new Obada\Api\ObitApi(
     new GuzzleHttp\Client(),
     $config
 );
-$obitDid = did:obada:fe096095-e0f0-4918-9607-6567bd5756b5; // string | The given ObitDID or USN argument
+$key = did:obada:fe096095-e0f0-4918-9607-6567bd5756b5; // string | The given ObitDID or USN argument
 
 try {
-    $result = $apiInstance->history($obitDid);
+    $result = $apiInstance->history($key);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ObitApi->history: ', $e->getMessage(), PHP_EOL;
@@ -172,7 +172,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **obitDid** | **string**| The given ObitDID or USN argument |
+ **key** | **string**| The given ObitDID or USN argument |
 
 ### Return type
 

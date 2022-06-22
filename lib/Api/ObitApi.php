@@ -697,15 +697,15 @@ class ObitApi
      *
      * Get Obit history by DID or USN
      *
-     * @param  string $obitDid The given ObitDID or USN argument (required)
+     * @param  string $key The given ObitDID or USN argument (required)
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Obada\ClientHelper\History200Response|\Obada\ClientHelper\NotFound
      */
-    public function history($obitDid)
+    public function history($key)
     {
-        list($response) = $this->historyWithHttpInfo($obitDid);
+        list($response) = $this->historyWithHttpInfo($key);
         return $response;
     }
 
@@ -714,15 +714,15 @@ class ObitApi
      *
      * Get Obit history by DID or USN
      *
-     * @param  string $obitDid The given ObitDID or USN argument (required)
+     * @param  string $key The given ObitDID or USN argument (required)
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Obada\ClientHelper\History200Response|\Obada\ClientHelper\NotFound, HTTP status code, HTTP response headers (array of strings)
      */
-    public function historyWithHttpInfo($obitDid)
+    public function historyWithHttpInfo($key)
     {
-        $request = $this->historyRequest($obitDid);
+        $request = $this->historyRequest($key);
 
         try {
             $options = $this->createHttpClientOption();
@@ -836,14 +836,14 @@ class ObitApi
      *
      * Get Obit history by DID or USN
      *
-     * @param  string $obitDid The given ObitDID or USN argument (required)
+     * @param  string $key The given ObitDID or USN argument (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function historyAsync($obitDid)
+    public function historyAsync($key)
     {
-        return $this->historyAsyncWithHttpInfo($obitDid)
+        return $this->historyAsyncWithHttpInfo($key)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -856,15 +856,15 @@ class ObitApi
      *
      * Get Obit history by DID or USN
      *
-     * @param  string $obitDid The given ObitDID or USN argument (required)
+     * @param  string $key The given ObitDID or USN argument (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function historyAsyncWithHttpInfo($obitDid)
+    public function historyAsyncWithHttpInfo($key)
     {
         $returnType = '\Obada\ClientHelper\History200Response';
-        $request = $this->historyRequest($obitDid);
+        $request = $this->historyRequest($key);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -905,21 +905,21 @@ class ObitApi
     /**
      * Create request for operation 'history'
      *
-     * @param  string $obitDid The given ObitDID or USN argument (required)
+     * @param  string $key The given ObitDID or USN argument (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function historyRequest($obitDid)
+    public function historyRequest($key)
     {
-        // verify the required parameter 'obitDid' is set
-        if ($obitDid === null || (is_array($obitDid) && count($obitDid) === 0)) {
+        // verify the required parameter 'key' is set
+        if ($key === null || (is_array($key) && count($key) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $obitDid when calling history'
+                'Missing the required parameter $key when calling history'
             );
         }
 
-        $resourcePath = '/obits/{obit_did}/history';
+        $resourcePath = '/obits/{key}/history';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -929,10 +929,10 @@ class ObitApi
 
 
         // path params
-        if ($obitDid !== null) {
+        if ($key !== null) {
             $resourcePath = str_replace(
-                '{' . 'obit_did' . '}',
-                ObjectSerializer::toPathValue($obitDid),
+                '{' . 'key' . '}',
+                ObjectSerializer::toPathValue($key),
                 $resourcePath
             );
         }
