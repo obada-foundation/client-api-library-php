@@ -1,5 +1,5 @@
 .gitignore
-.php_cs
+.php-cs-fixer.dist.php
 .travis.yml
 README.md
 composer.json
@@ -13,7 +13,7 @@ docs/Model/GenerateObitChecksumRequest.md
 docs/Model/GenerateObitChecksumResponse.md
 docs/Model/GenerateObitDIDRequest.md
 docs/Model/GenerateObitDIDResponse.md
-docs/Model/InlineResponse200.md
+docs/Model/History200Response.md
 docs/Model/InternalServerError.md
 docs/Model/NewAccountRequest.md
 docs/Model/NotAuthorized.md
@@ -36,7 +36,7 @@ lib/ClientHelper/GenerateObitChecksumRequest.php
 lib/ClientHelper/GenerateObitChecksumResponse.php
 lib/ClientHelper/GenerateObitDIDRequest.php
 lib/ClientHelper/GenerateObitDIDResponse.php
-lib/ClientHelper/InlineResponse200.php
+lib/ClientHelper/History200Response.php
 lib/ClientHelper/InternalServerError.php
 lib/ClientHelper/ModelInterface.php
 lib/ClientHelper/NewAccountRequest.php
@@ -62,7 +62,7 @@ test/Model/GenerateObitChecksumRequestTest.php
 test/Model/GenerateObitChecksumResponseTest.php
 test/Model/GenerateObitDIDRequestTest.php
 test/Model/GenerateObitDIDResponseTest.php
-test/Model/InlineResponse200Test.php
+test/Model/History200ResponseTest.php
 test/Model/InternalServerErrorTest.php
 test/Model/NewAccountRequestTest.php
 test/Model/NotAuthorizedTest.php

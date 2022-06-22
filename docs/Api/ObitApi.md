@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 ## `history()`
 
 ```php
-history($obitDid): \Obada\ClientHelper\InlineResponse200
+history($obitDid): \Obada\ClientHelper\History200Response
 ```
 
 Get Obit history by DID or USN
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Obada\ClientHelper\InlineResponse200**](../Model/InlineResponse200.md)
+[**\Obada\ClientHelper\History200Response**](../Model/History200Response.md)
 
 ### Authorization
 

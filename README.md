@@ -8,8 +8,8 @@ For more information, please visit [https://www.obada.io](https://www.obada.io).
 
 ### Requirements
 
-PHP 7.3 and later.
-Should also work with PHP 8.0 or 8.1 but has not been tested.
+PHP 7.4 and later.
+Should also work with PHP 8.0.
 
 ### Composer
 
@@ -96,7 +96,7 @@ Class | Method | HTTP request | Description
 - [GenerateObitChecksumResponse](docs/Model/GenerateObitChecksumResponse.md)
 - [GenerateObitDIDRequest](docs/Model/GenerateObitDIDRequest.md)
 - [GenerateObitDIDResponse](docs/Model/GenerateObitDIDResponse.md)
-- [InlineResponse200](docs/Model/InlineResponse200.md)
+- [History200Response](docs/Model/History200Response.md)
 - [InternalServerError](docs/Model/InternalServerError.md)
 - [NewAccountRequest](docs/Model/NewAccountRequest.md)
 - [NotAuthorized](docs/Model/NotAuthorized.md)

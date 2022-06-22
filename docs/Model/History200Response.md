@@ -1,4 +1,4 @@
-# # InlineResponse200
+# # History200Response
 
 ## Properties
 
