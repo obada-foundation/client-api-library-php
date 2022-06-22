@@ -1004,18 +1004,15 @@ class ObitApi
      *
      * Save Obit
      *
-     * @param  string $manufacturer Waiting more specific details from Rohi (required)
-     * @param  string $partNumber Manufacturer provided. In cases where no part number is provided for the product, use model, or the most specific ID available from the manufacturer. MWCN2LL/A (an iPhone 11 Pro, Silver, 256GB, model A2160) (required)
-     * @param  string $serialNumber Serial number hashed with sha256 hash function (required)
-     * @param  \Obada\ClientHelper\DeviceDocument[] $documents documents (optional)
+     * @param  \Obada\ClientHelper\SaveObitRequest $saveObitRequest saveObitRequest (optional)
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Obada\ClientHelper\Obit|\Obada\ClientHelper\UnprocessableEntity|\Obada\ClientHelper\InternalServerError
      */
-    public function save($manufacturer, $partNumber, $serialNumber, $documents = null)
+    public function save($saveObitRequest = null)
     {
-        list($response) = $this->saveWithHttpInfo($manufacturer, $partNumber, $serialNumber, $documents);
+        list($response) = $this->saveWithHttpInfo($saveObitRequest);
         return $response;
     }
 
@@ -1024,18 +1021,15 @@ class ObitApi
      *
      * Save Obit
      *
-     * @param  string $manufacturer Waiting more specific details from Rohi (required)
-     * @param  string $partNumber Manufacturer provided. In cases where no part number is provided for the product, use model, or the most specific ID available from the manufacturer. MWCN2LL/A (an iPhone 11 Pro, Silver, 256GB, model A2160) (required)
-     * @param  string $serialNumber Serial number hashed with sha256 hash function (required)
-     * @param  \Obada\ClientHelper\DeviceDocument[] $documents (optional)
+     * @param  \Obada\ClientHelper\SaveObitRequest $saveObitRequest (optional)
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Obada\ClientHelper\Obit|\Obada\ClientHelper\UnprocessableEntity|\Obada\ClientHelper\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function saveWithHttpInfo($manufacturer, $partNumber, $serialNumber, $documents = null)
+    public function saveWithHttpInfo($saveObitRequest = null)
     {
-        $request = $this->saveRequest($manufacturer, $partNumber, $serialNumber, $documents);
+        $request = $this->saveRequest($saveObitRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1172,17 +1166,14 @@ class ObitApi
      *
      * Save Obit
      *
-     * @param  string $manufacturer Waiting more specific details from Rohi (required)
-     * @param  string $partNumber Manufacturer provided. In cases where no part number is provided for the product, use model, or the most specific ID available from the manufacturer. MWCN2LL/A (an iPhone 11 Pro, Silver, 256GB, model A2160) (required)
-     * @param  string $serialNumber Serial number hashed with sha256 hash function (required)
-     * @param  \Obada\ClientHelper\DeviceDocument[] $documents (optional)
+     * @param  \Obada\ClientHelper\SaveObitRequest $saveObitRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function saveAsync($manufacturer, $partNumber, $serialNumber, $documents = null)
+    public function saveAsync($saveObitRequest = null)
     {
-        return $this->saveAsyncWithHttpInfo($manufacturer, $partNumber, $serialNumber, $documents)
+        return $this->saveAsyncWithHttpInfo($saveObitRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1195,18 +1186,15 @@ class ObitApi
      *
      * Save Obit
      *
-     * @param  string $manufacturer Waiting more specific details from Rohi (required)
-     * @param  string $partNumber Manufacturer provided. In cases where no part number is provided for the product, use model, or the most specific ID available from the manufacturer. MWCN2LL/A (an iPhone 11 Pro, Silver, 256GB, model A2160) (required)
-     * @param  string $serialNumber Serial number hashed with sha256 hash function (required)
-     * @param  \Obada\ClientHelper\DeviceDocument[] $documents (optional)
+     * @param  \Obada\ClientHelper\SaveObitRequest $saveObitRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function saveAsyncWithHttpInfo($manufacturer, $partNumber, $serialNumber, $documents = null)
+    public function saveAsyncWithHttpInfo($saveObitRequest = null)
     {
         $returnType = '\Obada\ClientHelper\Obit';
-        $request = $this->saveRequest($manufacturer, $partNumber, $serialNumber, $documents);
+        $request = $this->saveRequest($saveObitRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1247,34 +1235,13 @@ class ObitApi
     /**
      * Create request for operation 'save'
      *
-     * @param  string $manufacturer Waiting more specific details from Rohi (required)
-     * @param  string $partNumber Manufacturer provided. In cases where no part number is provided for the product, use model, or the most specific ID available from the manufacturer. MWCN2LL/A (an iPhone 11 Pro, Silver, 256GB, model A2160) (required)
-     * @param  string $serialNumber Serial number hashed with sha256 hash function (required)
-     * @param  \Obada\ClientHelper\DeviceDocument[] $documents (optional)
+     * @param  \Obada\ClientHelper\SaveObitRequest $saveObitRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function saveRequest($manufacturer, $partNumber, $serialNumber, $documents = null)
+    public function saveRequest($saveObitRequest = null)
     {
-        // verify the required parameter 'manufacturer' is set
-        if ($manufacturer === null || (is_array($manufacturer) && count($manufacturer) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $manufacturer when calling save'
-            );
-        }
-        // verify the required parameter 'partNumber' is set
-        if ($partNumber === null || (is_array($partNumber) && count($partNumber) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $partNumber when calling save'
-            );
-        }
-        // verify the required parameter 'serialNumber' is set
-        if ($serialNumber === null || (is_array($serialNumber) && count($serialNumber) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $serialNumber when calling save'
-            );
-        }
 
         $resourcePath = '/obits';
         $formParams = [];
@@ -1286,22 +1253,6 @@ class ObitApi
 
 
 
-        // form params
-        if ($manufacturer !== null) {
-            $formParams['manufacturer'] = ObjectSerializer::toFormValue($manufacturer);
-        }
-        // form params
-        if ($partNumber !== null) {
-            $formParams['part_number'] = ObjectSerializer::toFormValue($partNumber);
-        }
-        // form params
-        if ($serialNumber !== null) {
-            $formParams['serial_number'] = ObjectSerializer::toFormValue($serialNumber);
-        }
-        // form params
-        if ($documents !== null) {
-            $formParams['documents'] = ObjectSerializer::toFormValue($documents);
-        }
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
@@ -1310,12 +1261,18 @@ class ObitApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json'],
-                ['multipart/form-data']
+                ['application/json:']
             );
         }
 
         // for model (json/xml)
-        if (count($formParams) > 0) {
+        if (isset($saveObitRequest)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($saveObitRequest));
+            } else {
+                $httpBody = $saveObitRequest;
+            }
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {

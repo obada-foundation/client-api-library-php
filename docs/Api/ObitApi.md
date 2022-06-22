@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 ## `save()`
 
 ```php
-save($manufacturer, $partNumber, $serialNumber, $documents): \Obada\ClientHelper\Obit
+save($saveObitRequest): \Obada\ClientHelper\Obit
 ```
 
 Save Obit
@@ -218,13 +218,10 @@ $apiInstance = new Obada\Api\ObitApi(
     new GuzzleHttp\Client(),
     $config
 );
-$manufacturer = 'manufacturer_example'; // string | Waiting more specific details from Rohi
-$partNumber = 'partNumber_example'; // string | Manufacturer provided. In cases where no part number is provided for the product, use model, or the most specific ID available from the manufacturer. MWCN2LL/A (an iPhone 11 Pro, Silver, 256GB, model A2160)
-$serialNumber = 'serialNumber_example'; // string | Serial number hashed with sha256 hash function
-$documents = array(new \Obada\ClientHelper\\Obada\ClientHelper\DeviceDocument()); // \Obada\ClientHelper\DeviceDocument[]
+$saveObitRequest = new \Obada\ClientHelper\SaveObitRequest(); // \Obada\ClientHelper\SaveObitRequest
 
 try {
-    $result = $apiInstance->save($manufacturer, $partNumber, $serialNumber, $documents);
+    $result = $apiInstance->save($saveObitRequest);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ObitApi->save: ', $e->getMessage(), PHP_EOL;
@@ -235,10 +232,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **manufacturer** | **string**| Waiting more specific details from Rohi |
- **partNumber** | **string**| Manufacturer provided. In cases where no part number is provided for the product, use model, or the most specific ID available from the manufacturer. MWCN2LL/A (an iPhone 11 Pro, Silver, 256GB, model A2160) |
- **serialNumber** | **string**| Serial number hashed with sha256 hash function |
- **documents** | [**\Obada\ClientHelper\DeviceDocument[]**](../Model/\Obada\ClientHelper\DeviceDocument.md)|  | [optional]
+ **saveObitRequest** | [**\Obada\ClientHelper\SaveObitRequest**](../Model/SaveObitRequest.md)|  | [optional]
 
 ### Return type
 
@@ -250,7 +244,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: `multipart/form-data`
+- **Content-Type**: `application/json:`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

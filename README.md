@@ -91,6 +91,7 @@ Class | Method | HTTP request | Description
 
 - [Account](docs/Model/Account.md)
 - [AccountBalance](docs/Model/AccountBalance.md)
+- [DeviceDocument](docs/Model/DeviceDocument.md)
 - [DocumentLink](docs/Model/DocumentLink.md)
 - [GenerateObitChecksumRequest](docs/Model/GenerateObitChecksumRequest.md)
 - [GenerateObitChecksumResponse](docs/Model/GenerateObitChecksumResponse.md)
@@ -105,6 +106,7 @@ Class | Method | HTTP request | Description
 - [ObitHistory](docs/Model/ObitHistory.md)
 - [Obits](docs/Model/Obits.md)
 - [ObitsMeta](docs/Model/ObitsMeta.md)
+- [SaveObitRequest](docs/Model/SaveObitRequest.md)
 - [UnprocessableEntity](docs/Model/UnprocessableEntity.md)
 - [UnprocessableEntityFieldsInner](docs/Model/UnprocessableEntityFieldsInner.md)
 
