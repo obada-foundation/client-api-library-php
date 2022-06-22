@@ -60,7 +60,7 @@ class DocumentLink implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'name' => 'string',
-        'documentFile' => '\SplFileObject'
+        'documentFile' => 'string'
     ];
 
     /**
@@ -72,7 +72,7 @@ class DocumentLink implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'name' => null,
-        'documentFile' => 'binary'
+        'documentFile' => 'base64'
     ];
 
     /**
@@ -241,7 +241,7 @@ class DocumentLink implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets documentFile
      *
-     * @return \SplFileObject|null
+     * @return string|null
      */
     public function getDocumentFile()
     {
@@ -251,7 +251,7 @@ class DocumentLink implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets documentFile
      *
-     * @param \SplFileObject|null $documentFile documentFile
+     * @param string|null $documentFile documentFile
      *
      * @return self
      */
