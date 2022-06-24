@@ -196,6 +196,12 @@ class DeviceDocument implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
+        if ($this->container['documentFile'] === null) {
+            $invalidProperties[] = "'documentFile' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -214,7 +220,7 @@ class DeviceDocument implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets name
      *
-     * @return string|null
+     * @return string
      */
     public function getName()
     {
@@ -224,7 +230,7 @@ class DeviceDocument implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name
      *
-     * @param string|null $name Associative name of device document
+     * @param string $name Associative name of device document
      *
      * @return self
      */
@@ -238,7 +244,7 @@ class DeviceDocument implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets documentFile
      *
-     * @return string|null
+     * @return string
      */
     public function getDocumentFile()
     {
@@ -248,7 +254,7 @@ class DeviceDocument implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets documentFile
      *
-     * @param string|null $documentFile documentFile
+     * @param string $documentFile documentFile
      *
      * @return self
      */

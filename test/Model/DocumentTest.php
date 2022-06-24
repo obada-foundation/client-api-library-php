@@ -1,6 +1,6 @@
 <?php
 /**
- * DocumentLinkTest
+ * DocumentTest
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ namespace Obada\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * DocumentLinkTest Class Doc Comment
+ * DocumentTest Class Doc Comment
  *
  * @category    Class
  * @description Document hashlink
@@ -40,7 +40,7 @@ use PHPUnit\Framework\TestCase;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class DocumentLinkTest extends TestCase
+class DocumentTest extends TestCase
 {
 
     /**
@@ -72,9 +72,9 @@ class DocumentLinkTest extends TestCase
     }
 
     /**
-     * Test "DocumentLink"
+     * Test "Document"
      */
-    public function testDocumentLink()
+    public function testDocument()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -90,9 +90,18 @@ class DocumentLinkTest extends TestCase
     }
 
     /**
-     * Test attribute "documentFile"
+     * Test attribute "uri"
      */
-    public function testPropertyDocumentFile()
+    public function testPropertyUri()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "hash"
+     */
+    public function testPropertyHash()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

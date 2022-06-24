@@ -92,7 +92,7 @@ Class | Method | HTTP request | Description
 - [Account](docs/Model/Account.md)
 - [AccountBalance](docs/Model/AccountBalance.md)
 - [DeviceDocument](docs/Model/DeviceDocument.md)
-- [DocumentLink](docs/Model/DocumentLink.md)
+- [Document](docs/Model/Document.md)
 - [GenerateObitChecksumRequest](docs/Model/GenerateObitChecksumRequest.md)
 - [GenerateObitChecksumResponse](docs/Model/GenerateObitChecksumResponse.md)
 - [GenerateObitDIDRequest](docs/Model/GenerateObitDIDRequest.md)

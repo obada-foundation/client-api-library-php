@@ -1,6 +1,6 @@
 <?php
 /**
- * DocumentLink
+ * Document
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \Obada\ObjectSerializer;
 
 /**
- * DocumentLink Class Doc Comment
+ * Document Class Doc Comment
  *
  * @category Class
  * @description Document hashlink
@@ -42,7 +42,7 @@ use \Obada\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class DocumentLink implements ModelInterface, ArrayAccess, \JsonSerializable
+class Document implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class DocumentLink implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'DocumentLink';
+    protected static $openAPIModelName = 'Document';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,7 +60,8 @@ class DocumentLink implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'name' => 'string',
-        'documentFile' => '\SplFileObject'
+        'uri' => 'string',
+        'hash' => 'string'
     ];
 
     /**
@@ -72,7 +73,8 @@ class DocumentLink implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'name' => null,
-        'documentFile' => 'binary'
+        'uri' => null,
+        'hash' => null
     ];
 
     /**
@@ -103,7 +105,8 @@ class DocumentLink implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'name' => 'name',
-        'documentFile' => 'document_file'
+        'uri' => 'uri',
+        'hash' => 'hash'
     ];
 
     /**
@@ -113,7 +116,8 @@ class DocumentLink implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'name' => 'setName',
-        'documentFile' => 'setDocumentFile'
+        'uri' => 'setUri',
+        'hash' => 'setHash'
     ];
 
     /**
@@ -123,7 +127,8 @@ class DocumentLink implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'name' => 'getName',
-        'documentFile' => 'getDocumentFile'
+        'uri' => 'getUri',
+        'hash' => 'getHash'
     ];
 
     /**
@@ -184,7 +189,8 @@ class DocumentLink implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->container['name'] = $data['name'] ?? null;
-        $this->container['documentFile'] = $data['documentFile'] ?? null;
+        $this->container['uri'] = $data['uri'] ?? null;
+        $this->container['hash'] = $data['hash'] ?? null;
     }
 
     /**
@@ -196,9 +202,6 @@ class DocumentLink implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -217,7 +220,7 @@ class DocumentLink implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets name
      *
-     * @return string
+     * @return string|null
      */
     public function getName()
     {
@@ -227,7 +230,7 @@ class DocumentLink implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name
      *
-     * @param string $name Associative name of hashlink
+     * @param string|null $name Associative name of file
      *
      * @return self
      */
@@ -239,25 +242,49 @@ class DocumentLink implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets documentFile
+     * Gets uri
      *
-     * @return \SplFileObject|null
+     * @return string|null
      */
-    public function getDocumentFile()
+    public function getUri()
     {
-        return $this->container['documentFile'];
+        return $this->container['uri'];
     }
 
     /**
-     * Sets documentFile
+     * Sets uri
      *
-     * @param \SplFileObject|null $documentFile documentFile
+     * @param string|null $uri Link to the document
      *
      * @return self
      */
-    public function setDocumentFile($documentFile)
+    public function setUri($uri)
     {
-        $this->container['documentFile'] = $documentFile;
+        $this->container['uri'] = $uri;
+
+        return $this;
+    }
+
+    /**
+     * Gets hash
+     *
+     * @return string|null
+     */
+    public function getHash()
+    {
+        return $this->container['hash'];
+    }
+
+    /**
+     * Sets hash
+     *
+     * @param string|null $hash Hash of the file
+     *
+     * @return self
+     */
+    public function setHash($hash)
+    {
+        $this->container['hash'] = $hash;
 
         return $this;
     }

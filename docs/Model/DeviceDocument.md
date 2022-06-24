@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **string** | Associative name of device document | [optional]
-**documentFile** | **string** |  | [optional]
+**name** | **string** | Associative name of device document |
+**documentFile** | **string** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

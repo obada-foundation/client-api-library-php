@@ -66,7 +66,7 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
         'partNumber' => 'string',
         'serialNumberHash' => 'string',
         'trustAnchorToken' => 'string',
-        'documents' => '\Obada\ClientHelper\DocumentLink[]',
+        'documents' => '\Obada\ClientHelper\Document[]',
         'checksum' => 'string'
     ];
 
@@ -430,7 +430,7 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets documents
      *
-     * @return \Obada\ClientHelper\DocumentLink[]|null
+     * @return \Obada\ClientHelper\Document[]|null
      */
     public function getDocuments()
     {
@@ -440,7 +440,7 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets documents
      *
-     * @param \Obada\ClientHelper\DocumentLink[]|null $documents To generate this link, take an SHA-256 hash of the document, and link to it as https://www.some-website.com?h1=hash-of-document. Note this does not yet adhere to the hashlink standard.
+     * @param \Obada\ClientHelper\Document[]|null $documents Documents that are attached to Obit
      *
      * @return self
      */
