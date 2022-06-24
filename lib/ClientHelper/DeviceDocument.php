@@ -60,7 +60,8 @@ class DeviceDocument implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'name' => 'string',
-        'documentFile' => 'string'
+        'documentFile' => 'string',
+        'shouldEncrypt' => 'bool'
     ];
 
     /**
@@ -72,7 +73,8 @@ class DeviceDocument implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'name' => null,
-        'documentFile' => 'base64'
+        'documentFile' => 'base64',
+        'shouldEncrypt' => null
     ];
 
     /**
@@ -103,7 +105,8 @@ class DeviceDocument implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'name' => 'name',
-        'documentFile' => 'document_file'
+        'documentFile' => 'document_file',
+        'shouldEncrypt' => 'should_encrypt'
     ];
 
     /**
@@ -113,7 +116,8 @@ class DeviceDocument implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'name' => 'setName',
-        'documentFile' => 'setDocumentFile'
+        'documentFile' => 'setDocumentFile',
+        'shouldEncrypt' => 'setShouldEncrypt'
     ];
 
     /**
@@ -123,7 +127,8 @@ class DeviceDocument implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'name' => 'getName',
-        'documentFile' => 'getDocumentFile'
+        'documentFile' => 'getDocumentFile',
+        'shouldEncrypt' => 'getShouldEncrypt'
     ];
 
     /**
@@ -185,6 +190,7 @@ class DeviceDocument implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->container['name'] = $data['name'] ?? null;
         $this->container['documentFile'] = $data['documentFile'] ?? null;
+        $this->container['shouldEncrypt'] = $data['shouldEncrypt'] ?? true;
     }
 
     /**
@@ -261,6 +267,30 @@ class DeviceDocument implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDocumentFile($documentFile)
     {
         $this->container['documentFile'] = $documentFile;
+
+        return $this;
+    }
+
+    /**
+     * Gets shouldEncrypt
+     *
+     * @return bool|null
+     */
+    public function getShouldEncrypt()
+    {
+        return $this->container['shouldEncrypt'];
+    }
+
+    /**
+     * Sets shouldEncrypt
+     *
+     * @param bool|null $shouldEncrypt If true then client helper will encrypt document with account key
+     *
+     * @return self
+     */
+    public function setShouldEncrypt($shouldEncrypt)
+    {
+        $this->container['shouldEncrypt'] = $shouldEncrypt;
 
         return $this;
     }

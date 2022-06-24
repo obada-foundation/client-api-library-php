@@ -106,4 +106,13 @@ class DocumentTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "encrypted"
+     */
+    public function testPropertyEncrypted()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }

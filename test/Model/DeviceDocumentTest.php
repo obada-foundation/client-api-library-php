@@ -97,4 +97,13 @@ class DeviceDocumentTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "shouldEncrypt"
+     */
+    public function testPropertyShouldEncrypt()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }

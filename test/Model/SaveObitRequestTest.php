@@ -115,13 +115,4 @@ class SaveObitRequestTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
-
-    /**
-     * Test attribute "encryptDocuments"
-     */
-    public function testPropertyEncryptDocuments()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
 }

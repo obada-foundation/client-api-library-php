@@ -61,7 +61,8 @@ class Document implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPITypes = [
         'name' => 'string',
         'uri' => 'string',
-        'hash' => 'string'
+        'hash' => 'string',
+        'encrypted' => 'bool'
     ];
 
     /**
@@ -74,7 +75,8 @@ class Document implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $openAPIFormats = [
         'name' => null,
         'uri' => null,
-        'hash' => null
+        'hash' => null,
+        'encrypted' => null
     ];
 
     /**
@@ -106,7 +108,8 @@ class Document implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $attributeMap = [
         'name' => 'name',
         'uri' => 'uri',
-        'hash' => 'hash'
+        'hash' => 'hash',
+        'encrypted' => 'encrypted'
     ];
 
     /**
@@ -117,7 +120,8 @@ class Document implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $setters = [
         'name' => 'setName',
         'uri' => 'setUri',
-        'hash' => 'setHash'
+        'hash' => 'setHash',
+        'encrypted' => 'setEncrypted'
     ];
 
     /**
@@ -128,7 +132,8 @@ class Document implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static $getters = [
         'name' => 'getName',
         'uri' => 'getUri',
-        'hash' => 'getHash'
+        'hash' => 'getHash',
+        'encrypted' => 'getEncrypted'
     ];
 
     /**
@@ -191,6 +196,7 @@ class Document implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['name'] = $data['name'] ?? null;
         $this->container['uri'] = $data['uri'] ?? null;
         $this->container['hash'] = $data['hash'] ?? null;
+        $this->container['encrypted'] = $data['encrypted'] ?? null;
     }
 
     /**
@@ -285,6 +291,30 @@ class Document implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setHash($hash)
     {
         $this->container['hash'] = $hash;
+
+        return $this;
+    }
+
+    /**
+     * Gets encrypted
+     *
+     * @return bool|null
+     */
+    public function getEncrypted()
+    {
+        return $this->container['encrypted'];
+    }
+
+    /**
+     * Sets encrypted
+     *
+     * @param bool|null $encrypted If true then client helper will encrypt document with account key
+     *
+     * @return self
+     */
+    public function setEncrypted($encrypted)
+    {
+        $this->container['encrypted'] = $encrypted;
 
         return $this;
     }
