@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**history()**](ObitApi.md#history) | **GET** /obits/{key}/history | Get Obit history by DID or USN
 [**save()**](ObitApi.md#save) | **POST** /obits | Save Obit
 [**search()**](ObitApi.md#search) | **GET** /obits | Search obits by query
-[**uploadToChain()**](ObitApi.md#uploadToChain) | **GET** /obits/{key}/to-chain | Uploads NFT to the blockchain
+[**uploadToChain()**](ObitApi.md#uploadToChain) | **POST** /obits/{key}/to-chain | Uploads NFT to the blockchain
 
 
 ## `downloadFromChain()`
