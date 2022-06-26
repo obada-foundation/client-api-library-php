@@ -1,6 +1,6 @@
 <?php
 /**
- * TransferNFTRequestTest
+ * SendNFTRequestTest
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ namespace Obada\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * TransferNFTRequestTest Class Doc Comment
+ * SendNFTRequestTest Class Doc Comment
  *
  * @category    Class
  * @description Transfer NFT payload
@@ -40,7 +40,7 @@ use PHPUnit\Framework\TestCase;
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class TransferNFTRequestTest extends TestCase
+class SendNFTRequestTest extends TestCase
 {
 
     /**
@@ -72,18 +72,18 @@ class TransferNFTRequestTest extends TestCase
     }
 
     /**
-     * Test "TransferNFTRequest"
+     * Test "SendNFTRequest"
      */
-    public function testTransferNFTRequest()
+    public function testSendNFTRequest()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "address"
+     * Test attribute "receiver"
      */
-    public function testPropertyAddress()
+    public function testPropertyReceiver()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

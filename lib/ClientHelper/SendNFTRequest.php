@@ -1,6 +1,6 @@
 <?php
 /**
- * TransferNFTRequest
+ * SendNFTRequest
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \Obada\ObjectSerializer;
 
 /**
- * TransferNFTRequest Class Doc Comment
+ * SendNFTRequest Class Doc Comment
  *
  * @category Class
  * @description Transfer NFT payload
@@ -42,7 +42,7 @@ use \Obada\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class TransferNFTRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class SendNFTRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class TransferNFTRequest implements ModelInterface, ArrayAccess, \JsonSerializab
       *
       * @var string
       */
-    protected static $openAPIModelName = 'TransferNFTRequest';
+    protected static $openAPIModelName = 'SendNFTRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,7 +59,7 @@ class TransferNFTRequest implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'address' => 'string'
+        'receiver' => 'string'
     ];
 
     /**
@@ -70,7 +70,7 @@ class TransferNFTRequest implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'address' => null
+        'receiver' => null
     ];
 
     /**
@@ -100,7 +100,7 @@ class TransferNFTRequest implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'address' => 'address'
+        'receiver' => 'receiver'
     ];
 
     /**
@@ -109,7 +109,7 @@ class TransferNFTRequest implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'address' => 'setAddress'
+        'receiver' => 'setReceiver'
     ];
 
     /**
@@ -118,7 +118,7 @@ class TransferNFTRequest implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'address' => 'getAddress'
+        'receiver' => 'getReceiver'
     ];
 
     /**
@@ -178,7 +178,7 @@ class TransferNFTRequest implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['address'] = $data['address'] ?? null;
+        $this->container['receiver'] = $data['receiver'] ?? null;
     }
 
     /**
@@ -190,8 +190,8 @@ class TransferNFTRequest implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
-        if ($this->container['address'] === null) {
-            $invalidProperties[] = "'address' can't be null";
+        if ($this->container['receiver'] === null) {
+            $invalidProperties[] = "'receiver' can't be null";
         }
         return $invalidProperties;
     }
@@ -209,25 +209,25 @@ class TransferNFTRequest implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets address
+     * Gets receiver
      *
      * @return string
      */
-    public function getAddress()
+    public function getReceiver()
     {
-        return $this->container['address'];
+        return $this->container['receiver'];
     }
 
     /**
-     * Sets address
+     * Sets receiver
      *
-     * @param string $address OBADA blockchain address
+     * @param string $receiver OBADA blockchain receiver address
      *
      * @return self
      */
-    public function setAddress($address)
+    public function setReceiver($receiver)
     {
-        $this->container['address'] = $address;
+        $this->container['receiver'] = $receiver;
 
         return $this;
     }

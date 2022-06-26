@@ -97,12 +97,12 @@ class NFTApiTest extends TestCase
     }
 
     /**
-     * Test case for transfer
+     * Test case for send
      *
-     * Transfer NFT to another address.
+     * Send NFT to another address.
      *
      */
-    public function testTransfer()
+    public function testSend()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

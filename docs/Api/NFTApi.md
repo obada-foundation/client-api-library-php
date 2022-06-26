@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**mint()**](NFTApi.md#mint) | **POST** /nft/{key}/mint | Mints NFT
 [**nft()**](NFTApi.md#nft) | **GET** /nft/{key} | Fetch NFT from OBADA blockchain Node
-[**transfer()**](NFTApi.md#transfer) | **POST** /nft/{key}/transfer | Transfer NFT to another address
+[**send()**](NFTApi.md#send) | **POST** /nft/{key}/send | Send NFT to another address
 
 
 ## `mint()`
@@ -124,13 +124,13 @@ Name | Type | Description  | Notes
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `transfer()`
+## `send()`
 
 ```php
-transfer($key, $transferNFTRequest)
+send($key, $sendNFTRequest)
 ```
 
-Transfer NFT to another address
+Send NFT to another address
 
 ### Example
 
@@ -150,12 +150,12 @@ $apiInstance = new Obada\Api\NFTApi(
     $config
 );
 $key = did:obada:fe096095-e0f0-4918-9607-6567bd5756b5; // string | The given ObitDID or USN argument
-$transferNFTRequest = new \Obada\ClientHelper\TransferNFTRequest(); // \Obada\ClientHelper\TransferNFTRequest
+$sendNFTRequest = new \Obada\ClientHelper\SendNFTRequest(); // \Obada\ClientHelper\SendNFTRequest
 
 try {
-    $apiInstance->transfer($key, $transferNFTRequest);
+    $apiInstance->send($key, $sendNFTRequest);
 } catch (Exception $e) {
-    echo 'Exception when calling NFTApi->transfer: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling NFTApi->send: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -164,7 +164,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **string**| The given ObitDID or USN argument |
- **transferNFTRequest** | [**\Obada\ClientHelper\TransferNFTRequest**](../Model/TransferNFTRequest.md)|  | [optional]
+ **sendNFTRequest** | [**\Obada\ClientHelper\SendNFTRequest**](../Model/SendNFTRequest.md)|  | [optional]
 
 ### Return type
 

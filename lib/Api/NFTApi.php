@@ -693,37 +693,37 @@ class NFTApi
     }
 
     /**
-     * Operation transfer
+     * Operation send
      *
-     * Transfer NFT to another address
+     * Send NFT to another address
      *
      * @param  string $key The given ObitDID or USN argument (required)
-     * @param  \Obada\ClientHelper\TransferNFTRequest $transferNFTRequest transferNFTRequest (optional)
+     * @param  \Obada\ClientHelper\SendNFTRequest $sendNFTRequest sendNFTRequest (optional)
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return void
      */
-    public function transfer($key, $transferNFTRequest = null)
+    public function send($key, $sendNFTRequest = null)
     {
-        $this->transferWithHttpInfo($key, $transferNFTRequest);
+        $this->sendWithHttpInfo($key, $sendNFTRequest);
     }
 
     /**
-     * Operation transferWithHttpInfo
+     * Operation sendWithHttpInfo
      *
-     * Transfer NFT to another address
+     * Send NFT to another address
      *
      * @param  string $key The given ObitDID or USN argument (required)
-     * @param  \Obada\ClientHelper\TransferNFTRequest $transferNFTRequest (optional)
+     * @param  \Obada\ClientHelper\SendNFTRequest $sendNFTRequest (optional)
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function transferWithHttpInfo($key, $transferNFTRequest = null)
+    public function sendWithHttpInfo($key, $sendNFTRequest = null)
     {
-        $request = $this->transferRequest($key, $transferNFTRequest);
+        $request = $this->sendRequest($key, $sendNFTRequest);
 
         try {
             $options = $this->createHttpClientOption();
@@ -786,19 +786,19 @@ class NFTApi
     }
 
     /**
-     * Operation transferAsync
+     * Operation sendAsync
      *
-     * Transfer NFT to another address
+     * Send NFT to another address
      *
      * @param  string $key The given ObitDID or USN argument (required)
-     * @param  \Obada\ClientHelper\TransferNFTRequest $transferNFTRequest (optional)
+     * @param  \Obada\ClientHelper\SendNFTRequest $sendNFTRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function transferAsync($key, $transferNFTRequest = null)
+    public function sendAsync($key, $sendNFTRequest = null)
     {
-        return $this->transferAsyncWithHttpInfo($key, $transferNFTRequest)
+        return $this->sendAsyncWithHttpInfo($key, $sendNFTRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -807,20 +807,20 @@ class NFTApi
     }
 
     /**
-     * Operation transferAsyncWithHttpInfo
+     * Operation sendAsyncWithHttpInfo
      *
-     * Transfer NFT to another address
+     * Send NFT to another address
      *
      * @param  string $key The given ObitDID or USN argument (required)
-     * @param  \Obada\ClientHelper\TransferNFTRequest $transferNFTRequest (optional)
+     * @param  \Obada\ClientHelper\SendNFTRequest $sendNFTRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function transferAsyncWithHttpInfo($key, $transferNFTRequest = null)
+    public function sendAsyncWithHttpInfo($key, $sendNFTRequest = null)
     {
         $returnType = '';
-        $request = $this->transferRequest($key, $transferNFTRequest);
+        $request = $this->sendRequest($key, $sendNFTRequest);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -846,24 +846,24 @@ class NFTApi
     }
 
     /**
-     * Create request for operation 'transfer'
+     * Create request for operation 'send'
      *
      * @param  string $key The given ObitDID or USN argument (required)
-     * @param  \Obada\ClientHelper\TransferNFTRequest $transferNFTRequest (optional)
+     * @param  \Obada\ClientHelper\SendNFTRequest $sendNFTRequest (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function transferRequest($key, $transferNFTRequest = null)
+    public function sendRequest($key, $sendNFTRequest = null)
     {
         // verify the required parameter 'key' is set
         if ($key === null || (is_array($key) && count($key) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $key when calling transfer'
+                'Missing the required parameter $key when calling send'
             );
         }
 
-        $resourcePath = '/nft/{key}/transfer';
+        $resourcePath = '/nft/{key}/send';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -894,11 +894,11 @@ class NFTApi
         }
 
         // for model (json/xml)
-        if (isset($transferNFTRequest)) {
+        if (isset($sendNFTRequest)) {
             if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($transferNFTRequest));
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($sendNFTRequest));
             } else {
-                $httpBody = $transferNFTRequest;
+                $httpBody = $sendNFTRequest;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

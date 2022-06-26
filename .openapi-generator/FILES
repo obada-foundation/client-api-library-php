@@ -28,7 +28,7 @@ docs/Model/ObitHistory.md
 docs/Model/Obits.md
 docs/Model/ObitsMeta.md
 docs/Model/SaveObitRequest.md
-docs/Model/TransferNFTRequest.md
+docs/Model/SendNFTRequest.md
 docs/Model/UnprocessableEntity.md
 docs/Model/UnprocessableEntityFieldsInner.md
 git_push.sh
@@ -59,7 +59,7 @@ lib/ClientHelper/ObitHistory.php
 lib/ClientHelper/Obits.php
 lib/ClientHelper/ObitsMeta.php
 lib/ClientHelper/SaveObitRequest.php
-lib/ClientHelper/TransferNFTRequest.php
+lib/ClientHelper/SendNFTRequest.php
 lib/ClientHelper/UnprocessableEntity.php
 lib/ClientHelper/UnprocessableEntityFieldsInner.php
 lib/Configuration.php
@@ -91,6 +91,6 @@ test/Model/ObitTest.php
 test/Model/ObitsMetaTest.php
 test/Model/ObitsTest.php
 test/Model/SaveObitRequestTest.php
-test/Model/TransferNFTRequestTest.php
+test/Model/SendNFTRequestTest.php
 test/Model/UnprocessableEntityFieldsInnerTest.php
 test/Model/UnprocessableEntityTest.php

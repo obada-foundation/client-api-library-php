@@ -80,7 +80,7 @@ Class | Method | HTTP request | Description
 *AccountsApi* | [**createAccount**](docs/Api/AccountsApi.md#createaccount) | **POST** /accounts | Creates a new Account
 *NFTApi* | [**mint**](docs/Api/NFTApi.md#mint) | **POST** /nft/{key}/mint | Mints NFT
 *NFTApi* | [**nft**](docs/Api/NFTApi.md#nft) | **GET** /nft/{key} | Fetch NFT from OBADA blockchain Node
-*NFTApi* | [**transfer**](docs/Api/NFTApi.md#transfer) | **POST** /nft/{key}/transfer | Transfer NFT to another address
+*NFTApi* | [**send**](docs/Api/NFTApi.md#send) | **POST** /nft/{key}/send | Send NFT to another address
 *ObitApi* | [**get**](docs/Api/ObitApi.md#get) | **GET** /obits/{key} | Get Obit by DID or USN
 *ObitApi* | [**history**](docs/Api/ObitApi.md#history) | **GET** /obits/{key}/history | Get Obit history by DID or USN
 *ObitApi* | [**save**](docs/Api/ObitApi.md#save) | **POST** /obits | Save Obit
@@ -111,7 +111,7 @@ Class | Method | HTTP request | Description
 - [Obits](docs/Model/Obits.md)
 - [ObitsMeta](docs/Model/ObitsMeta.md)
 - [SaveObitRequest](docs/Model/SaveObitRequest.md)
-- [TransferNFTRequest](docs/Model/TransferNFTRequest.md)
+- [SendNFTRequest](docs/Model/SendNFTRequest.md)
 - [UnprocessableEntity](docs/Model/UnprocessableEntity.md)
 - [UnprocessableEntityFieldsInner](docs/Model/UnprocessableEntityFieldsInner.md)
 
