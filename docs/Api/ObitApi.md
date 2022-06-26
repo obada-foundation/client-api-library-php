@@ -15,7 +15,7 @@ Method | HTTP request | Description
 ## `downloadFromChain()`
 
 ```php
-downloadFromChain($key)
+downloadFromChain($key): \Obada\ClientHelper\NFT
 ```
 
 Download NFT from the blockchain
@@ -42,7 +42,8 @@ $apiInstance = new Obada\Api\ObitApi(
 $key = did:obada:fe096095-e0f0-4918-9607-6567bd5756b5; // string | The given ObitDID or USN argument
 
 try {
-    $apiInstance->downloadFromChain($key);
+    $result = $apiInstance->downloadFromChain($key);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ObitApi->downloadFromChain: ', $e->getMessage(), PHP_EOL;
 }
@@ -56,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**\Obada\ClientHelper\NFT**](../Model/NFT.md)
 
 ### Authorization
 
