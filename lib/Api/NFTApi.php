@@ -1,6 +1,6 @@
 <?php
 /**
- * ObitApi
+ * NFTApi
  * PHP version 7.4
  *
  * @category Class
@@ -41,14 +41,14 @@ use Obada\HeaderSelector;
 use Obada\ObjectSerializer;
 
 /**
- * ObitApi Class Doc Comment
+ * NFTApi Class Doc Comment
  *
  * @category Class
  * @package  Obada
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class ObitApi
+class NFTApi
 {
     /**
      * @var ClientInterface
@@ -117,36 +117,35 @@ class ObitApi
     }
 
     /**
-     * Operation get
+     * Operation mint
      *
-     * Get Obit by DID or USN
+     * Mints NFT
      *
      * @param  string $key The given ObitDID or USN argument (required)
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Obada\ClientHelper\Obit|\Obada\ClientHelper\NotFound|\Obada\ClientHelper\InternalServerError
+     * @return void
      */
-    public function get($key)
+    public function mint($key)
     {
-        list($response) = $this->getWithHttpInfo($key);
-        return $response;
+        $this->mintWithHttpInfo($key);
     }
 
     /**
-     * Operation getWithHttpInfo
+     * Operation mintWithHttpInfo
      *
-     * Get Obit by DID or USN
+     * Mints NFT
      *
      * @param  string $key The given ObitDID or USN argument (required)
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Obada\ClientHelper\Obit|\Obada\ClientHelper\NotFound|\Obada\ClientHelper\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getWithHttpInfo($key)
+    public function mintWithHttpInfo($key)
     {
-        $request = $this->getRequest($key);
+        $request = $this->mintRequest($key);
 
         try {
             $options = $this->createHttpClientOption();
@@ -183,80 +182,10 @@ class ObitApi
                 );
             }
 
-            switch($statusCode) {
-                case 200:
-                    if ('\Obada\ClientHelper\Obit' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Obada\ClientHelper\Obit' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Obada\ClientHelper\Obit', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 404:
-                    if ('\Obada\ClientHelper\NotFound' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Obada\ClientHelper\NotFound' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Obada\ClientHelper\NotFound', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 500:
-                    if ('\Obada\ClientHelper\InternalServerError' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Obada\ClientHelper\InternalServerError' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Obada\ClientHelper\InternalServerError', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\Obada\ClientHelper\Obit';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return [null, $statusCode, $response->getHeaders()];
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Obada\ClientHelper\Obit',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
                 case 404:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -279,18 +208,18 @@ class ObitApi
     }
 
     /**
-     * Operation getAsync
+     * Operation mintAsync
      *
-     * Get Obit by DID or USN
+     * Mints NFT
      *
      * @param  string $key The given ObitDID or USN argument (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAsync($key)
+    public function mintAsync($key)
     {
-        return $this->getAsyncWithHttpInfo($key)
+        return $this->mintAsyncWithHttpInfo($key)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -299,38 +228,25 @@ class ObitApi
     }
 
     /**
-     * Operation getAsyncWithHttpInfo
+     * Operation mintAsyncWithHttpInfo
      *
-     * Get Obit by DID or USN
+     * Mints NFT
      *
      * @param  string $key The given ObitDID or USN argument (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAsyncWithHttpInfo($key)
+    public function mintAsyncWithHttpInfo($key)
     {
-        $returnType = '\Obada\ClientHelper\Obit';
-        $request = $this->getRequest($key);
+        $returnType = '';
+        $request = $this->mintRequest($key);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
@@ -350,23 +266,23 @@ class ObitApi
     }
 
     /**
-     * Create request for operation 'get'
+     * Create request for operation 'mint'
      *
      * @param  string $key The given ObitDID or USN argument (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getRequest($key)
+    public function mintRequest($key)
     {
         // verify the required parameter 'key' is set
         if ($key === null || (is_array($key) && count($key) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $key when calling get'
+                'Missing the required parameter $key when calling mint'
             );
         }
 
-        $resourcePath = '/obits/{key}';
+        $resourcePath = '/nft/{key}/mint';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -398,635 +314,6 @@ class ObitApi
 
         // for model (json/xml)
         if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation history
-     *
-     * Get Obit history by DID or USN
-     *
-     * @param  string $key The given ObitDID or USN argument (required)
-     *
-     * @throws \Obada\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Obada\ClientHelper\History200Response|\Obada\ClientHelper\NotFound
-     */
-    public function history($key)
-    {
-        list($response) = $this->historyWithHttpInfo($key);
-        return $response;
-    }
-
-    /**
-     * Operation historyWithHttpInfo
-     *
-     * Get Obit history by DID or USN
-     *
-     * @param  string $key The given ObitDID or USN argument (required)
-     *
-     * @throws \Obada\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Obada\ClientHelper\History200Response|\Obada\ClientHelper\NotFound, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function historyWithHttpInfo($key)
-    {
-        $request = $this->historyRequest($key);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('\Obada\ClientHelper\History200Response' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Obada\ClientHelper\History200Response' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Obada\ClientHelper\History200Response', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 404:
-                    if ('\Obada\ClientHelper\NotFound' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Obada\ClientHelper\NotFound' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Obada\ClientHelper\NotFound', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\Obada\ClientHelper\History200Response';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Obada\ClientHelper\History200Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Obada\ClientHelper\NotFound',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation historyAsync
-     *
-     * Get Obit history by DID or USN
-     *
-     * @param  string $key The given ObitDID or USN argument (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function historyAsync($key)
-    {
-        return $this->historyAsyncWithHttpInfo($key)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation historyAsyncWithHttpInfo
-     *
-     * Get Obit history by DID or USN
-     *
-     * @param  string $key The given ObitDID or USN argument (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function historyAsyncWithHttpInfo($key)
-    {
-        $returnType = '\Obada\ClientHelper\History200Response';
-        $request = $this->historyRequest($key);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'history'
-     *
-     * @param  string $key The given ObitDID or USN argument (required)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function historyRequest($key)
-    {
-        // verify the required parameter 'key' is set
-        if ($key === null || (is_array($key) && count($key) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $key when calling history'
-            );
-        }
-
-        $resourcePath = '/obits/{key}/history';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($key !== null) {
-            $resourcePath = str_replace(
-                '{' . 'key' . '}',
-                ObjectSerializer::toPathValue($key),
-                $resourcePath
-            );
-        }
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                []
-            );
-        }
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode($formParams);
-
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation save
-     *
-     * Save Obit
-     *
-     * @param  \Obada\ClientHelper\SaveObitRequest $saveObitRequest saveObitRequest (optional)
-     *
-     * @throws \Obada\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Obada\ClientHelper\Obit|\Obada\ClientHelper\UnprocessableEntity|\Obada\ClientHelper\InternalServerError
-     */
-    public function save($saveObitRequest = null)
-    {
-        list($response) = $this->saveWithHttpInfo($saveObitRequest);
-        return $response;
-    }
-
-    /**
-     * Operation saveWithHttpInfo
-     *
-     * Save Obit
-     *
-     * @param  \Obada\ClientHelper\SaveObitRequest $saveObitRequest (optional)
-     *
-     * @throws \Obada\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return array of \Obada\ClientHelper\Obit|\Obada\ClientHelper\UnprocessableEntity|\Obada\ClientHelper\InternalServerError, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function saveWithHttpInfo($saveObitRequest = null)
-    {
-        $request = $this->saveRequest($saveObitRequest);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('\Obada\ClientHelper\Obit' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Obada\ClientHelper\Obit' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Obada\ClientHelper\Obit', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 422:
-                    if ('\Obada\ClientHelper\UnprocessableEntity' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Obada\ClientHelper\UnprocessableEntity' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Obada\ClientHelper\UnprocessableEntity', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 500:
-                    if ('\Obada\ClientHelper\InternalServerError' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Obada\ClientHelper\InternalServerError' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\Obada\ClientHelper\InternalServerError', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\Obada\ClientHelper\Obit';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Obada\ClientHelper\Obit',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 422:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Obada\ClientHelper\UnprocessableEntity',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Obada\ClientHelper\InternalServerError',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation saveAsync
-     *
-     * Save Obit
-     *
-     * @param  \Obada\ClientHelper\SaveObitRequest $saveObitRequest (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function saveAsync($saveObitRequest = null)
-    {
-        return $this->saveAsyncWithHttpInfo($saveObitRequest)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation saveAsyncWithHttpInfo
-     *
-     * Save Obit
-     *
-     * @param  \Obada\ClientHelper\SaveObitRequest $saveObitRequest (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function saveAsyncWithHttpInfo($saveObitRequest = null)
-    {
-        $returnType = '\Obada\ClientHelper\Obit';
-        $request = $this->saveRequest($saveObitRequest);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'save'
-     *
-     * @param  \Obada\ClientHelper\SaveObitRequest $saveObitRequest (optional)
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function saveRequest($saveObitRequest = null)
-    {
-
-        $resourcePath = '/obits';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-
-
-        if ($multipart) {
-            $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json']
-            );
-        } else {
-            $headers = $this->headerSelector->selectHeaders(
-                ['application/json'],
-                ['application/json:']
-            );
-        }
-
-        // for model (json/xml)
-        if (isset($saveObitRequest)) {
-            if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($saveObitRequest));
-            } else {
-                $httpBody = $saveObitRequest;
-            }
-        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -1076,38 +363,36 @@ class ObitApi
     }
 
     /**
-     * Operation search
+     * Operation nFT
      *
-     * Search obits by query
+     * Fetch NFT from OBADA blockchain Node
      *
-     * @param  string $q Query argument that used for a fulltext search (optional)
-     * @param  int $offset Number of records to skip for pagination. (optional, default to 0)
+     * @param  string $key The given ObitDID or USN argument (required)
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Obada\ClientHelper\Obits|\Obada\ClientHelper\InternalServerError
+     * @return \Obada\ClientHelper\NFT|\Obada\ClientHelper\NotFound|\Obada\ClientHelper\InternalServerError
      */
-    public function search($q = null, $offset = 0)
+    public function nFT($key)
     {
-        list($response) = $this->searchWithHttpInfo($q, $offset);
+        list($response) = $this->nFTWithHttpInfo($key);
         return $response;
     }
 
     /**
-     * Operation searchWithHttpInfo
+     * Operation nFTWithHttpInfo
      *
-     * Search obits by query
+     * Fetch NFT from OBADA blockchain Node
      *
-     * @param  string $q Query argument that used for a fulltext search (optional)
-     * @param  int $offset Number of records to skip for pagination. (optional, default to 0)
+     * @param  string $key The given ObitDID or USN argument (required)
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Obada\ClientHelper\Obits|\Obada\ClientHelper\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Obada\ClientHelper\NFT|\Obada\ClientHelper\NotFound|\Obada\ClientHelper\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function searchWithHttpInfo($q = null, $offset = 0)
+    public function nFTWithHttpInfo($key)
     {
-        $request = $this->searchRequest($q, $offset);
+        $request = $this->nFTRequest($key);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1146,17 +431,32 @@ class ObitApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Obada\ClientHelper\Obits' === '\SplFileObject') {
+                    if ('\Obada\ClientHelper\NFT' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Obada\ClientHelper\Obits' !== 'string') {
+                        if ('\Obada\ClientHelper\NFT' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Obada\ClientHelper\Obits', []),
+                        ObjectSerializer::deserialize($content, '\Obada\ClientHelper\NFT', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 404:
+                    if ('\Obada\ClientHelper\NotFound' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Obada\ClientHelper\NotFound' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\Obada\ClientHelper\NotFound', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1177,7 +477,7 @@ class ObitApi
                     ];
             }
 
-            $returnType = '\Obada\ClientHelper\Obits';
+            $returnType = '\Obada\ClientHelper\NFT';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1198,7 +498,15 @@ class ObitApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Obada\ClientHelper\Obits',
+                        '\Obada\ClientHelper\NFT',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Obada\ClientHelper\NotFound',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1217,19 +525,18 @@ class ObitApi
     }
 
     /**
-     * Operation searchAsync
+     * Operation nFTAsync
      *
-     * Search obits by query
+     * Fetch NFT from OBADA blockchain Node
      *
-     * @param  string $q Query argument that used for a fulltext search (optional)
-     * @param  int $offset Number of records to skip for pagination. (optional, default to 0)
+     * @param  string $key The given ObitDID or USN argument (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchAsync($q = null, $offset = 0)
+    public function nFTAsync($key)
     {
-        return $this->searchAsyncWithHttpInfo($q, $offset)
+        return $this->nFTAsyncWithHttpInfo($key)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1238,20 +545,19 @@ class ObitApi
     }
 
     /**
-     * Operation searchAsyncWithHttpInfo
+     * Operation nFTAsyncWithHttpInfo
      *
-     * Search obits by query
+     * Fetch NFT from OBADA blockchain Node
      *
-     * @param  string $q Query argument that used for a fulltext search (optional)
-     * @param  int $offset Number of records to skip for pagination. (optional, default to 0)
+     * @param  string $key The given ObitDID or USN argument (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function searchAsyncWithHttpInfo($q = null, $offset = 0)
+    public function nFTAsyncWithHttpInfo($key)
     {
-        $returnType = '\Obada\ClientHelper\Obits';
-        $request = $this->searchRequest($q, $offset);
+        $returnType = '\Obada\ClientHelper\NFT';
+        $request = $this->nFTRequest($key);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1290,48 +596,39 @@ class ObitApi
     }
 
     /**
-     * Create request for operation 'search'
+     * Create request for operation 'nFT'
      *
-     * @param  string $q Query argument that used for a fulltext search (optional)
-     * @param  int $offset Number of records to skip for pagination. (optional, default to 0)
+     * @param  string $key The given ObitDID or USN argument (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function searchRequest($q = null, $offset = 0)
+    public function nFTRequest($key)
     {
-        if ($offset !== null && $offset < 0) {
-            throw new \InvalidArgumentException('invalid value for "$offset" when calling ObitApi.search, must be bigger than or equal to 0.');
+        // verify the required parameter 'key' is set
+        if ($key === null || (is_array($key) && count($key) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $key when calling nFT'
+            );
         }
 
-
-        $resourcePath = '/obits';
+        $resourcePath = '/nft/{key}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $q,
-            'q', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $offset,
-            'offset', // param base name
-            'integer', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
 
 
+        // path params
+        if ($key !== null) {
+            $resourcePath = str_replace(
+                '{' . 'key' . '}',
+                ObjectSerializer::toPathValue($key),
+                $resourcePath
+            );
+        }
 
 
         if ($multipart) {
@@ -1389,6 +686,263 @@ class ObitApi
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation transfer
+     *
+     * Transfer NFT to another address
+     *
+     * @param  string $key The given ObitDID or USN argument (required)
+     * @param  \Obada\ClientHelper\TransferNFTRequest $transferNFTRequest transferNFTRequest (optional)
+     *
+     * @throws \Obada\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return void
+     */
+    public function transfer($key, $transferNFTRequest = null)
+    {
+        $this->transferWithHttpInfo($key, $transferNFTRequest);
+    }
+
+    /**
+     * Operation transferWithHttpInfo
+     *
+     * Transfer NFT to another address
+     *
+     * @param  string $key The given ObitDID or USN argument (required)
+     * @param  \Obada\ClientHelper\TransferNFTRequest $transferNFTRequest (optional)
+     *
+     * @throws \Obada\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function transferWithHttpInfo($key, $transferNFTRequest = null)
+    {
+        $request = $this->transferRequest($key, $transferNFTRequest);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Obada\ClientHelper\NotFound',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Obada\ClientHelper\InternalServerError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation transferAsync
+     *
+     * Transfer NFT to another address
+     *
+     * @param  string $key The given ObitDID or USN argument (required)
+     * @param  \Obada\ClientHelper\TransferNFTRequest $transferNFTRequest (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function transferAsync($key, $transferNFTRequest = null)
+    {
+        return $this->transferAsyncWithHttpInfo($key, $transferNFTRequest)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation transferAsyncWithHttpInfo
+     *
+     * Transfer NFT to another address
+     *
+     * @param  string $key The given ObitDID or USN argument (required)
+     * @param  \Obada\ClientHelper\TransferNFTRequest $transferNFTRequest (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function transferAsyncWithHttpInfo($key, $transferNFTRequest = null)
+    {
+        $returnType = '';
+        $request = $this->transferRequest($key, $transferNFTRequest);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'transfer'
+     *
+     * @param  string $key The given ObitDID or USN argument (required)
+     * @param  \Obada\ClientHelper\TransferNFTRequest $transferNFTRequest (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function transferRequest($key, $transferNFTRequest = null)
+    {
+        // verify the required parameter 'key' is set
+        if ($key === null || (is_array($key) && count($key) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $key when calling transfer'
+            );
+        }
+
+        $resourcePath = '/nft/{key}/transfer';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($key !== null) {
+            $resourcePath = str_replace(
+                '{' . 'key' . '}',
+                ObjectSerializer::toPathValue($key),
+                $resourcePath
+            );
+        }
+
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                ['application/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($transferNFTRequest)) {
+            if ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($transferNFTRequest));
+            } else {
+                $httpBody = $transferNFTRequest;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires Bearer (JWT) authentication (access token)
+        if (!empty($this->config->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

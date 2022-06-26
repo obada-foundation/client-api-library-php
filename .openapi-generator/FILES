@@ -4,6 +4,7 @@
 README.md
 composer.json
 docs/Api/AccountsApi.md
+docs/Api/NFTApi.md
 docs/Api/ObitApi.md
 docs/Api/UtilsApi.md
 docs/Model/Account.md
@@ -27,10 +28,12 @@ docs/Model/ObitHistory.md
 docs/Model/Obits.md
 docs/Model/ObitsMeta.md
 docs/Model/SaveObitRequest.md
+docs/Model/TransferNFTRequest.md
 docs/Model/UnprocessableEntity.md
 docs/Model/UnprocessableEntityFieldsInner.md
 git_push.sh
 lib/Api/AccountsApi.php
+lib/Api/NFTApi.php
 lib/Api/ObitApi.php
 lib/Api/UtilsApi.php
 lib/ApiException.php
@@ -56,6 +59,7 @@ lib/ClientHelper/ObitHistory.php
 lib/ClientHelper/Obits.php
 lib/ClientHelper/ObitsMeta.php
 lib/ClientHelper/SaveObitRequest.php
+lib/ClientHelper/TransferNFTRequest.php
 lib/ClientHelper/UnprocessableEntity.php
 lib/ClientHelper/UnprocessableEntityFieldsInner.php
 lib/Configuration.php
@@ -63,6 +67,7 @@ lib/HeaderSelector.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
 test/Api/AccountsApiTest.php
+test/Api/NFTApiTest.php
 test/Api/ObitApiTest.php
 test/Api/UtilsApiTest.php
 test/Model/AccountBalanceTest.php
@@ -86,5 +91,6 @@ test/Model/ObitTest.php
 test/Model/ObitsMetaTest.php
 test/Model/ObitsTest.php
 test/Model/SaveObitRequestTest.php
+test/Model/TransferNFTRequestTest.php
 test/Model/UnprocessableEntityFieldsInnerTest.php
 test/Model/UnprocessableEntityTest.php

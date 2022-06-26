@@ -1,6 +1,6 @@
 <?php
 /**
- * ObitApiTest
+ * NFTApiTest
  * PHP version 7.4
  *
  * @category Class
@@ -34,14 +34,14 @@ use \Obada\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ObitApiTest Class Doc Comment
+ * NFTApiTest Class Doc Comment
  *
  * @category Class
  * @package  Obada
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class ObitApiTest extends TestCase
+class NFTApiTest extends TestCase
 {
 
     /**
@@ -73,48 +73,36 @@ class ObitApiTest extends TestCase
     }
 
     /**
-     * Test case for get
+     * Test case for mint
      *
-     * Get Obit by DID or USN.
+     * Mints NFT.
      *
      */
-    public function testGet()
+    public function testMint()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for history
+     * Test case for nFT
      *
-     * Get Obit history by DID or USN.
+     * Fetch NFT from OBADA blockchain Node.
      *
      */
-    public function testHistory()
+    public function testNFT()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for save
+     * Test case for transfer
      *
-     * Save Obit.
-     *
-     */
-    public function testSave()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for search
-     *
-     * Search obits by query.
+     * Transfer NFT to another address.
      *
      */
-    public function testSearch()
+    public function testTransfer()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
