@@ -85,12 +85,12 @@ class NFTApiTest extends TestCase
     }
 
     /**
-     * Test case for nFT
+     * Test case for nft
      *
      * Fetch NFT from OBADA blockchain Node.
      *
      */
-    public function testNFT()
+    public function testNft()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

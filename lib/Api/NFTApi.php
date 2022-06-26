@@ -363,7 +363,7 @@ class NFTApi
     }
 
     /**
-     * Operation nFT
+     * Operation nft
      *
      * Fetch NFT from OBADA blockchain Node
      *
@@ -373,14 +373,14 @@ class NFTApi
      * @throws \InvalidArgumentException
      * @return \Obada\ClientHelper\NFT|\Obada\ClientHelper\NotFound|\Obada\ClientHelper\InternalServerError
      */
-    public function nFT($key)
+    public function nft($key)
     {
-        list($response) = $this->nFTWithHttpInfo($key);
+        list($response) = $this->nftWithHttpInfo($key);
         return $response;
     }
 
     /**
-     * Operation nFTWithHttpInfo
+     * Operation nftWithHttpInfo
      *
      * Fetch NFT from OBADA blockchain Node
      *
@@ -390,9 +390,9 @@ class NFTApi
      * @throws \InvalidArgumentException
      * @return array of \Obada\ClientHelper\NFT|\Obada\ClientHelper\NotFound|\Obada\ClientHelper\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function nFTWithHttpInfo($key)
+    public function nftWithHttpInfo($key)
     {
-        $request = $this->nFTRequest($key);
+        $request = $this->nftRequest($key);
 
         try {
             $options = $this->createHttpClientOption();
@@ -525,7 +525,7 @@ class NFTApi
     }
 
     /**
-     * Operation nFTAsync
+     * Operation nftAsync
      *
      * Fetch NFT from OBADA blockchain Node
      *
@@ -534,9 +534,9 @@ class NFTApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function nFTAsync($key)
+    public function nftAsync($key)
     {
-        return $this->nFTAsyncWithHttpInfo($key)
+        return $this->nftAsyncWithHttpInfo($key)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -545,7 +545,7 @@ class NFTApi
     }
 
     /**
-     * Operation nFTAsyncWithHttpInfo
+     * Operation nftAsyncWithHttpInfo
      *
      * Fetch NFT from OBADA blockchain Node
      *
@@ -554,10 +554,10 @@ class NFTApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function nFTAsyncWithHttpInfo($key)
+    public function nftAsyncWithHttpInfo($key)
     {
         $returnType = '\Obada\ClientHelper\NFT';
-        $request = $this->nFTRequest($key);
+        $request = $this->nftRequest($key);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -596,19 +596,19 @@ class NFTApi
     }
 
     /**
-     * Create request for operation 'nFT'
+     * Create request for operation 'nft'
      *
      * @param  string $key The given ObitDID or USN argument (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function nFTRequest($key)
+    public function nftRequest($key)
     {
         // verify the required parameter 'key' is set
         if ($key === null || (is_array($key) && count($key) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $key when calling nFT'
+                'Missing the required parameter $key when calling nft'
             );
         }
 

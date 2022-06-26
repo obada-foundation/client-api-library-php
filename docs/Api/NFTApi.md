@@ -5,7 +5,7 @@ All URIs are relative to http://obs.node.obada.io.
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**mint()**](NFTApi.md#mint) | **POST** /nft/{key}/mint | Mints NFT
-[**nFT()**](NFTApi.md#nFT) | **GET** /nft/{key} | Fetch NFT from OBADA blockchain Node
+[**nft()**](NFTApi.md#nft) | **GET** /nft/{key} | Fetch NFT from OBADA blockchain Node
 [**transfer()**](NFTApi.md#transfer) | **POST** /nft/{key}/transfer | Transfer NFT to another address
 
 
@@ -66,10 +66,10 @@ void (empty response body)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `nFT()`
+## `nft()`
 
 ```php
-nFT($key): \Obada\ClientHelper\NFT
+nft($key): \Obada\ClientHelper\NFT
 ```
 
 Fetch NFT from OBADA blockchain Node
@@ -94,10 +94,10 @@ $apiInstance = new Obada\Api\NFTApi(
 $key = did:obada:fe096095-e0f0-4918-9607-6567bd5756b5; // string | The given ObitDID or USN argument
 
 try {
-    $result = $apiInstance->nFT($key);
+    $result = $apiInstance->nft($key);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling NFTApi->nFT: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling NFTApi->nft: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
