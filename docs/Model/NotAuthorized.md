@@ -1,10 +1,9 @@
-# # DocumentLink
+# # NotAuthorized
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **string** | Associative name of hashlink |
-**documentFile** | **\SplFileObject** |  | [optional]
+**error** | **string** |  | [optional] [default to 'Not authorized']
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

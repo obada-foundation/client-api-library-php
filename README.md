@@ -8,8 +8,8 @@ For more information, please visit [https://www.obada.io](https://www.obada.io).
 
 ### Requirements
 
-PHP 7.3 and later.
-Should also work with PHP 8.0 or 8.1 but has not been tested.
+PHP 7.4 and later.
+Should also work with PHP 8.0.
 
 ### Composer
 
@@ -50,18 +50,22 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
+// Configure Bearer (JWT) authorization: bearerAuth
+$config = Obada\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
-$apiInstance = new Obada\Api\ObitApi(
+
+$apiInstance = new Obada\Api\AccountsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
+    new GuzzleHttp\Client(),
+    $config
 );
-$key = did:obada:fe096095-e0f0-4918-9607-6567bd5756b5; // string | The given ObitDID or USN argument
 
 try {
-    $apiInstance->downloadFromChain($key);
+    $result = $apiInstance->balance();
+    print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ObitApi->downloadFromChain: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AccountsApi->balance: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
@@ -72,35 +76,51 @@ All URIs are relative to *http://obs.node.obada.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ObitApi* | [**downloadFromChain**](docs/Api/ObitApi.md#downloadfromchain) | **GET** /obits/{key}/from-chain | Download NFT from the blockchain
+*AccountsApi* | [**balance**](docs/Api/AccountsApi.md#balance) | **GET** /accounts/my-balance | Shows account balance of OBADA address
+*AccountsApi* | [**createAccount**](docs/Api/AccountsApi.md#createaccount) | **POST** /accounts | Creates a new Account
+*NFTApi* | [**mint**](docs/Api/NFTApi.md#mint) | **POST** /nft/{key}/mint | Mints NFT
+*NFTApi* | [**nft**](docs/Api/NFTApi.md#nft) | **GET** /nft/{key} | Fetch NFT from OBADA blockchain Node
+*NFTApi* | [**send**](docs/Api/NFTApi.md#send) | **POST** /nft/{key}/send | Send NFT to another address
 *ObitApi* | [**get**](docs/Api/ObitApi.md#get) | **GET** /obits/{key} | Get Obit by DID or USN
-*ObitApi* | [**history**](docs/Api/ObitApi.md#history) | **GET** /obits/{obit_did}/history | Get Obit history by DID or USN
+*ObitApi* | [**history**](docs/Api/ObitApi.md#history) | **GET** /obits/{key}/history | Get Obit history by DID or USN
 *ObitApi* | [**save**](docs/Api/ObitApi.md#save) | **POST** /obits | Save Obit
 *ObitApi* | [**search**](docs/Api/ObitApi.md#search) | **GET** /obits | Search obits by query
-*ObitApi* | [**uploadToChain**](docs/Api/ObitApi.md#uploadtochain) | **GET** /obits/{key}/to-chain | Uploads NFT to the blockchain
 *UtilsApi* | [**generateChecksum**](docs/Api/UtilsApi.md#generatechecksum) | **POST** /obit/checksum | Generates Obit checksum
 *UtilsApi* | [**generateDID**](docs/Api/UtilsApi.md#generatedid) | **POST** /obit/did | Generate Obit DID
 
 ## Models
 
-- [DocumentLink](docs/Model/DocumentLink.md)
+- [Account](docs/Model/Account.md)
+- [AccountBalance](docs/Model/AccountBalance.md)
+- [DeviceDocument](docs/Model/DeviceDocument.md)
+- [Document](docs/Model/Document.md)
 - [GenerateObitChecksumRequest](docs/Model/GenerateObitChecksumRequest.md)
 - [GenerateObitChecksumResponse](docs/Model/GenerateObitChecksumResponse.md)
 - [GenerateObitDIDRequest](docs/Model/GenerateObitDIDRequest.md)
 - [GenerateObitDIDResponse](docs/Model/GenerateObitDIDResponse.md)
-- [InlineResponse200](docs/Model/InlineResponse200.md)
+- [History200Response](docs/Model/History200Response.md)
 - [InternalServerError](docs/Model/InternalServerError.md)
+- [NFT](docs/Model/NFT.md)
+- [NFTData](docs/Model/NFTData.md)
+- [NFTDocument](docs/Model/NFTDocument.md)
+- [NewAccountRequest](docs/Model/NewAccountRequest.md)
+- [NotAuthorized](docs/Model/NotAuthorized.md)
 - [NotFound](docs/Model/NotFound.md)
 - [Obit](docs/Model/Obit.md)
 - [ObitHistory](docs/Model/ObitHistory.md)
 - [Obits](docs/Model/Obits.md)
 - [ObitsMeta](docs/Model/ObitsMeta.md)
 - [SaveObitRequest](docs/Model/SaveObitRequest.md)
+- [SendNFTRequest](docs/Model/SendNFTRequest.md)
 - [UnprocessableEntity](docs/Model/UnprocessableEntity.md)
 - [UnprocessableEntityFieldsInner](docs/Model/UnprocessableEntityFieldsInner.md)
 
 ## Authorization
-All endpoints do not require authorization.
+
+### bearerAuth
+
+- **Type**: Bearer authentication (JWT)
+
 ## Tests
 
 To run the tests, use:
