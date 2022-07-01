@@ -190,7 +190,7 @@ class DeviceDocument implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->container['name'] = $data['name'] ?? null;
         $this->container['documentFile'] = $data['documentFile'] ?? null;
-        $this->container['shouldEncrypt'] = $data['shouldEncrypt'] ?? true;
+        $this->container['shouldEncrypt'] = $data['shouldEncrypt'] ?? false;
     }
 
     /**
