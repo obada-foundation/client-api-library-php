@@ -107,4 +107,16 @@ class NFTApiTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test case for updateMetadata
+     *
+     * Update NFT metadata.
+     *
+     */
+    public function testUpdateMetadata()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }

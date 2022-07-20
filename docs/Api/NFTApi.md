@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**mint()**](NFTApi.md#mint) | **POST** /nft/{key}/mint | Mints NFT
 [**nft()**](NFTApi.md#nft) | **GET** /nft/{key} | Fetch NFT from OBADA blockchain Node
 [**send()**](NFTApi.md#send) | **POST** /nft/{key}/send | Send NFT to another address
+[**updateMetadata()**](NFTApi.md#updateMetadata) | **POST** /nft/{key}/metadata | Update NFT metadata
 
 
 ## `mint()`
@@ -177,6 +178,63 @@ void (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `updateMetadata()`
+
+```php
+updateMetadata($key)
+```
+
+Update NFT metadata
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: bearerAuth
+$config = Obada\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Obada\Api\NFTApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$key = did:obada:fe096095-e0f0-4918-9607-6567bd5756b5; // string | The given ObitDID or USN argument
+
+try {
+    $apiInstance->updateMetadata($key);
+} catch (Exception $e) {
+    echo 'Exception when calling NFTApi->updateMetadata: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **key** | **string**| The given ObitDID or USN argument |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
