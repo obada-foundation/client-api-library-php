@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**balance()**](AccountsApi.md#balance) | **GET** /accounts/my-balance | Shows account balance of OBADA address
 [**createAccount()**](AccountsApi.md#createAccount) | **POST** /accounts | Creates a new Account
-[**newMnemonic()**](AccountsApi.md#newMnemonic) | **GET** /accounts/new-mnemonic | Generate a new mnemonic phrase for seeding wallet
+[**newMnemonic()**](AccountsApi.md#newMnemonic) | **GET** /new-mnemonic | Generate a new mnemonic phrase for seeding wallet
 
 
 ## `balance()`

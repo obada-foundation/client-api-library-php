@@ -1057,7 +1057,7 @@ class AccountsApi
     public function newMnemonicRequest()
     {
 
-        $resourcePath = '/accounts/new-mnemonic';
+        $resourcePath = '/new-mnemonic';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
