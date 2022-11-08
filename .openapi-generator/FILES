@@ -4,6 +4,7 @@
 README.md
 composer.json
 docs/Api/AccountsApi.md
+docs/Api/KeysApi.md
 docs/Api/NFTApi.md
 docs/Api/ObitApi.md
 docs/Api/UtilsApi.md
@@ -17,6 +18,7 @@ docs/Model/GenerateObitDIDRequest.md
 docs/Model/GenerateObitDIDResponse.md
 docs/Model/History200Response.md
 docs/Model/InternalServerError.md
+docs/Model/MnemonicRequest.md
 docs/Model/NFT.md
 docs/Model/NFTData.md
 docs/Model/NFTDocument.md
@@ -34,6 +36,7 @@ docs/Model/UnprocessableEntity.md
 docs/Model/UnprocessableEntityFieldsInner.md
 git_push.sh
 lib/Api/AccountsApi.php
+lib/Api/KeysApi.php
 lib/Api/NFTApi.php
 lib/Api/ObitApi.php
 lib/Api/UtilsApi.php
@@ -48,6 +51,7 @@ lib/ClientHelper/GenerateObitDIDRequest.php
 lib/ClientHelper/GenerateObitDIDResponse.php
 lib/ClientHelper/History200Response.php
 lib/ClientHelper/InternalServerError.php
+lib/ClientHelper/MnemonicRequest.php
 lib/ClientHelper/ModelInterface.php
 lib/ClientHelper/NFT.php
 lib/ClientHelper/NFTData.php
@@ -69,6 +73,7 @@ lib/HeaderSelector.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
 test/Api/AccountsApiTest.php
+test/Api/KeysApiTest.php
 test/Api/NFTApiTest.php
 test/Api/ObitApiTest.php
 test/Api/UtilsApiTest.php
@@ -82,6 +87,7 @@ test/Model/GenerateObitDIDRequestTest.php
 test/Model/GenerateObitDIDResponseTest.php
 test/Model/History200ResponseTest.php
 test/Model/InternalServerErrorTest.php
+test/Model/MnemonicRequestTest.php
 test/Model/NFTDataTest.php
 test/Model/NFTDocumentTest.php
 test/Model/NFTTest.php

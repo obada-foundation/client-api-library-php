@@ -79,6 +79,7 @@ Class | Method | HTTP request | Description
 *AccountsApi* | [**balance**](docs/Api/AccountsApi.md#balance) | **GET** /accounts/my-balance | Shows account balance of OBADA address
 *AccountsApi* | [**createAccount**](docs/Api/AccountsApi.md#createaccount) | **POST** /accounts | Creates a new Account
 *AccountsApi* | [**newMnemonic**](docs/Api/AccountsApi.md#newmnemonic) | **GET** /new-mnemonic | Generate a new mnemonic phrase for seeding wallet
+*KeysApi* | [**newMasterKey**](docs/Api/KeysApi.md#newmasterkey) | **POST** /keys/new | Creates a new master key from mnemonic phrase
 *NFTApi* | [**mint**](docs/Api/NFTApi.md#mint) | **POST** /nft/{key}/mint | Mints NFT
 *NFTApi* | [**nft**](docs/Api/NFTApi.md#nft) | **GET** /nft/{key} | Fetch NFT from OBADA blockchain Node
 *NFTApi* | [**send**](docs/Api/NFTApi.md#send) | **POST** /nft/{key}/send | Send NFT to another address
@@ -102,6 +103,7 @@ Class | Method | HTTP request | Description
 - [GenerateObitDIDResponse](docs/Model/GenerateObitDIDResponse.md)
 - [History200Response](docs/Model/History200Response.md)
 - [InternalServerError](docs/Model/InternalServerError.md)
+- [MnemonicRequest](docs/Model/MnemonicRequest.md)
 - [NFT](docs/Model/NFT.md)
 - [NFTData](docs/Model/NFTData.md)
 - [NFTDocument](docs/Model/NFTDocument.md)
