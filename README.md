@@ -79,6 +79,7 @@ Class | Method | HTTP request | Description
 *AccountsApi* | [**balance**](docs/Api/AccountsApi.md#balance) | **GET** /accounts/my-balance | Shows account balance of OBADA address
 *AccountsApi* | [**createAccount**](docs/Api/AccountsApi.md#createaccount) | **POST** /accounts | Creates a new Account
 *AccountsApi* | [**newMnemonic**](docs/Api/AccountsApi.md#newmnemonic) | **GET** /new-mnemonic | Generate a new mnemonic phrase for seeding wallet
+*KeysApi* | [**getAllMasterKeys**](docs/Api/KeysApi.md#getallmasterkeys) | **GET** /keys | Retreave all master keys
 *KeysApi* | [**newMasterKey**](docs/Api/KeysApi.md#newmasterkey) | **POST** /keys/new | Creates a new master key from mnemonic phrase
 *NFTApi* | [**mint**](docs/Api/NFTApi.md#mint) | **POST** /nft/{key}/mint | Mints NFT
 *NFTApi* | [**nft**](docs/Api/NFTApi.md#nft) | **GET** /nft/{key} | Fetch NFT from OBADA blockchain Node
@@ -95,6 +96,7 @@ Class | Method | HTTP request | Description
 
 - [Account](docs/Model/Account.md)
 - [AccountBalance](docs/Model/AccountBalance.md)
+- [AllMasterKeys](docs/Model/AllMasterKeys.md)
 - [DeviceDocument](docs/Model/DeviceDocument.md)
 - [Document](docs/Model/Document.md)
 - [GenerateObitChecksumRequest](docs/Model/GenerateObitChecksumRequest.md)
@@ -115,6 +117,7 @@ Class | Method | HTTP request | Description
 - [ObitHistory](docs/Model/ObitHistory.md)
 - [Obits](docs/Model/Obits.md)
 - [ObitsMeta](docs/Model/ObitsMeta.md)
+- [PubKey](docs/Model/PubKey.md)
 - [SaveObitRequest](docs/Model/SaveObitRequest.md)
 - [SendNFTRequest](docs/Model/SendNFTRequest.md)
 - [UnprocessableEntity](docs/Model/UnprocessableEntity.md)

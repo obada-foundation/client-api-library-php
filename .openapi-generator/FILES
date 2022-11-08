@@ -10,6 +10,7 @@ docs/Api/ObitApi.md
 docs/Api/UtilsApi.md
 docs/Model/Account.md
 docs/Model/AccountBalance.md
+docs/Model/AllMasterKeys.md
 docs/Model/DeviceDocument.md
 docs/Model/Document.md
 docs/Model/GenerateObitChecksumRequest.md
@@ -30,6 +31,7 @@ docs/Model/Obit.md
 docs/Model/ObitHistory.md
 docs/Model/Obits.md
 docs/Model/ObitsMeta.md
+docs/Model/PubKey.md
 docs/Model/SaveObitRequest.md
 docs/Model/SendNFTRequest.md
 docs/Model/UnprocessableEntity.md
@@ -43,6 +45,7 @@ lib/Api/UtilsApi.php
 lib/ApiException.php
 lib/ClientHelper/Account.php
 lib/ClientHelper/AccountBalance.php
+lib/ClientHelper/AllMasterKeys.php
 lib/ClientHelper/DeviceDocument.php
 lib/ClientHelper/Document.php
 lib/ClientHelper/GenerateObitChecksumRequest.php
@@ -64,6 +67,7 @@ lib/ClientHelper/Obit.php
 lib/ClientHelper/ObitHistory.php
 lib/ClientHelper/Obits.php
 lib/ClientHelper/ObitsMeta.php
+lib/ClientHelper/PubKey.php
 lib/ClientHelper/SaveObitRequest.php
 lib/ClientHelper/SendNFTRequest.php
 lib/ClientHelper/UnprocessableEntity.php
@@ -79,6 +83,7 @@ test/Api/ObitApiTest.php
 test/Api/UtilsApiTest.php
 test/Model/AccountBalanceTest.php
 test/Model/AccountTest.php
+test/Model/AllMasterKeysTest.php
 test/Model/DeviceDocumentTest.php
 test/Model/DocumentTest.php
 test/Model/GenerateObitChecksumRequestTest.php
@@ -99,6 +104,7 @@ test/Model/ObitHistoryTest.php
 test/Model/ObitTest.php
 test/Model/ObitsMetaTest.php
 test/Model/ObitsTest.php
+test/Model/PubKeyTest.php
 test/Model/SaveObitRequestTest.php
 test/Model/SendNFTRequestTest.php
 test/Model/UnprocessableEntityFieldsInnerTest.php
