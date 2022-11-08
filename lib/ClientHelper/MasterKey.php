@@ -1,6 +1,6 @@
 <?php
 /**
- * AllMasterKeys
+ * MasterKey
  *
  * PHP version 7.4
  *
@@ -33,16 +33,16 @@ use \ArrayAccess;
 use \Obada\ObjectSerializer;
 
 /**
- * AllMasterKeys Class Doc Comment
+ * MasterKey Class Doc Comment
  *
  * @category Class
- * @description Returns all master keys per account
+ * @description Master key
  * @package  Obada
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AllMasterKeys implements ModelInterface, ArrayAccess, \JsonSerializable
+class MasterKey implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class AllMasterKeys implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'AllMasterKeys';
+    protected static $openAPIModelName = 'MasterKey';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

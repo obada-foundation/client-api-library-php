@@ -124,7 +124,7 @@ class KeysApi
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Obada\ClientHelper\AllMasterKeys|\Obada\ClientHelper\NotAuthorized|\Obada\ClientHelper\UnprocessableEntity|\Obada\ClientHelper\InternalServerError
+     * @return \Obada\ClientHelper\MasterKey[]|\Obada\ClientHelper\NotAuthorized|\Obada\ClientHelper\UnprocessableEntity|\Obada\ClientHelper\InternalServerError
      */
     public function getAllMasterKeys()
     {
@@ -140,7 +140,7 @@ class KeysApi
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Obada\ClientHelper\AllMasterKeys|\Obada\ClientHelper\NotAuthorized|\Obada\ClientHelper\UnprocessableEntity|\Obada\ClientHelper\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Obada\ClientHelper\MasterKey[]|\Obada\ClientHelper\NotAuthorized|\Obada\ClientHelper\UnprocessableEntity|\Obada\ClientHelper\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAllMasterKeysWithHttpInfo()
     {
@@ -183,17 +183,17 @@ class KeysApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Obada\ClientHelper\AllMasterKeys' === '\SplFileObject') {
+                    if ('\Obada\ClientHelper\MasterKey[]' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Obada\ClientHelper\AllMasterKeys' !== 'string') {
+                        if ('\Obada\ClientHelper\MasterKey[]' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Obada\ClientHelper\AllMasterKeys', []),
+                        ObjectSerializer::deserialize($content, '\Obada\ClientHelper\MasterKey[]', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -244,7 +244,7 @@ class KeysApi
                     ];
             }
 
-            $returnType = '\Obada\ClientHelper\AllMasterKeys';
+            $returnType = '\Obada\ClientHelper\MasterKey[]';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -265,7 +265,7 @@ class KeysApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Obada\ClientHelper\AllMasterKeys',
+                        '\Obada\ClientHelper\MasterKey[]',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -329,7 +329,7 @@ class KeysApi
      */
     public function getAllMasterKeysAsyncWithHttpInfo()
     {
-        $returnType = '\Obada\ClientHelper\AllMasterKeys';
+        $returnType = '\Obada\ClientHelper\MasterKey[]';
         $request = $this->getAllMasterKeysRequest();
 
         return $this->client

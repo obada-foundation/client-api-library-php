@@ -96,7 +96,6 @@ Class | Method | HTTP request | Description
 
 - [Account](docs/Model/Account.md)
 - [AccountBalance](docs/Model/AccountBalance.md)
-- [AllMasterKeys](docs/Model/AllMasterKeys.md)
 - [DeviceDocument](docs/Model/DeviceDocument.md)
 - [Document](docs/Model/Document.md)
 - [GenerateObitChecksumRequest](docs/Model/GenerateObitChecksumRequest.md)
@@ -105,6 +104,7 @@ Class | Method | HTTP request | Description
 - [GenerateObitDIDResponse](docs/Model/GenerateObitDIDResponse.md)
 - [History200Response](docs/Model/History200Response.md)
 - [InternalServerError](docs/Model/InternalServerError.md)
+- [MasterKey](docs/Model/MasterKey.md)
 - [MnemonicRequest](docs/Model/MnemonicRequest.md)
 - [NFT](docs/Model/NFT.md)
 - [NFTData](docs/Model/NFTData.md)

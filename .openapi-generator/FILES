@@ -10,7 +10,6 @@ docs/Api/ObitApi.md
 docs/Api/UtilsApi.md
 docs/Model/Account.md
 docs/Model/AccountBalance.md
-docs/Model/AllMasterKeys.md
 docs/Model/DeviceDocument.md
 docs/Model/Document.md
 docs/Model/GenerateObitChecksumRequest.md
@@ -19,6 +18,7 @@ docs/Model/GenerateObitDIDRequest.md
 docs/Model/GenerateObitDIDResponse.md
 docs/Model/History200Response.md
 docs/Model/InternalServerError.md
+docs/Model/MasterKey.md
 docs/Model/MnemonicRequest.md
 docs/Model/NFT.md
 docs/Model/NFTData.md
@@ -45,7 +45,6 @@ lib/Api/UtilsApi.php
 lib/ApiException.php
 lib/ClientHelper/Account.php
 lib/ClientHelper/AccountBalance.php
-lib/ClientHelper/AllMasterKeys.php
 lib/ClientHelper/DeviceDocument.php
 lib/ClientHelper/Document.php
 lib/ClientHelper/GenerateObitChecksumRequest.php
@@ -54,6 +53,7 @@ lib/ClientHelper/GenerateObitDIDRequest.php
 lib/ClientHelper/GenerateObitDIDResponse.php
 lib/ClientHelper/History200Response.php
 lib/ClientHelper/InternalServerError.php
+lib/ClientHelper/MasterKey.php
 lib/ClientHelper/MnemonicRequest.php
 lib/ClientHelper/ModelInterface.php
 lib/ClientHelper/NFT.php
@@ -83,7 +83,6 @@ test/Api/ObitApiTest.php
 test/Api/UtilsApiTest.php
 test/Model/AccountBalanceTest.php
 test/Model/AccountTest.php
-test/Model/AllMasterKeysTest.php
 test/Model/DeviceDocumentTest.php
 test/Model/DocumentTest.php
 test/Model/GenerateObitChecksumRequestTest.php
@@ -92,6 +91,7 @@ test/Model/GenerateObitDIDRequestTest.php
 test/Model/GenerateObitDIDResponseTest.php
 test/Model/History200ResponseTest.php
 test/Model/InternalServerErrorTest.php
+test/Model/MasterKeyTest.php
 test/Model/MnemonicRequestTest.php
 test/Model/NFTDataTest.php
 test/Model/NFTDocumentTest.php

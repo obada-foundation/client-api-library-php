@@ -1,6 +1,6 @@
 <?php
 /**
- * AllMasterKeysTest
+ * MasterKeyTest
  *
  * PHP version 7.4
  *
@@ -32,15 +32,15 @@ namespace Obada\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * AllMasterKeysTest Class Doc Comment
+ * MasterKeyTest Class Doc Comment
  *
  * @category    Class
- * @description Returns all master keys per account
+ * @description Master key
  * @package     Obada
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class AllMasterKeysTest extends TestCase
+class MasterKeyTest extends TestCase
 {
 
     /**
@@ -72,9 +72,9 @@ class AllMasterKeysTest extends TestCase
     }
 
     /**
-     * Test "AllMasterKeys"
+     * Test "MasterKey"
      */
-    public function testAllMasterKeys()
+    public function testMasterKey()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

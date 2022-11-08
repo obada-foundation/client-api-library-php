@@ -11,7 +11,7 @@ Method | HTTP request | Description
 ## `getAllMasterKeys()`
 
 ```php
-getAllMasterKeys(): \Obada\ClientHelper\AllMasterKeys
+getAllMasterKeys(): \Obada\ClientHelper\MasterKey[]
 ```
 
 Retreave all master keys
@@ -48,7 +48,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Obada\ClientHelper\AllMasterKeys**](../Model/AllMasterKeys.md)
+[**\Obada\ClientHelper\MasterKey[]**](../Model/MasterKey.md)
 
 ### Authorization
 
