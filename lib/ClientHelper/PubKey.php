@@ -60,7 +60,9 @@ class PubKey implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'pubKey' => 'string',
-        'address' => 'string'
+        'address' => 'string',
+        'balance' => 'int',
+        'nftCount' => 'int'
     ];
 
     /**
@@ -72,7 +74,9 @@ class PubKey implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'pubKey' => null,
-        'address' => null
+        'address' => null,
+        'balance' => 'int64',
+        'nftCount' => 'int64'
     ];
 
     /**
@@ -103,7 +107,9 @@ class PubKey implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'pubKey' => 'pub_key',
-        'address' => 'address'
+        'address' => 'address',
+        'balance' => 'balance',
+        'nftCount' => 'nft_count'
     ];
 
     /**
@@ -113,7 +119,9 @@ class PubKey implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'pubKey' => 'setPubKey',
-        'address' => 'setAddress'
+        'address' => 'setAddress',
+        'balance' => 'setBalance',
+        'nftCount' => 'setNftCount'
     ];
 
     /**
@@ -123,7 +131,9 @@ class PubKey implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'pubKey' => 'getPubKey',
-        'address' => 'getAddress'
+        'address' => 'getAddress',
+        'balance' => 'getBalance',
+        'nftCount' => 'getNftCount'
     ];
 
     /**
@@ -185,6 +195,8 @@ class PubKey implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->container['pubKey'] = $data['pubKey'] ?? null;
         $this->container['address'] = $data['address'] ?? null;
+        $this->container['balance'] = $data['balance'] ?? null;
+        $this->container['nftCount'] = $data['nftCount'] ?? null;
     }
 
     /**
@@ -255,6 +267,54 @@ class PubKey implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setAddress($address)
     {
         $this->container['address'] = $address;
+
+        return $this;
+    }
+
+    /**
+     * Gets balance
+     *
+     * @return int|null
+     */
+    public function getBalance()
+    {
+        return $this->container['balance'];
+    }
+
+    /**
+     * Sets balance
+     *
+     * @param int|null $balance balance
+     *
+     * @return self
+     */
+    public function setBalance($balance)
+    {
+        $this->container['balance'] = $balance;
+
+        return $this;
+    }
+
+    /**
+     * Gets nftCount
+     *
+     * @return int|null
+     */
+    public function getNftCount()
+    {
+        return $this->container['nftCount'];
+    }
+
+    /**
+     * Sets nftCount
+     *
+     * @param int|null $nftCount nftCount
+     *
+     * @return self
+     */
+    public function setNftCount($nftCount)
+    {
+        $this->container['nftCount'] = $nftCount;
 
         return $this;
     }

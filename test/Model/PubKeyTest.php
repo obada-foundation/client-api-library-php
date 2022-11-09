@@ -97,4 +97,22 @@ class PubKeyTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "balance"
+     */
+    public function testPropertyBalance()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "nftCount"
+     */
+    public function testPropertyNftCount()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }
