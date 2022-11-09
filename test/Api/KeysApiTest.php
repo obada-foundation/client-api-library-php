@@ -95,4 +95,16 @@ class KeysApiTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test case for newPrivateKey
+     *
+     * Create a new private key from master key.
+     *
+     */
+    public function testNewPrivateKey()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }

@@ -81,6 +81,7 @@ Class | Method | HTTP request | Description
 *AccountsApi* | [**newMnemonic**](docs/Api/AccountsApi.md#newmnemonic) | **GET** /new-mnemonic | Generate a new mnemonic phrase for seeding wallet
 *KeysApi* | [**getAllMasterKeys**](docs/Api/KeysApi.md#getallmasterkeys) | **GET** /keys | Retreave all master keys
 *KeysApi* | [**newMasterKey**](docs/Api/KeysApi.md#newmasterkey) | **POST** /keys/new | Creates a new master key from mnemonic phrase
+*KeysApi* | [**newPrivateKey**](docs/Api/KeysApi.md#newprivatekey) | **POST** /keys/{kid}/new-private-key | Create a new private key from master key
 *NFTApi* | [**mint**](docs/Api/NFTApi.md#mint) | **POST** /nft/{key}/mint | Mints NFT
 *NFTApi* | [**nft**](docs/Api/NFTApi.md#nft) | **GET** /nft/{key} | Fetch NFT from OBADA blockchain Node
 *NFTApi* | [**send**](docs/Api/NFTApi.md#send) | **POST** /nft/{key}/send | Send NFT to another address
