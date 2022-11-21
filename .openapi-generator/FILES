@@ -8,6 +8,7 @@ docs/Api/KeysApi.md
 docs/Api/NFTApi.md
 docs/Api/ObitApi.md
 docs/Api/UtilsApi.md
+docs/Model/Account.md
 docs/Model/AccountBalance.md
 docs/Model/DeviceDocument.md
 docs/Model/Document.md
@@ -17,7 +18,6 @@ docs/Model/GenerateObitDIDRequest.md
 docs/Model/GenerateObitDIDResponse.md
 docs/Model/History200Response.md
 docs/Model/InternalServerError.md
-docs/Model/MasterKey.md
 docs/Model/MnemonicRequest.md
 docs/Model/NFT.md
 docs/Model/NFTData.md
@@ -30,7 +30,6 @@ docs/Model/ObitHistory.md
 docs/Model/Obits.md
 docs/Model/ObitsMeta.md
 docs/Model/Profile.md
-docs/Model/PubKey.md
 docs/Model/RegisterRequest.md
 docs/Model/SaveObitRequest.md
 docs/Model/SendNFTRequest.md
@@ -43,6 +42,7 @@ lib/Api/NFTApi.php
 lib/Api/ObitApi.php
 lib/Api/UtilsApi.php
 lib/ApiException.php
+lib/ClientHelper/Account.php
 lib/ClientHelper/AccountBalance.php
 lib/ClientHelper/DeviceDocument.php
 lib/ClientHelper/Document.php
@@ -52,7 +52,6 @@ lib/ClientHelper/GenerateObitDIDRequest.php
 lib/ClientHelper/GenerateObitDIDResponse.php
 lib/ClientHelper/History200Response.php
 lib/ClientHelper/InternalServerError.php
-lib/ClientHelper/MasterKey.php
 lib/ClientHelper/MnemonicRequest.php
 lib/ClientHelper/ModelInterface.php
 lib/ClientHelper/NFT.php
@@ -66,7 +65,6 @@ lib/ClientHelper/ObitHistory.php
 lib/ClientHelper/Obits.php
 lib/ClientHelper/ObitsMeta.php
 lib/ClientHelper/Profile.php
-lib/ClientHelper/PubKey.php
 lib/ClientHelper/RegisterRequest.php
 lib/ClientHelper/SaveObitRequest.php
 lib/ClientHelper/SendNFTRequest.php
@@ -82,6 +80,7 @@ test/Api/NFTApiTest.php
 test/Api/ObitApiTest.php
 test/Api/UtilsApiTest.php
 test/Model/AccountBalanceTest.php
+test/Model/AccountTest.php
 test/Model/DeviceDocumentTest.php
 test/Model/DocumentTest.php
 test/Model/GenerateObitChecksumRequestTest.php
@@ -90,7 +89,6 @@ test/Model/GenerateObitDIDRequestTest.php
 test/Model/GenerateObitDIDResponseTest.php
 test/Model/History200ResponseTest.php
 test/Model/InternalServerErrorTest.php
-test/Model/MasterKeyTest.php
 test/Model/MnemonicRequestTest.php
 test/Model/NFTDataTest.php
 test/Model/NFTDocumentTest.php
@@ -103,7 +101,6 @@ test/Model/ObitTest.php
 test/Model/ObitsMetaTest.php
 test/Model/ObitsTest.php
 test/Model/ProfileTest.php
-test/Model/PubKeyTest.php
 test/Model/RegisterRequestTest.php
 test/Model/SaveObitRequestTest.php
 test/Model/SendNFTRequestTest.php

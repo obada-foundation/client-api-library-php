@@ -73,18 +73,6 @@ class KeysApiTest extends TestCase
     }
 
     /**
-     * Test case for getAllMasterKeys
-     *
-     * Retreave all master keys.
-     *
-     */
-    public function testGetAllMasterKeys()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test case for newMasterKey
      *
      * Creates a new master key from mnemonic phrase.

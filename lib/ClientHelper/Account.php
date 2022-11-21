@@ -1,6 +1,6 @@
 <?php
 /**
- * PubKey
+ * Account
  *
  * PHP version 7.4
  *
@@ -33,16 +33,16 @@ use \ArrayAccess;
 use \Obada\ObjectSerializer;
 
 /**
- * PubKey Class Doc Comment
+ * Account Class Doc Comment
  *
  * @category Class
- * @description Public key
+ * @description OBADA account
  * @package  Obada
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class PubKey implements ModelInterface, ArrayAccess, \JsonSerializable
+class Account implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class PubKey implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'PubKey';
+    protected static $openAPIModelName = 'Account';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

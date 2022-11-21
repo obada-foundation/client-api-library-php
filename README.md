@@ -62,10 +62,10 @@ $apiInstance = new Obada\Api\AccountsApi(
 );
 
 try {
-    $result = $apiInstance->balance();
+    $result = $apiInstance->accounts();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AccountsApi->balance: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AccountsApi->accounts: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
@@ -76,10 +76,10 @@ All URIs are relative to *http://obs.node.obada.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AccountsApi* | [**accounts**](docs/Api/AccountsApi.md#accounts) | **GET** /accounts | Returns a list of OBADA accounts
 *AccountsApi* | [**balance**](docs/Api/AccountsApi.md#balance) | **GET** /accounts/my-balance | Shows account balance of OBADA address
 *AccountsApi* | [**newMnemonic**](docs/Api/AccountsApi.md#newmnemonic) | **GET** /accounts/new-mnemonic | Generate a new mnemonic phrase for seeding wallet
 *AccountsApi* | [**register**](docs/Api/AccountsApi.md#register) | **POST** /accounts/register | Register a new client-helper user profile
-*KeysApi* | [**getAllMasterKeys**](docs/Api/KeysApi.md#getallmasterkeys) | **GET** /keys | Retreave all master keys
 *KeysApi* | [**newMasterKey**](docs/Api/KeysApi.md#newmasterkey) | **POST** /keys/new | Creates a new master key from mnemonic phrase
 *KeysApi* | [**newPrivateKey**](docs/Api/KeysApi.md#newprivatekey) | **POST** /keys/{kid}/new-private-key | Create a new private key from master key
 *NFTApi* | [**mint**](docs/Api/NFTApi.md#mint) | **POST** /nft/{key}/mint | Mints NFT
@@ -95,6 +95,7 @@ Class | Method | HTTP request | Description
 
 ## Models
 
+- [Account](docs/Model/Account.md)
 - [AccountBalance](docs/Model/AccountBalance.md)
 - [DeviceDocument](docs/Model/DeviceDocument.md)
 - [Document](docs/Model/Document.md)
@@ -104,7 +105,6 @@ Class | Method | HTTP request | Description
 - [GenerateObitDIDResponse](docs/Model/GenerateObitDIDResponse.md)
 - [History200Response](docs/Model/History200Response.md)
 - [InternalServerError](docs/Model/InternalServerError.md)
-- [MasterKey](docs/Model/MasterKey.md)
 - [MnemonicRequest](docs/Model/MnemonicRequest.md)
 - [NFT](docs/Model/NFT.md)
 - [NFTData](docs/Model/NFTData.md)
@@ -117,7 +117,6 @@ Class | Method | HTTP request | Description
 - [Obits](docs/Model/Obits.md)
 - [ObitsMeta](docs/Model/ObitsMeta.md)
 - [Profile](docs/Model/Profile.md)
-- [PubKey](docs/Model/PubKey.md)
 - [RegisterRequest](docs/Model/RegisterRequest.md)
 - [SaveObitRequest](docs/Model/SaveObitRequest.md)
 - [SendNFTRequest](docs/Model/SendNFTRequest.md)

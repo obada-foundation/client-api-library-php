@@ -1,6 +1,6 @@
 <?php
 /**
- * PubKeyTest
+ * AccountTest
  *
  * PHP version 7.4
  *
@@ -32,15 +32,15 @@ namespace Obada\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * PubKeyTest Class Doc Comment
+ * AccountTest Class Doc Comment
  *
  * @category    Class
- * @description Public key
+ * @description OBADA account
  * @package     Obada
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class PubKeyTest extends TestCase
+class AccountTest extends TestCase
 {
 
     /**
@@ -72,9 +72,9 @@ class PubKeyTest extends TestCase
     }
 
     /**
-     * Test "PubKey"
+     * Test "Account"
      */
-    public function testPubKey()
+    public function testAccount()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
