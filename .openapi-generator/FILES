@@ -10,6 +10,7 @@ docs/Api/ObitApi.md
 docs/Api/UtilsApi.md
 docs/Model/Account.md
 docs/Model/AccountBalance.md
+docs/Model/Accounts.md
 docs/Model/DeviceDocument.md
 docs/Model/Document.md
 docs/Model/GenerateObitChecksumRequest.md
@@ -44,6 +45,7 @@ lib/Api/UtilsApi.php
 lib/ApiException.php
 lib/ClientHelper/Account.php
 lib/ClientHelper/AccountBalance.php
+lib/ClientHelper/Accounts.php
 lib/ClientHelper/DeviceDocument.php
 lib/ClientHelper/Document.php
 lib/ClientHelper/GenerateObitChecksumRequest.php
@@ -81,6 +83,7 @@ test/Api/ObitApiTest.php
 test/Api/UtilsApiTest.php
 test/Model/AccountBalanceTest.php
 test/Model/AccountTest.php
+test/Model/AccountsTest.php
 test/Model/DeviceDocumentTest.php
 test/Model/DocumentTest.php
 test/Model/GenerateObitChecksumRequestTest.php

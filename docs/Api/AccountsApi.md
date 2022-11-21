@@ -13,7 +13,7 @@ Method | HTTP request | Description
 ## `accounts()`
 
 ```php
-accounts(): \Obada\ClientHelper\Account[]
+accounts(): \Obada\ClientHelper\Accounts
 ```
 
 Returns a list of OBADA accounts
@@ -50,7 +50,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Obada\ClientHelper\Account[]**](../Model/Account.md)
+[**\Obada\ClientHelper\Accounts**](../Model/Accounts.md)
 
 ### Authorization
 
