@@ -1,6 +1,6 @@
 <?php
 /**
- * Account
+ * Profile
  *
  * PHP version 7.4
  *
@@ -33,16 +33,16 @@ use \ArrayAccess;
 use \Obada\ObjectSerializer;
 
 /**
- * Account Class Doc Comment
+ * Profile Class Doc Comment
  *
  * @category Class
- * @description ClientHelper account
+ * @description ClientHelper user profile
  * @package  Obada
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Account implements ModelInterface, ArrayAccess, \JsonSerializable
+class Profile implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Account';
+    protected static $openAPIModelName = 'Profile';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -227,7 +227,7 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets id
      *
-     * @param string|null $id Account owner id
+     * @param string|null $id Profile owner id
      *
      * @return self
      */
@@ -251,7 +251,7 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets email
      *
-     * @param string $email Account owner email, will be used for verification purpose
+     * @param string $email Profile owner email, will be used for verification purpose
      *
      * @return self
      */

@@ -1,6 +1,6 @@
 <?php
 /**
- * AccountTest
+ * ProfileTest
  *
  * PHP version 7.4
  *
@@ -32,15 +32,15 @@ namespace Obada\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * AccountTest Class Doc Comment
+ * ProfileTest Class Doc Comment
  *
  * @category    Class
- * @description ClientHelper account
+ * @description ClientHelper user profile
  * @package     Obada
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class AccountTest extends TestCase
+class ProfileTest extends TestCase
 {
 
     /**
@@ -72,9 +72,9 @@ class AccountTest extends TestCase
     }
 
     /**
-     * Test "Account"
+     * Test "Profile"
      */
-    public function testAccount()
+    public function testProfile()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

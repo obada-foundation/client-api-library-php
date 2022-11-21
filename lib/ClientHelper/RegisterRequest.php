@@ -1,6 +1,6 @@
 <?php
 /**
- * NewAccountRequest
+ * RegisterRequest
  *
  * PHP version 7.4
  *
@@ -33,16 +33,16 @@ use \ArrayAccess;
 use \Obada\ObjectSerializer;
 
 /**
- * NewAccountRequest Class Doc Comment
+ * RegisterRequest Class Doc Comment
  *
  * @category Class
- * @description New account create payload
+ * @description Register profile payload
  * @package  Obada
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class NewAccountRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class RegisterRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class NewAccountRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
       *
       * @var string
       */
-    protected static $openAPIModelName = 'NewAccountRequest';
+    protected static $openAPIModelName = 'RegisterRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -221,7 +221,7 @@ class NewAccountRequest implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets email
      *
-     * @param string $email Account owner email, will be used for verification purpose
+     * @param string $email Profile owner email, will be used for verification purpose
      *
      * @return self
      */

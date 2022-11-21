@@ -85,24 +85,24 @@ class AccountsApiTest extends TestCase
     }
 
     /**
-     * Test case for createAccount
-     *
-     * Creates a new Account.
-     *
-     */
-    public function testCreateAccount()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test case for newMnemonic
      *
      * Generate a new mnemonic phrase for seeding wallet.
      *
      */
     public function testNewMnemonic()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for register
+     *
+     * Register a new client-helper user profile.
+     *
+     */
+    public function testRegister()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

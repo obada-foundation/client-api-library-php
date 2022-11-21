@@ -1,6 +1,6 @@
 <?php
 /**
- * NewAccountRequestTest
+ * RegisterRequestTest
  *
  * PHP version 7.4
  *
@@ -32,15 +32,15 @@ namespace Obada\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * NewAccountRequestTest Class Doc Comment
+ * RegisterRequestTest Class Doc Comment
  *
  * @category    Class
- * @description New account create payload
+ * @description Register profile payload
  * @package     Obada
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class NewAccountRequestTest extends TestCase
+class RegisterRequestTest extends TestCase
 {
 
     /**
@@ -72,9 +72,9 @@ class NewAccountRequestTest extends TestCase
     }
 
     /**
-     * Test "NewAccountRequest"
+     * Test "RegisterRequest"
      */
-    public function testNewAccountRequest()
+    public function testRegisterRequest()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

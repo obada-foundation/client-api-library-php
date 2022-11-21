@@ -77,8 +77,8 @@ All URIs are relative to *http://obs.node.obada.io*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AccountsApi* | [**balance**](docs/Api/AccountsApi.md#balance) | **GET** /accounts/my-balance | Shows account balance of OBADA address
-*AccountsApi* | [**createAccount**](docs/Api/AccountsApi.md#createaccount) | **POST** /accounts | Creates a new Account
-*AccountsApi* | [**newMnemonic**](docs/Api/AccountsApi.md#newmnemonic) | **GET** /new-mnemonic | Generate a new mnemonic phrase for seeding wallet
+*AccountsApi* | [**newMnemonic**](docs/Api/AccountsApi.md#newmnemonic) | **GET** /accounts/new-mnemonic | Generate a new mnemonic phrase for seeding wallet
+*AccountsApi* | [**register**](docs/Api/AccountsApi.md#register) | **POST** /accounts/register | Register a new client-helper user profile
 *KeysApi* | [**getAllMasterKeys**](docs/Api/KeysApi.md#getallmasterkeys) | **GET** /keys | Retreave all master keys
 *KeysApi* | [**newMasterKey**](docs/Api/KeysApi.md#newmasterkey) | **POST** /keys/new | Creates a new master key from mnemonic phrase
 *KeysApi* | [**newPrivateKey**](docs/Api/KeysApi.md#newprivatekey) | **POST** /keys/{kid}/new-private-key | Create a new private key from master key
@@ -95,7 +95,6 @@ Class | Method | HTTP request | Description
 
 ## Models
 
-- [Account](docs/Model/Account.md)
 - [AccountBalance](docs/Model/AccountBalance.md)
 - [DeviceDocument](docs/Model/DeviceDocument.md)
 - [Document](docs/Model/Document.md)
@@ -110,7 +109,6 @@ Class | Method | HTTP request | Description
 - [NFT](docs/Model/NFT.md)
 - [NFTData](docs/Model/NFTData.md)
 - [NFTDocument](docs/Model/NFTDocument.md)
-- [NewAccountRequest](docs/Model/NewAccountRequest.md)
 - [NewMnemonic](docs/Model/NewMnemonic.md)
 - [NotAuthorized](docs/Model/NotAuthorized.md)
 - [NotFound](docs/Model/NotFound.md)
@@ -118,7 +116,9 @@ Class | Method | HTTP request | Description
 - [ObitHistory](docs/Model/ObitHistory.md)
 - [Obits](docs/Model/Obits.md)
 - [ObitsMeta](docs/Model/ObitsMeta.md)
+- [Profile](docs/Model/Profile.md)
 - [PubKey](docs/Model/PubKey.md)
+- [RegisterRequest](docs/Model/RegisterRequest.md)
 - [SaveObitRequest](docs/Model/SaveObitRequest.md)
 - [SendNFTRequest](docs/Model/SendNFTRequest.md)
 - [UnprocessableEntity](docs/Model/UnprocessableEntity.md)
