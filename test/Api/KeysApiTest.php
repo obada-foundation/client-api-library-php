@@ -73,18 +73,6 @@ class KeysApiTest extends TestCase
     }
 
     /**
-     * Test case for newMasterKey
-     *
-     * Creates a new master key from mnemonic phrase.
-     *
-     */
-    public function testNewMasterKey()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test case for newPrivateKey
      *
      * Create a new private key from master key.

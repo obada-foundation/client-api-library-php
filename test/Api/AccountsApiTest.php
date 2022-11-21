@@ -109,6 +109,18 @@ class AccountsApiTest extends TestCase
     }
 
     /**
+     * Test case for newWallet
+     *
+     * Creates profile HD wallet.
+     *
+     */
+    public function testNewWallet()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for register
      *
      * Register a new client-helper user profile.
