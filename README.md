@@ -78,10 +78,10 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AccountsApi* | [**accounts**](docs/Api/AccountsApi.md#accounts) | **GET** /accounts | Returns a list of OBADA accounts
 *AccountsApi* | [**balance**](docs/Api/AccountsApi.md#balance) | **GET** /accounts/my-balance | Shows account balance of OBADA address
+*AccountsApi* | [**newAccount**](docs/Api/AccountsApi.md#newaccount) | **POST** /accounts/new-account | Creates a new OBADA account from HD wallet master key
 *AccountsApi* | [**newMnemonic**](docs/Api/AccountsApi.md#newmnemonic) | **GET** /accounts/new-mnemonic | Generate a new mnemonic phrase for seeding wallet
 *AccountsApi* | [**newWallet**](docs/Api/AccountsApi.md#newwallet) | **POST** /accounts/new-wallet | Creates profile HD wallet
 *AccountsApi* | [**register**](docs/Api/AccountsApi.md#register) | **POST** /accounts/register | Register a new client-helper user profile
-*KeysApi* | [**newPrivateKey**](docs/Api/KeysApi.md#newprivatekey) | **POST** /keys/{kid}/new-private-key | Create a new private key from master key
 *NFTApi* | [**mint**](docs/Api/NFTApi.md#mint) | **POST** /nft/{key}/mint | Mints NFT
 *NFTApi* | [**nft**](docs/Api/NFTApi.md#nft) | **GET** /nft/{key} | Fetch NFT from OBADA blockchain Node
 *NFTApi* | [**send**](docs/Api/NFTApi.md#send) | **POST** /nft/{key}/send | Send NFT to another address

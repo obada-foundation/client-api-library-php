@@ -4,7 +4,6 @@
 README.md
 composer.json
 docs/Api/AccountsApi.md
-docs/Api/KeysApi.md
 docs/Api/NFTApi.md
 docs/Api/ObitApi.md
 docs/Api/UtilsApi.md
@@ -38,7 +37,6 @@ docs/Model/UnprocessableEntity.md
 docs/Model/UnprocessableEntityFieldsInner.md
 git_push.sh
 lib/Api/AccountsApi.php
-lib/Api/KeysApi.php
 lib/Api/NFTApi.php
 lib/Api/ObitApi.php
 lib/Api/UtilsApi.php
@@ -77,7 +75,6 @@ lib/HeaderSelector.php
 lib/ObjectSerializer.php
 phpunit.xml.dist
 test/Api/AccountsApiTest.php
-test/Api/KeysApiTest.php
 test/Api/NFTApiTest.php
 test/Api/ObitApiTest.php
 test/Api/UtilsApiTest.php

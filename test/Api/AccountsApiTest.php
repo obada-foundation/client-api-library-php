@@ -97,6 +97,18 @@ class AccountsApiTest extends TestCase
     }
 
     /**
+     * Test case for newAccount
+     *
+     * Creates a new OBADA account from HD wallet master key.
+     *
+     */
+    public function testNewAccount()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for newMnemonic
      *
      * Generate a new mnemonic phrase for seeding wallet.
