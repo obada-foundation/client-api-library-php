@@ -17,6 +17,7 @@ docs/Model/GenerateObitChecksumResponse.md
 docs/Model/GenerateObitDIDRequest.md
 docs/Model/GenerateObitDIDResponse.md
 docs/Model/History200Response.md
+docs/Model/ImportAccountRequest.md
 docs/Model/InternalServerError.md
 docs/Model/MnemonicRequest.md
 docs/Model/NFT.md
@@ -35,6 +36,7 @@ docs/Model/SaveObitRequest.md
 docs/Model/SendNFTRequest.md
 docs/Model/UnprocessableEntity.md
 docs/Model/UnprocessableEntityFieldsInner.md
+docs/Model/WalletExistsError.md
 git_push.sh
 lib/Api/AccountsApi.php
 lib/Api/NFTApi.php
@@ -51,6 +53,7 @@ lib/ClientHelper/GenerateObitChecksumResponse.php
 lib/ClientHelper/GenerateObitDIDRequest.php
 lib/ClientHelper/GenerateObitDIDResponse.php
 lib/ClientHelper/History200Response.php
+lib/ClientHelper/ImportAccountRequest.php
 lib/ClientHelper/InternalServerError.php
 lib/ClientHelper/MnemonicRequest.php
 lib/ClientHelper/ModelInterface.php
@@ -70,6 +73,7 @@ lib/ClientHelper/SaveObitRequest.php
 lib/ClientHelper/SendNFTRequest.php
 lib/ClientHelper/UnprocessableEntity.php
 lib/ClientHelper/UnprocessableEntityFieldsInner.php
+lib/ClientHelper/WalletExistsError.php
 lib/Configuration.php
 lib/HeaderSelector.php
 lib/ObjectSerializer.php
@@ -88,6 +92,7 @@ test/Model/GenerateObitChecksumResponseTest.php
 test/Model/GenerateObitDIDRequestTest.php
 test/Model/GenerateObitDIDResponseTest.php
 test/Model/History200ResponseTest.php
+test/Model/ImportAccountRequestTest.php
 test/Model/InternalServerErrorTest.php
 test/Model/MnemonicRequestTest.php
 test/Model/NFTDataTest.php
@@ -106,3 +111,4 @@ test/Model/SaveObitRequestTest.php
 test/Model/SendNFTRequestTest.php
 test/Model/UnprocessableEntityFieldsInnerTest.php
 test/Model/UnprocessableEntityTest.php
+test/Model/WalletExistsErrorTest.php

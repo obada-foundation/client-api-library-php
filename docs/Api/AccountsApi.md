@@ -6,6 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**accounts()**](AccountsApi.md#accounts) | **GET** /accounts | Returns a list of OBADA accounts
 [**balance()**](AccountsApi.md#balance) | **GET** /accounts/my-balance | Shows account balance of OBADA address
+[**importAccount()**](AccountsApi.md#importAccount) | **POST** /accounts/import-account | Imports an existing OBADA account (private key) client-helper user profile
+[**importWallet()**](AccountsApi.md#importWallet) | **POST** /accounts/import-wallet | Imports an existing HD wallet to the client-helper user profile
 [**newAccount()**](AccountsApi.md#newAccount) | **POST** /accounts/new-account | Creates a new OBADA account from HD wallet master key
 [**newMnemonic()**](AccountsApi.md#newMnemonic) | **GET** /accounts/new-mnemonic | Generate a new mnemonic phrase for seeding wallet
 [**newWallet()**](AccountsApi.md#newWallet) | **POST** /accounts/new-wallet | Creates profile HD wallet
@@ -116,6 +118,120 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `importAccount()`
+
+```php
+importAccount($importAccountRequest)
+```
+
+Imports an existing OBADA account (private key) client-helper user profile
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: bearerAuth
+$config = Obada\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Obada\Api\AccountsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$importAccountRequest = new \Obada\ClientHelper\ImportAccountRequest(); // \Obada\ClientHelper\ImportAccountRequest
+
+try {
+    $apiInstance->importAccount($importAccountRequest);
+} catch (Exception $e) {
+    echo 'Exception when calling AccountsApi->importAccount: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **importAccountRequest** | [**\Obada\ClientHelper\ImportAccountRequest**](../Model/ImportAccountRequest.md)|  | [optional]
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `importWallet()`
+
+```php
+importWallet($mnemonicRequest)
+```
+
+Imports an existing HD wallet to the client-helper user profile
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: bearerAuth
+$config = Obada\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Obada\Api\AccountsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$mnemonicRequest = new \Obada\ClientHelper\MnemonicRequest(); // \Obada\ClientHelper\MnemonicRequest
+
+try {
+    $apiInstance->importWallet($mnemonicRequest);
+} catch (Exception $e) {
+    echo 'Exception when calling AccountsApi->importWallet: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **mnemonicRequest** | [**\Obada\ClientHelper\MnemonicRequest**](../Model/MnemonicRequest.md)|  | [optional]
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

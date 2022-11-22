@@ -78,6 +78,8 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AccountsApi* | [**accounts**](docs/Api/AccountsApi.md#accounts) | **GET** /accounts | Returns a list of OBADA accounts
 *AccountsApi* | [**balance**](docs/Api/AccountsApi.md#balance) | **GET** /accounts/my-balance | Shows account balance of OBADA address
+*AccountsApi* | [**importAccount**](docs/Api/AccountsApi.md#importaccount) | **POST** /accounts/import-account | Imports an existing OBADA account (private key) client-helper user profile
+*AccountsApi* | [**importWallet**](docs/Api/AccountsApi.md#importwallet) | **POST** /accounts/import-wallet | Imports an existing HD wallet to the client-helper user profile
 *AccountsApi* | [**newAccount**](docs/Api/AccountsApi.md#newaccount) | **POST** /accounts/new-account | Creates a new OBADA account from HD wallet master key
 *AccountsApi* | [**newMnemonic**](docs/Api/AccountsApi.md#newmnemonic) | **GET** /accounts/new-mnemonic | Generate a new mnemonic phrase for seeding wallet
 *AccountsApi* | [**newWallet**](docs/Api/AccountsApi.md#newwallet) | **POST** /accounts/new-wallet | Creates profile HD wallet
@@ -105,6 +107,7 @@ Class | Method | HTTP request | Description
 - [GenerateObitDIDRequest](docs/Model/GenerateObitDIDRequest.md)
 - [GenerateObitDIDResponse](docs/Model/GenerateObitDIDResponse.md)
 - [History200Response](docs/Model/History200Response.md)
+- [ImportAccountRequest](docs/Model/ImportAccountRequest.md)
 - [InternalServerError](docs/Model/InternalServerError.md)
 - [MnemonicRequest](docs/Model/MnemonicRequest.md)
 - [NFT](docs/Model/NFT.md)
@@ -123,6 +126,7 @@ Class | Method | HTTP request | Description
 - [SendNFTRequest](docs/Model/SendNFTRequest.md)
 - [UnprocessableEntity](docs/Model/UnprocessableEntity.md)
 - [UnprocessableEntityFieldsInner](docs/Model/UnprocessableEntityFieldsInner.md)
+- [WalletExistsError](docs/Model/WalletExistsError.md)
 
 ## Authorization
 

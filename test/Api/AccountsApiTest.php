@@ -97,6 +97,30 @@ class AccountsApiTest extends TestCase
     }
 
     /**
+     * Test case for importAccount
+     *
+     * Imports an existing OBADA account (private key) client-helper user profile.
+     *
+     */
+    public function testImportAccount()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for importWallet
+     *
+     * Imports an existing HD wallet to the client-helper user profile.
+     *
+     */
+    public function testImportWallet()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for newAccount
      *
      * Creates a new OBADA account from HD wallet master key.

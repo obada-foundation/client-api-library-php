@@ -1,6 +1,6 @@
 <?php
 /**
- * MnemonicRequestTest
+ * ImportAccountRequestTest
  *
  * PHP version 7.4
  *
@@ -32,15 +32,15 @@ namespace Obada\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * MnemonicRequestTest Class Doc Comment
+ * ImportAccountRequestTest Class Doc Comment
  *
  * @category    Class
- * @description Mnemonic for seeding the wallet response
+ * @description OBADA account import payload
  * @package     Obada
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class MnemonicRequestTest extends TestCase
+class ImportAccountRequestTest extends TestCase
 {
 
     /**
@@ -72,18 +72,18 @@ class MnemonicRequestTest extends TestCase
     }
 
     /**
-     * Test "MnemonicRequest"
+     * Test "ImportAccountRequest"
      */
-    public function testMnemonicRequest()
+    public function testImportAccountRequest()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "mnemonic"
+     * Test attribute "privateKey"
      */
-    public function testPropertyMnemonic()
+    public function testPropertyPrivateKey()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

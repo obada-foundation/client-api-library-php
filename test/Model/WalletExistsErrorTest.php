@@ -1,6 +1,6 @@
 <?php
 /**
- * MnemonicRequestTest
+ * WalletExistsErrorTest
  *
  * PHP version 7.4
  *
@@ -32,15 +32,15 @@ namespace Obada\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * MnemonicRequestTest Class Doc Comment
+ * WalletExistsErrorTest Class Doc Comment
  *
  * @category    Class
- * @description Mnemonic for seeding the wallet response
+ * @description Returns when trying to create or import HD wallet into setteld user profile.
  * @package     Obada
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class MnemonicRequestTest extends TestCase
+class WalletExistsErrorTest extends TestCase
 {
 
     /**
@@ -72,18 +72,18 @@ class MnemonicRequestTest extends TestCase
     }
 
     /**
-     * Test "MnemonicRequest"
+     * Test "WalletExistsError"
      */
-    public function testMnemonicRequest()
+    public function testWalletExistsError()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "mnemonic"
+     * Test attribute "error"
      */
-    public function testPropertyMnemonic()
+    public function testPropertyError()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

@@ -1,6 +1,6 @@
 <?php
 /**
- * MnemonicRequest
+ * ImportAccountRequest
  *
  * PHP version 7.4
  *
@@ -33,16 +33,16 @@ use \ArrayAccess;
 use \Obada\ObjectSerializer;
 
 /**
- * MnemonicRequest Class Doc Comment
+ * ImportAccountRequest Class Doc Comment
  *
  * @category Class
- * @description Mnemonic for seeding the wallet response
+ * @description OBADA account import payload
  * @package  Obada
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class MnemonicRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class ImportAccountRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class MnemonicRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'MnemonicRequest';
+    protected static $openAPIModelName = 'ImportAccountRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,7 +59,7 @@ class MnemonicRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'mnemonic' => 'string'
+        'privateKey' => 'string'
     ];
 
     /**
@@ -70,7 +70,7 @@ class MnemonicRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'mnemonic' => null
+        'privateKey' => null
     ];
 
     /**
@@ -100,7 +100,7 @@ class MnemonicRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'mnemonic' => 'mnemonic'
+        'privateKey' => 'private_key'
     ];
 
     /**
@@ -109,7 +109,7 @@ class MnemonicRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'mnemonic' => 'setMnemonic'
+        'privateKey' => 'setPrivateKey'
     ];
 
     /**
@@ -118,7 +118,7 @@ class MnemonicRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'mnemonic' => 'getMnemonic'
+        'privateKey' => 'getPrivateKey'
     ];
 
     /**
@@ -178,7 +178,7 @@ class MnemonicRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['mnemonic'] = $data['mnemonic'] ?? null;
+        $this->container['privateKey'] = $data['privateKey'] ?? null;
     }
 
     /**
@@ -190,8 +190,8 @@ class MnemonicRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['mnemonic'] === null) {
-            $invalidProperties[] = "'mnemonic' can't be null";
+        if ($this->container['privateKey'] === null) {
+            $invalidProperties[] = "'privateKey' can't be null";
         }
         return $invalidProperties;
     }
@@ -209,25 +209,25 @@ class MnemonicRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets mnemonic
+     * Gets privateKey
      *
      * @return string
      */
-    public function getMnemonic()
+    public function getPrivateKey()
     {
-        return $this->container['mnemonic'];
+        return $this->container['privateKey'];
     }
 
     /**
-     * Sets mnemonic
+     * Sets privateKey
      *
-     * @param string $mnemonic Mnemonic for seeding
+     * @param string $privateKey OBADA account
      *
      * @return self
      */
-    public function setMnemonic($mnemonic)
+    public function setPrivateKey($privateKey)
     {
-        $this->container['mnemonic'] = $mnemonic;
+        $this->container['privateKey'] = $privateKey;
 
         return $this;
     }

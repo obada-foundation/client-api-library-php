@@ -1,6 +1,6 @@
 <?php
 /**
- * MnemonicRequest
+ * WalletExistsError
  *
  * PHP version 7.4
  *
@@ -33,16 +33,16 @@ use \ArrayAccess;
 use \Obada\ObjectSerializer;
 
 /**
- * MnemonicRequest Class Doc Comment
+ * WalletExistsError Class Doc Comment
  *
  * @category Class
- * @description Mnemonic for seeding the wallet response
+ * @description Returns when trying to create or import HD wallet into setteld user profile.
  * @package  Obada
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class MnemonicRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class WalletExistsError implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class MnemonicRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'MnemonicRequest';
+    protected static $openAPIModelName = 'WalletExistsError';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,7 +59,7 @@ class MnemonicRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'mnemonic' => 'string'
+        'error' => 'string'
     ];
 
     /**
@@ -70,7 +70,7 @@ class MnemonicRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'mnemonic' => null
+        'error' => null
     ];
 
     /**
@@ -100,7 +100,7 @@ class MnemonicRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'mnemonic' => 'mnemonic'
+        'error' => 'error'
     ];
 
     /**
@@ -109,7 +109,7 @@ class MnemonicRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'mnemonic' => 'setMnemonic'
+        'error' => 'setError'
     ];
 
     /**
@@ -118,7 +118,7 @@ class MnemonicRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'mnemonic' => 'getMnemonic'
+        'error' => 'getError'
     ];
 
     /**
@@ -178,7 +178,7 @@ class MnemonicRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['mnemonic'] = $data['mnemonic'] ?? null;
+        $this->container['error'] = $data['error'] ?? 'profile wallet already exist';
     }
 
     /**
@@ -190,9 +190,6 @@ class MnemonicRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['mnemonic'] === null) {
-            $invalidProperties[] = "'mnemonic' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -209,25 +206,25 @@ class MnemonicRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets mnemonic
+     * Gets error
      *
-     * @return string
+     * @return string|null
      */
-    public function getMnemonic()
+    public function getError()
     {
-        return $this->container['mnemonic'];
+        return $this->container['error'];
     }
 
     /**
-     * Sets mnemonic
+     * Sets error
      *
-     * @param string $mnemonic Mnemonic for seeding
+     * @param string|null $error error
      *
      * @return self
      */
-    public function setMnemonic($mnemonic)
+    public function setError($error)
     {
-        $this->container['mnemonic'] = $mnemonic;
+        $this->container['error'] = $error;
 
         return $this;
     }
