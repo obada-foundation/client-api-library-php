@@ -60,12 +60,13 @@ $apiInstance = new Obada\Api\AccountsApi(
     new GuzzleHttp\Client(),
     $config
 );
+$address = obada1yxxnd624tgwqm3eyv5smdvjrrydfh9h943qptg; // string | OBADA address
 
 try {
-    $result = $apiInstance->accounts();
+    $result = $apiInstance->account($address);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AccountsApi->accounts: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AccountsApi->account: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
@@ -76,6 +77,7 @@ All URIs are relative to *http://obs.node.obada.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AccountsApi* | [**account**](docs/Api/AccountsApi.md#account) | **GET** /accounts/{address} | Fetches an information about single account
 *AccountsApi* | [**accounts**](docs/Api/AccountsApi.md#accounts) | **GET** /accounts | Returns a list of OBADA accounts
 *AccountsApi* | [**balance**](docs/Api/AccountsApi.md#balance) | **GET** /accounts/my-balance | Shows account balance of OBADA address
 *AccountsApi* | [**importAccount**](docs/Api/AccountsApi.md#importaccount) | **POST** /accounts/import-account | Imports an existing OBADA account (private key) client-helper user profile

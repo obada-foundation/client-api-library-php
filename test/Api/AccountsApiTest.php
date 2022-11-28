@@ -73,6 +73,18 @@ class AccountsApiTest extends TestCase
     }
 
     /**
+     * Test case for account
+     *
+     * Fetches an information about single account.
+     *
+     */
+    public function testAccount()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for accounts
      *
      * Returns a list of OBADA accounts.

@@ -4,6 +4,7 @@ All URIs are relative to http://obs.node.obada.io.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**account()**](AccountsApi.md#account) | **GET** /accounts/{address} | Fetches an information about single account
 [**accounts()**](AccountsApi.md#accounts) | **GET** /accounts | Returns a list of OBADA accounts
 [**balance()**](AccountsApi.md#balance) | **GET** /accounts/my-balance | Shows account balance of OBADA address
 [**importAccount()**](AccountsApi.md#importAccount) | **POST** /accounts/import-account | Imports an existing OBADA account (private key) client-helper user profile
@@ -13,6 +14,64 @@ Method | HTTP request | Description
 [**newWallet()**](AccountsApi.md#newWallet) | **POST** /accounts/new-wallet | Creates profile HD wallet
 [**register()**](AccountsApi.md#register) | **POST** /accounts/register | Register a new client-helper user profile
 
+
+## `account()`
+
+```php
+account($address): \Obada\ClientHelper\Accounts
+```
+
+Fetches an information about single account
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: bearerAuth
+$config = Obada\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Obada\Api\AccountsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$address = obada1yxxnd624tgwqm3eyv5smdvjrrydfh9h943qptg; // string | OBADA address
+
+try {
+    $result = $apiInstance->account($address);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AccountsApi->account: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **address** | **string**| OBADA address |
+
+### Return type
+
+[**\Obada\ClientHelper\Accounts**](../Model/Accounts.md)
+
+### Authorization
+
+[bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `accounts()`
 
