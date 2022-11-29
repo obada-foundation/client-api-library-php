@@ -125,7 +125,7 @@ class AccountsApi
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Obada\ClientHelper\Accounts|\Obada\ClientHelper\NotAuthorized|\Obada\ClientHelper\InternalServerError
+     * @return \Obada\ClientHelper\Account|\Obada\ClientHelper\NotAuthorized|\Obada\ClientHelper\InternalServerError
      */
     public function account($address)
     {
@@ -142,7 +142,7 @@ class AccountsApi
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Obada\ClientHelper\Accounts|\Obada\ClientHelper\NotAuthorized|\Obada\ClientHelper\InternalServerError, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Obada\ClientHelper\Account|\Obada\ClientHelper\NotAuthorized|\Obada\ClientHelper\InternalServerError, HTTP status code, HTTP response headers (array of strings)
      */
     public function accountWithHttpInfo($address)
     {
@@ -185,17 +185,17 @@ class AccountsApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Obada\ClientHelper\Accounts' === '\SplFileObject') {
+                    if ('\Obada\ClientHelper\Account' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Obada\ClientHelper\Accounts' !== 'string') {
+                        if ('\Obada\ClientHelper\Account' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Obada\ClientHelper\Accounts', []),
+                        ObjectSerializer::deserialize($content, '\Obada\ClientHelper\Account', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -231,7 +231,7 @@ class AccountsApi
                     ];
             }
 
-            $returnType = '\Obada\ClientHelper\Accounts';
+            $returnType = '\Obada\ClientHelper\Account';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -252,7 +252,7 @@ class AccountsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Obada\ClientHelper\Accounts',
+                        '\Obada\ClientHelper\Account',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -310,7 +310,7 @@ class AccountsApi
      */
     public function accountAsyncWithHttpInfo($address)
     {
-        $returnType = '\Obada\ClientHelper\Accounts';
+        $returnType = '\Obada\ClientHelper\Account';
         $request = $this->accountRequest($address);
 
         return $this->client

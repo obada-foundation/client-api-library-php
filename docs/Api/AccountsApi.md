@@ -18,7 +18,7 @@ Method | HTTP request | Description
 ## `account()`
 
 ```php
-account($address): \Obada\ClientHelper\Accounts
+account($address): \Obada\ClientHelper\Account
 ```
 
 Fetches an information about single account
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Obada\ClientHelper\Accounts**](../Model/Accounts.md)
+[**\Obada\ClientHelper\Account**](../Model/Account.md)
 
 ### Authorization
 
