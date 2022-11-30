@@ -62,7 +62,8 @@ class SaveObitRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'manufacturer' => 'string',
         'partNumber' => 'string',
         'serialNumber' => 'string',
-        'documents' => '\Obada\ClientHelper\DeviceDocument[]'
+        'documents' => '\Obada\ClientHelper\DeviceDocument[]',
+        'address' => 'string'
     ];
 
     /**
@@ -76,7 +77,8 @@ class SaveObitRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'manufacturer' => null,
         'partNumber' => null,
         'serialNumber' => null,
-        'documents' => null
+        'documents' => null,
+        'address' => null
     ];
 
     /**
@@ -109,7 +111,8 @@ class SaveObitRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'manufacturer' => 'manufacturer',
         'partNumber' => 'part_number',
         'serialNumber' => 'serial_number',
-        'documents' => 'documents'
+        'documents' => 'documents',
+        'address' => 'address'
     ];
 
     /**
@@ -121,7 +124,8 @@ class SaveObitRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'manufacturer' => 'setManufacturer',
         'partNumber' => 'setPartNumber',
         'serialNumber' => 'setSerialNumber',
-        'documents' => 'setDocuments'
+        'documents' => 'setDocuments',
+        'address' => 'setAddress'
     ];
 
     /**
@@ -133,7 +137,8 @@ class SaveObitRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         'manufacturer' => 'getManufacturer',
         'partNumber' => 'getPartNumber',
         'serialNumber' => 'getSerialNumber',
-        'documents' => 'getDocuments'
+        'documents' => 'getDocuments',
+        'address' => 'getAddress'
     ];
 
     /**
@@ -197,6 +202,7 @@ class SaveObitRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['partNumber'] = $data['partNumber'] ?? null;
         $this->container['serialNumber'] = $data['serialNumber'] ?? null;
         $this->container['documents'] = $data['documents'] ?? null;
+        $this->container['address'] = $data['address'] ?? null;
     }
 
     /**
@@ -324,6 +330,30 @@ class SaveObitRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setDocuments($documents)
     {
         $this->container['documents'] = $documents;
+
+        return $this;
+    }
+
+    /**
+     * Gets address
+     *
+     * @return string|null
+     */
+    public function getAddress()
+    {
+        return $this->container['address'];
+    }
+
+    /**
+     * Sets address
+     *
+     * @param string|null $address address
+     *
+     * @return self
+     */
+    public function setAddress($address)
+    {
+        $this->container['address'] = $address;
 
         return $this;
     }
