@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**newMnemonic()**](AccountsApi.md#newMnemonic) | **GET** /accounts/new-mnemonic | Generate a new mnemonic phrase for seeding wallet
 [**newWallet()**](AccountsApi.md#newWallet) | **POST** /accounts/new-wallet | Creates profile HD wallet
 [**register()**](AccountsApi.md#register) | **POST** /accounts/register | Register a new client-helper user profile
+[**sendCoins()**](AccountsApi.md#sendCoins) | **POST** /accounts/{address}/send-coins | Send coins from selected account
 
 
 ## `account()`
@@ -509,6 +510,65 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Obada\ClientHelper\Profile**](../Model/Profile.md)
+
+### Authorization
+
+[bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `sendCoins()`
+
+```php
+sendCoins($address, $sendCoinsRequest)
+```
+
+Send coins from selected account
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: bearerAuth
+$config = Obada\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Obada\Api\AccountsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$address = obada1yxxnd624tgwqm3eyv5smdvjrrydfh9h943qptg; // string | OBADA address
+$sendCoinsRequest = new \Obada\ClientHelper\SendCoinsRequest(); // \Obada\ClientHelper\SendCoinsRequest
+
+try {
+    $apiInstance->sendCoins($address, $sendCoinsRequest);
+} catch (Exception $e) {
+    echo 'Exception when calling AccountsApi->sendCoins: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **address** | **string**| OBADA address |
+ **sendCoinsRequest** | [**\Obada\ClientHelper\SendCoinsRequest**](../Model/SendCoinsRequest.md)|  | [optional]
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 

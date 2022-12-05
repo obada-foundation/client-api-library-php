@@ -179,4 +179,16 @@ class AccountsApiTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test case for sendCoins
+     *
+     * Send coins from selected account.
+     *
+     */
+    public function testSendCoins()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }

@@ -86,6 +86,7 @@ Class | Method | HTTP request | Description
 *AccountsApi* | [**newMnemonic**](docs/Api/AccountsApi.md#newmnemonic) | **GET** /accounts/new-mnemonic | Generate a new mnemonic phrase for seeding wallet
 *AccountsApi* | [**newWallet**](docs/Api/AccountsApi.md#newwallet) | **POST** /accounts/new-wallet | Creates profile HD wallet
 *AccountsApi* | [**register**](docs/Api/AccountsApi.md#register) | **POST** /accounts/register | Register a new client-helper user profile
+*AccountsApi* | [**sendCoins**](docs/Api/AccountsApi.md#sendcoins) | **POST** /accounts/{address}/send-coins | Send coins from selected account
 *NFTApi* | [**mint**](docs/Api/NFTApi.md#mint) | **POST** /nft/{key}/mint | Mints NFT
 *NFTApi* | [**nft**](docs/Api/NFTApi.md#nft) | **GET** /nft/{key} | Fetch NFT from OBADA blockchain Node
 *NFTApi* | [**send**](docs/Api/NFTApi.md#send) | **POST** /nft/{key}/send | Send NFT to another address
@@ -125,6 +126,7 @@ Class | Method | HTTP request | Description
 - [Profile](docs/Model/Profile.md)
 - [RegisterRequest](docs/Model/RegisterRequest.md)
 - [SaveObitRequest](docs/Model/SaveObitRequest.md)
+- [SendCoinsRequest](docs/Model/SendCoinsRequest.md)
 - [SendNFTRequest](docs/Model/SendNFTRequest.md)
 - [UnprocessableEntity](docs/Model/UnprocessableEntity.md)
 - [UnprocessableEntityFieldsInner](docs/Model/UnprocessableEntityFieldsInner.md)

@@ -33,6 +33,7 @@ docs/Model/ObitsMeta.md
 docs/Model/Profile.md
 docs/Model/RegisterRequest.md
 docs/Model/SaveObitRequest.md
+docs/Model/SendCoinsRequest.md
 docs/Model/SendNFTRequest.md
 docs/Model/UnprocessableEntity.md
 docs/Model/UnprocessableEntityFieldsInner.md
@@ -70,6 +71,7 @@ lib/ClientHelper/ObitsMeta.php
 lib/ClientHelper/Profile.php
 lib/ClientHelper/RegisterRequest.php
 lib/ClientHelper/SaveObitRequest.php
+lib/ClientHelper/SendCoinsRequest.php
 lib/ClientHelper/SendNFTRequest.php
 lib/ClientHelper/UnprocessableEntity.php
 lib/ClientHelper/UnprocessableEntityFieldsInner.php
@@ -108,6 +110,7 @@ test/Model/ObitsTest.php
 test/Model/ProfileTest.php
 test/Model/RegisterRequestTest.php
 test/Model/SaveObitRequestTest.php
+test/Model/SendCoinsRequestTest.php
 test/Model/SendNFTRequestTest.php
 test/Model/UnprocessableEntityFieldsInnerTest.php
 test/Model/UnprocessableEntityTest.php
