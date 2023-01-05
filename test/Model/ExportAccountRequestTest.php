@@ -81,9 +81,9 @@ class ExportAccountRequestTest extends TestCase
     }
 
     /**
-     * Test attribute "privateKey"
+     * Test attribute "address"
      */
-    public function testPropertyPrivateKey()
+    public function testPropertyAddress()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

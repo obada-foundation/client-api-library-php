@@ -59,7 +59,7 @@ class ExportAccountRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'privateKey' => 'string',
+        'address' => 'string',
         'passphrase' => 'string'
     ];
 
@@ -71,7 +71,7 @@ class ExportAccountRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'privateKey' => null,
+        'address' => null,
         'passphrase' => null
     ];
 
@@ -102,7 +102,7 @@ class ExportAccountRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
-        'privateKey' => 'private_key',
+        'address' => 'address',
         'passphrase' => 'passphrase'
     ];
 
@@ -112,7 +112,7 @@ class ExportAccountRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'privateKey' => 'setPrivateKey',
+        'address' => 'setAddress',
         'passphrase' => 'setPassphrase'
     ];
 
@@ -122,7 +122,7 @@ class ExportAccountRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
-        'privateKey' => 'getPrivateKey',
+        'address' => 'getAddress',
         'passphrase' => 'getPassphrase'
     ];
 
@@ -183,7 +183,7 @@ class ExportAccountRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(array $data = null)
     {
-        $this->container['privateKey'] = $data['privateKey'] ?? null;
+        $this->container['address'] = $data['address'] ?? null;
         $this->container['passphrase'] = $data['passphrase'] ?? null;
     }
 
@@ -196,9 +196,6 @@ class ExportAccountRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
-        if ($this->container['privateKey'] === null) {
-            $invalidProperties[] = "'privateKey' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -215,25 +212,25 @@ class ExportAccountRequest implements ModelInterface, ArrayAccess, \JsonSerializ
 
 
     /**
-     * Gets privateKey
+     * Gets address
      *
-     * @return string
+     * @return string|null
      */
-    public function getPrivateKey()
+    public function getAddress()
     {
-        return $this->container['privateKey'];
+        return $this->container['address'];
     }
 
     /**
-     * Sets privateKey
+     * Sets address
      *
-     * @param string $privateKey OBADA account
+     * @param string|null $address OBADA account
      *
      * @return self
      */
-    public function setPrivateKey($privateKey)
+    public function setAddress($address)
     {
-        $this->container['privateKey'] = $privateKey;
+        $this->container['address'] = $address;
 
         return $this;
     }
