@@ -109,9 +109,21 @@ class AccountsApiTest extends TestCase
     }
 
     /**
+     * Test case for exportAccount
+     *
+     * Export OBADA account (private key) from client-helper.
+     *
+     */
+    public function testExportAccount()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for importAccount
      *
-     * Imports an existing OBADA account (private key) client-helper user profile.
+     * Imports an existing OBADA account (private key) to the client-helper user profile.
      *
      */
     public function testImportAccount()

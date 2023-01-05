@@ -80,7 +80,8 @@ Class | Method | HTTP request | Description
 *AccountsApi* | [**account**](docs/Api/AccountsApi.md#account) | **GET** /accounts/{address} | Fetches an information about single account
 *AccountsApi* | [**accounts**](docs/Api/AccountsApi.md#accounts) | **GET** /accounts | Returns a list of OBADA accounts
 *AccountsApi* | [**balance**](docs/Api/AccountsApi.md#balance) | **GET** /accounts/my-balance | Shows account balance of OBADA address
-*AccountsApi* | [**importAccount**](docs/Api/AccountsApi.md#importaccount) | **POST** /accounts/import-account | Imports an existing OBADA account (private key) client-helper user profile
+*AccountsApi* | [**exportAccount**](docs/Api/AccountsApi.md#exportaccount) | **POST** /accounts/export-account | Export OBADA account (private key) from client-helper
+*AccountsApi* | [**importAccount**](docs/Api/AccountsApi.md#importaccount) | **POST** /accounts/import-account | Imports an existing OBADA account (private key) to the client-helper user profile
 *AccountsApi* | [**importWallet**](docs/Api/AccountsApi.md#importwallet) | **POST** /accounts/import-wallet | Imports an existing HD wallet to the client-helper user profile
 *AccountsApi* | [**newAccount**](docs/Api/AccountsApi.md#newaccount) | **POST** /accounts/new-account | Creates a new OBADA account from HD wallet master key
 *AccountsApi* | [**newMnemonic**](docs/Api/AccountsApi.md#newmnemonic) | **GET** /accounts/new-mnemonic | Generate a new mnemonic phrase for seeding wallet
@@ -105,6 +106,8 @@ Class | Method | HTTP request | Description
 - [Accounts](docs/Model/Accounts.md)
 - [DeviceDocument](docs/Model/DeviceDocument.md)
 - [Document](docs/Model/Document.md)
+- [ExportAccountRequest](docs/Model/ExportAccountRequest.md)
+- [ExportAccountResponse](docs/Model/ExportAccountResponse.md)
 - [GenerateObitChecksumRequest](docs/Model/GenerateObitChecksumRequest.md)
 - [GenerateObitChecksumResponse](docs/Model/GenerateObitChecksumResponse.md)
 - [GenerateObitDIDRequest](docs/Model/GenerateObitDIDRequest.md)

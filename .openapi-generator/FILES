@@ -12,6 +12,8 @@ docs/Model/AccountBalance.md
 docs/Model/Accounts.md
 docs/Model/DeviceDocument.md
 docs/Model/Document.md
+docs/Model/ExportAccountRequest.md
+docs/Model/ExportAccountResponse.md
 docs/Model/GenerateObitChecksumRequest.md
 docs/Model/GenerateObitChecksumResponse.md
 docs/Model/GenerateObitDIDRequest.md
@@ -49,6 +51,8 @@ lib/ClientHelper/AccountBalance.php
 lib/ClientHelper/Accounts.php
 lib/ClientHelper/DeviceDocument.php
 lib/ClientHelper/Document.php
+lib/ClientHelper/ExportAccountRequest.php
+lib/ClientHelper/ExportAccountResponse.php
 lib/ClientHelper/GenerateObitChecksumRequest.php
 lib/ClientHelper/GenerateObitChecksumResponse.php
 lib/ClientHelper/GenerateObitDIDRequest.php
@@ -89,6 +93,8 @@ test/Model/AccountTest.php
 test/Model/AccountsTest.php
 test/Model/DeviceDocumentTest.php
 test/Model/DocumentTest.php
+test/Model/ExportAccountRequestTest.php
+test/Model/ExportAccountResponseTest.php
 test/Model/GenerateObitChecksumRequestTest.php
 test/Model/GenerateObitChecksumResponseTest.php
 test/Model/GenerateObitDIDRequestTest.php
