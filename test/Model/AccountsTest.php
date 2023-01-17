@@ -81,9 +81,18 @@ class AccountsTest extends TestCase
     }
 
     /**
-     * Test attribute "data"
+     * Test attribute "hdAccounts"
      */
-    public function testPropertyData()
+    public function testPropertyHdAccounts()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "importedAccounts"
+     */
+    public function testPropertyImportedAccounts()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

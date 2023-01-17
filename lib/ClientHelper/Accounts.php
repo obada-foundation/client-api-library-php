@@ -58,7 +58,8 @@ class Accounts implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'data' => '\Obada\ClientHelper\Account[]'
+        'hdAccounts' => '\Obada\ClientHelper\Account[]',
+        'importedAccounts' => '\Obada\ClientHelper\Account[]'
     ];
 
     /**
@@ -69,7 +70,8 @@ class Accounts implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'data' => null
+        'hdAccounts' => null,
+        'importedAccounts' => null
     ];
 
     /**
@@ -99,7 +101,8 @@ class Accounts implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'data' => 'data'
+        'hdAccounts' => 'hd_accounts',
+        'importedAccounts' => 'imported_accounts'
     ];
 
     /**
@@ -108,7 +111,8 @@ class Accounts implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'data' => 'setData'
+        'hdAccounts' => 'setHdAccounts',
+        'importedAccounts' => 'setImportedAccounts'
     ];
 
     /**
@@ -117,7 +121,8 @@ class Accounts implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'data' => 'getData'
+        'hdAccounts' => 'getHdAccounts',
+        'importedAccounts' => 'getImportedAccounts'
     ];
 
     /**
@@ -177,7 +182,8 @@ class Accounts implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['data'] = $data['data'] ?? null;
+        $this->container['hdAccounts'] = $data['hdAccounts'] ?? null;
+        $this->container['importedAccounts'] = $data['importedAccounts'] ?? null;
     }
 
     /**
@@ -205,25 +211,49 @@ class Accounts implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets data
+     * Gets hdAccounts
      *
      * @return \Obada\ClientHelper\Account[]|null
      */
-    public function getData()
+    public function getHdAccounts()
     {
-        return $this->container['data'];
+        return $this->container['hdAccounts'];
     }
 
     /**
-     * Sets data
+     * Sets hdAccounts
      *
-     * @param \Obada\ClientHelper\Account[]|null $data data
+     * @param \Obada\ClientHelper\Account[]|null $hdAccounts hdAccounts
      *
      * @return self
      */
-    public function setData($data)
+    public function setHdAccounts($hdAccounts)
     {
-        $this->container['data'] = $data;
+        $this->container['hdAccounts'] = $hdAccounts;
+
+        return $this;
+    }
+
+    /**
+     * Gets importedAccounts
+     *
+     * @return \Obada\ClientHelper\Account[]|null
+     */
+    public function getImportedAccounts()
+    {
+        return $this->container['importedAccounts'];
+    }
+
+    /**
+     * Sets importedAccounts
+     *
+     * @param \Obada\ClientHelper\Account[]|null $importedAccounts importedAccounts
+     *
+     * @return self
+     */
+    public function setImportedAccounts($importedAccounts)
+    {
+        $this->container['importedAccounts'] = $importedAccounts;
 
         return $this;
     }
