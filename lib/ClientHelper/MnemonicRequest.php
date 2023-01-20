@@ -59,7 +59,8 @@ class MnemonicRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'mnemonic' => 'string'
+        'mnemonic' => 'string',
+        'force' => 'bool'
     ];
 
     /**
@@ -70,7 +71,8 @@ class MnemonicRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'mnemonic' => null
+        'mnemonic' => null,
+        'force' => null
     ];
 
     /**
@@ -100,7 +102,8 @@ class MnemonicRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'mnemonic' => 'mnemonic'
+        'mnemonic' => 'mnemonic',
+        'force' => 'force'
     ];
 
     /**
@@ -109,7 +112,8 @@ class MnemonicRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'mnemonic' => 'setMnemonic'
+        'mnemonic' => 'setMnemonic',
+        'force' => 'setForce'
     ];
 
     /**
@@ -118,7 +122,8 @@ class MnemonicRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'mnemonic' => 'getMnemonic'
+        'mnemonic' => 'getMnemonic',
+        'force' => 'getForce'
     ];
 
     /**
@@ -179,6 +184,7 @@ class MnemonicRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->container['mnemonic'] = $data['mnemonic'] ?? null;
+        $this->container['force'] = $data['force'] ?? false;
     }
 
     /**
@@ -228,6 +234,30 @@ class MnemonicRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setMnemonic($mnemonic)
     {
         $this->container['mnemonic'] = $mnemonic;
+
+        return $this;
+    }
+
+    /**
+     * Gets force
+     *
+     * @return bool|null
+     */
+    public function getForce()
+    {
+        return $this->container['force'];
+    }
+
+    /**
+     * Sets force
+     *
+     * @param bool|null $force Flag that specify if exisiting wallet should be replaced, if false is send then error will be send back
+     *
+     * @return self
+     */
+    public function setForce($force)
+    {
+        $this->container['force'] = $force;
 
         return $this;
     }

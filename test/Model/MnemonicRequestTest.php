@@ -88,4 +88,13 @@ class MnemonicRequestTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "force"
+     */
+    public function testPropertyForce()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }
