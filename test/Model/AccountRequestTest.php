@@ -1,6 +1,6 @@
 <?php
 /**
- * AccountTest
+ * AccountRequestTest
  *
  * PHP version 7.4
  *
@@ -32,15 +32,15 @@ namespace Obada\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * AccountTest Class Doc Comment
+ * AccountRequestTest Class Doc Comment
  *
  * @category    Class
- * @description OBADA account
+ * @description Set account specific data
  * @package     Obada
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class AccountTest extends TestCase
+class AccountRequestTest extends TestCase
 {
 
     /**
@@ -72,9 +72,9 @@ class AccountTest extends TestCase
     }
 
     /**
-     * Test "Account"
+     * Test "AccountRequest"
      */
-    public function testAccount()
+    public function testAccountRequest()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -84,42 +84,6 @@ class AccountTest extends TestCase
      * Test attribute "name"
      */
     public function testPropertyName()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "pubKey"
-     */
-    public function testPropertyPubKey()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "address"
-     */
-    public function testPropertyAddress()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "balance"
-     */
-    public function testPropertyBalance()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "nftCount"
-     */
-    public function testPropertyNftCount()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

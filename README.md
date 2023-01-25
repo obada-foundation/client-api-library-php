@@ -88,6 +88,7 @@ Class | Method | HTTP request | Description
 *AccountsApi* | [**newWallet**](docs/Api/AccountsApi.md#newwallet) | **POST** /accounts/new-wallet | Creates profile HD wallet
 *AccountsApi* | [**register**](docs/Api/AccountsApi.md#register) | **POST** /accounts/register | Register a new client-helper user profile
 *AccountsApi* | [**sendCoins**](docs/Api/AccountsApi.md#sendcoins) | **POST** /accounts/{address}/send-coins | Send coins from selected account
+*AccountsApi* | [**updateAccount**](docs/Api/AccountsApi.md#updateaccount) | **POST** /accounts/{address} | Sets account specific information
 *NFTApi* | [**mint**](docs/Api/NFTApi.md#mint) | **POST** /nft/{key}/mint | Mints NFT
 *NFTApi* | [**nft**](docs/Api/NFTApi.md#nft) | **GET** /nft/{key} | Fetch NFT from OBADA blockchain Node
 *NFTApi* | [**send**](docs/Api/NFTApi.md#send) | **POST** /nft/{key}/send | Send NFT to another address
@@ -103,6 +104,7 @@ Class | Method | HTTP request | Description
 
 - [Account](docs/Model/Account.md)
 - [AccountBalance](docs/Model/AccountBalance.md)
+- [AccountRequest](docs/Model/AccountRequest.md)
 - [Accounts](docs/Model/Accounts.md)
 - [DeviceDocument](docs/Model/DeviceDocument.md)
 - [Document](docs/Model/Document.md)

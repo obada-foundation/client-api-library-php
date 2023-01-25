@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**name** | **string** | Account address associated name | [optional]
 **pubKey** | **string** | Public key | [optional]
 **address** | **string** | OBADA address | [optional]
 **balance** | **int** |  | [optional]

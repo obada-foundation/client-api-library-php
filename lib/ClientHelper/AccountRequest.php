@@ -1,6 +1,6 @@
 <?php
 /**
- * Account
+ * AccountRequest
  *
  * PHP version 7.4
  *
@@ -33,16 +33,16 @@ use \ArrayAccess;
 use \Obada\ObjectSerializer;
 
 /**
- * Account Class Doc Comment
+ * AccountRequest Class Doc Comment
  *
  * @category Class
- * @description OBADA account
+ * @description Set account specific data
  * @package  Obada
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Account implements ModelInterface, ArrayAccess, \JsonSerializable
+class AccountRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Account';
+    protected static $openAPIModelName = 'AccountRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,11 +59,7 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'name' => 'string',
-        'pubKey' => 'string',
-        'address' => 'string',
-        'balance' => 'int',
-        'nftCount' => 'int'
+        'name' => 'string'
     ];
 
     /**
@@ -74,11 +70,7 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'name' => null,
-        'pubKey' => null,
-        'address' => null,
-        'balance' => 'int64',
-        'nftCount' => 'int64'
+        'name' => null
     ];
 
     /**
@@ -108,11 +100,7 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'pubKey' => 'pub_key',
-        'address' => 'address',
-        'balance' => 'balance',
-        'nftCount' => 'nft_count'
+        'name' => 'name'
     ];
 
     /**
@@ -121,11 +109,7 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'pubKey' => 'setPubKey',
-        'address' => 'setAddress',
-        'balance' => 'setBalance',
-        'nftCount' => 'setNftCount'
+        'name' => 'setName'
     ];
 
     /**
@@ -134,11 +118,7 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'pubKey' => 'getPubKey',
-        'address' => 'getAddress',
-        'balance' => 'getBalance',
-        'nftCount' => 'getNftCount'
+        'name' => 'getName'
     ];
 
     /**
@@ -199,10 +179,6 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->container['name'] = $data['name'] ?? null;
-        $this->container['pubKey'] = $data['pubKey'] ?? null;
-        $this->container['address'] = $data['address'] ?? null;
-        $this->container['balance'] = $data['balance'] ?? null;
-        $this->container['nftCount'] = $data['nftCount'] ?? null;
     }
 
     /**
@@ -242,109 +218,13 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets name
      *
-     * @param string|null $name Account address associated name
+     * @param string|null $name name
      *
      * @return self
      */
     public function setName($name)
     {
         $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets pubKey
-     *
-     * @return string|null
-     */
-    public function getPubKey()
-    {
-        return $this->container['pubKey'];
-    }
-
-    /**
-     * Sets pubKey
-     *
-     * @param string|null $pubKey Public key
-     *
-     * @return self
-     */
-    public function setPubKey($pubKey)
-    {
-        $this->container['pubKey'] = $pubKey;
-
-        return $this;
-    }
-
-    /**
-     * Gets address
-     *
-     * @return string|null
-     */
-    public function getAddress()
-    {
-        return $this->container['address'];
-    }
-
-    /**
-     * Sets address
-     *
-     * @param string|null $address OBADA address
-     *
-     * @return self
-     */
-    public function setAddress($address)
-    {
-        $this->container['address'] = $address;
-
-        return $this;
-    }
-
-    /**
-     * Gets balance
-     *
-     * @return int|null
-     */
-    public function getBalance()
-    {
-        return $this->container['balance'];
-    }
-
-    /**
-     * Sets balance
-     *
-     * @param int|null $balance balance
-     *
-     * @return self
-     */
-    public function setBalance($balance)
-    {
-        $this->container['balance'] = $balance;
-
-        return $this;
-    }
-
-    /**
-     * Gets nftCount
-     *
-     * @return int|null
-     */
-    public function getNftCount()
-    {
-        return $this->container['nftCount'];
-    }
-
-    /**
-     * Sets nftCount
-     *
-     * @param int|null $nftCount nftCount
-     *
-     * @return self
-     */
-    public function setNftCount($nftCount)
-    {
-        $this->container['nftCount'] = $nftCount;
 
         return $this;
     }

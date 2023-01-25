@@ -203,4 +203,16 @@ class AccountsApiTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test case for updateAccount
+     *
+     * Sets account specific information.
+     *
+     */
+    public function testUpdateAccount()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }

@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**newWallet()**](AccountsApi.md#newWallet) | **POST** /accounts/new-wallet | Creates profile HD wallet
 [**register()**](AccountsApi.md#register) | **POST** /accounts/register | Register a new client-helper user profile
 [**sendCoins()**](AccountsApi.md#sendCoins) | **POST** /accounts/{address}/send-coins | Send coins from selected account
+[**updateAccount()**](AccountsApi.md#updateAccount) | **POST** /accounts/{address} | Sets account specific information
 
 
 ## `account()`
@@ -360,7 +361,7 @@ void (empty response body)
 ## `newAccount()`
 
 ```php
-newAccount()
+newAccount($accountRequest)
 ```
 
 Creates a new OBADA account from HD wallet master key
@@ -382,9 +383,10 @@ $apiInstance = new Obada\Api\AccountsApi(
     new GuzzleHttp\Client(),
     $config
 );
+$accountRequest = new \Obada\ClientHelper\AccountRequest(); // \Obada\ClientHelper\AccountRequest
 
 try {
-    $apiInstance->newAccount();
+    $apiInstance->newAccount($accountRequest);
 } catch (Exception $e) {
     echo 'Exception when calling AccountsApi->newAccount: ', $e->getMessage(), PHP_EOL;
 }
@@ -392,7 +394,9 @@ try {
 
 ### Parameters
 
-This endpoint does not need any parameter.
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accountRequest** | [**\Obada\ClientHelper\AccountRequest**](../Model/AccountRequest.md)|  | [optional]
 
 ### Return type
 
@@ -404,7 +408,7 @@ void (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -624,6 +628,65 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **address** | **string**| OBADA address |
  **sendCoinsRequest** | [**\Obada\ClientHelper\SendCoinsRequest**](../Model/SendCoinsRequest.md)|  | [optional]
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `updateAccount()`
+
+```php
+updateAccount($address, $accountRequest)
+```
+
+Sets account specific information
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: bearerAuth
+$config = Obada\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Obada\Api\AccountsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$address = obada1yxxnd624tgwqm3eyv5smdvjrrydfh9h943qptg; // string | OBADA address
+$accountRequest = new \Obada\ClientHelper\AccountRequest(); // \Obada\ClientHelper\AccountRequest
+
+try {
+    $apiInstance->updateAccount($address, $accountRequest);
+} catch (Exception $e) {
+    echo 'Exception when calling AccountsApi->updateAccount: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **address** | **string**| OBADA address |
+ **accountRequest** | [**\Obada\ClientHelper\AccountRequest**](../Model/AccountRequest.md)|  | [optional]
 
 ### Return type
 
