@@ -59,7 +59,7 @@ class AccountRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'name' => 'string'
+        'accountName' => 'string'
     ];
 
     /**
@@ -70,7 +70,7 @@ class AccountRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'name' => null
+        'accountName' => null
     ];
 
     /**
@@ -100,7 +100,7 @@ class AccountRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name'
+        'accountName' => 'account_name'
     ];
 
     /**
@@ -109,7 +109,7 @@ class AccountRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName'
+        'accountName' => 'setAccountName'
     ];
 
     /**
@@ -118,7 +118,7 @@ class AccountRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName'
+        'accountName' => 'getAccountName'
     ];
 
     /**
@@ -178,7 +178,7 @@ class AccountRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = $data['name'] ?? null;
+        $this->container['accountName'] = $data['accountName'] ?? null;
     }
 
     /**
@@ -206,25 +206,25 @@ class AccountRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets name
+     * Gets accountName
      *
      * @return string|null
      */
-    public function getName()
+    public function getAccountName()
     {
-        return $this->container['name'];
+        return $this->container['accountName'];
     }
 
     /**
-     * Sets name
+     * Sets accountName
      *
-     * @param string|null $name name
+     * @param string|null $accountName Associative account name
      *
      * @return self
      */
-    public function setName($name)
+    public function setAccountName($accountName)
     {
-        $this->container['name'] = $name;
+        $this->container['accountName'] = $accountName;
 
         return $this;
     }

@@ -59,7 +59,8 @@ class ImportAccountRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'privateKey' => 'string'
+        'privateKey' => 'string',
+        'accountName' => 'string'
     ];
 
     /**
@@ -70,7 +71,8 @@ class ImportAccountRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'privateKey' => null
+        'privateKey' => null,
+        'accountName' => null
     ];
 
     /**
@@ -100,7 +102,8 @@ class ImportAccountRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
-        'privateKey' => 'private_key'
+        'privateKey' => 'private_key',
+        'accountName' => 'account_name'
     ];
 
     /**
@@ -109,7 +112,8 @@ class ImportAccountRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'privateKey' => 'setPrivateKey'
+        'privateKey' => 'setPrivateKey',
+        'accountName' => 'setAccountName'
     ];
 
     /**
@@ -118,7 +122,8 @@ class ImportAccountRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
-        'privateKey' => 'getPrivateKey'
+        'privateKey' => 'getPrivateKey',
+        'accountName' => 'getAccountName'
     ];
 
     /**
@@ -179,6 +184,7 @@ class ImportAccountRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     public function __construct(array $data = null)
     {
         $this->container['privateKey'] = $data['privateKey'] ?? null;
+        $this->container['accountName'] = $data['accountName'] ?? null;
     }
 
     /**
@@ -228,6 +234,30 @@ class ImportAccountRequest implements ModelInterface, ArrayAccess, \JsonSerializ
     public function setPrivateKey($privateKey)
     {
         $this->container['privateKey'] = $privateKey;
+
+        return $this;
+    }
+
+    /**
+     * Gets accountName
+     *
+     * @return string|null
+     */
+    public function getAccountName()
+    {
+        return $this->container['accountName'];
+    }
+
+    /**
+     * Sets accountName
+     *
+     * @param string|null $accountName Associative account name
+     *
+     * @return self
+     */
+    public function setAccountName($accountName)
+    {
+        $this->container['accountName'] = $accountName;
 
         return $this;
     }

@@ -88,4 +88,13 @@ class ImportAccountRequestTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "accountName"
+     */
+    public function testPropertyAccountName()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }

@@ -81,9 +81,9 @@ class AccountRequestTest extends TestCase
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "accountName"
      */
-    public function testPropertyName()
+    public function testPropertyAccountName()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
