@@ -121,6 +121,18 @@ class AccountsApiTest extends TestCase
     }
 
     /**
+     * Test case for getMnemonic
+     *
+     * Fetching an existing mnemonic phrase.
+     *
+     */
+    public function testGetMnemonic()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for importAccount
      *
      * Imports an existing OBADA account (private key) to the client-helper user profile.
