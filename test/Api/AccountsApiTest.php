@@ -97,18 +97,6 @@ class AccountsApiTest extends TestCase
     }
 
     /**
-     * Test case for balance
-     *
-     * Shows account balance of OBADA address.
-     *
-     */
-    public function testBalance()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test case for deleteImportedAccount
      *
      * Delete imported account.

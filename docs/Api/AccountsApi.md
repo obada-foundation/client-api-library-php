@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**account()**](AccountsApi.md#account) | **GET** /accounts/{address} | Fetches an information about single account
 [**accounts()**](AccountsApi.md#accounts) | **GET** /accounts | Returns a list of OBADA accounts
-[**balance()**](AccountsApi.md#balance) | **GET** /accounts/my-balance | Shows account balance of OBADA address
 [**deleteImportedAccount()**](AccountsApi.md#deleteImportedAccount) | **DELETE** /accounts/{address} | Delete imported account
 [**exportAccount()**](AccountsApi.md#exportAccount) | **POST** /accounts/export-account | Export OBADA account (private key) from client-helper
 [**getMnemonic()**](AccountsApi.md#getMnemonic) | **GET** /accounts/mnemonic | Fetching an existing mnemonic phrase
@@ -119,61 +118,6 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**\Obada\ClientHelper\Accounts**](../Model/Accounts.md)
-
-### Authorization
-
-[bearerAuth](../../README.md#bearerAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `balance()`
-
-```php
-balance(): \Obada\ClientHelper\AccountBalance
-```
-
-Shows account balance of OBADA address
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure Bearer (JWT) authorization: bearerAuth
-$config = Obada\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new Obada\Api\AccountsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-
-try {
-    $result = $apiInstance->balance();
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling AccountsApi->balance: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**\Obada\ClientHelper\AccountBalance**](../Model/AccountBalance.md)
 
 ### Authorization
 
