@@ -109,6 +109,18 @@ class AccountsApiTest extends TestCase
     }
 
     /**
+     * Test case for deleteImportedAccount
+     *
+     * Delete imported account.
+     *
+     */
+    public function testDeleteImportedAccount()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for exportAccount
      *
      * Export OBADA account (private key) from client-helper.
