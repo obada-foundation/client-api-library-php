@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  * AccountBalanceTest Class Doc Comment
  *
  * @category    Class
- * @description OBADA Account balance
+ * @description AccountBalance
  * @package     Obada
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
@@ -81,18 +81,18 @@ class AccountBalanceTest extends TestCase
     }
 
     /**
-     * Test attribute "address"
+     * Test attribute "denom"
      */
-    public function testPropertyAddress()
+    public function testPropertyDenom()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "balance"
+     * Test attribute "amount"
      */
-    public function testPropertyBalance()
+    public function testPropertyAmount()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

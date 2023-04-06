@@ -36,7 +36,6 @@ use \Obada\ObjectSerializer;
  * AccountBalance Class Doc Comment
  *
  * @category Class
- * @description OBADA Account balance
  * @package  Obada
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -51,7 +50,7 @@ class AccountBalance implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'AccountBalance';
+    protected static $openAPIModelName = 'Account_balance';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,8 +58,8 @@ class AccountBalance implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'address' => 'string',
-        'balance' => 'int'
+        'denom' => 'string',
+        'amount' => 'string'
     ];
 
     /**
@@ -71,8 +70,8 @@ class AccountBalance implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'address' => null,
-        'balance' => 'int64'
+        'denom' => null,
+        'amount' => null
     ];
 
     /**
@@ -102,8 +101,8 @@ class AccountBalance implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'address' => 'address',
-        'balance' => 'balance'
+        'denom' => 'denom',
+        'amount' => 'amount'
     ];
 
     /**
@@ -112,8 +111,8 @@ class AccountBalance implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'address' => 'setAddress',
-        'balance' => 'setBalance'
+        'denom' => 'setDenom',
+        'amount' => 'setAmount'
     ];
 
     /**
@@ -122,8 +121,8 @@ class AccountBalance implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'address' => 'getAddress',
-        'balance' => 'getBalance'
+        'denom' => 'getDenom',
+        'amount' => 'getAmount'
     ];
 
     /**
@@ -183,8 +182,8 @@ class AccountBalance implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['address'] = $data['address'] ?? null;
-        $this->container['balance'] = $data['balance'] ?? null;
+        $this->container['denom'] = $data['denom'] ?? null;
+        $this->container['amount'] = $data['amount'] ?? null;
     }
 
     /**
@@ -212,49 +211,49 @@ class AccountBalance implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets address
+     * Gets denom
      *
      * @return string|null
      */
-    public function getAddress()
+    public function getDenom()
     {
-        return $this->container['address'];
+        return $this->container['denom'];
     }
 
     /**
-     * Sets address
+     * Sets denom
      *
-     * @param string|null $address address
+     * @param string|null $denom Denomination unit
      *
      * @return self
      */
-    public function setAddress($address)
+    public function setDenom($denom)
     {
-        $this->container['address'] = $address;
+        $this->container['denom'] = $denom;
 
         return $this;
     }
 
     /**
-     * Gets balance
+     * Gets amount
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getBalance()
+    public function getAmount()
     {
-        return $this->container['balance'];
+        return $this->container['amount'];
     }
 
     /**
-     * Sets balance
+     * Sets amount
      *
-     * @param int|null $balance balance
+     * @param string|null $amount amount
      *
      * @return self
      */
-    public function setBalance($balance)
+    public function setAmount($amount)
     {
-        $this->container['balance'] = $balance;
+        $this->container['amount'] = $amount;
 
         return $this;
     }

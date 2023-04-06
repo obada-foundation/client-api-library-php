@@ -62,7 +62,7 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => 'string',
         'pubKey' => 'string',
         'address' => 'string',
-        'balance' => 'int',
+        'balance' => '\Obada\ClientHelper\AccountBalance',
         'nftCount' => 'int'
     ];
 
@@ -77,7 +77,7 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
         'name' => null,
         'pubKey' => null,
         'address' => null,
-        'balance' => 'int64',
+        'balance' => null,
         'nftCount' => 'int64'
     ];
 
@@ -304,7 +304,7 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets balance
      *
-     * @return int|null
+     * @return \Obada\ClientHelper\AccountBalance|null
      */
     public function getBalance()
     {
@@ -314,7 +314,7 @@ class Account implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets balance
      *
-     * @param int|null $balance balance
+     * @param \Obada\ClientHelper\AccountBalance|null $balance balance
      *
      * @return self
      */
