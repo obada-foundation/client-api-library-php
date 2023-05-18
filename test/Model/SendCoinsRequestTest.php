@@ -81,9 +81,9 @@ class SendCoinsRequestTest extends TestCase
     }
 
     /**
-     * Test attribute "recepientAddress"
+     * Test attribute "recipientAddress"
      */
-    public function testPropertyRecepientAddress()
+    public function testPropertyRecipientAddress()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**recepientAddress** | **string** |  |
+**recipientAddress** | **string** |  |
 **amount** | **string** |  |
 **denom** | **string** |  |
 

@@ -59,7 +59,7 @@ class SendCoinsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'recepientAddress' => 'string',
+        'recipientAddress' => 'string',
         'amount' => 'string',
         'denom' => 'string'
     ];
@@ -72,7 +72,7 @@ class SendCoinsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'recepientAddress' => null,
+        'recipientAddress' => null,
         'amount' => null,
         'denom' => null
     ];
@@ -104,7 +104,7 @@ class SendCoinsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'recepientAddress' => 'recepient_address',
+        'recipientAddress' => 'recipient_address',
         'amount' => 'amount',
         'denom' => 'denom'
     ];
@@ -115,7 +115,7 @@ class SendCoinsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'recepientAddress' => 'setRecepientAddress',
+        'recipientAddress' => 'setRecipientAddress',
         'amount' => 'setAmount',
         'denom' => 'setDenom'
     ];
@@ -126,7 +126,7 @@ class SendCoinsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'recepientAddress' => 'getRecepientAddress',
+        'recipientAddress' => 'getRecipientAddress',
         'amount' => 'getAmount',
         'denom' => 'getDenom'
     ];
@@ -188,7 +188,7 @@ class SendCoinsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['recepientAddress'] = $data['recepientAddress'] ?? null;
+        $this->container['recipientAddress'] = $data['recipientAddress'] ?? null;
         $this->container['amount'] = $data['amount'] ?? null;
         $this->container['denom'] = $data['denom'] ?? null;
     }
@@ -202,8 +202,8 @@ class SendCoinsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['recepientAddress'] === null) {
-            $invalidProperties[] = "'recepientAddress' can't be null";
+        if ($this->container['recipientAddress'] === null) {
+            $invalidProperties[] = "'recipientAddress' can't be null";
         }
         if ($this->container['amount'] === null) {
             $invalidProperties[] = "'amount' can't be null";
@@ -227,25 +227,25 @@ class SendCoinsRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets recepientAddress
+     * Gets recipientAddress
      *
      * @return string
      */
-    public function getRecepientAddress()
+    public function getRecipientAddress()
     {
-        return $this->container['recepientAddress'];
+        return $this->container['recipientAddress'];
     }
 
     /**
-     * Sets recepientAddress
+     * Sets recipientAddress
      *
-     * @param string $recepientAddress recepientAddress
+     * @param string $recipientAddress recipientAddress
      *
      * @return self
      */
-    public function setRecepientAddress($recepientAddress)
+    public function setRecipientAddress($recipientAddress)
     {
-        $this->container['recepientAddress'] = $recepientAddress;
+        $this->container['recipientAddress'] = $recipientAddress;
 
         return $this;
     }
