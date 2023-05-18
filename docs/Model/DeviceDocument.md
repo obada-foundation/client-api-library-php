@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **string** | Associative name of device document |
+**type** | **string** | Document type |
 **documentFile** | **string** |  |
 **shouldEncrypt** | **bool** | If true then client helper will encrypt document with account key | [optional] [default to false]
 

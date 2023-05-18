@@ -60,6 +60,7 @@ class DeviceDocument implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'name' => 'string',
+        'type' => 'string',
         'documentFile' => 'string',
         'shouldEncrypt' => 'bool'
     ];
@@ -73,6 +74,7 @@ class DeviceDocument implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'name' => null,
+        'type' => null,
         'documentFile' => 'base64',
         'shouldEncrypt' => null
     ];
@@ -105,6 +107,7 @@ class DeviceDocument implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'name' => 'name',
+        'type' => 'type',
         'documentFile' => 'document_file',
         'shouldEncrypt' => 'should_encrypt'
     ];
@@ -116,6 +119,7 @@ class DeviceDocument implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'name' => 'setName',
+        'type' => 'setType',
         'documentFile' => 'setDocumentFile',
         'shouldEncrypt' => 'setShouldEncrypt'
     ];
@@ -127,6 +131,7 @@ class DeviceDocument implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'name' => 'getName',
+        'type' => 'getType',
         'documentFile' => 'getDocumentFile',
         'shouldEncrypt' => 'getShouldEncrypt'
     ];
@@ -189,6 +194,7 @@ class DeviceDocument implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->container['name'] = $data['name'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
         $this->container['documentFile'] = $data['documentFile'] ?? null;
         $this->container['shouldEncrypt'] = $data['shouldEncrypt'] ?? false;
     }
@@ -204,6 +210,9 @@ class DeviceDocument implements ModelInterface, ArrayAccess, \JsonSerializable
 
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
+        }
+        if ($this->container['type'] === null) {
+            $invalidProperties[] = "'type' can't be null";
         }
         if ($this->container['documentFile'] === null) {
             $invalidProperties[] = "'documentFile' can't be null";
@@ -243,6 +252,30 @@ class DeviceDocument implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setName($name)
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->container['type'];
+    }
+
+    /**
+     * Sets type
+     *
+     * @param string $type Document type
+     *
+     * @return self
+     */
+    public function setType($type)
+    {
+        $this->container['type'] = $type;
 
         return $this;
     }

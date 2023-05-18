@@ -90,6 +90,15 @@ class DeviceDocumentTest extends TestCase
     }
 
     /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "documentFile"
      */
     public function testPropertyDocumentFile()
