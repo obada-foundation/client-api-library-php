@@ -108,10 +108,10 @@ class NFT implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'classId' => 'class_id',
+        'classId' => 'classId',
         'id' => 'id',
         'uri' => 'uri',
-        'uriHash' => 'uri_hash',
+        'uriHash' => 'uriHash',
         'data' => 'data'
     ];
 
