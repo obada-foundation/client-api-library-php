@@ -81,36 +81,9 @@ class NFTDataTest extends TestCase
     }
 
     /**
-     * Test attribute "trustAnchorToken"
-     */
-    public function testPropertyTrustAnchorToken()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "usn"
      */
     public function testPropertyUsn()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "checksum"
-     */
-    public function testPropertyChecksum()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "documents"
-     */
-    public function testPropertyDocuments()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

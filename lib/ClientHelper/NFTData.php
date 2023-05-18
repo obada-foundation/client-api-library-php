@@ -58,10 +58,7 @@ class NFTData implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'trustAnchorToken' => 'string',
-        'usn' => 'string',
-        'checksum' => 'string',
-        'documents' => '\Obada\ClientHelper\NFTDocument[]'
+        'usn' => 'string'
     ];
 
     /**
@@ -72,10 +69,7 @@ class NFTData implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'trustAnchorToken' => null,
-        'usn' => null,
-        'checksum' => null,
-        'documents' => null
+        'usn' => null
     ];
 
     /**
@@ -105,10 +99,7 @@ class NFTData implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'trustAnchorToken' => 'trust_anchor_token',
-        'usn' => 'usn',
-        'checksum' => 'checksum',
-        'documents' => 'documents'
+        'usn' => 'usn'
     ];
 
     /**
@@ -117,10 +108,7 @@ class NFTData implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'trustAnchorToken' => 'setTrustAnchorToken',
-        'usn' => 'setUsn',
-        'checksum' => 'setChecksum',
-        'documents' => 'setDocuments'
+        'usn' => 'setUsn'
     ];
 
     /**
@@ -129,10 +117,7 @@ class NFTData implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'trustAnchorToken' => 'getTrustAnchorToken',
-        'usn' => 'getUsn',
-        'checksum' => 'getChecksum',
-        'documents' => 'getDocuments'
+        'usn' => 'getUsn'
     ];
 
     /**
@@ -192,10 +177,7 @@ class NFTData implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['trustAnchorToken'] = $data['trustAnchorToken'] ?? null;
         $this->container['usn'] = $data['usn'] ?? null;
-        $this->container['checksum'] = $data['checksum'] ?? null;
-        $this->container['documents'] = $data['documents'] ?? null;
     }
 
     /**
@@ -223,30 +205,6 @@ class NFTData implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets trustAnchorToken
-     *
-     * @return string|null
-     */
-    public function getTrustAnchorToken()
-    {
-        return $this->container['trustAnchorToken'];
-    }
-
-    /**
-     * Sets trustAnchorToken
-     *
-     * @param string|null $trustAnchorToken trustAnchorToken
-     *
-     * @return self
-     */
-    public function setTrustAnchorToken($trustAnchorToken)
-    {
-        $this->container['trustAnchorToken'] = $trustAnchorToken;
-
-        return $this;
-    }
-
-    /**
      * Gets usn
      *
      * @return string|null
@@ -266,54 +224,6 @@ class NFTData implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setUsn($usn)
     {
         $this->container['usn'] = $usn;
-
-        return $this;
-    }
-
-    /**
-     * Gets checksum
-     *
-     * @return string|null
-     */
-    public function getChecksum()
-    {
-        return $this->container['checksum'];
-    }
-
-    /**
-     * Sets checksum
-     *
-     * @param string|null $checksum checksum
-     *
-     * @return self
-     */
-    public function setChecksum($checksum)
-    {
-        $this->container['checksum'] = $checksum;
-
-        return $this;
-    }
-
-    /**
-     * Gets documents
-     *
-     * @return \Obada\ClientHelper\NFTDocument[]|null
-     */
-    public function getDocuments()
-    {
-        return $this->container['documents'];
-    }
-
-    /**
-     * Sets documents
-     *
-     * @param \Obada\ClientHelper\NFTDocument[]|null $documents documents
-     *
-     * @return self
-     */
-    public function setDocuments($documents)
-    {
-        $this->container['documents'] = $documents;
 
         return $this;
     }

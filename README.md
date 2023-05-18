@@ -120,7 +120,6 @@ Class | Method | HTTP request | Description
 - [MnemonicRequest](docs/Model/MnemonicRequest.md)
 - [NFT](docs/Model/NFT.md)
 - [NFTData](docs/Model/NFTData.md)
-- [NFTDocument](docs/Model/NFTDocument.md)
 - [NewMnemonic](docs/Model/NewMnemonic.md)
 - [NotAuthorized](docs/Model/NotAuthorized.md)
 - [NotFound](docs/Model/NotFound.md)
