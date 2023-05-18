@@ -1,6 +1,6 @@
 <?php
 /**
- * ObitHistoryTest
+ * ObitHistoryValueTest
  *
  * PHP version 7.4
  *
@@ -32,15 +32,15 @@ namespace Obada\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ObitHistoryTest Class Doc Comment
+ * ObitHistoryValueTest Class Doc Comment
  *
  * @category    Class
- * @description New Obit request payload.
+ * @description ObitHistoryValue
  * @package     Obada
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class ObitHistoryTest extends TestCase
+class ObitHistoryValueTest extends TestCase
 {
 
     /**
@@ -72,63 +72,27 @@ class ObitHistoryTest extends TestCase
     }
 
     /**
-     * Test "ObitHistory"
+     * Test "ObitHistoryValue"
      */
-    public function testObitHistory()
+    public function testObitHistoryValue()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "obitDid"
+     * Test attribute "versionHash"
      */
-    public function testPropertyObitDid()
+    public function testPropertyVersionHash()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "event"
+     * Test attribute "rootHash"
      */
-    public function testPropertyEvent()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "oldValues"
-     */
-    public function testPropertyOldValues()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "newValues"
-     */
-    public function testPropertyNewValues()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "createdAt"
-     */
-    public function testPropertyCreatedAt()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "updatedAt"
-     */
-    public function testPropertyUpdatedAt()
+    public function testPropertyRootHash()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

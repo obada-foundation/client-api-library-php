@@ -1,6 +1,6 @@
 <?php
 /**
- * ObitHistory
+ * ObitHistoryValue
  *
  * PHP version 7.4
  *
@@ -33,16 +33,15 @@ use \ArrayAccess;
 use \Obada\ObjectSerializer;
 
 /**
- * ObitHistory Class Doc Comment
+ * ObitHistoryValue Class Doc Comment
  *
  * @category Class
- * @description New Obit request payload.
  * @package  Obada
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ObitHistory implements ModelInterface, ArrayAccess, \JsonSerializable
+class ObitHistoryValue implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +50,7 @@ class ObitHistory implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ObitHistory';
+    protected static $openAPIModelName = 'ObitHistory_value';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,12 +58,8 @@ class ObitHistory implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'obitDid' => 'string',
-        'event' => 'string',
-        'oldValues' => 'object',
-        'newValues' => 'object',
-        'createdAt' => '\DateTime',
-        'updatedAt' => '\DateTime'
+        'versionHash' => 'string',
+        'rootHash' => 'string'
     ];
 
     /**
@@ -75,12 +70,8 @@ class ObitHistory implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'obitDid' => null,
-        'event' => null,
-        'oldValues' => null,
-        'newValues' => null,
-        'createdAt' => 'date-time',
-        'updatedAt' => 'date-time'
+        'versionHash' => null,
+        'rootHash' => null
     ];
 
     /**
@@ -110,12 +101,8 @@ class ObitHistory implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'obitDid' => 'obit_did',
-        'event' => 'event',
-        'oldValues' => 'old_values',
-        'newValues' => 'new_values',
-        'createdAt' => 'created_at',
-        'updatedAt' => 'updated_at'
+        'versionHash' => 'version_hash',
+        'rootHash' => 'root_hash'
     ];
 
     /**
@@ -124,12 +111,8 @@ class ObitHistory implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'obitDid' => 'setObitDid',
-        'event' => 'setEvent',
-        'oldValues' => 'setOldValues',
-        'newValues' => 'setNewValues',
-        'createdAt' => 'setCreatedAt',
-        'updatedAt' => 'setUpdatedAt'
+        'versionHash' => 'setVersionHash',
+        'rootHash' => 'setRootHash'
     ];
 
     /**
@@ -138,12 +121,8 @@ class ObitHistory implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'obitDid' => 'getObitDid',
-        'event' => 'getEvent',
-        'oldValues' => 'getOldValues',
-        'newValues' => 'getNewValues',
-        'createdAt' => 'getCreatedAt',
-        'updatedAt' => 'getUpdatedAt'
+        'versionHash' => 'getVersionHash',
+        'rootHash' => 'getRootHash'
     ];
 
     /**
@@ -203,12 +182,8 @@ class ObitHistory implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['obitDid'] = $data['obitDid'] ?? null;
-        $this->container['event'] = $data['event'] ?? null;
-        $this->container['oldValues'] = $data['oldValues'] ?? null;
-        $this->container['newValues'] = $data['newValues'] ?? null;
-        $this->container['createdAt'] = $data['createdAt'] ?? null;
-        $this->container['updatedAt'] = $data['updatedAt'] ?? null;
+        $this->container['versionHash'] = $data['versionHash'] ?? null;
+        $this->container['rootHash'] = $data['rootHash'] ?? null;
     }
 
     /**
@@ -219,10 +194,6 @@ class ObitHistory implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
-
-        if (!is_null($this->container['obitDid']) && (mb_strlen($this->container['obitDid']) > 256)) {
-            $invalidProperties[] = "invalid value for 'obitDid', the character length must be smaller than or equal to 256.";
-        }
 
         return $invalidProperties;
     }
@@ -240,149 +211,49 @@ class ObitHistory implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets obitDid
+     * Gets versionHash
      *
      * @return string|null
      */
-    public function getObitDid()
+    public function getVersionHash()
     {
-        return $this->container['obitDid'];
+        return $this->container['versionHash'];
     }
 
     /**
-     * Sets obitDid
+     * Sets versionHash
      *
-     * @param string|null $obitDid OBADA decentralized identifier (max length Rohi?)
+     * @param string|null $versionHash versionHash
      *
      * @return self
      */
-    public function setObitDid($obitDid)
+    public function setVersionHash($versionHash)
     {
-        if (!is_null($obitDid) && (mb_strlen($obitDid) > 256)) {
-            throw new \InvalidArgumentException('invalid length for $obitDid when calling ObitHistory., must be smaller than or equal to 256.');
-        }
-
-        $this->container['obitDid'] = $obitDid;
+        $this->container['versionHash'] = $versionHash;
 
         return $this;
     }
 
     /**
-     * Gets event
+     * Gets rootHash
      *
      * @return string|null
      */
-    public function getEvent()
+    public function getRootHash()
     {
-        return $this->container['event'];
+        return $this->container['rootHash'];
     }
 
     /**
-     * Sets event
+     * Sets rootHash
      *
-     * @param string|null $event History event
+     * @param string|null $rootHash rootHash
      *
      * @return self
      */
-    public function setEvent($event)
+    public function setRootHash($rootHash)
     {
-        $this->container['event'] = $event;
-
-        return $this;
-    }
-
-    /**
-     * Gets oldValues
-     *
-     * @return object|null
-     */
-    public function getOldValues()
-    {
-        return $this->container['oldValues'];
-    }
-
-    /**
-     * Sets oldValues
-     *
-     * @param object|null $oldValues oldValues
-     *
-     * @return self
-     */
-    public function setOldValues($oldValues)
-    {
-        $this->container['oldValues'] = $oldValues;
-
-        return $this;
-    }
-
-    /**
-     * Gets newValues
-     *
-     * @return object|null
-     */
-    public function getNewValues()
-    {
-        return $this->container['newValues'];
-    }
-
-    /**
-     * Sets newValues
-     *
-     * @param object|null $newValues newValues
-     *
-     * @return self
-     */
-    public function setNewValues($newValues)
-    {
-        $this->container['newValues'] = $newValues;
-
-        return $this;
-    }
-
-    /**
-     * Gets createdAt
-     *
-     * @return \DateTime|null
-     */
-    public function getCreatedAt()
-    {
-        return $this->container['createdAt'];
-    }
-
-    /**
-     * Sets createdAt
-     *
-     * @param \DateTime|null $createdAt createdAt
-     *
-     * @return self
-     */
-    public function setCreatedAt($createdAt)
-    {
-        $this->container['createdAt'] = $createdAt;
-
-        return $this;
-    }
-
-    /**
-     * Gets updatedAt
-     *
-     * @return \DateTime|null
-     */
-    public function getUpdatedAt()
-    {
-        return $this->container['updatedAt'];
-    }
-
-    /**
-     * Sets updatedAt
-     *
-     * @param \DateTime|null $updatedAt updatedAt
-     *
-     * @return self
-     */
-    public function setUpdatedAt($updatedAt)
-    {
-        $this->container['updatedAt'] = $updatedAt;
+        $this->container['rootHash'] = $rootHash;
 
         return $this;
     }

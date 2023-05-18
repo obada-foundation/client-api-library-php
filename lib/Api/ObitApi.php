@@ -455,7 +455,7 @@ class ObitApi
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Obada\ClientHelper\History200Response|\Obada\ClientHelper\NotFound
+     * @return array<string,\Obada\ClientHelper\ObitHistoryValue>|\Obada\ClientHelper\NotFound
      */
     public function history($key)
     {
@@ -472,7 +472,7 @@ class ObitApi
      *
      * @throws \Obada\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Obada\ClientHelper\History200Response|\Obada\ClientHelper\NotFound, HTTP status code, HTTP response headers (array of strings)
+     * @return array of array<string,\Obada\ClientHelper\ObitHistoryValue>|\Obada\ClientHelper\NotFound, HTTP status code, HTTP response headers (array of strings)
      */
     public function historyWithHttpInfo($key)
     {
@@ -515,17 +515,17 @@ class ObitApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\Obada\ClientHelper\History200Response' === '\SplFileObject') {
+                    if ('array<string,\Obada\ClientHelper\ObitHistoryValue>' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Obada\ClientHelper\History200Response' !== 'string') {
+                        if ('array&lt;string,\Obada\ClientHelper\ObitHistoryValue&gt;' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\Obada\ClientHelper\History200Response', []),
+                        ObjectSerializer::deserialize($content, 'array<string,\Obada\ClientHelper\ObitHistoryValue>', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -546,7 +546,7 @@ class ObitApi
                     ];
             }
 
-            $returnType = '\Obada\ClientHelper\History200Response';
+            $returnType = 'array<string,\Obada\ClientHelper\ObitHistoryValue>';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -567,7 +567,7 @@ class ObitApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Obada\ClientHelper\History200Response',
+                        'array<string,\Obada\ClientHelper\ObitHistoryValue>',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -617,7 +617,7 @@ class ObitApi
      */
     public function historyAsyncWithHttpInfo($key)
     {
-        $returnType = '\Obada\ClientHelper\History200Response';
+        $returnType = 'array<string,\Obada\ClientHelper\ObitHistoryValue>';
         $request = $this->historyRequest($key);
 
         return $this->client

@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 ## `history()`
 
 ```php
-history($key): \Obada\ClientHelper\History200Response
+history($key): array<string,\Obada\ClientHelper\ObitHistoryValue>
 ```
 
 Get Obit history by DID or USN
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Obada\ClientHelper\History200Response**](../Model/History200Response.md)
+[**array<string,\Obada\ClientHelper\ObitHistoryValue>**](../Model/ObitHistoryValue.md)
 
 ### Authorization
 
