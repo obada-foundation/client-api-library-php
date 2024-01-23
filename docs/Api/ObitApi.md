@@ -1,14 +1,74 @@
 # Obada\ObitApi
 
-All URIs are relative to http://obs.node.obada.io.
+All URIs are relative to http://obs.node.obada.io, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**get()**](ObitApi.md#get) | **GET** /obits/{key} | Get Obit by DID or USN
-[**history()**](ObitApi.md#history) | **GET** /obits/{key}/history | Get Obit history by DID or USN
-[**save()**](ObitApi.md#save) | **POST** /obits | Save Obit
-[**search()**](ObitApi.md#search) | **GET** /obits | Search obits by query
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**batchSave()**](ObitApi.md#batchSave) | **POST** /obits/batch | Batch Save Obit |
+| [**get()**](ObitApi.md#get) | **GET** /obits/{key} | Get Obit by DID or USN |
+| [**history()**](ObitApi.md#history) | **GET** /obits/{key}/history | Get Obit history by DID or USN |
+| [**save()**](ObitApi.md#save) | **POST** /obits | Save Obit |
+| [**search()**](ObitApi.md#search) | **GET** /obits | Search obits by query |
 
+
+## `batchSave()`
+
+```php
+batchSave($batchSaveObitRequest)
+```
+
+Batch Save Obit
+
+Returns Obit with updated checksum if data was changed.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer (JWT) authorization: bearerAuth
+$config = Obada\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Obada\Api\ObitApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$batchSaveObitRequest = new \Obada\ClientHelper\BatchSaveObitRequest(); // \Obada\ClientHelper\BatchSaveObitRequest
+
+try {
+    $apiInstance->batchSave($batchSaveObitRequest);
+} catch (Exception $e) {
+    echo 'Exception when calling ObitApi->batchSave: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **batchSaveObitRequest** | [**\Obada\ClientHelper\BatchSaveObitRequest**](../Model/BatchSaveObitRequest.md)|  | [optional] |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json:`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `get()`
 
@@ -49,9 +109,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **key** | **string**| The given ObitDID or USN argument |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **key** | **string**| The given ObitDID or USN argument | |
 
 ### Return type
 
@@ -109,9 +169,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **key** | **string**| The given ObitDID or USN argument |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **key** | **string**| The given ObitDID or USN argument | |
 
 ### Return type
 
@@ -169,9 +229,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **saveObitRequest** | [**\Obada\ClientHelper\SaveObitRequest**](../Model/SaveObitRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **saveObitRequest** | [**\Obada\ClientHelper\SaveObitRequest**](../Model/SaveObitRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -230,10 +290,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **q** | **string**| Query argument that used for a fulltext search | [optional]
- **offset** | **int**| Number of records to skip for pagination. | [optional] [default to 0]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **q** | **string**| Query argument that used for a fulltext search | [optional] |
+| **offset** | **int**| Number of records to skip for pagination. | [optional] [default to 0] |
 
 ### Return type
 

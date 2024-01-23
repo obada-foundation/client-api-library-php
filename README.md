@@ -90,10 +90,13 @@ Class | Method | HTTP request | Description
 *AccountsApi* | [**register**](docs/Api/AccountsApi.md#register) | **POST** /accounts/register | Register a new client-helper user profile
 *AccountsApi* | [**sendCoins**](docs/Api/AccountsApi.md#sendcoins) | **POST** /accounts/{address}/send-coins | Send coins from selected account
 *AccountsApi* | [**updateAccount**](docs/Api/AccountsApi.md#updateaccount) | **POST** /accounts/{address} | Sets account specific information
+*NFTApi* | [**batchMint**](docs/Api/NFTApi.md#batchmint) | **POST** /nft/batch-mint | Mints batches of NFT
+*NFTApi* | [**batchSend**](docs/Api/NFTApi.md#batchsend) | **POST** /nft/batch-send | Send a batch of NFTs to another address
 *NFTApi* | [**mint**](docs/Api/NFTApi.md#mint) | **POST** /nft/{key}/mint | Mints NFT
 *NFTApi* | [**nft**](docs/Api/NFTApi.md#nft) | **GET** /nft/{key} | Fetch NFT from OBADA blockchain Node
 *NFTApi* | [**send**](docs/Api/NFTApi.md#send) | **POST** /nft/{key}/send | Send NFT to another address
 *NFTApi* | [**updateMetadata**](docs/Api/NFTApi.md#updatemetadata) | **POST** /nft/{key}/metadata | Update NFT metadata
+*ObitApi* | [**batchSave**](docs/Api/ObitApi.md#batchsave) | **POST** /obits/batch | Batch Save Obit
 *ObitApi* | [**get**](docs/Api/ObitApi.md#get) | **GET** /obits/{key} | Get Obit by DID or USN
 *ObitApi* | [**history**](docs/Api/ObitApi.md#history) | **GET** /obits/{key}/history | Get Obit history by DID or USN
 *ObitApi* | [**save**](docs/Api/ObitApi.md#save) | **POST** /obits | Save Obit
@@ -107,6 +110,10 @@ Class | Method | HTTP request | Description
 - [AccountBalance](docs/Model/AccountBalance.md)
 - [AccountRequest](docs/Model/AccountRequest.md)
 - [Accounts](docs/Model/Accounts.md)
+- [BatchMintNFTRequest](docs/Model/BatchMintNFTRequest.md)
+- [BatchSaveObitRequest](docs/Model/BatchSaveObitRequest.md)
+- [BatchSaveObitRequestObitsInner](docs/Model/BatchSaveObitRequestObitsInner.md)
+- [BatchSendNFTRequest](docs/Model/BatchSendNFTRequest.md)
 - [DeviceDocument](docs/Model/DeviceDocument.md)
 - [Document](docs/Model/Document.md)
 - [ExportAccountRequest](docs/Model/ExportAccountRequest.md)
@@ -138,6 +145,7 @@ Class | Method | HTTP request | Description
 
 ## Authorization
 
+Authentication schemes defined for the API:
 ### bearerAuth
 
 - **Type**: Bearer authentication (JWT)

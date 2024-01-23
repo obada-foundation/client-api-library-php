@@ -11,6 +11,10 @@ docs/Model/Account.md
 docs/Model/AccountBalance.md
 docs/Model/AccountRequest.md
 docs/Model/Accounts.md
+docs/Model/BatchMintNFTRequest.md
+docs/Model/BatchSaveObitRequest.md
+docs/Model/BatchSaveObitRequestObitsInner.md
+docs/Model/BatchSendNFTRequest.md
 docs/Model/DeviceDocument.md
 docs/Model/Document.md
 docs/Model/ExportAccountRequest.md
@@ -24,7 +28,6 @@ docs/Model/InternalServerError.md
 docs/Model/MnemonicRequest.md
 docs/Model/NFT.md
 docs/Model/NFTData.md
-docs/Model/NFTDocument.md
 docs/Model/NewMnemonic.md
 docs/Model/NotAuthorized.md
 docs/Model/NotFound.md
@@ -50,6 +53,10 @@ lib/ClientHelper/Account.php
 lib/ClientHelper/AccountBalance.php
 lib/ClientHelper/AccountRequest.php
 lib/ClientHelper/Accounts.php
+lib/ClientHelper/BatchMintNFTRequest.php
+lib/ClientHelper/BatchSaveObitRequest.php
+lib/ClientHelper/BatchSaveObitRequestObitsInner.php
+lib/ClientHelper/BatchSendNFTRequest.php
 lib/ClientHelper/DeviceDocument.php
 lib/ClientHelper/Document.php
 lib/ClientHelper/ExportAccountRequest.php
@@ -64,7 +71,6 @@ lib/ClientHelper/MnemonicRequest.php
 lib/ClientHelper/ModelInterface.php
 lib/ClientHelper/NFT.php
 lib/ClientHelper/NFTData.php
-lib/ClientHelper/NFTDocument.php
 lib/ClientHelper/NewMnemonic.php
 lib/ClientHelper/NotAuthorized.php
 lib/ClientHelper/NotFound.php
@@ -92,6 +98,10 @@ test/Model/AccountBalanceTest.php
 test/Model/AccountRequestTest.php
 test/Model/AccountTest.php
 test/Model/AccountsTest.php
+test/Model/BatchMintNFTRequestTest.php
+test/Model/BatchSaveObitRequestObitsInnerTest.php
+test/Model/BatchSaveObitRequestTest.php
+test/Model/BatchSendNFTRequestTest.php
 test/Model/DeviceDocumentTest.php
 test/Model/DocumentTest.php
 test/Model/ExportAccountRequestTest.php
@@ -104,7 +114,6 @@ test/Model/ImportAccountRequestTest.php
 test/Model/InternalServerErrorTest.php
 test/Model/MnemonicRequestTest.php
 test/Model/NFTDataTest.php
-test/Model/NFTDocumentTest.php
 test/Model/NFTTest.php
 test/Model/NewMnemonicTest.php
 test/Model/NotAuthorizedTest.php

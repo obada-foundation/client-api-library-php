@@ -1,11 +1,11 @@
 # Obada\UtilsApi
 
-All URIs are relative to http://obs.node.obada.io.
+All URIs are relative to http://obs.node.obada.io, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**generateChecksum()**](UtilsApi.md#generateChecksum) | **POST** /obit/checksum | Generates Obit checksum
-[**generateDID()**](UtilsApi.md#generateDID) | **POST** /obit/did | Generate Obit DID
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**generateChecksum()**](UtilsApi.md#generateChecksum) | **POST** /obit/checksum | Generates Obit checksum |
+| [**generateDID()**](UtilsApi.md#generateDID) | **POST** /obit/did | Generate Obit DID |
 
 
 ## `generateChecksum()`
@@ -47,9 +47,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **generateObitChecksumRequest** | [**\Obada\ClientHelper\GenerateObitChecksumRequest**](../Model/GenerateObitChecksumRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **generateObitChecksumRequest** | [**\Obada\ClientHelper\GenerateObitChecksumRequest**](../Model/GenerateObitChecksumRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -107,9 +107,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **generateObitDIDRequest** | [**\Obada\ClientHelper\GenerateObitDIDRequest**](../Model/GenerateObitDIDRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **generateObitDIDRequest** | [**\Obada\ClientHelper\GenerateObitDIDRequest**](../Model/GenerateObitDIDRequest.md)|  | [optional] |
 
 ### Return type
 

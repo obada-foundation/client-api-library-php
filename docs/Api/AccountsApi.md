@@ -1,22 +1,22 @@
 # Obada\AccountsApi
 
-All URIs are relative to http://obs.node.obada.io.
+All URIs are relative to http://obs.node.obada.io, except if the operation defines another base path.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**account()**](AccountsApi.md#account) | **GET** /accounts/{address} | Fetches an information about single account
-[**accounts()**](AccountsApi.md#accounts) | **GET** /accounts | Returns a list of OBADA accounts
-[**deleteImportedAccount()**](AccountsApi.md#deleteImportedAccount) | **DELETE** /accounts/{address} | Delete imported account
-[**exportAccount()**](AccountsApi.md#exportAccount) | **POST** /accounts/export-account | Export OBADA account (private key) from client-helper
-[**getMnemonic()**](AccountsApi.md#getMnemonic) | **GET** /accounts/mnemonic | Fetching an existing mnemonic phrase
-[**importAccount()**](AccountsApi.md#importAccount) | **POST** /accounts/import-account | Imports an existing OBADA account (private key) to the client-helper user profile
-[**importWallet()**](AccountsApi.md#importWallet) | **POST** /accounts/import-wallet | Imports an existing HD wallet to the client-helper user profile
-[**newAccount()**](AccountsApi.md#newAccount) | **POST** /accounts/new-account | Creates a new OBADA account from HD wallet master key
-[**newMnemonic()**](AccountsApi.md#newMnemonic) | **GET** /accounts/new-mnemonic | Generate a new mnemonic phrase for seeding wallet
-[**newWallet()**](AccountsApi.md#newWallet) | **POST** /accounts/new-wallet | Creates profile HD wallet
-[**register()**](AccountsApi.md#register) | **POST** /accounts/register | Register a new client-helper user profile
-[**sendCoins()**](AccountsApi.md#sendCoins) | **POST** /accounts/{address}/send-coins | Send coins from selected account
-[**updateAccount()**](AccountsApi.md#updateAccount) | **POST** /accounts/{address} | Sets account specific information
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**account()**](AccountsApi.md#account) | **GET** /accounts/{address} | Fetches an information about single account |
+| [**accounts()**](AccountsApi.md#accounts) | **GET** /accounts | Returns a list of OBADA accounts |
+| [**deleteImportedAccount()**](AccountsApi.md#deleteImportedAccount) | **DELETE** /accounts/{address} | Delete imported account |
+| [**exportAccount()**](AccountsApi.md#exportAccount) | **POST** /accounts/export-account | Export OBADA account (private key) from client-helper |
+| [**getMnemonic()**](AccountsApi.md#getMnemonic) | **GET** /accounts/mnemonic | Fetching an existing mnemonic phrase |
+| [**importAccount()**](AccountsApi.md#importAccount) | **POST** /accounts/import-account | Imports an existing OBADA account (private key) to the client-helper user profile |
+| [**importWallet()**](AccountsApi.md#importWallet) | **POST** /accounts/import-wallet | Imports an existing HD wallet to the client-helper user profile |
+| [**newAccount()**](AccountsApi.md#newAccount) | **POST** /accounts/new-account | Creates a new OBADA account from HD wallet master key |
+| [**newMnemonic()**](AccountsApi.md#newMnemonic) | **GET** /accounts/new-mnemonic | Generate a new mnemonic phrase for seeding wallet |
+| [**newWallet()**](AccountsApi.md#newWallet) | **POST** /accounts/new-wallet | Creates profile HD wallet |
+| [**register()**](AccountsApi.md#register) | **POST** /accounts/register | Register a new client-helper user profile |
+| [**sendCoins()**](AccountsApi.md#sendCoins) | **POST** /accounts/{address}/send-coins | Send coins from selected account |
+| [**updateAccount()**](AccountsApi.md#updateAccount) | **POST** /accounts/{address} | Sets account specific information |
 
 
 ## `account()`
@@ -56,9 +56,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **address** | **string**| OBADA address |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **address** | **string**| OBADA address | |
 
 ### Return type
 
@@ -168,9 +168,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **address** | **string**| OBADA address |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **address** | **string**| OBADA address | |
 
 ### Return type
 
@@ -226,9 +226,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **exportAccountRequest** | [**\Obada\ClientHelper\ExportAccountRequest**](../Model/ExportAccountRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **exportAccountRequest** | [**\Obada\ClientHelper\ExportAccountRequest**](../Model/ExportAccountRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -338,9 +338,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **importAccountRequest** | [**\Obada\ClientHelper\ImportAccountRequest**](../Model/ImportAccountRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **importAccountRequest** | [**\Obada\ClientHelper\ImportAccountRequest**](../Model/ImportAccountRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -395,9 +395,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **mnemonicRequest** | [**\Obada\ClientHelper\MnemonicRequest**](../Model/MnemonicRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **mnemonicRequest** | [**\Obada\ClientHelper\MnemonicRequest**](../Model/MnemonicRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -452,9 +452,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **accountRequest** | [**\Obada\ClientHelper\AccountRequest**](../Model/AccountRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **accountRequest** | [**\Obada\ClientHelper\AccountRequest**](../Model/AccountRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -564,9 +564,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **mnemonicRequest** | [**\Obada\ClientHelper\MnemonicRequest**](../Model/MnemonicRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **mnemonicRequest** | [**\Obada\ClientHelper\MnemonicRequest**](../Model/MnemonicRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -624,9 +624,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **registerRequest** | [**\Obada\ClientHelper\RegisterRequest**](../Model/RegisterRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **registerRequest** | [**\Obada\ClientHelper\RegisterRequest**](../Model/RegisterRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -682,10 +682,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **address** | **string**| OBADA address |
- **sendCoinsRequest** | [**\Obada\ClientHelper\SendCoinsRequest**](../Model/SendCoinsRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **address** | **string**| OBADA address | |
+| **sendCoinsRequest** | [**\Obada\ClientHelper\SendCoinsRequest**](../Model/SendCoinsRequest.md)|  | [optional] |
 
 ### Return type
 
@@ -741,10 +741,10 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **address** | **string**| OBADA address |
- **accountRequest** | [**\Obada\ClientHelper\AccountRequest**](../Model/AccountRequest.md)|  | [optional]
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **address** | **string**| OBADA address | |
+| **accountRequest** | [**\Obada\ClientHelper\AccountRequest**](../Model/AccountRequest.md)|  | [optional] |
 
 ### Return type
 
