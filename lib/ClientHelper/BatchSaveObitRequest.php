@@ -59,6 +59,7 @@ class BatchSaveObitRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
+        'address' => 'string',
         'shouldMint' => 'bool',
         'obits' => '\Obada\ClientHelper\BatchSaveObitRequestObitsInner[]'
     ];
@@ -71,6 +72,7 @@ class BatchSaveObitRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'address' => null,
         'shouldMint' => null,
         'obits' => null
     ];
@@ -81,6 +83,7 @@ class BatchSaveObitRequest implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'address' => false,
         'shouldMint' => false,
         'obits' => false
     ];
@@ -171,6 +174,7 @@ class BatchSaveObitRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
+        'address' => 'address',
         'shouldMint' => 'should_mint',
         'obits' => 'obits'
     ];
@@ -181,6 +185,7 @@ class BatchSaveObitRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
+        'address' => 'setAddress',
         'shouldMint' => 'setShouldMint',
         'obits' => 'setObits'
     ];
@@ -191,6 +196,7 @@ class BatchSaveObitRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
+        'address' => 'getAddress',
         'shouldMint' => 'getShouldMint',
         'obits' => 'getObits'
     ];
@@ -252,6 +258,7 @@ class BatchSaveObitRequest implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(array $data = null)
     {
+        $this->setIfExists('address', $data ?? [], null);
         $this->setIfExists('shouldMint', $data ?? [], false);
         $this->setIfExists('obits', $data ?? [], null);
     }
@@ -300,6 +307,33 @@ class BatchSaveObitRequest implements ModelInterface, ArrayAccess, \JsonSerializ
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets address
+     *
+     * @return string|null
+     */
+    public function getAddress()
+    {
+        return $this->container['address'];
+    }
+
+    /**
+     * Sets address
+     *
+     * @param string|null $address address
+     *
+     * @return self
+     */
+    public function setAddress($address)
+    {
+        if (is_null($address)) {
+            throw new \InvalidArgumentException('non-nullable address cannot be null');
+        }
+        $this->container['address'] = $address;
+
+        return $this;
+    }
 
     /**
      * Gets shouldMint

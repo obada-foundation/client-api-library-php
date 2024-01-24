@@ -61,8 +61,7 @@ class BatchSaveObitRequestObitsInner implements ModelInterface, ArrayAccess, \Js
         'manufacturer' => 'string',
         'partNumber' => 'string',
         'serialNumber' => 'string',
-        'documents' => '\Obada\ClientHelper\DeviceDocument[]',
-        'address' => 'string'
+        'documents' => '\Obada\ClientHelper\DeviceDocument[]'
     ];
 
     /**
@@ -76,8 +75,7 @@ class BatchSaveObitRequestObitsInner implements ModelInterface, ArrayAccess, \Js
         'manufacturer' => null,
         'partNumber' => null,
         'serialNumber' => null,
-        'documents' => null,
-        'address' => null
+        'documents' => null
     ];
 
     /**
@@ -89,8 +87,7 @@ class BatchSaveObitRequestObitsInner implements ModelInterface, ArrayAccess, \Js
         'manufacturer' => false,
         'partNumber' => false,
         'serialNumber' => false,
-        'documents' => false,
-        'address' => false
+        'documents' => false
     ];
 
     /**
@@ -182,8 +179,7 @@ class BatchSaveObitRequestObitsInner implements ModelInterface, ArrayAccess, \Js
         'manufacturer' => 'manufacturer',
         'partNumber' => 'part_number',
         'serialNumber' => 'serial_number',
-        'documents' => 'documents',
-        'address' => 'address'
+        'documents' => 'documents'
     ];
 
     /**
@@ -195,8 +191,7 @@ class BatchSaveObitRequestObitsInner implements ModelInterface, ArrayAccess, \Js
         'manufacturer' => 'setManufacturer',
         'partNumber' => 'setPartNumber',
         'serialNumber' => 'setSerialNumber',
-        'documents' => 'setDocuments',
-        'address' => 'setAddress'
+        'documents' => 'setDocuments'
     ];
 
     /**
@@ -208,8 +203,7 @@ class BatchSaveObitRequestObitsInner implements ModelInterface, ArrayAccess, \Js
         'manufacturer' => 'getManufacturer',
         'partNumber' => 'getPartNumber',
         'serialNumber' => 'getSerialNumber',
-        'documents' => 'getDocuments',
-        'address' => 'getAddress'
+        'documents' => 'getDocuments'
     ];
 
     /**
@@ -273,7 +267,6 @@ class BatchSaveObitRequestObitsInner implements ModelInterface, ArrayAccess, \Js
         $this->setIfExists('partNumber', $data ?? [], null);
         $this->setIfExists('serialNumber', $data ?? [], null);
         $this->setIfExists('documents', $data ?? [], null);
-        $this->setIfExists('address', $data ?? [], null);
     }
 
     /**
@@ -431,33 +424,6 @@ class BatchSaveObitRequestObitsInner implements ModelInterface, ArrayAccess, \Js
             throw new \InvalidArgumentException('non-nullable documents cannot be null');
         }
         $this->container['documents'] = $documents;
-
-        return $this;
-    }
-
-    /**
-     * Gets address
-     *
-     * @return string|null
-     */
-    public function getAddress()
-    {
-        return $this->container['address'];
-    }
-
-    /**
-     * Sets address
-     *
-     * @param string|null $address address
-     *
-     * @return self
-     */
-    public function setAddress($address)
-    {
-        if (is_null($address)) {
-            throw new \InvalidArgumentException('non-nullable address cannot be null');
-        }
-        $this->container['address'] = $address;
 
         return $this;
     }

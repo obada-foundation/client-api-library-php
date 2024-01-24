@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**address** | **string** |  | [optional]
 **shouldMint** | **bool** | If true then client helper will mint NFTs for each Obit | [optional] [default to false]
 **obits** | [**\Obada\ClientHelper\BatchSaveObitRequestObitsInner[]**](BatchSaveObitRequestObitsInner.md) |  |
 
