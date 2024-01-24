@@ -1,6 +1,6 @@
 <?php
 /**
- * Obit
+ * Document
  *
  * PHP version 7.4
  *
@@ -33,16 +33,16 @@ use \ArrayAccess;
 use \Obada\ObjectSerializer;
 
 /**
- * Obit Class Doc Comment
+ * Document Class Doc Comment
  *
  * @category Class
- * @description OBADA record.
+ * @description Document hashlink
  * @package  Obada
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
+class Document implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Obit';
+    protected static $openAPIModelName = 'Document';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,15 +59,11 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'did' => 'string',
-        'usn' => 'string',
-        'owner' => 'string',
-        'manufacturer' => 'string',
-        'partNumber' => 'string',
-        'serialNumber' => 'string',
-        'trustAnchorToken' => 'string',
-        'documents' => '\Obada\ClientHelper\Document[]',
-        'checksum' => 'string'
+        'name' => 'string',
+        'type' => 'string',
+        'uri' => 'string',
+        'hash' => 'string',
+        'encrypted' => 'bool'
     ];
 
     /**
@@ -78,15 +74,11 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'did' => null,
-        'usn' => null,
-        'owner' => null,
-        'manufacturer' => null,
-        'partNumber' => null,
-        'serialNumber' => null,
-        'trustAnchorToken' => null,
-        'documents' => null,
-        'checksum' => null
+        'name' => null,
+        'type' => null,
+        'uri' => null,
+        'hash' => null,
+        'encrypted' => null
     ];
 
     /**
@@ -95,15 +87,11 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'did' => false,
-        'usn' => false,
-        'owner' => false,
-        'manufacturer' => false,
-        'partNumber' => false,
-        'serialNumber' => false,
-        'trustAnchorToken' => false,
-        'documents' => false,
-        'checksum' => false
+        'name' => false,
+        'type' => false,
+        'uri' => false,
+        'hash' => false,
+        'encrypted' => false
     ];
 
     /**
@@ -192,15 +180,11 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'did' => 'did',
-        'usn' => 'usn',
-        'owner' => 'owner',
-        'manufacturer' => 'manufacturer',
-        'partNumber' => 'part_number',
-        'serialNumber' => 'serial_number',
-        'trustAnchorToken' => 'trust_anchor_token',
-        'documents' => 'documents',
-        'checksum' => 'checksum'
+        'name' => 'name',
+        'type' => 'type',
+        'uri' => 'uri',
+        'hash' => 'hash',
+        'encrypted' => 'encrypted'
     ];
 
     /**
@@ -209,15 +193,11 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'did' => 'setDid',
-        'usn' => 'setUsn',
-        'owner' => 'setOwner',
-        'manufacturer' => 'setManufacturer',
-        'partNumber' => 'setPartNumber',
-        'serialNumber' => 'setSerialNumber',
-        'trustAnchorToken' => 'setTrustAnchorToken',
-        'documents' => 'setDocuments',
-        'checksum' => 'setChecksum'
+        'name' => 'setName',
+        'type' => 'setType',
+        'uri' => 'setUri',
+        'hash' => 'setHash',
+        'encrypted' => 'setEncrypted'
     ];
 
     /**
@@ -226,15 +206,11 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'did' => 'getDid',
-        'usn' => 'getUsn',
-        'owner' => 'getOwner',
-        'manufacturer' => 'getManufacturer',
-        'partNumber' => 'getPartNumber',
-        'serialNumber' => 'getSerialNumber',
-        'trustAnchorToken' => 'getTrustAnchorToken',
-        'documents' => 'getDocuments',
-        'checksum' => 'getChecksum'
+        'name' => 'getName',
+        'type' => 'getType',
+        'uri' => 'getUri',
+        'hash' => 'getHash',
+        'encrypted' => 'getEncrypted'
     ];
 
     /**
@@ -294,15 +270,11 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('did', $data ?? [], null);
-        $this->setIfExists('usn', $data ?? [], null);
-        $this->setIfExists('owner', $data ?? [], null);
-        $this->setIfExists('manufacturer', $data ?? [], null);
-        $this->setIfExists('partNumber', $data ?? [], null);
-        $this->setIfExists('serialNumber', $data ?? [], null);
-        $this->setIfExists('trustAnchorToken', $data ?? [], null);
-        $this->setIfExists('documents', $data ?? [], null);
-        $this->setIfExists('checksum', $data ?? [], null);
+        $this->setIfExists('name', $data ?? [], null);
+        $this->setIfExists('type', $data ?? [], null);
+        $this->setIfExists('uri', $data ?? [], null);
+        $this->setIfExists('hash', $data ?? [], null);
+        $this->setIfExists('encrypted', $data ?? [], null);
     }
 
     /**
@@ -332,15 +304,6 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['manufacturer'] === null) {
-            $invalidProperties[] = "'manufacturer' can't be null";
-        }
-        if ($this->container['partNumber'] === null) {
-            $invalidProperties[] = "'partNumber' can't be null";
-        }
-        if ($this->container['serialNumber'] === null) {
-            $invalidProperties[] = "'serialNumber' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -357,244 +320,136 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets did
+     * Gets name
      *
      * @return string|null
      */
-    public function getDid()
+    public function getName()
     {
-        return $this->container['did'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets did
+     * Sets name
      *
-     * @param string|null $did OBADA decentralized identifier
+     * @param string|null $name Associative name of file
      *
      * @return self
      */
-    public function setDid($did)
+    public function setName($name)
     {
-        if (is_null($did)) {
-            throw new \InvalidArgumentException('non-nullable did cannot be null');
+        if (is_null($name)) {
+            throw new \InvalidArgumentException('non-nullable name cannot be null');
         }
-        $this->container['did'] = $did;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets usn
+     * Gets type
      *
      * @return string|null
      */
-    public function getUsn()
+    public function getType()
     {
-        return $this->container['usn'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets usn
+     * Sets type
      *
-     * @param string|null $usn Test An 8-12 character “URL Shortened” obit. Create the USN by Base(58) encoding the OBIT ID. Take the first 8 characters. Check for duplicates. With 16 million OBITs there is a 40% chance of collision. If so, add 4 characters. Repeat as necessary until a unique USN is generated.
+     * @param string|null $type Document type
      *
      * @return self
      */
-    public function setUsn($usn)
+    public function setType($type)
     {
-        if (is_null($usn)) {
-            throw new \InvalidArgumentException('non-nullable usn cannot be null');
+        if (is_null($type)) {
+            throw new \InvalidArgumentException('non-nullable type cannot be null');
         }
-        $this->container['usn'] = $usn;
+        $this->container['type'] = $type;
 
         return $this;
     }
 
     /**
-     * Gets owner
+     * Gets uri
      *
      * @return string|null
      */
-    public function getOwner()
+    public function getUri()
     {
-        return $this->container['owner'];
+        return $this->container['uri'];
     }
 
     /**
-     * Sets owner
+     * Sets uri
      *
-     * @param string|null $owner Owner is the person/entity that owns the obit and the physical asset it represents. Format is a DID like did:obada:owner:1234. However in the current version only test numbers will be used.
+     * @param string|null $uri Link to the document
      *
      * @return self
      */
-    public function setOwner($owner)
+    public function setUri($uri)
     {
-        if (is_null($owner)) {
-            throw new \InvalidArgumentException('non-nullable owner cannot be null');
+        if (is_null($uri)) {
+            throw new \InvalidArgumentException('non-nullable uri cannot be null');
         }
-        $this->container['owner'] = $owner;
+        $this->container['uri'] = $uri;
 
         return $this;
     }
 
     /**
-     * Gets manufacturer
-     *
-     * @return string
-     */
-    public function getManufacturer()
-    {
-        return $this->container['manufacturer'];
-    }
-
-    /**
-     * Sets manufacturer
-     *
-     * @param string $manufacturer Waiting more specific details from Rohi
-     *
-     * @return self
-     */
-    public function setManufacturer($manufacturer)
-    {
-        if (is_null($manufacturer)) {
-            throw new \InvalidArgumentException('non-nullable manufacturer cannot be null');
-        }
-        $this->container['manufacturer'] = $manufacturer;
-
-        return $this;
-    }
-
-    /**
-     * Gets partNumber
-     *
-     * @return string
-     */
-    public function getPartNumber()
-    {
-        return $this->container['partNumber'];
-    }
-
-    /**
-     * Sets partNumber
-     *
-     * @param string $partNumber Manufacturer provided. In cases where no part number is provided for the product, use model, or the most specific ID available from the manufacturer. MWCN2LL/A (an iPhone 11 Pro, Silver, 256GB, model A2160)
-     *
-     * @return self
-     */
-    public function setPartNumber($partNumber)
-    {
-        if (is_null($partNumber)) {
-            throw new \InvalidArgumentException('non-nullable partNumber cannot be null');
-        }
-        $this->container['partNumber'] = $partNumber;
-
-        return $this;
-    }
-
-    /**
-     * Gets serialNumber
-     *
-     * @return string
-     */
-    public function getSerialNumber()
-    {
-        return $this->container['serialNumber'];
-    }
-
-    /**
-     * Sets serialNumber
-     *
-     * @param string $serialNumber Serial number hashed with sha256 hash function
-     *
-     * @return self
-     */
-    public function setSerialNumber($serialNumber)
-    {
-        if (is_null($serialNumber)) {
-            throw new \InvalidArgumentException('non-nullable serialNumber cannot be null');
-        }
-        $this->container['serialNumber'] = $serialNumber;
-
-        return $this;
-    }
-
-    /**
-     * Gets trustAnchorToken
+     * Gets hash
      *
      * @return string|null
      */
-    public function getTrustAnchorToken()
+    public function getHash()
     {
-        return $this->container['trustAnchorToken'];
+        return $this->container['hash'];
     }
 
     /**
-     * Sets trustAnchorToken
+     * Sets hash
      *
-     * @param string|null $trustAnchorToken JWT token from the trust anchor
+     * @param string|null $hash Hash of the file
      *
      * @return self
      */
-    public function setTrustAnchorToken($trustAnchorToken)
+    public function setHash($hash)
     {
-        if (is_null($trustAnchorToken)) {
-            throw new \InvalidArgumentException('non-nullable trustAnchorToken cannot be null');
+        if (is_null($hash)) {
+            throw new \InvalidArgumentException('non-nullable hash cannot be null');
         }
-        $this->container['trustAnchorToken'] = $trustAnchorToken;
+        $this->container['hash'] = $hash;
 
         return $this;
     }
 
     /**
-     * Gets documents
+     * Gets encrypted
      *
-     * @return \Obada\ClientHelper\Document[]|null
+     * @return bool|null
      */
-    public function getDocuments()
+    public function getEncrypted()
     {
-        return $this->container['documents'];
+        return $this->container['encrypted'];
     }
 
     /**
-     * Sets documents
+     * Sets encrypted
      *
-     * @param \Obada\ClientHelper\Document[]|null $documents Documents that are attached to Obit
+     * @param bool|null $encrypted If true then client helper will encrypt document with account key
      *
      * @return self
      */
-    public function setDocuments($documents)
+    public function setEncrypted($encrypted)
     {
-        if (is_null($documents)) {
-            throw new \InvalidArgumentException('non-nullable documents cannot be null');
+        if (is_null($encrypted)) {
+            throw new \InvalidArgumentException('non-nullable encrypted cannot be null');
         }
-        $this->container['documents'] = $documents;
-
-        return $this;
-    }
-
-    /**
-     * Gets checksum
-     *
-     * @return string|null
-     */
-    public function getChecksum()
-    {
-        return $this->container['checksum'];
-    }
-
-    /**
-     * Sets checksum
-     *
-     * @param string|null $checksum Hash calculated by SHA256 (previous Obit checksum + Obit data).
-     *
-     * @return self
-     */
-    public function setChecksum($checksum)
-    {
-        if (is_null($checksum)) {
-            throw new \InvalidArgumentException('non-nullable checksum cannot be null');
-        }
-        $this->container['checksum'] = $checksum;
+        $this->container['encrypted'] = $encrypted;
 
         return $this;
     }

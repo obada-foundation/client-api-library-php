@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **partNumber** | **string** | Manufacturer provided. In cases where no part number is provided for the product, use model, or the most specific ID available from the manufacturer. MWCN2LL/A (an iPhone 11 Pro, Silver, 256GB, model A2160) |
 **serialNumber** | **string** | Serial number hashed with sha256 hash function |
 **trustAnchorToken** | **string** | JWT token from the trust anchor | [optional]
-**documents** | [**\Obada\ClientHelper\DeviceDocument[]**](DeviceDocument.md) | Documents that are attached to Obit | [optional]
+**documents** | [**\Obada\ClientHelper\Document[]**](Document.md) | Documents that are attached to Obit | [optional]
 **checksum** | **string** | Hash calculated by SHA256 (previous Obit checksum + Obit data). | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
