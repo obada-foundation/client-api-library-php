@@ -64,7 +64,7 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
         'owner' => 'string',
         'manufacturer' => 'string',
         'partNumber' => 'string',
-        'serialNumberHash' => 'string',
+        'serialNumber' => 'string',
         'trustAnchorToken' => 'string',
         'documents' => '\Obada\ClientHelper\Document[]',
         'checksum' => 'string'
@@ -83,7 +83,7 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
         'owner' => null,
         'manufacturer' => null,
         'partNumber' => null,
-        'serialNumberHash' => null,
+        'serialNumber' => null,
         'trustAnchorToken' => null,
         'documents' => null,
         'checksum' => null
@@ -100,7 +100,7 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
         'owner' => false,
         'manufacturer' => false,
         'partNumber' => false,
-        'serialNumberHash' => false,
+        'serialNumber' => false,
         'trustAnchorToken' => false,
         'documents' => false,
         'checksum' => false
@@ -197,7 +197,7 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
         'owner' => 'owner',
         'manufacturer' => 'manufacturer',
         'partNumber' => 'part_number',
-        'serialNumberHash' => 'serial_number_hash',
+        'serialNumber' => 'serial_number',
         'trustAnchorToken' => 'trust_anchor_token',
         'documents' => 'documents',
         'checksum' => 'checksum'
@@ -214,7 +214,7 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
         'owner' => 'setOwner',
         'manufacturer' => 'setManufacturer',
         'partNumber' => 'setPartNumber',
-        'serialNumberHash' => 'setSerialNumberHash',
+        'serialNumber' => 'setSerialNumber',
         'trustAnchorToken' => 'setTrustAnchorToken',
         'documents' => 'setDocuments',
         'checksum' => 'setChecksum'
@@ -231,7 +231,7 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
         'owner' => 'getOwner',
         'manufacturer' => 'getManufacturer',
         'partNumber' => 'getPartNumber',
-        'serialNumberHash' => 'getSerialNumberHash',
+        'serialNumber' => 'getSerialNumber',
         'trustAnchorToken' => 'getTrustAnchorToken',
         'documents' => 'getDocuments',
         'checksum' => 'getChecksum'
@@ -299,7 +299,7 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('owner', $data ?? [], null);
         $this->setIfExists('manufacturer', $data ?? [], null);
         $this->setIfExists('partNumber', $data ?? [], null);
-        $this->setIfExists('serialNumberHash', $data ?? [], null);
+        $this->setIfExists('serialNumber', $data ?? [], null);
         $this->setIfExists('trustAnchorToken', $data ?? [], null);
         $this->setIfExists('documents', $data ?? [], null);
         $this->setIfExists('checksum', $data ?? [], null);
@@ -337,6 +337,9 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ($this->container['partNumber'] === null) {
             $invalidProperties[] = "'partNumber' can't be null";
+        }
+        if ($this->container['serialNumber'] === null) {
+            $invalidProperties[] = "'serialNumber' can't be null";
         }
         return $invalidProperties;
     }
@@ -489,28 +492,28 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets serialNumberHash
+     * Gets serialNumber
      *
-     * @return string|null
+     * @return string
      */
-    public function getSerialNumberHash()
+    public function getSerialNumber()
     {
-        return $this->container['serialNumberHash'];
+        return $this->container['serialNumber'];
     }
 
     /**
-     * Sets serialNumberHash
+     * Sets serialNumber
      *
-     * @param string|null $serialNumberHash Serial number hashed with sha256 hash function
+     * @param string $serialNumber Serial number hashed with sha256 hash function
      *
      * @return self
      */
-    public function setSerialNumberHash($serialNumberHash)
+    public function setSerialNumber($serialNumber)
     {
-        if (is_null($serialNumberHash)) {
-            throw new \InvalidArgumentException('non-nullable serialNumberHash cannot be null');
+        if (is_null($serialNumber)) {
+            throw new \InvalidArgumentException('non-nullable serialNumber cannot be null');
         }
-        $this->container['serialNumberHash'] = $serialNumberHash;
+        $this->container['serialNumber'] = $serialNumber;
 
         return $this;
     }

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **owner** | **string** | Owner is the person/entity that owns the obit and the physical asset it represents. Format is a DID like did:obada:owner:1234. However in the current version only test numbers will be used. | [optional]
 **manufacturer** | **string** | Waiting more specific details from Rohi |
 **partNumber** | **string** | Manufacturer provided. In cases where no part number is provided for the product, use model, or the most specific ID available from the manufacturer. MWCN2LL/A (an iPhone 11 Pro, Silver, 256GB, model A2160) |
-**serialNumberHash** | **string** | Serial number hashed with sha256 hash function | [optional]
+**serialNumber** | **string** | Serial number hashed with sha256 hash function |
 **trustAnchorToken** | **string** | JWT token from the trust anchor | [optional]
 **documents** | [**\Obada\ClientHelper\Document[]**](Document.md) | Documents that are attached to Obit | [optional]
 **checksum** | **string** | Hash calculated by SHA256 (previous Obit checksum + Obit data). | [optional]
