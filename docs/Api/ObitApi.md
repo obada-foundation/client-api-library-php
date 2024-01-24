@@ -14,7 +14,7 @@ All URIs are relative to http://obs.node.obada.io, except if the operation defin
 ## `batchSave()`
 
 ```php
-batchSave($batchSaveObitRequest)
+batchSave($batchSaveObitRequest): \Obada\ClientHelper\Obit[]
 ```
 
 Batch Save Obit
@@ -41,7 +41,8 @@ $apiInstance = new Obada\Api\ObitApi(
 $batchSaveObitRequest = new \Obada\ClientHelper\BatchSaveObitRequest(); // \Obada\ClientHelper\BatchSaveObitRequest
 
 try {
-    $apiInstance->batchSave($batchSaveObitRequest);
+    $result = $apiInstance->batchSave($batchSaveObitRequest);
+    print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ObitApi->batchSave: ', $e->getMessage(), PHP_EOL;
 }
@@ -55,7 +56,7 @@ try {
 
 ### Return type
 
-void (empty response body)
+[**\Obada\ClientHelper\Obit[]**](../Model/Obit.md)
 
 ### Authorization
 
