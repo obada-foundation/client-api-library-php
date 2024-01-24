@@ -66,7 +66,7 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
         'partNumber' => 'string',
         'serialNumber' => 'string',
         'trustAnchorToken' => 'string',
-        'documents' => '\Obada\ClientHelper\Document[]',
+        'documents' => '\Obada\ClientHelper\DeviceDocument[]',
         'checksum' => 'string'
     ];
 
@@ -548,7 +548,7 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets documents
      *
-     * @return \Obada\ClientHelper\Document[]|null
+     * @return \Obada\ClientHelper\DeviceDocument[]|null
      */
     public function getDocuments()
     {
@@ -558,7 +558,7 @@ class Obit implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets documents
      *
-     * @param \Obada\ClientHelper\Document[]|null $documents Documents that are attached to Obit
+     * @param \Obada\ClientHelper\DeviceDocument[]|null $documents Documents that are attached to Obit
      *
      * @return self
      */

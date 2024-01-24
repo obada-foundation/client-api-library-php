@@ -16,7 +16,6 @@ docs/Model/BatchSaveObitRequest.md
 docs/Model/BatchSaveObitRequestObitsInner.md
 docs/Model/BatchSendNFTRequest.md
 docs/Model/DeviceDocument.md
-docs/Model/Document.md
 docs/Model/ExportAccountRequest.md
 docs/Model/ExportAccountResponse.md
 docs/Model/GenerateObitChecksumRequest.md
@@ -58,7 +57,6 @@ lib/ClientHelper/BatchSaveObitRequest.php
 lib/ClientHelper/BatchSaveObitRequestObitsInner.php
 lib/ClientHelper/BatchSendNFTRequest.php
 lib/ClientHelper/DeviceDocument.php
-lib/ClientHelper/Document.php
 lib/ClientHelper/ExportAccountRequest.php
 lib/ClientHelper/ExportAccountResponse.php
 lib/ClientHelper/GenerateObitChecksumRequest.php
@@ -103,7 +101,6 @@ test/Model/BatchSaveObitRequestObitsInnerTest.php
 test/Model/BatchSaveObitRequestTest.php
 test/Model/BatchSendNFTRequestTest.php
 test/Model/DeviceDocumentTest.php
-test/Model/DocumentTest.php
 test/Model/ExportAccountRequestTest.php
 test/Model/ExportAccountResponseTest.php
 test/Model/GenerateObitChecksumRequestTest.php

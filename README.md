@@ -115,7 +115,6 @@ Class | Method | HTTP request | Description
 - [BatchSaveObitRequestObitsInner](docs/Model/BatchSaveObitRequestObitsInner.md)
 - [BatchSendNFTRequest](docs/Model/BatchSendNFTRequest.md)
 - [DeviceDocument](docs/Model/DeviceDocument.md)
-- [Document](docs/Model/Document.md)
 - [ExportAccountRequest](docs/Model/ExportAccountRequest.md)
 - [ExportAccountResponse](docs/Model/ExportAccountResponse.md)
 - [GenerateObitChecksumRequest](docs/Model/GenerateObitChecksumRequest.md)
